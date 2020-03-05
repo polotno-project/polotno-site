@@ -91,7 +91,7 @@ function Home() {
           <p className="hero__subtitle">
             Make your own {competitor} alternative.
           </p>
-          <div className={styles.buttons}>
+          {/* <div className={styles.buttons}>
             <Link
               className={classnames(
                 'button button--outline button--secondary button--lg',
@@ -101,6 +101,74 @@ function Home() {
             >
               Get Started
             </Link>
+          </div> */}
+          {/* <link
+            href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
+            rel="stylesheet"
+            type="text/css"
+          /> */}
+          <div
+            id="mc_embed_signup"
+            style={{ maxWidth: '400px', margin: 'auto' }}
+          >
+            <form
+              action="https://dev.us10.list-manage.com/subscribe/post?u=c4acb00b499825f956980387e&amp;id=c004a2de67"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll">
+                <div className="mc-field-group">
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    className="required email"
+                    id="mce-EMAIL"
+                    placeholder="Your email"
+                    style={{
+                      padding: '8px',
+                      border: '1px solid white',
+                      borderRadius: '4px',
+                      marginRight: '10px',
+                      width: '150px'
+                    }}
+                  />
+                  <input
+                    type="submit"
+                    value="Get notified on early access"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    className="button"
+                  />
+                </div>
+                <div id="mce-responses" className="clear">
+                  <div
+                    className="response"
+                    id="mce-error-response"
+                    style={{ display: 'none' }}
+                  ></div>
+                  <div
+                    className="response"
+                    id="mce-success-response"
+                    style={{ display: 'none' }}
+                  ></div>
+                </div>
+                <div
+                  style={{ position: 'absolute', left: '-5000px' }}
+                  aria-hidden="true"
+                >
+                  <input
+                    type="text"
+                    name="b_c4acb00b499825f956980387e_c004a2de67"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </header>
