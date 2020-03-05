@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Polotno SDK',
+  title: 'Polotno',
   tagline: 'Canvas editor framework',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
