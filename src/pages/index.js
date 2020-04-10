@@ -15,7 +15,7 @@ const features = [
         Polotno was designed to easily build a canvas editor application and
         used to get your new business feature quickly.
       </>
-    )
+    ),
   },
   {
     title: <>Modular components</>,
@@ -25,7 +25,7 @@ const features = [
         Polotno is a large set of js modules and React components, so you can
         bootstrap a working version.
       </>
-    )
+    ),
   },
   {
     title: <>Your own canvas editor</>,
@@ -35,8 +35,8 @@ const features = [
         Polotno has all the features for building rich design tools: selection,
         text styles, image filters, undo/redo, smart cropping, and much more.
       </>
-    )
-  }
+    ),
+  },
 ];
 
 function Feature({ imageUrl, title, description }) {
@@ -62,7 +62,7 @@ const COMPETITORS = [
   'Designbold',
   'Crello',
   'Piktochart',
-  'Zazzle'
+  'Zazzle',
 ];
 
 function Home() {
@@ -133,7 +133,7 @@ function Home() {
                       border: '1px solid white',
                       borderRadius: '4px',
                       marginRight: '10px',
-                      width: '150px'
+                      width: '150px',
                     }}
                   />
                   <input
@@ -163,7 +163,7 @@ function Home() {
                   <input
                     type="text"
                     name="b_c4acb00b499825f956980387e_c004a2de67"
-                    tabindex="-1"
+                    tabIndex="-1"
                     value=""
                   />
                 </div>
@@ -185,6 +185,19 @@ function Home() {
           </section>
         )}
       </main>
+      <h2>Demo</h2>
+      <iframe
+        src="https://codesandbox.io/embed/polotno-demo-yi1v5?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+        style={{
+          width: '100%',
+          height: '500px',
+          border: 0,
+          overflow: 'hidden',
+        }}
+        title="Polotno demo"
+        allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      ></iframe>
     </Layout>
   );
 }
