@@ -7,11 +7,14 @@ module.exports = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   // projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-54202824-5',
+    },
     navbar: {
       title: 'Polotno',
       logo: {
         alt: 'Polotno logo',
-        src: 'img/logo.svg'
+        src: 'img/logo.svg',
       },
       links: [
         // { to: 'docs/getting-started', label: 'Docs', position: 'left' },
@@ -21,7 +24,7 @@ module.exports = {
         //   label: 'GitHub',
         //   position: 'right'
         // }
-      ]
+      ],
     },
     footer: {
       style: 'dark',
@@ -37,7 +40,7 @@ module.exports = {
             //   label: 'Second Doc',
             //   to: 'docs/doc2'
             // }
-          ]
+          ],
         },
         // {
         //   title: 'Community',
@@ -65,13 +68,13 @@ module.exports = {
             // },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/lavrton'
-            }
-          ]
-        }
+              href: 'https://twitter.com/lavrton',
+            },
+          ],
+        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Polotno. Built with Docusaurus.`
-    }
+      copyright: `Copyright © ${new Date().getFullYear()} Polotno. Built with Docusaurus.`,
+    },
   },
   presets: [
     [
@@ -79,12 +82,13 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/'
+          editUrl:
+            'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
-        }
-      }
-    ]
-  ]
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
+    ],
+  ],
 };
