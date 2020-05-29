@@ -284,12 +284,17 @@ function Home() {
           </div>
         </section>
       </main>
-      <h2>Demo</h2>
+      <h2>
+        Demo{' '}
+        <a href="https://yi1v5.csb.app/" target="_blank">
+          [open on a new tab]
+        </a>
+      </h2>
       <iframe
         src="https://codesandbox.io/embed/polotno-demo-yi1v5?fontsize=14&hidenavigation=1&theme=dark&view=preview"
         style={{
           width: '100%',
-          height: '500px',
+          height: '700px',
           border: 0,
           overflow: 'hidden',
         }}
