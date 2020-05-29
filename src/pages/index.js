@@ -217,7 +217,7 @@ function Home() {
                     value="Get notified on early access"
                     name="subscribe"
                     id="mc-embedded-subscribe"
-                    className="button"
+                    className="button button--outline button--secondary "
                   />
                 </div>
                 <div id="mce-responses" className="clear">
