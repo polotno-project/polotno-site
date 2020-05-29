@@ -6,34 +6,110 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const features = [
+const useCases = [
+  {
+    title: <>Design apps</>,
+    imageUrl: 'img/undraw_moments_0y20.svg',
+    description: (
+      <>
+        Do you want to make an editor for social media images, presentations,
+        business cards?
+      </>
+    ),
+  },
+  {
+    title: <>Printing company</>,
+    imageUrl: 'img/undraw_printing_invoices_5r4r.svg',
+    description: (
+      <>
+        Do you have a printing business, so your users can quickly make a design
+        to print?
+      </>
+    ),
+  },
+  {
+    title: <>E-commerce</>,
+    imageUrl: 'img/undraw_web_shopping_dd4l.svg',
+    description: (
+      <>
+        Do you have a shop and you want to allow your clients customize their
+        purchases. Like making their own T-shirt design?
+      </>
+    ),
+  },
+];
+
+const reasons = [
+  {
+    title: <>Low cost</>,
+    imageUrl: 'img/undraw_Savings_dwkw.svg',
+    description: (
+      <>
+        Building full canvas editor is hard. You will save tens of tens or
+        hundreds of thousands dollars if you will just use solid and already
+        working solution.
+      </>
+    ),
+  },
   {
     title: <>Fast development</>,
-    imageUrl: 'img/web_design.svg',
+    imageUrl: 'img/undraw_speed_test_wxl0.svg',
     description: (
       <>
         Polotno was designed to easily build a canvas editor application and
-        used to get your new business feature quickly.
+        used to get your new business feature quickly. Don't waste time. Ship
+        new feature today!
       </>
     ),
   },
   {
+    title: <>High quality</>,
+    imageUrl: 'img/undraw_result_5583.svg',
+    description: (
+      <>Polotno is made from experience of tens of similar applications.</>
+    ),
+  },
+];
+
+const features = [
+  // {
+  //   title: <>Fast development</>,
+  //   imageUrl: 'img/web_design.svg',
+  //   description: (
+  //     <>
+  //       Polotno was designed to easily build a canvas editor application and
+  //       used to get your new business feature quickly.
+  //     </>
+  //   ),
+  // },
+
+  {
     title: <>Modular components</>,
-    imageUrl: 'img/designers.svg',
+    imageUrl: 'img/undraw_design_notes_8dmv.svg',
     description: (
       <>
         Polotno is a large set of js modules and React components, so you can
-        bootstrap a working version.
+        bootstrap a working version in a day.
       </>
     ),
   },
   {
-    title: <>Your own canvas editor</>,
-    imageUrl: 'img/new_app.svg',
+    title: <>Full featured canvas editor</>,
+    imageUrl: 'img/undraw_abstract_x68e.svg',
     description: (
       <>
         Polotno has all the features for building rich design tools: selection,
         text styles, image filters, undo/redo, smart cropping, and much more.
+      </>
+    ),
+  },
+  {
+    title: <>Simple API</>,
+    imageUrl: 'img/undraw_dev_productivity_umsq.svg',
+    description: (
+      <>
+        Polotno hide as much complexity from you as possible. So you can use
+        clean yet powerful API.
       </>
     ),
   },
@@ -91,7 +167,7 @@ function Home() {
           <p className="hero__subtitle">
             Make your own {competitor} alternative.
           </p>
-          {/* <div className={styles.buttons}>
+          <div className={styles.buttons}>
             <Link
               className={classnames(
                 'button button--outline button--secondary button--lg',
@@ -101,7 +177,7 @@ function Home() {
             >
               Get Started
             </Link>
-          </div> */}
+          </div>
           {/* <link
             href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
             rel="stylesheet"
@@ -109,7 +185,7 @@ function Home() {
           /> */}
           <div
             id="mc_embed_signup"
-            style={{ maxWidth: '400px', margin: 'auto' }}
+            style={{ maxWidth: '400px', margin: 'auto', marginTop: '20px' }}
           >
             <form
               action="https://dev.us10.list-manage.com/subscribe/post?u=c4acb00b499825f956980387e&amp;id=c004a2de67"
@@ -173,17 +249,40 @@ function Home() {
         </div>
       </header>
       <main>
-        {features && features.length && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
+        <h2>Where to use Polotno?</h2>
+        <section className={styles.useCases}>
+          <div className="container">
+            <div className="row">
+              {useCases.map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
+      </main>
+      <main>
+        <h2>Why use Polotno?</h2>
+        <section className={styles.features}>
+          <div className="container">
+            <div className="row">
+              {reasons.map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <main>
+        <h2>Anything good for developers?</h2>
+        <section className={styles.features}>
+          <div className="container">
+            <div className="row">
+              {features.map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <h2>Demo</h2>
       <iframe

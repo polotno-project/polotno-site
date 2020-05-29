@@ -7,7 +7,7 @@
 
 module.exports = {
   someSidebar: {
-    Docusaurus: ['getting-started']
+    Polotno: ['getting-started'],
     // Features: ['mdx'],
-  }
+  },
 };

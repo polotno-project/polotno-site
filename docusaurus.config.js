@@ -17,7 +17,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        // { to: 'docs/getting-started', label: 'Docs', position: 'left' },
+        { to: 'docs/getting-started', label: 'Docs', position: 'left' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',
@@ -32,10 +32,10 @@ module.exports = {
         {
           title: 'Docs',
           items: [
-            // {
-            //   label: 'Getting Started',
-            //   to: 'docs/getting-started'
-            // }
+            {
+              label: 'Getting Started',
+              to: 'docs/getting-started',
+            },
             // {
             //   label: 'Second Doc',
             //   to: 'docs/doc2'
