@@ -284,6 +284,80 @@ function Home() {
           </div>
         </section>
       </main>
+      <main>
+        {/* TODO: move styles from global to scope */}
+        <div class="background">
+          <div class="container">
+            <div class="panel pricing-table">
+              <div class="pricing-plan">
+                <h2 class="pricing-header">Dev</h2>
+                <ul class="pricing-features">
+                  <li class="pricing-features-item">
+                    Fof non-commercial or development usage only
+                  </li>
+                  <li class="pricing-features-item">
+                    Have a small backlink to polotno website
+                  </li>
+                  <li class="pricing-features-item">
+                    All polotno features included
+                  </li>
+                </ul>
+                <span class="pricing-price">Free</span>
+                {/* <a href="#/" class="pricing-button">
+                  Sign up
+                </a> */}
+              </div>
+
+              <div class="pricing-plan">
+                <h2 class="pricing-header">Small team</h2>
+                <ul class="pricing-features">
+                  <li class="pricing-features-item">
+                    Commercial and non-commercial usage
+                  </li>
+                  <li class="pricing-features-item">
+                    No watermarks and backlinks
+                  </li>
+                  <li class="pricing-features-item">Email support</li>
+                </ul>
+                <span class="pricing-price">$500 / month</span>
+                <a
+                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Small%20team%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  class="pricing-button is-featured"
+                  target="_blank"
+                >
+                  Request
+                </a>
+              </div>
+
+              <div class="pricing-plan">
+                <h2 class="pricing-header">Enterprise</h2>
+                <ul class="pricing-features">
+                  <li class="pricing-features-item">
+                    Commercial and non-commercial usage
+                  </li>
+                  <li class="pricing-features-item">
+                    No watermarks and backlinks
+                  </li>
+                  <li class="pricing-features-item">
+                    No watermarks and backlinks
+                  </li>
+                  <li class="pricing-features-item">
+                    High priority feature request
+                  </li>
+                </ul>
+                <span class="pricing-price">$1000 / month</span>
+                <a
+                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Enterprise%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  class="pricing-button"
+                  target="_blank"
+                >
+                  Request
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
       <h2>
         Demo{' '}
         <a href="https://yi1v5.csb.app/" target="_blank">
