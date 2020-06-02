@@ -45,9 +45,9 @@ const reasons = [
     imageUrl: 'img/undraw_Savings_dwkw.svg',
     description: (
       <>
-        Building full canvas editor is hard. You will save tens of tens or
-        hundreds of thousands dollars if you will just use solid and already
-        working solution.
+        Building full canvas editor is hard. You will save tens or hundreds of
+        thousands dollars if you will just use solid and already working
+        solution.
       </>
     ),
   },
@@ -319,7 +319,7 @@ function Home() {
                   </li>
                   <li class="pricing-features-item">Email support</li>
                 </ul>
-                <span class="pricing-price">$500 / month</span>
+                <span class="pricing-price">$250 / month</span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Small%20team%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   class="pricing-button is-featured"
@@ -339,19 +339,40 @@ function Home() {
                     No watermarks and backlinks
                   </li>
                   <li class="pricing-features-item">
-                    No watermarks and backlinks
+                    High priority features request
                   </li>
-                  <li class="pricing-features-item">
-                    High priority feature request
-                  </li>
+                  <li class="pricing-features-item">High priority support</li>
                 </ul>
-                <span class="pricing-price">$1000 / month</span>
+                <span class="pricing-price">$500 / month</span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Enterprise%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   class="pricing-button"
                   target="_blank"
                 >
                   Request
+                </a>
+              </div>
+
+              <div class="pricing-plan">
+                <h2 class="pricing-header">Custom solution</h2>
+                <ul class="pricing-features">
+                  <li class="pricing-features-item">
+                    We build everything for you
+                  </li>
+                  <li class="pricing-features-item">
+                    Full access to the source code
+                  </li>
+                  <li class="pricing-features-item">
+                    2 years bug-free guaranty
+                  </li>
+                </ul>
+                <span class="pricing-price">From $20 000</span>
+                <a
+                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  class="pricing-button"
+                  target="_blank"
+                >
+                  Contact
                 </a>
               </div>
             </div>
