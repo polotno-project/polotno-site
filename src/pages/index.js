@@ -131,8 +131,8 @@ function Feature({ imageUrl, title, description }) {
 }
 
 const COMPETITORS = [
-  'Canva',
   'Stensil',
+  'Canva',
   'PixTeller',
   'Snappa',
   'Designbold',
@@ -149,7 +149,7 @@ function Home() {
       const oldIndex = COMPETITORS.indexOf(competitor);
       const newIndex = (oldIndex + 1) % COMPETITORS.length;
       setCompetitor(COMPETITORS[newIndex]);
-    }, 1000);
+    }, 3000);
     return () => clearTimeout(timeout);
   }, [competitor]);
 
@@ -165,7 +165,7 @@ function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <p className="hero__subtitle">
-            Make your own {competitor} alternative.
+            Do you want to make something like {competitor}?
           </p>
           <div className={styles.buttons}>
             <Link
@@ -285,6 +285,7 @@ function Home() {
         </section>
       </main>
       <main>
+        <h2>Price</h2>
         {/* TODO: move styles from global to scope */}
         <div class="background">
           <div class="container">
@@ -319,7 +320,7 @@ function Home() {
                   </li>
                   <li class="pricing-features-item">Email support</li>
                 </ul>
-                <span class="pricing-price">$250 / month</span>
+                <span class="pricing-price">$200 / month</span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Small%20team%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   class="pricing-button is-featured"
