@@ -6,8 +6,9 @@
  */
 
 module.exports = {
-  someSidebar: {
-    Polotno: ['getting-started'],
+  docs: {
+    Polotno: ['getting-started', 'overview'],
+    Store: ['store-overview', 'page-overview', 'element-overview'],
     // Features: ['mdx'],
   },
 };

@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   // organizationName: 'facebook', // Usually your GitHub org/user name.
-  // projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'polotno', // Usually your repo name.
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-54202824-5',
@@ -82,8 +82,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: '',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
