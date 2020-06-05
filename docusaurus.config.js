@@ -18,6 +18,7 @@ module.exports = {
       },
       links: [
         { to: 'docs/getting-started', label: 'Docs', position: 'left' },
+        { to: '/#price', label: 'Price', position: 'left' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',

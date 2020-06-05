@@ -285,7 +285,7 @@ function Home() {
         </section>
       </main>
       <main>
-        <h2>Price</h2>
+        <h2 id="price">Price</h2>
         {/* TODO: move styles from global to scope */}
         <div class="background">
           <div class="container">
