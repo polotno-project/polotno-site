@@ -3,6 +3,8 @@ id: getting-started
 title: Getting Started
 ---
 
+**The documentation is not fully ready and to complete yet!** It will be updated very soon. Thanks for your understanding.
+
 ## Quick start
 
 Install `polotno` package:
