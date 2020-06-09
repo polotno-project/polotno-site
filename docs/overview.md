@@ -3,6 +3,9 @@ id: overview
 title: Overview
 ---
 
+**The documentation is not fully ready and to complete yet!** It will be updated very soon. Thanks for your understanding.
+
+
 ## Why `polotno`?
 
 `Polotno` is a very opinionated JavaScript framework that will help you build canvas editor for several business use cases.
