@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Polotno',
-  tagline: 'Canvas editor framework',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Graphic design editor framework',
+  url: 'https://polotno.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   // organizationName: 'facebook', // Usually your GitHub org/user name.
@@ -77,6 +77,14 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Polotno. Built with Docusaurus.`,
     },
   },
+  scripts: [
+    {
+      src: 'https://plausible.io/js/plausible.js',
+      async: true,
+      defer: true,
+      'data-domain': 'polotno.dev',
+    },
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
