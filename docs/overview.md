@@ -3,6 +3,7 @@ id: overview
 title: Overview
 ---
 
+**The documentation is not fully ready and to complete yet!** It will be updated very soon. Thanks for your understanding.
 
 ## Why `polotno`?
 
@@ -13,6 +14,23 @@ There are many powerful JavaScript frameworks and tools that can help you make a
 So the idea is to make a simple tool to solve only very limited set of business needs. It doesn't have many options and configurations. And the API should be as small as possible.
 
 So you can just add it into the page and you have a full featured solution.
+
+## Quick start
+
+Install `polotno` package:
+
+```bash
+npm install polotno
+```
+
+Init demo application:
+
+
+```js
+import { createApp } from 'polotno/demo-app';
+
+const store = createApp({ container: document.getElementById('root') });
+```
 
 ## Core concept
 

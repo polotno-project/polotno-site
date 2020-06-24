@@ -17,7 +17,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        { to: 'docs/getting-started', label: 'Docs', position: 'left' },
+        { to: 'docs/overview', label: 'Docs', position: 'left' },
         { to: '/#price', label: 'Price', position: 'left' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
@@ -35,7 +35,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/getting-started',
+              to: 'docs/overview',
             },
             // {
             //   label: 'Second Doc',

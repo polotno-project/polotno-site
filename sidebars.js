@@ -7,7 +7,7 @@
 
 module.exports = {
   docs: {
-    Polotno: ['getting-started', 'overview'],
+    Polotno: ['overview'],
     Store: ['store-overview', 'page-overview', 'element-overview'],
     // Features: ['mdx'],
   },
