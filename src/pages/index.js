@@ -387,7 +387,7 @@ function Home() {
         </a>
       </h2>
       <iframe
-        src="https://yi1v5.csb.app/"
+        src="https://codesandbox.io/embed/polotno-demo-yi1v5?fontsize=14&hidenavigation=1&theme=dark&view=preview"
         style={{
           width: '100%',
           height: '700px',
