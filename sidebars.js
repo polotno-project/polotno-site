@@ -9,6 +9,7 @@ module.exports = {
   docs: {
     Polotno: ['overview'],
     Store: ['store-overview', 'page-overview', 'element-overview'],
+    Workspace: ['workspace-overview'],
     // Features: ['mdx'],
   },
 };
