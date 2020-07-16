@@ -19,6 +19,7 @@ module.exports = {
       links: [
         { to: 'docs/overview', label: 'Docs', position: 'left' },
         { to: '/#price', label: 'Price', position: 'left' },
+        { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',

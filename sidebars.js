@@ -10,6 +10,6 @@ module.exports = {
     Polotno: ['overview'],
     Store: ['store-overview', 'page-overview', 'element-overview'],
     Workspace: ['workspace-overview'],
-    // Features: ['mdx'],
+    Showcase: ['demo-full-editor', 'demo-simple-t-shirt'],
   },
 };
