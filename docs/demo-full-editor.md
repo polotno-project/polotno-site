@@ -1,14 +1,16 @@
 ---
-title: E-commerce print editor for T-Shirt
+title: Full Canvas Editor
 hide_table_of_contents: true
 ---
 
-A simple print editor for a t-shirt without any additional UI.
+This a is full demo of canvas editor `Polotno`. It have core `Workspace` component and all additional UI components for full features.
 
-Type text, download printing (image without t-shirt).
+Probably you shouldn't use demo UI components (sidebar, topbar, zoom buttons) in large applications. You may want to design your own UI with your own styles and branding.
+
+But you still can use all of them if you want.
 
 <iframe
-    src="https://codesandbox.io/embed/polotno-simple-t-shirt-demo-i1ir9?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/polotno-demo-yi1v5?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',
