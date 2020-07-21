@@ -7,7 +7,7 @@ module.exports = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'polotno', // Usually your repo name.
   themeConfig: {
-    disableDarkMode: false,
+    disableDarkMode: true,
     navbar: {
       title: 'Polotno',
       logo: {
