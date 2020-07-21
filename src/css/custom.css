@@ -93,7 +93,6 @@
 
 .pricing-table * {
   text-align: center;
-  text-transform: uppercase;
 }
 
 .pricing-plan {
@@ -142,6 +141,8 @@
   font-size: 12px;
   line-height: 1.5;
   padding: 15px 0;
+  font-weight: normal;
+  color: black;
 }
 
 .pricing-features-item:last-child {

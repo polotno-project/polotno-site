@@ -376,7 +376,7 @@ function Home() {
                 <h2 class="pricing-header">Custom solution</h2>
                 <ul class="pricing-features">
                   <li class="pricing-features-item">
-                    We build everything for you
+                    We build everything <br /> for you
                   </li>
                   <li class="pricing-features-item">
                     Full access to the source code
@@ -385,7 +385,8 @@ function Home() {
                     Your own branding and specific features
                   </li>
                   <li class="pricing-features-item">
-                    2 years bug-free guaranty
+                    2 years bug-free <br />
+                    guaranty
                   </li>
                 </ul>
                 <span class="pricing-price">From $20 000</span>
