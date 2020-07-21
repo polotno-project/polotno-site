@@ -296,7 +296,7 @@ function Home() {
           <div class="container">
             <div class="panel pricing-table">
               <div class="pricing-plan">
-                <h2 class="pricing-header">Dev</h2>
+                <h2 class="pricing-header">Non-commercial</h2>
                 <ul class="pricing-features">
                   <li class="pricing-features-item">
                     Fof non-commercial or development usage only
@@ -304,8 +304,13 @@ function Home() {
                   <li class="pricing-features-item">
                     Have a small backlink to polotno website
                   </li>
+
                   <li class="pricing-features-item">
                     All polotno features included
+                  </li>
+                  <li class="pricing-features-item">
+                    Basic community
+                    <br /> support
                   </li>
                 </ul>
                 <span class="pricing-price">Free</span>
@@ -318,12 +323,18 @@ function Home() {
                 <h2 class="pricing-header">Small team</h2>
                 <ul class="pricing-features">
                   <li class="pricing-features-item">
-                    Commercial and non-commercial usage
+                    Commercial and non-commercial
+                  </li>
+                  <li class="pricing-features-item">
+                    One domain, up to 300 daily users
                   </li>
                   <li class="pricing-features-item">
                     No watermarks and backlinks
                   </li>
-                  <li class="pricing-features-item">Email support</li>
+                  <li class="pricing-features-item">
+                    Email
+                    <br /> support
+                  </li>
                 </ul>
                 <span class="pricing-price">$200 / month</span>
                 <a
@@ -342,12 +353,14 @@ function Home() {
                     Commercial and non-commercial usage
                   </li>
                   <li class="pricing-features-item">
+                    Unlimited domains and daily users
+                  </li>
+                  <li class="pricing-features-item">
                     No watermarks and backlinks
                   </li>
                   <li class="pricing-features-item">
-                    High priority features request
+                    High priority features request ans support
                   </li>
-                  <li class="pricing-features-item">High priority support</li>
                 </ul>
                 <span class="pricing-price">$500 / month</span>
                 <a
@@ -367,6 +380,9 @@ function Home() {
                   </li>
                   <li class="pricing-features-item">
                     Full access to the source code
+                  </li>
+                  <li class="pricing-features-item">
+                    Your own branding and specific features
                   </li>
                   <li class="pricing-features-item">
                     2 years bug-free guaranty

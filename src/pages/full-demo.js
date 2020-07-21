@@ -31,6 +31,7 @@ function Hello() {
           alignItems: 'center',
           width: '100vw',
           height: 'calc(100vh - 60px)',
+          paddingTop: '60px',
         }}
       >
         <link
