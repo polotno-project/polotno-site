@@ -4,7 +4,6 @@ import Navbar from '@theme/Navbar';
 
 const PolotnoApp = React.lazy(() =>
   import('polotno/polotno-app').then((m) => {
-    console.log(m);
     return { default: m.PolotnoApp };
   })
 );
