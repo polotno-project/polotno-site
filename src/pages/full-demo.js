@@ -30,7 +30,7 @@ function Hello() {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100vw',
-          height: 'calc(100vh - 60px)',
+          height: 'calc(100vh)',
           paddingTop: '60px',
         }}
       >
