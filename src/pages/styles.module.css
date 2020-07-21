@@ -39,3 +39,8 @@ h2 {
   text-align: center;
   padding: 40px;
 }
+
+.demoImage {
+  border-radius: 4px;
+  box-shadow: 0 0 5px grey;
+}

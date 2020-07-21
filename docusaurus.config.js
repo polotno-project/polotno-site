@@ -7,9 +7,7 @@ module.exports = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'polotno', // Usually your repo name.
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-54202824-5',
-    },
+    disableDarkMode: false,
     navbar: {
       title: 'Polotno',
       logo: {
@@ -20,6 +18,7 @@ module.exports = {
         { to: 'docs/overview', label: 'Docs', position: 'left' },
         { to: '/#price', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
+        { to: '/full-demo', label: 'Demo', position: 'left' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',

@@ -131,8 +131,8 @@ function Feature({ imageUrl, title, description }) {
 }
 
 const COMPETITORS = [
-  'Stensil',
   'Canva',
+  'Stensil',
   'PixTeller',
   'Snappa',
   'Designbold',
@@ -165,7 +165,9 @@ function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <p className="hero__subtitle">
-            Do you want to make something like {competitor}?
+            Create your own app like
+            <br />
+            {competitor}
           </p>
           <div className={styles.buttons}>
             <Link
@@ -247,6 +249,9 @@ function Home() {
             </form>
           </div>
         </div>
+        <div className="container" style={{ padding: '10px' }}>
+          <img className={styles.demoImage} src="/img/screenshot.jpg" />
+        </div>
       </header>
       <main>
         <h2>Where to use Polotno?</h2>
@@ -304,9 +309,9 @@ function Home() {
                   </li>
                 </ul>
                 <span class="pricing-price">Free</span>
-                {/* <a href="#/" class="pricing-button">
-                  Sign up
-                </a> */}
+                <a href={useBaseUrl('docs/overview')} class="pricing-button">
+                  Get started
+                </a>
               </div>
 
               <div class="pricing-plan">
@@ -323,7 +328,7 @@ function Home() {
                 <span class="pricing-price">$200 / month</span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Small%20team%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
-                  class="pricing-button is-featured"
+                  class="pricing-button"
                   target="_blank"
                 >
                   Request
@@ -347,7 +352,7 @@ function Home() {
                 <span class="pricing-price">$500 / month</span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Enterprise%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
-                  class="pricing-button"
+                  class="pricing-button is-featured"
                   target="_blank"
                 >
                   Request
@@ -380,24 +385,6 @@ function Home() {
           </div>
         </div>
       </main>
-      <h2>
-        Demo{' '}
-        <a href="https://yi1v5.csb.app/" target="_blank">
-          [open on a new tab]
-        </a>
-      </h2>
-      <iframe
-        src="https://codesandbox.io/embed/polotno-demo-yi1v5?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-        style={{
-          width: '100%',
-          height: '700px',
-          border: 0,
-          overflow: 'hidden',
-        }}
-        title="Polotno demo"
-        allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-      ></iframe>
     </Layout>
   );
 }
