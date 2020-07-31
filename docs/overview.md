@@ -23,13 +23,13 @@ Install `polotno` package:
 npm install polotno
 ```
 
-Init demo application:
+Init demo application (without any frameworks):
 
 
 ```js
-import { createApp } from 'polotno/demo-app';
+import { createDemoApp } from 'polotno/polotno-app';
 
-const store = createApp({ container: document.getElementById('root') });
+const { store } = createDemoApp({ container: document.getElementById('root') });
 ```
 
 ## Core concept
@@ -42,15 +42,25 @@ const store = createApp({ container: document.getElementById('root') });
 For saving and working with the objects tree of canvas editor. It provide API for adding/updating/removing canvas objects, undo/redo, selection changes, zooming.
 
 ```js
-import Store from 'polotno/model/store';
-const store = Store.create();
+import { createStore } from 'polotno/model/store';
+
+const store = createStore();
+const page = store.addPage();
+
+page.addElement({
+  x: 50,
+  y: 50,
+  type: 'text',
+  fill: 'black',
+  text: 'hello',
+});
 ```
 
 
 
-### Workarea canvas component
+### Workarea React canvas component
 
-React component for drawing canvas app on the page. It has all basic functionality for common edits: selection, resize and actual drawing of objects.
+React component for drawing canvas app on the page. It has all basic functionality for common edits: selection, resize, actual drawing of objects, snapping, etc.
 
 ```js
 import Workspace from 'polotno/canvas/workspace';
@@ -60,13 +70,45 @@ const App = () => {
 }
 ```
 
-### Toolbars
+### UI components
 
-Set of components created as a demo for general canvas editor app.
+Set of React components for general canvas editor app.
+
 - a toolbar for basic objects manipulations actions (such as align, remove, change objects styles, etc).
 - side panels for adding new objects
 
 ```js
 import Toolbar from 'polotno/toolbar/toolbar';
+import ZoomButtons from 'polotno/toolbar/zoom-buttons';
 import SidePanel from 'polotno/side-panel/side-panel';
+
+export const App = ({ store }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        width: '100%',
+      }}
+    >
+      <div style={{ width: '300px', height: '100%', display: 'flex' }}>
+        <SidePanel store={store} />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          height: '100%',
+          margin: 'auto',
+          flex: 1,
+          flexDirection: 'column',
+          position: 'relative',
+        }}
+      >
+        <Toolbar store={store} />
+        <Workspace store={store} />
+        <ZoomButtons store={store} />
+      </div>
+    </div>
+  );
+};
 ```
