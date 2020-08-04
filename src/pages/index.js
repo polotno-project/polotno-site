@@ -187,7 +187,7 @@ function Home() {
           /> */}
           <div
             id="mc_embed_signup"
-            style={{ maxWidth: '400px', margin: 'auto', marginTop: '20px' }}
+            style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px' }}
           >
             <form
               action="https://dev.us10.list-manage.com/subscribe/post?u=c4acb00b499825f956980387e&amp;id=c004a2de67"
