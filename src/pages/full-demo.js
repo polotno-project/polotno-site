@@ -22,16 +22,16 @@ function Hello() {
   }, []);
 
   return (
-    <React.Fragment>
-      <Navbar />
+    <Layout>
+      {/* Layout */}
+      {/* <Navbar /> */}
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           width: '100vw',
-          height: 'calc(100vh)',
-          paddingTop: '60px',
+          height: 'calc(100vh - 60px)',
         }}
       >
         <link
@@ -48,7 +48,7 @@ function Hello() {
           </React.Suspense>
         )}
       </div>
-    </React.Fragment>
+    </Layout>
   );
 }
 
