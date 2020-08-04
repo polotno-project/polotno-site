@@ -7,18 +7,21 @@ module.exports = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'polotno', // Usually your repo name.
   themeConfig: {
-    disableDarkMode: true,
+    colorMode: {
+      disableSwitch: true,
+    },
     navbar: {
       title: 'Polotno',
       logo: {
         alt: 'Polotno logo',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         { to: 'docs/overview', label: 'Docs', position: 'left' },
         { to: '/#price', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
         { to: '/full-demo', label: 'Demo', position: 'left' },
+        { to: '/contact', label: 'Contact', position: 'right' },
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',
@@ -79,10 +82,10 @@ module.exports = {
   },
   scripts: [
     {
-      src: 'https://plausible.io/js/plausible.js',
+      src: '/stats.js',
       async: true,
       defer: true,
-      'data-domain': 'polotno.dev',
+      // 'data-domain': 'polotno.dev',
     },
   ],
   presets: [
@@ -91,7 +94,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: '',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

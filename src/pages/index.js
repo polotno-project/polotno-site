@@ -344,14 +344,14 @@ function Home() {
                 </ul>
                 <span class="pricing-price">$100 / month</span>
                 <a
-                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Small%20team%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  href="https://buy.paddle.com/product/600588"
                   class="pricing-button"
                   target="_blank"
                   onClick={() => {
-                    window.plausible('plan1-request');
+                    window.plausible('small-plan-buy');
                   }}
                 >
-                  Request
+                  Buy
                 </a>
               </div>
 
@@ -373,14 +373,14 @@ function Home() {
                 </ul>
                 <span class="pricing-price">$200 / month</span>
                 <a
-                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%22Enterprise%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  href="https://buy.paddle.com/product/616700"
                   class="pricing-button is-featured"
                   target="_blank"
                   onClick={() => {
-                    window.plausible('plan2-request');
+                    window.plausible('large-plan-buy');
                   }}
                 >
-                  Request
+                  Buy
                 </a>
               </div>
 
