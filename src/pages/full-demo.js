@@ -13,9 +13,30 @@ function Hello() {
 
   React.useEffect(() => {
     const run = async () => {
-      const { Store } = await import('polotno/model/store');
-      const s = Store.create();
-      s.addPage();
+      // const { createStore } = await import('../../../polotno/src/model/store');
+      const { createStore } = await import('polotno/model/store');
+      const s = createStore();
+
+      window.store = s;
+      // // s.addPage();
+      if (localStorage.getItem('polotno-state')) {
+        if (confirm('Load previous session?')) {
+          try {
+            const json = JSON.parse(localStorage.getItem('polotno-state'));
+            s.loadJSON(json);
+          } catch (e) {
+            alert('Sorry, I can not load it');
+            console.error(e);
+          }
+        }
+      }
+      s.on('change', () => {
+        const json = s.toJSON();
+        localStorage.setItem('polotno-state', JSON.stringify(json));
+      });
+      if (s.pages.length === 0) {
+        s.addPage();
+      }
       setStore(s);
     };
     run();

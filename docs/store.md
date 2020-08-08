@@ -124,3 +124,81 @@ store.history.undo();
 // apply changes again
 store.history.redo();
 ```
+
+### Serializations
+
+### `store.toJSON()`
+
+Save store into plain object.
+
+```js
+const json = store.toJSON();
+
+// your own function to save JSON somewhere
+saveIntoBackend(JSON.stringify(json));
+```
+
+### `store.loadJSON()`
+
+Load passed json into the store. It will update all properties, pages and elements
+
+```js
+import { createStore } from 'polotno/model/store';
+const store = store.createStore();
+
+// save to JSON at some point of time
+const json = store.toJSON();
+
+
+// load from JSON
+store.loadJSON(json);
+```
+
+
+### Export
+
+### `store.toDataURL()`
+
+Convert store into base64 URL
+
+```js
+// default export
+store.toDataURL();
+
+// make exported image 2x bigger (higher quality)
+store.toDataURL({ pixelRatio: 2})
+
+// ignore page background on export
+store.toDataURL({ ignoreBackground: true });
+```
+
+
+### `store.saveAsImage()`
+
+`saveAsImage` will export drawing into image and save it as local file.
+
+```js
+// default export
+store.saveAsImage({ fileName: 'polotno.png' });
+
+// make exported image 2x bigger (higher quality)
+store.saveAsImage({ pixelRatio: 2})
+
+// ignore page background on export
+store.saveAsImage({ ignoreBackground: true });
+```
+
+### `store.saveAsPDF()`
+
+`saveAsPDF` will export drawing into PDF and save it as local file.
+
+```js
+// default export
+store.saveAsPDF({ fileName: 'polotno.pdf' });
+
+// make exported image 2x bigger (higher quality)
+store.saveAsPDF({ pixelRatio: 2})
+
+// ignore page background on export
+store.saveAsPDF({ ignoreBackground: true });
+```
