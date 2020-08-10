@@ -34,7 +34,7 @@ The getter. Returns all pages of the store.
 The getter. Returns current active page or the last created.
 
 
-### UI
+## UI
 
 ### `store.width` and `store.height`
 
@@ -67,7 +67,6 @@ Change zooming of active page.
 ```js
 store.setScale(2);
 ```
-
 
 
 ## Working with active elements
@@ -125,7 +124,7 @@ store.history.undo();
 store.history.redo();
 ```
 
-### Serializations
+## Serializations
 
 ### `store.toJSON()`
 
@@ -155,7 +154,7 @@ store.loadJSON(json);
 ```
 
 
-### Export
+## Export
 
 ### `store.toDataURL()`
 
