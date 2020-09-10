@@ -398,7 +398,7 @@ function Home() {
                   </li>
                   <li class="pricing-features-item">
                     2 years bug-free <br />
-                    guaranty
+                    guarantee
                   </li>
                 </ul>
                 <span class="pricing-price">From $10 000</span>
