@@ -12,7 +12,9 @@ title: Store overview
 
 ```js
 import { createStore } from 'polotno/model/store';
-const store = createStore();
+const store = createStore({
+  key: 'YOUR_API_KEY', // make it empty for dev version
+});
 ```
 
 ### `store.addPage()`

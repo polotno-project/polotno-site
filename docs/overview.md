@@ -29,7 +29,10 @@ Init demo application (without any frameworks):
 ```js
 import { createDemoApp } from 'polotno/polotno-app';
 
-const { store } = createDemoApp({ container: document.getElementById('root') });
+const { store } = createDemoApp({
+  container: document.getElementById('root'),
+  key: 'YOUR_API_KEY' // use empty string for dev version 
+});
 ```
 
 ## Core concept

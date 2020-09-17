@@ -368,7 +368,7 @@ function Home() {
                     No watermarks and backlinks
                   </li>
                   <li class="pricing-features-item">
-                    High priority features request ans support
+                    High priority features request and support
                   </li>
                 </ul>
                 <span class="pricing-price">$200 / month</span>
