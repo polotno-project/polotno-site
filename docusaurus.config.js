@@ -21,7 +21,9 @@ module.exports = {
         { to: '/#price', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
         { to: '/full-demo', label: 'Demo', position: 'left' },
+        { to: '/cabinet', label: 'API keys', position: 'right' },
         { to: '/contact', label: 'Contact', position: 'right' },
+
         // { to: 'blog', label: 'Blog', position: 'left' }
         // {
         //   href: 'https://github.com/facebook/docusaurus',

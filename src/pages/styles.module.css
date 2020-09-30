@@ -44,3 +44,47 @@ h2 {
   border-radius: 4px;
   box-shadow: 0 0 5px grey;
 }
+
+.cabinetPage {
+  padding: 20px;
+  position: relative;
+}
+
+.cabinetPage h3 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.loginButton {
+  cursor: pointer;
+  font-size: 2em;
+  color: #1c1e21;
+  margin-top: 150px;
+}
+
+.logoutButton {
+  float: right;
+  color: rgb(114, 53, 53);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.keyRow {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.keyRow pre {
+  display: inline-block;
+  width: calc(100% - 90px);
+  margin: 0;
+}
+
+.keyRow button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
