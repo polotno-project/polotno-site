@@ -4,7 +4,7 @@ import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import styles from './styles.module.css';
 
 const DOMAIN = 'polotno.eu.auth0.com';
-const API = 'https://api.poloto.dev/api';
+const API = 'https://api.polotno.dev/api';
 
 const UserDashboard = () => {
   const { user, logout, getAccessTokenSilently } = useAuth0();
@@ -141,7 +141,7 @@ function Cabinet() {
         {isLoading && <h3>Loading...</h3>}
         {isAuthenticated && <UserDashboard />}
         {!isLoading && !isAuthenticated && (
-          <div>
+          <div style={{ textAlign: 'center ' }}>
             <h3>Do you want to generate API keys to use Polotno SDK?</h3>
             <a onClick={loginWithPopup} className={styles.loginButton}>
               Login
