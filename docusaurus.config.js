@@ -84,10 +84,11 @@ module.exports = {
   },
   scripts: [
     {
-      src: '/stats.js',
+      // src: '/stats.js',
+      src: 'https://plausible.io/js/plausible.js',
       async: true,
       defer: true,
-      // 'data-domain': 'polotno.dev',
+      'data-domain': 'polotno.dev',
     },
   ],
   presets: [
