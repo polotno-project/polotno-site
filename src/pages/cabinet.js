@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const DOMAIN = 'polotno.eu.auth0.com';
 const API = 'https://api.polotno.dev/api';
@@ -143,6 +144,10 @@ function Cabinet() {
         {!isLoading && !isAuthenticated && (
           <div style={{ textAlign: 'center ' }}>
             <h3>Do you want to generate API keys to use Polotno SDK?</h3>
+            <p>
+              You will need to have a paid subscription in order to generate
+              keys. You can <Link to="/#price">buy polotno here</Link>.
+            </p>
             <a onClick={loginWithPopup} className={styles.loginButton}>
               Login
             </a>

@@ -60,6 +60,9 @@ h2 {
   font-size: 2em;
   color: #1c1e21;
   margin-top: 150px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .logoutButton {

@@ -20,7 +20,7 @@ module.exports = {
         { to: 'docs/overview', label: 'Docs', position: 'left' },
         { to: '/#price', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
-        { to: '/full-demo', label: 'Demo', position: 'left' },
+        { to: 'https://studio.polotno.dev', label: 'Studio', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
         { to: '/contact', label: 'Contact', position: 'right' },
 

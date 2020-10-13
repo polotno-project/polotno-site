@@ -35,6 +35,13 @@ const { store } = createDemoApp({
 });
 ```
 
+Add styles to your page:
+
+```html
+<link href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css" rel="stylesheet" />
+<link href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css" rel="stylesheet" />
+```
+
 ## Core concept
 
 `Polotno` consists of three main modules
