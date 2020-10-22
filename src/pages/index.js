@@ -216,7 +216,7 @@ function Home() {
                   />
                   <input
                     type="submit"
-                    value="Get notified on early access"
+                    value="Subscribe to Polotno news and updates"
                     name="subscribe"
                     id="mc-embedded-subscribe"
                     className="button button--outline button--secondary "
