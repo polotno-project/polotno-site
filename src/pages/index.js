@@ -314,6 +314,7 @@ function Home() {
                   </li>
                 </ul>
                 <span class="pricing-price">Free</span>
+                <span class="pricing-trial"></span>
                 <a
                   href={useBaseUrl('docs/overview')}
                   class="pricing-button"
@@ -343,6 +344,7 @@ function Home() {
                   </li>
                 </ul>
                 <span class="pricing-price">$100 / month</span>
+                <span class="pricing-trial">60 days trial period</span>
                 <a
                   href="https://buy.paddle.com/product/600588"
                   class="pricing-button"
@@ -372,6 +374,7 @@ function Home() {
                   </li>
                 </ul>
                 <span class="pricing-price">$200 / month</span>
+                <span class="trial">60 days trial period</span>
                 <a
                   href="https://buy.paddle.com/product/616700"
                   class="pricing-button is-featured"
@@ -402,6 +405,7 @@ function Home() {
                   </li>
                 </ul>
                 <span class="pricing-price">From $10 000</span>
+                <span class="pricing-trial"></span>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   class="pricing-button"

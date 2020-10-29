@@ -156,6 +156,11 @@
   font-weight: 700;
 }
 
+.pricing-trial {
+  display: block;
+  min-height: 26px;
+}
+
 .pricing-button {
   border: 1px solid rgb(79, 104, 232);
   border-radius: 10px;
