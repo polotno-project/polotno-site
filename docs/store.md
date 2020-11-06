@@ -152,6 +152,8 @@ const json = store.toJSON();
 
 
 // load from JSON
+// remember that "json" should be a javascript object
+// if you have a json string, you may need to parse it - JSON.parse(string);
 store.loadJSON(json);
 ```
 
