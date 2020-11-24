@@ -178,7 +178,7 @@ store.toDataURL({ ignoreBackground: true });
 
 ### `store.saveAsImage()`
 
-`saveAsImage` will export drawing into image and save it as local file.
+`saveAsImage` will export drawing into image and save it as local file. By default it exports just the first page. If you need to export another pages, pass `pageId` property.
 
 ```js
 // default export
@@ -189,11 +189,15 @@ store.saveAsImage({ pixelRatio: 2})
 
 // ignore page background on export
 store.saveAsImage({ ignoreBackground: true });
+
+// export second page
+store.saveAsImage({ pageId: store.pages[1].id });
 ```
 
 ### `store.saveAsPDF()`
 
-`saveAsPDF` will export drawing into PDF and save it as local file.
+`saveAsPDF` will export drawing into PDF and save it as local file. By default it exports just the first page. If you need to export another pages, pass `pageId` property.
+
 
 ```js
 // default export
@@ -204,4 +208,7 @@ store.saveAsPDF({ pixelRatio: 2})
 
 // ignore page background on export
 store.saveAsPDF({ ignoreBackground: true });
+
+// export second page
+store.saveAsPDF({ pageId: store.pages[1].id });
 ```

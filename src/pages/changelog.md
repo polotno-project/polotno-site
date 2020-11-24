@@ -3,6 +3,17 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.2.0
+
+* New feature - locking. `element.set({ locked: true })`. Locked elements can't be changed from the canvas by an end user.
+* New feature - `stroke` and `strokeWidth` for `Text` element.
+* Better support for exports of multi-page projects.
+* Bug fix - removing elements from the canvas by keyboard will work only on correct focus.
+* Fix the bug with incorrect page focusing.
+* Performance optimizations.
+* Better dark theme support.
+* Better text rendering and fonts load.
+
 
 ### 0.1.3
 
