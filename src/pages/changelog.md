@@ -3,6 +3,12 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.2.2
+
+* Bug fix - better text editing from the canvas
+* New sidebar panel - Upload!
+* Collapsible toolbar for text (better support for smaller screens)
+
 ### 0.2.0
 
 * New feature - locking. `element.set({ locked: true })`. Locked elements can't be changed from the canvas by an end user.
