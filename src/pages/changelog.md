@@ -3,6 +3,16 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.3.0
+
+* New property for all elements `opacity`. Add opacity button to the toolbar
+* Added duplicate button to the toolbar
+* `flipX` and `flipY` options for `image` and `svg` elements
+* Added flip button to the toolbar
+* Added more align and layering options
+* General style fixes and improvements
+* Better font loading
+
 ### 0.2.2
 
 * Bug fix - better text editing from the canvas
