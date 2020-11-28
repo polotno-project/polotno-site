@@ -47,20 +47,20 @@ text.moveToBottom();
 ```
 
 
-### `element.moveToTop()`
+### `element.moveTop()`
 
 Move element to the top of the page or a group.
 
 ```js
-text.moveToTop();
+text.moveTop();
 ```
 
-### `element.moveToBottom()`
+### `element.moveBottom()`
 
 Move element to the bottom of the page or a group.
 
 ```js
-text.moveToBottom();
+text.moveBottom();
 ```
 
 ### Locking
