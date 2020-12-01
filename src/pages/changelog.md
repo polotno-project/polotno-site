@@ -5,6 +5,7 @@ hide_table_of_contents: true
 
 ### 0.3.1
 
+* **Major upgrade for all internal dependencies.**. `polotno` should be used with `react@^17`. It may not work with `react@^16`.
 * Sidebar UI - added ability to set custom sizes
 * New Filter - Simple shadows
 * Sidebar UI - fix scroll issues
