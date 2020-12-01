@@ -3,6 +3,13 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.3.1
+
+* Sidebar UI - added ability to set custom sizes
+* New Filter - Simple shadows
+* Sidebar UI - fix scroll issues
+* Sidebar UI - background color fixes, ability to set any background
+
 ### 0.3.0
 
 * New property for all elements `opacity`. Add opacity button to the toolbar
