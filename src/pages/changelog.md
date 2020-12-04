@@ -3,6 +3,12 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.4.0
+
+* Ability to add custom font file from side panel
+* new `store.addFont({ name, url })`, `store.removeFont(name)` and `await store.loadFond(name)` API.
+* Brand new "Elements" panel on sidebar with https://iconscout.com/ search
+
 ### 0.3.1
 
 * **Major upgrade for all internal dependencies.**. `polotno` should be used with `react@^17`. It may not work with `react@^16`.
