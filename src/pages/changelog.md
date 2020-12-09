@@ -3,6 +3,12 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.4.1
+
+* "Elements" from side panel are real SVG files now
+* Fix "my fonts" add button to filter only font files
+* Animate adding new elements on the canvas
+
 ### 0.4.0
 
 * Ability to add custom font file from side panel
