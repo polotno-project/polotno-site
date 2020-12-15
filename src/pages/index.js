@@ -299,7 +299,7 @@ function Home() {
                 <h2 class="pricing-header">Non-commercial</h2>
                 <ul class="pricing-features">
                   <li class="pricing-features-item">
-                    Fof non-commercial or development usage only
+                    For non-commercial or development usage only
                   </li>
                   <li class="pricing-features-item">
                     Have a small backlink to polotno website
