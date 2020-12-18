@@ -3,6 +3,22 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.4.4
+
+* Fix flip quality of SVG images
+* Slightly change toolbar icons
+* `store.deletePages(ids)` API
+* pdf export fixes
+* New button "fit image to background" in the toolbar
+* `downloadButtonEnabled` prop for toolbar component
+
+
+### 0.4.3
+
+* Reduced bundle size
+* Fixed "More" button on small screens when a text element is selected
+* New loading indicators are added
+
 ### 0.4.1
 
 * "Elements" from side panel are real SVG files now

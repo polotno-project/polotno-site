@@ -35,6 +35,15 @@ The getter. Returns all pages of the store.
 
 The getter. Returns current active page or the last created.
 
+### `store.deletePages(ids)`
+
+Remove pages from the store
+
+```js
+// remove current page
+store.deletePages([store.activePage.id])
+```
+
 
 ## UI
 
