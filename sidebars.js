@@ -7,9 +7,9 @@
 
 module.exports = {
   docs: {
-    Polotno: ['overview'],
+    Polotno: ['overview', 'config'],
     Store: ['store-overview', 'page-overview', 'element-overview'],
-    Workspace: ['workspace-overview'],
+    'UI components': ['workspace', 'side-panel'],
     Showcase: ['demo-full-editor', 'demo-simple-t-shirt'],
   },
 };

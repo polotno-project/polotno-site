@@ -1,6 +1,5 @@
 ---
-id: workspace-overview
-title: Workspace component
+title: Workspace
 ---
 
 `Workspace` is the main `React` component that you are going to use to display the drawings and interact with them. All manipulations with canvas are made via [Store](/docs/store-overview).

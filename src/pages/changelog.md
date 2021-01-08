@@ -3,6 +3,13 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.5.0
+
+* New API for manipulating side panel components
+* New API to change default Google Fonts list
+* New API to change default upload behavior
+* Performance and UI fixes for many side panel components
+
 ### 0.4.4
 
 * Fix flip quality of SVG images
