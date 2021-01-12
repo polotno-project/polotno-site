@@ -3,6 +3,10 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.5.3
+
+* General bugs fixes and stability improvements
+
 ### 0.5.0
 
 * New API for manipulating side panel components

@@ -13,7 +13,7 @@ title: Store overview
 ```js
 import { createStore } from 'polotno/model/store';
 const store = createStore({
-  key: 'YOUR_API_KEY', // make it empty for dev version
+  key: 'YOUR_API_KEY',
 });
 ```
 
@@ -154,7 +154,7 @@ Load passed json into the store. It will update all properties, pages and elemen
 
 ```js
 import { createStore } from 'polotno/model/store';
-const store = store.createStore();
+const store = createStore({ key: YOUR_API_KEY });
 
 // save to JSON at some point of time
 const json = store.toJSON();

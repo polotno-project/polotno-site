@@ -7,9 +7,9 @@ title: Workspace
 
 ```js
 import { Workspace } from 'polotno/canvas/workspace';
-import { Store } from 'polotno/model/store';
+import { createStore } from 'polotno/model/store';
 
-const store = Store.create();
+const store = createStore({ key: YOUR_API_KEY });
 
 const App = () => {
   return <div><Workspace store={store} /></div>;
