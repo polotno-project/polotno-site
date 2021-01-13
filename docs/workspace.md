@@ -9,7 +9,9 @@ title: Workspace
 import { Workspace } from 'polotno/canvas/workspace';
 import { createStore } from 'polotno/model/store';
 
-const store = createStore({ key: YOUR_API_KEY });
+const store = createStore({
+  key: YOUR_API_KEY // you can create it here: https://polotno.dev/cabinet/
+});
 
 const App = () => {
   return <div><Workspace store={store} /></div>;
