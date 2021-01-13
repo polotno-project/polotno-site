@@ -92,6 +92,11 @@ module.exports = {
       'data-domain': 'polotno.dev',
     },
   ],
+  scripts: [
+    {
+      src: 'https://cdn.paddle.com/paddle/paddle.js',
+    },
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
