@@ -23,14 +23,12 @@ module.exports = {
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
         { to: 'https://studio.polotno.dev', label: 'Studio', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
+        {
+          to: 'https://discord.gg/W2VeKgsr9J',
+          label: 'Discord chat',
+          position: 'right',
+        },
         { to: '/contact', label: 'Contact', position: 'right' },
-
-        // { to: 'blog', label: 'Blog', position: 'left' }
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right'
-        // }
       ],
     },
     footer: {
