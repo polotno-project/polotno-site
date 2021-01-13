@@ -6,8 +6,10 @@ import Link from '@docusaurus/Link';
 
 const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 
-const isLocalhost =
-  typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
+// const isLocalhost =
+//   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
+
+const isLocalhost = false;
 
 const POLOTNO_API = isLocalhost
   ? 'http://localhost:3001/api'
