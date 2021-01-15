@@ -3,6 +3,14 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.6.2
+
+* New filter - Sepia
+* New filter - Grayscale
+* Fixed ability to apply filters to images
+* Added ability to set custom attributes to elements with `element.set({ custom: { metaInformation: 'my-data' }})`
+
+
 ### 0.5.3
 
 * General bugs fixes and stability improvements

@@ -83,14 +83,11 @@ module.exports = {
   },
   scripts: [
     {
-      // src: '/stats.js',
       src: 'https://plausible.io/js/plausible.js',
       async: true,
       defer: true,
       'data-domain': 'polotno.dev',
     },
-  ],
-  scripts: [
     {
       src: 'https://cdn.paddle.com/paddle/paddle.js',
     },
