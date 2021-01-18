@@ -3,6 +3,10 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.7.0
+
+* Many UI fixes for the toolbar
+
 ### 0.6.5
 
 * Much better undo/redo implementation
