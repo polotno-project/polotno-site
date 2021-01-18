@@ -3,6 +3,13 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.6.5
+
+* Much better undo/redo implementation
+* New `element.clone()` and `page.clone()` methods
+* New `element.toJSON()` and `page.toJSON()` methods
+* Added more hotkeys to `<Workspace>` component
+
 ### 0.6.2
 
 * New filter - Sepia
