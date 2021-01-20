@@ -214,10 +214,6 @@ function Cabinet() {
         {!isLoading && !isAuthenticated && (
           <div style={{ textAlign: 'center ' }}>
             <h3>Do you want to generate API keys to use Polotno SDK?</h3>
-            <p>
-              You will need to have a paid subscription in order to generate
-              keys. You can <Link to="/#price">buy polotno here</Link>.
-            </p>
             <a onClick={loginWithPopup} className={styles.loginButton}>
               Login
             </a>
