@@ -122,3 +122,27 @@ export const App = ({ store }) => {
   );
 };
 ```
+
+
+### Styles
+
+Most of `Polotno` UI is made with [Blueprint](https://blueprintjs.com/) framework. If your are making your own custom UI interface or additional components I recommend to use `blueprint` when possible. But you can always use your own custom solutions or other style frameworks.
+
+Polotno is using [Blueprint Icons](https://blueprintjs.com/docs/#icons) and [Meronex Icons](https://icons.meronex.com/). So I recommend to use them for your UI.
+
+### Reactivity
+
+Polotno internals are made with [mobx](https://mobx.js.org/) library. You can use `mobx` API to add reactivity to your own application. [mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome) library. In React framework you will need `observer()` function:
+
+```js
+import { observer } from "mobx-react-lite";
+
+const App = observer(({ store }) => {
+    return (
+      <div>
+        <p>Here we will define our own custom tab.</p>
+        <p>Elements on the current page: {store.activePage?.children.length}</p>
+      </div>
+    );
+  })
+```
