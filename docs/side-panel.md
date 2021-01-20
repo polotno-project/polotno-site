@@ -21,7 +21,7 @@ The `SidePanel` will automatically take full width and height of its parent. So 
 You can pass `sections` property to `<SidePanel />` component to specify all available tabs manually. Here is the default UI:
 
 ```js
-import SidePanel, { DEFAULT_SECTIONS } from 'polotno/side-panel/side-panel';
+import { SidePanel, DEFAULT_SECTIONS } from 'polotno/side-panel/side-panel';
 
 const MyPanel = () => {
   return <div><SidePanel store={store} sections={DEFAULT_SECTIONS} /></div>;
