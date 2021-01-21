@@ -3,6 +3,11 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.8.0 - 2021-01-21
+
+* Text element resizing fixes
+* `letterSpacing` and `lineHeight` attributes for text elements
+
 ### 0.7.3
 
 * Some internal bugs fixes and stability improvements

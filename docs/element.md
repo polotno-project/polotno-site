@@ -104,6 +104,8 @@ page.addElement({
   width: 0,
   strokeWidth: 0,
   stroke: 'black',
+  lineHeight: 1,
+  letterSpacing: 0, // % from font size
 });
 ```
 
