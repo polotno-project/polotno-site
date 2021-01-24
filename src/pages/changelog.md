@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ### 0.10.1 -2021-01-24
 
-* New crop behavior on double click on the image. Very exited about it.
+* New crop behavior on double click on the image. Very excited about it.
 * `image` elements has also `cropWidth` and `cropHeight` properties.
 * Added `Crop` button to the top toolbar.
 
