@@ -3,7 +3,7 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
-### 0.10.0 -2021-01-24
+### 0.10.1 -2021-01-24
 
 * New crop behavior on double click on the image. Very exited about it.
 * `image` elements has also `cropWidth` and `cropHeight` properties.
