@@ -3,9 +3,13 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.10.0 -2021-01-24
+
+* New crop behavior on double click on the image. Very exited about it.
+* `image` elements has also `cropWidth` and `cropHeight` properties.
+* Added `Crop` button to the top toolbar.
+
 ### 0.9.0 - 2021-01-23
-
-
 
 * **Possible breaking**: `image` elements has no `clipDirection` any more.
 * **Possible breaking**: property `svgSource` for `svg` elements is renamed to `src`
