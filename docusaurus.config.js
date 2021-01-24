@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Polotno',
-  tagline: 'Graphic design editor framework',
+  tagline: 'SDK for making design editors for the web',
   url: 'https://polotno.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
