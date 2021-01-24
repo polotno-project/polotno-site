@@ -3,6 +3,18 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.9.0 - 2021-01-23
+
+
+
+* **Possible breaking**: `image` elements has no `clipDirection` any more.
+* **Possible breaking**: property `svgSource` for `svg` elements is renamed to `src`
+* Cropping abilities by double click on image
+* `cropX` and `cropY` properties for `image` elements. crop value should be from `0` to `1` and means % of original size
+* SVG images will keep ratio on resize
+* Various style fixes
+* `hideOpacity` option for `<Toolbar />`
+
 ### 0.8.0 - 2021-01-21
 
 * Text element resizing fixes
