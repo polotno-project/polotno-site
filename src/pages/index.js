@@ -163,7 +163,9 @@ function Home() {
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle" style={{ marginBottom: '60px' }}>
+            {siteConfig.tagline}
+          </p>
           <p className="hero__subtitle">
             Create your own app like
             <br />
@@ -175,6 +177,9 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted
               )}
+              style={{
+                backgroundColor: 'white',
+              }}
               to={useBaseUrl('docs/overview')}
             >
               Get Started
@@ -220,6 +225,9 @@ function Home() {
                     name="subscribe"
                     id="mc-embedded-subscribe"
                     className="button button--outline button--secondary "
+                    style={{
+                      backgroundColor: 'white',
+                    }}
                   />
                 </div>
                 <div id="mce-responses" className="clear">
@@ -250,7 +258,7 @@ function Home() {
           </div>
         </div>
         <div className="container" style={{ padding: '10px' }}>
-          <img className={styles.demoImage} src="/img/screenshot.jpg" />
+          <img className={styles.demoImage} src="/img/polotno.png" />
         </div>
       </header>
       <main>
