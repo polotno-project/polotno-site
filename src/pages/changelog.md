@@ -3,7 +3,13 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
-### 0.10.1 -2021-01-24
+### 0.10.4 - 2021-01-27
+
+* You can drag elements from side panel
+* Better crop UX for `image` elements
+* Fixed some crashes and bugs
+
+### 0.10.1 - 2021-01-24
 
 * New crop behavior on double click on the image. Very excited about it.
 * `image` elements has also `cropWidth` and `cropHeight` properties.
