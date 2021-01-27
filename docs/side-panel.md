@@ -126,3 +126,81 @@ const СustomSizes = {
 Demo: https://codesandbox.io/s/polotno-custom-sizes-panel-hmq9h?file=/src/index.js
 
 
+### How to load custom photos?
+
+We can write another custom panel that will load images from any API:
+
+```js
+export const PhotosPanel = observer(({ store }) => {
+  const [images, setImages] = React.useState([]);
+
+  async function loadImages() {
+    // here we should implement your own API requests
+    setImages([]);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    // for demo images are hard coded
+    // in real app here will be something like JSON structure
+    setImages([
+      "./carlos-lindner-zvZ-HASOA74-unsplash.jpg",
+      "./guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg"
+    ]);
+  }
+
+  React.useEffect(() => {
+    loadImages();
+  }, []);
+
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+      <InputGroup
+        leftIcon="search"
+        placeholder="Search..."
+        onChange={(e) => {
+          loadImages();
+        }}
+        style={{
+          marginBottom: "20px"
+        }}
+      />
+      <p>Demo images: </p>
+      {/* you can create yur own custom component here */}
+      {/* but we will use built-in grid component */}
+      <ImagesGrid
+        images={images}
+        getPreview={(image) => image}
+        onSelect={async (image, { x, y }) => {
+          const { width, height } = await getImageSize(image.urls.small);
+          store.activePage.addElement({
+            type: "image",
+            src: image.urls.regular,
+            width,
+            height,
+            x,
+            y
+          });
+        }}
+        rowsNumber={2}
+        isLoading={!images.length}
+        loadMore={false}
+      />
+    </div>
+  );
+});
+
+// define the new custom section
+const СustomPhotos = {
+  name: "photos",
+  Tab: (props) => (
+    <SectionTab name="Photos" {...props}>
+      <MdPhotoLibrary />
+    </SectionTab>
+  ),
+  // we need observer to update component automatically on any store changes
+  Panel: PhotosPanel
+};
+```
+
+Demo: https://codesandbox.io/s/polotno-load-custom-images-hmq9h?file=/src/index.js
+
+
