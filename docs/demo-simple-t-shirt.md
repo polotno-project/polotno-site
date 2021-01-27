@@ -1,5 +1,5 @@
 ---
-title: E-commerce print editor for T-Shirt
+title: Print for T-Shirt
 hide_table_of_contents: true
 ---
 

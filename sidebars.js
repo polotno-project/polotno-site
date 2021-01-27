@@ -6,10 +6,30 @@
  */
 
 module.exports = {
-  docs: {
-    Polotno: ['overview', 'config'],
-    Store: ['store-overview', 'page-overview', 'element-overview'],
-    'UI components': ['workspace', 'side-panel'],
-    Showcase: ['demo-full-editor', 'demo-simple-t-shirt'],
-  },
+  docs: [
+    {
+      type: 'category',
+      label: 'Polotno',
+      collapsed: false,
+      items: ['overview', 'config'],
+    },
+    {
+      type: 'category',
+      label: 'Store',
+      collapsed: false,
+      items: ['store-overview', 'page-overview', 'element-overview'],
+    },
+    {
+      type: 'category',
+      label: 'UI components',
+      collapsed: false,
+      items: ['workspace', 'side-panel'],
+    },
+    {
+      type: 'category',
+      label: 'Showcase',
+      collapsed: false,
+      items: ['demo-full-editor', 'demo-simple-t-shirt'],
+    },
+  ],
 };
