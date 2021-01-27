@@ -142,8 +142,8 @@ export const PhotosPanel = observer(({ store }) => {
     // for demo images are hard coded
     // in real app here will be something like JSON structure
     setImages([
-      "./carlos-lindner-zvZ-HASOA74-unsplash.jpg",
-      "./guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg"
+      { url: "./carlos-lindner-zvZ-HASOA74-unsplash.jpg" },
+      { url: "./guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg" }
     ]);
   }
 
@@ -168,12 +168,12 @@ export const PhotosPanel = observer(({ store }) => {
       {/* but we will use built-in grid component */}
       <ImagesGrid
         images={images}
-        getPreview={(image) => image}
+        getPreview={(image) => image.url}
         onSelect={async (image, { x, y }) => {
-          const { width, height } = await getImageSize(image.urls.small);
+          const { width, height } = await getImageSize(image.url);
           store.activePage.addElement({
             type: "image",
-            src: image.urls.regular,
+            src: image.url,
             width,
             height,
             x,
@@ -187,7 +187,6 @@ export const PhotosPanel = observer(({ store }) => {
     </div>
   );
 });
-
 // define the new custom section
 const СustomPhotos = {
   name: "photos",
