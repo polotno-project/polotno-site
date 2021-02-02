@@ -3,6 +3,14 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.11.0 - 2021-02-02
+
+* Text resize fixes
+* Image crop fixes
+* Better drop from side panel to canvas
+* Align elements fixes
+* Less click to enter "edit mode" for `text` element
+
 ### 0.10.4 - 2021-01-27
 
 * You can drag elements from side panel

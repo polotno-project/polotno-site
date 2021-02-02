@@ -137,6 +137,8 @@ export const PhotosPanel = observer(({ store }) => {
   async function loadImages() {
     // here we should implement your own API requests
     setImages([]);
+
+    // wait to emulate network request
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     // for demo images are hard coded
