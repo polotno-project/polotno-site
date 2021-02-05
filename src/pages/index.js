@@ -402,13 +402,13 @@ function Home() {
                     We build everything <br /> for you
                   </li>
                   <li class="pricing-features-item">
-                    Full access to the source code
+                    Full access to the customization source code
                   </li>
                   <li class="pricing-features-item">
-                    Your own branding and specific features
+                    Your own branding and styles
                   </li>
                   <li class="pricing-features-item">
-                    2 years bug-free <br />
+                    1 year bug-free <br />
                     guarantee
                   </li>
                 </ul>
