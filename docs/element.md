@@ -95,6 +95,11 @@ page.addElement({
   shadowEnabled: false,
   shadowBlur: 10,
   text: 'Hey, polotno',
+  // placeholder is working similar to input placeholder
+  // it will be rendered if no text is defined
+  // and we will use it in input element too
+  // useful for template canvas, where users will need to replace text elements
+  placeholder: '',
   fontSize: 14,
   fontFamily: 'Roboto',
   fontStyle: '',
@@ -108,6 +113,13 @@ page.addElement({
   letterSpacing: 0, // % from font size
 });
 ```
+
+### text.toggleEditMode()
+
+Enable edit mode for the text. It puts cursor inside the text and a user can do regular text editing.
+
+You can use `text.toggleEditMode()` to enter "edit mode" programmatically. For example, right after you created a new text element.
+
 
 ## Image element
 
@@ -132,6 +144,10 @@ page.addElement({
   height: 100,
 });
 ```
+
+### `image.toggleCropMode()`
+
+Enter into "crop mode" of the image programmatically.
 
 ## SVG element
 

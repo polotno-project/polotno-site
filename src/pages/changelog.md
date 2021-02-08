@@ -3,7 +3,11 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
-### 0.11.3 -  2021-02-05
+### 0.12.0 -  2021-02-08
+
+- `placeholder` attribute for `text` elements. Can be used to simulate `placeholder` attribute from DOM inputs.
+
+### 0.11.3 -  2021-02-08
 
 - Image crop fixes and fadeout effect for better UI
 
