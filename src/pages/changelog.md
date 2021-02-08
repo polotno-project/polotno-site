@@ -3,6 +3,10 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.11.3 -  2021-02-05
+
+- Image crop fixes and fadeout effect for better UI
+
 ### 0.11.2 -  2021-02-04
 
 - Fix undo/redo
