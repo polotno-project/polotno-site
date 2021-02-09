@@ -3,6 +3,14 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+### 0.12.1 -  2021-02-09
+
+- Better undo/redo managment. The "no change recorded" bug is fixed.
+- Better crop UI on toolbar
+- `custom` attribute for `page`
+- some other small bugs fixes
+
+
 ### 0.12.0 -  2021-02-08
 
 - `placeholder` attribute for `text` elements. Can be used to simulate `placeholder` attribute from DOM inputs.
