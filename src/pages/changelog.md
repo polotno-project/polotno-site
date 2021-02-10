@@ -3,9 +3,17 @@ title: Changelog
 hide_table_of_contents: true
 ---
 
+## Welcome to the change log of `Polotno`.
+
+### 0.13.0 -  2021-02-10
+
+- Fix resize when several shapes are selected
+- Highlight of elements on mouseover
+- Putting cursor on correct position when text element is selected
+
 ### 0.12.1 -  2021-02-09
 
-- Better undo/redo managment. The "no change recorded" bug is fixed.
+- Better undo/redo management. The "no change recorded" bug is fixed.
 - Better crop UI on toolbar
 - `custom` attribute for `page`
 - some other small bugs fixes
