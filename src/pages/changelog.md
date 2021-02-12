@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.13.1 -  2021-02-12
+
+- Jumping fixes for crop action
+- Fix undo/redo when several shapes are moved
+- Fix some console warnings
+
 ### 0.13.0 -  2021-02-10
 
 - Fix resize when several shapes are selected
