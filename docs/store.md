@@ -140,7 +140,7 @@ store.history.redo();
 Batch several actions into one history entry.
 
 ```js
-store.history.transaction(await ()=> {
+store.history.transaction(async ()=> {
   const element = store.activePage.addElement({ type: 'text', text: 'loading' });
   const text = await serverRequest();
   element.set({ text });
@@ -152,7 +152,7 @@ store.history.transaction(await ()=> {
 Run transaction that should be ignored in history
 
 ```js
-store.history.ignore(await ()=> {
+store.history.ignore(()=> {
   // that change will be NOT create new history point
   element.set({ x: 0, y: 0});
 });
