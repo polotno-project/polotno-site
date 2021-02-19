@@ -135,6 +135,38 @@ store.history.undo();
 store.history.redo();
 ```
 
+### `store.history.transaction(async () => {})`
+
+Batch several actions into one history entry.
+
+```js
+store.history.transaction(await ()=> {
+  const element = store.activePage.addElement({ type: 'text', text: 'loading' });
+  const text = await serverRequest();
+  element.set({ text });
+});
+```
+
+### `store.history.ignore(async () => {})`
+
+Run transaction that should be ignored in history
+
+```js
+store.history.ignore(await ()=> {
+  // that change will be NOT create new history point
+  element.set({ x: 0, y: 0});
+});
+```
+
+### `store.history.startTransaction()`
+
+Create a new history transaction. After that command all changes will be recorded as one history point.
+
+### `store.history.endTransaction()`
+
+Finish created transaction and record all changes as one history point.
+
+
 ## Serializations
 
 ### `store.toJSON()`
