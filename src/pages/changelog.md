@@ -5,19 +5,26 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.13.1 -  2021-02-12
+### 0.14.0 - 2021-02-26
+
+- **New Magic Resize feature**
+- Better touch support
+- Undo/redo fixes
+- Better reset zoom function
+
+### 0.13.1 - 2021-02-12
 
 - Jumping fixes for crop action
 - Fix undo/redo when several shapes are moved
 - Fix some console warnings
 
-### 0.13.0 -  2021-02-10
+### 0.13.0 - 2021-02-10
 
 - Fix resize when several shapes are selected
 - Highlight of elements on mouseover
 - Putting cursor on correct position when text element is selected
 
-### 0.12.1 -  2021-02-09
+### 0.12.1 - 2021-02-09
 
 - Better undo/redo management. The "no change recorded" bug is fixed.
 - Better crop UI on toolbar
@@ -25,15 +32,15 @@ hide_table_of_contents: true
 - some other small bugs fixes
 
 
-### 0.12.0 -  2021-02-08
+### 0.12.0 - 2021-02-08
 
 - `placeholder` attribute for `text` elements. Can be used to simulate `placeholder` attribute from DOM inputs.
 
-### 0.11.3 -  2021-02-08
+### 0.11.3 - 2021-02-08
 
 - Image crop fixes and fadeout effect for better UI
 
-### 0.11.2 -  2021-02-04
+### 0.11.2 - 2021-02-04
 
 - Fix undo/redo
 - Text element editing fixes
