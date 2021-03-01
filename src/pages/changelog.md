@@ -5,7 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.14.0 - 2021-02-26
+### 0.14.2 - 2021-03-26
+
+- Fix crop button hide on image element click
+- Fix text blink on undo/redo
+- `justify` align is temporary removed from toolbar of text elements
+- added better loading indicators for image elements
+
+### 0.14.1 - 2021-02-26
 
 - **New Magic Resize feature**
 - Better touch support
