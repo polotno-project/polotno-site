@@ -399,13 +399,13 @@ function Home() {
                 <h2 class="pricing-header">Custom solution</h2>
                 <ul class="pricing-features">
                   <li class="pricing-features-item">
-                    We build everything <br /> for you
+                    I build everything <br /> for you
                   </li>
                   <li class="pricing-features-item">
                     Full access to the customization source code
                   </li>
                   <li class="pricing-features-item">
-                    Your own branding and styles
+                    Your own branding and styles (optional)
                   </li>
                   <li class="pricing-features-item">
                     1 year bug-free <br />

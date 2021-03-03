@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.15.0 - 2021-03-03
+
+- Zooming will try to keep canvas position
+- More options for `lineHeight` property for `text` element. Now it should support all CSS values
+- New border option for `image` and `svg` elements
+- Several bugs fixes
+
 ### 0.14.2 - 2021-03-01
 
 - Fix crop button hide on image element click
