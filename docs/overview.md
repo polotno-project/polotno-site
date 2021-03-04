@@ -99,6 +99,7 @@ export const App = ({ store }) => {
         display: 'flex',
         height: '100%',
         width: '100%',
+        maxHeight: '100vh',
       }}
     >
       <div style={{ width: '300px', height: '100%', display: 'flex' }}>
