@@ -52,25 +52,21 @@ module.exports = {
         //   items: [
         //     {
         //       label: 'Stack Overflow',
-        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus'
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
         //     },
         //     {
         //       label: 'Discord',
-        //       href: 'https://discordapp.com/invite/docusaurus'
-        //     }
-        //   ]
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //   ],
         // },
         {
-          title: 'Social',
+          title: 'Company',
           items: [
-            // {
-            //   label: 'Blog',
-            //   to: 'blog'
-            // },
-            // {
-            //   label: 'GitHub',
-            //   href: 'https://github.com/facebook/docusaurus'
-            // },
+            {
+              label: 'Status',
+              href: 'https://status.polotno.dev',
+            },
             {
               label: 'Twitter',
               href: 'https://twitter.com/lavrton',
