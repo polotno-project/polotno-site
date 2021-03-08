@@ -31,6 +31,7 @@ const MyPanel = () => {
 And this is how you can define in manually:
 
 ```js
+import { observer } from 'mobx-react-lite';
 import { SidePanel } from "polotno/side-panel/side-panel";
 // import existing section
 import { TextSection } from "polotno/side-panel/side-panel";
@@ -88,6 +89,8 @@ Demo:
 With the same customization approach you can make your own panel for changing pages sizes:
 
 ```js
+import { observer } from 'mobx-react-lite';
+
 const AVAILABLE_SIZES = [
   { width: 500, height: 500 },
   { width: 1000, height: 1000 },
@@ -131,6 +134,7 @@ Demo: https://codesandbox.io/s/polotno-custom-sizes-panel-hmq9h?file=/src/index.
 We can write another custom panel that will load images from any API:
 
 ```js
+import { observer } from 'mobx-react-lite';
 export const PhotosPanel = observer(({ store }) => {
   const [images, setImages] = React.useState([]);
 
@@ -197,7 +201,6 @@ const СustomPhotos = {
       <MdPhotoLibrary />
     </SectionTab>
   ),
-  // we need observer to update component automatically on any store changes
   Panel: PhotosPanel
 };
 ```
