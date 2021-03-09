@@ -27,6 +27,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Misc',
+      collapsed: false,
+      items: ['custom-element', 'vue-integration'],
+    },
+    {
+      type: 'category',
       label: 'Showcase',
       collapsed: false,
       items: ['demo-full-editor', 'demo-simple-t-shirt'],
