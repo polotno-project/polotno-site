@@ -80,11 +80,16 @@ store.setScale(2);
 ```
 
 
-## Working with active elements
+## Working with elements
 
-### `store.activeElements`
+### `store.selectedElements`
 
 Returns array of currently selected elements on the current page
+
+```js
+const firstSelected = store.selectedElements[0];
+```
+
 
 ### `store.selectElements(ids)`
 
@@ -100,6 +105,15 @@ Remove elements from the store.
 
 ```js
 store.deleteElements([element1.id, element2.id]);
+```
+
+### `store.getElementById(id)`
+
+Finds elements on the store by passed id:
+
+```js
+const element = store.getElementBuId('some-id');
+element.set({ x: 0 });
 ```
 
 ## History
@@ -216,6 +230,9 @@ store.toDataURL({ pixelRatio: 2})
 
 // ignore page background on export
 store.toDataURL({ ignoreBackground: true });
+
+// export as jpg
+store.toDataURL({ mimeType: 'image/jpg' });
 ```
 
 
@@ -226,6 +243,9 @@ store.toDataURL({ ignoreBackground: true });
 ```js
 // default export
 store.saveAsImage({ fileName: 'polotno.png' });
+
+// export as jpg
+store.saveAsImage({ mimeType: 'image/jpg' });
 
 // make exported image 2x bigger (higher quality)
 store.saveAsImage({ pixelRatio: 2})
