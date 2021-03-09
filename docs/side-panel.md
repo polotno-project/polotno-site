@@ -175,15 +175,15 @@ export const PhotosPanel = observer(({ store }) => {
       <ImagesGrid
         images={images}
         getPreview={(image) => image.url}
-        onSelect={async (image, { x, y }) => {
+        onSelect={async (image, pos) => {
           const { width, height } = await getImageSize(image.url);
           store.activePage.addElement({
             type: "image",
             src: image.url,
             width,
             height,
-            x,
-            y
+            x: pos?.x || 0,
+            y: pos?.y || 0
           });
         }}
         rowsNumber={2}
