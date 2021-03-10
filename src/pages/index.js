@@ -300,32 +300,32 @@ function Home() {
       <main>
         <h2 id="price">Price</h2>
         {/* TODO: move styles from global to scope */}
-        <div class="background">
-          <div class="container">
-            <div class="panel pricing-table">
-              <div class="pricing-plan">
-                <h2 class="pricing-header">Non-commercial</h2>
-                <ul class="pricing-features">
-                  <li class="pricing-features-item">
+        <div className="background">
+          <div className="container">
+            <div className="panel pricing-table">
+              <div className="pricing-plan">
+                <h2 className="pricing-header">Non-commercial</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
                     For non-commercial or development usage only
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Have a small backlink to polotno website
                   </li>
 
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     All polotno features included
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Basic community
                     <br /> support
                   </li>
                 </ul>
-                <span class="pricing-price">Free</span>
-                <span class="pricing-trial"></span>
+                <p className="pricing-price">Free</p>
+                <p className="pricing-trial"></p>
                 <a
                   href={useBaseUrl('docs/overview')}
-                  class="pricing-button"
+                  className="pricing-button"
                   onClick={() => {
                     window.plausible('get-started-from-plan');
                   }}
@@ -334,28 +334,28 @@ function Home() {
                 </a>
               </div>
 
-              <div class="pricing-plan">
-                <h2 class="pricing-header">Small team</h2>
-                <ul class="pricing-features">
-                  <li class="pricing-features-item">
+              <div className="pricing-plan">
+                <h2 className="pricing-header">Small team</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
                     Commercial and non-commercial
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     One domain, up to 300 daily users
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     No watermarks and backlinks
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Email
                     <br /> support
                   </li>
                 </ul>
-                <span class="pricing-price">$100 / month</span>
-                <span class="pricing-trial">60 days trial period</span>
+                <p className="pricing-price">$100 / month</p>
+                <p className="pricing-trial">60 days trial period</p>
                 <a
                   href="https://buy.paddle.com/product/600588"
-                  class="pricing-button"
+                  className="pricing-button"
                   target="_blank"
                   onClick={() => {
                     window.plausible('small-plan-buy');
@@ -365,27 +365,27 @@ function Home() {
                 </a>
               </div>
 
-              <div class="pricing-plan">
-                <h2 class="pricing-header">Enterprise</h2>
-                <ul class="pricing-features">
-                  <li class="pricing-features-item">
+              <div className="pricing-plan">
+                <h2 className="pricing-header">Enterprise</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
                     Commercial and non-commercial usage
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Unlimited domains and daily users
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     No watermarks and backlinks
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     High priority features request and support
                   </li>
                 </ul>
-                <span class="pricing-price">$200 / month</span>
-                <span class="trial">60 days trial period</span>
+                <p className="pricing-price">$200 / month</p>
+                <span className="trial">60 days trial period</span>
                 <a
                   href="https://buy.paddle.com/product/616700"
-                  class="pricing-button is-featured"
+                  className="pricing-button is-featured"
                   target="_blank"
                   onClick={() => {
                     window.plausible('large-plan-buy');
@@ -395,28 +395,28 @@ function Home() {
                 </a>
               </div>
 
-              <div class="pricing-plan">
-                <h2 class="pricing-header">Custom solution</h2>
-                <ul class="pricing-features">
-                  <li class="pricing-features-item">
+              <div className="pricing-plan">
+                <h2 className="pricing-header">Custom solution</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
                     I build everything <br /> for you
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Full access to the customization source code
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     Your own branding and styles (optional)
                   </li>
-                  <li class="pricing-features-item">
+                  <li className="pricing-features-item">
                     1 year bug-free <br />
                     guarantee
                   </li>
                 </ul>
-                <span class="pricing-price">From $10 000</span>
-                <span class="pricing-trial"></span>
+                <p className="pricing-price">From $10 000</p>
+                <p className="pricing-trial"></p>
                 <a
                   href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
-                  class="pricing-button"
+                  className="pricing-button"
                   target="_blank"
                   onClick={() => {
                     window.plausible('custom-solution-request');
