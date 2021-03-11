@@ -387,7 +387,7 @@ function Home() {
                   </li>
                 </ul>
                 <p className="pricing-price">$200 / month</p>
-                <span className="trial">60 days trial period</span>
+                <p className="trial">60 days trial period</p>
                 <a
                   href="https://buy.paddle.com/product/616700"
                   className="pricing-button is-featured"
