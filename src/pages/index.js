@@ -142,16 +142,21 @@ const COMPETITORS = [
 ];
 
 function Home() {
-  const [competitor, setCompetitor] = React.useState(COMPETITORS[0]);
+  const ref = React.useRef();
 
   React.useEffect(() => {
-    const timeout = setTimeout(() => {
+    let competitor = COMPETITORS[0];
+    const timeout = setInterval(() => {
       const oldIndex = COMPETITORS.indexOf(competitor);
       const newIndex = (oldIndex + 1) % COMPETITORS.length;
-      setCompetitor(COMPETITORS[newIndex]);
+      competitor = COMPETITORS[newIndex];
+
+      // use ref instead of state,
+      // because state change is clearing algolia search
+      ref.current.innerText = competitor;
     }, 3000);
-    return () => clearTimeout(timeout);
-  }, [competitor]);
+    return () => clearInterval(timeout);
+  }, []);
 
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -169,7 +174,7 @@ function Home() {
           <p className="hero__subtitle">
             Create your own app like
             <br />
-            {competitor}
+            <span ref={ref}>{COMPETITORS[0]}</span>
           </p>
           <div className={styles.buttons}>
             <Link
@@ -415,7 +420,7 @@ function Home() {
                 <p className="pricing-price">From $10 000</p>
                 <p className="pricing-trial"></p>
                 <a
-                  href="mailto:anton@lavrton.com?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
@@ -438,7 +443,7 @@ function Home() {
         >
           These plans don't fit your needs?{' '}
           <a
-            href="mailto:anton@lavrton.com?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
+            href="mailto:anton@polotno.dev?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
             target="_blank"
           >
             Tell us more

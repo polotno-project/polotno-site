@@ -76,6 +76,18 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Polotno. Built with Docusaurus.`,
     },
+    algolia: {
+      apiKey: '29f79523fee713489da139abf189e9c4',
+      indexName: 'polotno',
+
+      // Optional: see doc section bellow
+      contextualSearch: false,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
   },
   scripts: [
     {
