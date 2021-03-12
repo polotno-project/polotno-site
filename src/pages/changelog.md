@@ -5,6 +5,25 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.16.0 - 2021-03-12
+
+- **Breaking**. Fonts API is changed. Instead of `name` you should use `fontFamily`. 
+
+```js
+// old:
+store.addFont({ name: 'Troika', url: path });
+
+// new:
+store.addFont({ fontFamily: 'Troika', url: path });
+```
+
+- Multi-page work fixes
+- Better zoom UX
+- Better color control for text placeholder
+- Fixes for upload button
+- `jpg` image export
+- Safer key validation flow
+
 ### 0.15.0 - 2021-03-03
 
 - Zooming will try to keep canvas position

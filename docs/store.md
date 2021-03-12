@@ -278,16 +278,47 @@ store.saveAsPDF({ pageId: store.pages[1].id });
 
 ## Working with fonts
 
-### `store.addFont({ name, url })`
+### `store.addFont({ fontFamily, url })`
 
 The function to add new custom font to the project.
 
 ```js
 store.addFont({
-  name: 'MyCustomFont',
-  url: someServerUrlOrBase64
+  fontFamily: 'MyCustomFont',
+  url: serverUrlOrBase64
 })
 ```
+
+Also you can use a richer API for more control:
+
+```js
+store.addFont({
+  fontFamily: 'MyCustomFont',
+  styles: [
+    {
+      src:
+        'url(pathToNormalFile.ttf)',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+    },
+    {
+      src:
+        'url(pathToBoldFile.ttf)',
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+    }
+  ]
+});
+```
+
+Or you can just register font in the store and then **manually** add required CSS into the page:
+
+```js
+store.addFont({
+  fontFamily: 'MyCustomFont'
+})
+```
+
 
 ### `store.removeFont(name)`
 
