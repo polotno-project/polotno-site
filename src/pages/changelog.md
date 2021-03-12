@@ -17,6 +17,7 @@ store.addFont({ name: 'Troika', url: path });
 store.addFont({ fontFamily: 'Troika', url: path });
 ```
 
+- Fix performance issue for `image` elements. `Polotno` should consume a lot less CPU now.
 - Multi-page work fixes
 - Better zoom UX
 - Better color control for text placeholder
