@@ -1,0 +1,28 @@
+{
+  "name": "polotno-custom-side-panel",
+  "version": "1.0.0",
+  "description": "How to change the default side panel of Polotno?",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "polotno": "0.13.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

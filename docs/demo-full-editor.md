@@ -9,7 +9,7 @@ You may want to design your own UI with your own styles and branding and use `Wo
 
 
 <iframe
-    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/master/examples/polotno-demo?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/source/examples/polotno-demo?fontsize=11&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',

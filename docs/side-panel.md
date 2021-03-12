@@ -70,8 +70,9 @@ const CustomSidePanel = () => {
 
 Demo:
 
+
 <iframe
-    src="https://codesandbox.io/embed/polotno-custom-side-panel-eyfbq?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/source/examples/polotno-custom-side-panel?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',
@@ -205,6 +206,6 @@ const СustomPhotos = {
 };
 ```
 
-Demo: https://codesandbox.io/s/polotno-load-custom-images-hmq9h?file=/src/index.js
+Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-load-custom-images
 
 
