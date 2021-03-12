@@ -8,7 +8,7 @@ A simple print editor for a t-shirt without any additional UI.
 Type text, download printing (image without t-shirt).
 
 <iframe
-    src="https://codesandbox.io/embed/polotno-simple-t-shirt-demo-i1ir9?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/master/examples/polotno-simple-t-shirt-demo?fontsize=11&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',
