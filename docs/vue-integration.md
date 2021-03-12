@@ -6,6 +6,8 @@ title: Integration with Vue framework.
 
 ### Is it possible to use `polotno` with `Vue.js` framework?
 
+Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-and-vue?file=/src/App.vue
+
 If you don't need much customizations you can make your own application with `Vue.js` framework and embed `polotno` into it. You can use [store API](/docs/store-overview) to interact with the editor. Also you can 
 
 ```js
@@ -48,5 +50,3 @@ body {
 }
 </style>
 ```
-
-https://codesandbox.io/s/vue-and-polotno-roei3?file=/src/App.vue

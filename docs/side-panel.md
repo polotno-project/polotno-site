@@ -127,10 +127,12 @@ const СustomSizes = {
 };
 ```
 
-Demo: https://codesandbox.io/s/polotno-custom-sizes-panel-hmq9h?file=/src/index.js
 
 
 ### How to load custom photos?
+
+Demo: Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-load-custom-images
+
 
 We can write another custom panel that will load images from any API:
 
@@ -205,7 +207,4 @@ const СustomPhotos = {
   Panel: PhotosPanel
 };
 ```
-
-Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-load-custom-images
-
 
