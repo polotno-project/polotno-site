@@ -68,6 +68,10 @@ module.exports = {
               href: 'https://status.polotno.dev',
             },
             {
+              label: 'License',
+              href: '/license',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/lavrton',
             },
