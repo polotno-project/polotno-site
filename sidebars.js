@@ -23,7 +23,7 @@ module.exports = {
       type: 'category',
       label: 'UI components',
       collapsed: false,
-      items: ['workspace', 'side-panel'],
+      items: ['workspace', 'side-panel', 'toolbar'],
     },
     {
       type: 'category',

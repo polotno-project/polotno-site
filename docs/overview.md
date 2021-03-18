@@ -25,27 +25,31 @@ npm install polotno
 
 Init demo application (without any frameworks):
 
-
 ```js
 import { createDemoApp } from 'polotno/polotno-app';
 
 const { store } = createDemoApp({
   container: document.getElementById('root'),
-  key: 'YOUR_API_KEY' // you can create it here: https://polotno.dev/cabinet/
+  key: 'YOUR_API_KEY', // you can create it here: https://polotno.dev/cabinet/
 });
 ```
 
 Add styles to your page:
 
 ```html
-<link href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css" rel="stylesheet" />
-<link href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css" rel="stylesheet" />
+<link
+  href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+  rel="stylesheet"
+/>
 ```
 
 ## Core concept
 
 `Polotno` consists of three main modules
-
 
 ### Store
 
@@ -66,8 +70,6 @@ page.addElement({
 });
 ```
 
-
-
 ### Workarea React canvas component
 
 React component for drawing canvas app on the page. It has all basic functionality for common edits: selection, resize, actual drawing of objects, snapping, etc.
@@ -77,7 +79,7 @@ import Workspace from 'polotno/canvas/workspace';
 
 const App = () => {
   return <Workspace store={store} />;
-}
+};
 ```
 
 ### UI components
@@ -91,6 +93,7 @@ Set of React components for general canvas editor app.
 import Toolbar from 'polotno/toolbar/toolbar';
 import ZoomButtons from 'polotno/toolbar/zoom-buttons';
 import SidePanel from 'polotno/side-panel/side-panel';
+import Workspace from 'polotno/canvas/workspace';
 
 export const App = ({ store }) => {
   return (
@@ -124,7 +127,6 @@ export const App = ({ store }) => {
 };
 ```
 
-
 ### Styles
 
 Most of `Polotno` UI is made with [Blueprint](https://blueprintjs.com/) framework. If your are making your own custom UI interface or additional components I recommend to use `blueprint` when possible. But you can always use your own custom solutions or other style frameworks.
@@ -136,14 +138,14 @@ Polotno is using [Blueprint Icons](https://blueprintjs.com/docs/#icons) and [Mer
 Polotno internals are made with [mobx](https://mobx.js.org/) library. You can use `mobx` API to add reactivity to your own application. [mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome) library. In React framework you will need `observer()` function:
 
 ```js
-import { observer } from "mobx-react-lite";
+import { observer } from 'mobx-react-lite';
 
 const App = observer(({ store }) => {
-    return (
-      <div>
-        <p>Here we will define our own custom tab.</p>
-        <p>Elements on the current page: {store.activePage?.children.length}</p>
-      </div>
-    );
-  })
+  return (
+    <div>
+      <p>Here we will define our own custom tab.</p>
+      <p>Elements on the current page: {store.activePage?.children.length}</p>
+    </div>
+  );
+});
 ```
