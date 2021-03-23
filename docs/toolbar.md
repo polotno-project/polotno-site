@@ -114,4 +114,7 @@ import {
   FontColorInput,
   SpacingInput,
 } from 'polotno/toolbar/text-toolbar';
+
+// You need to pass "store" and "element" props to these inputs
+<FontFamilyInput store={store} element={element} />;
 ```
