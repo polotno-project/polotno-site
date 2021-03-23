@@ -3,11 +3,11 @@ id: page-overview
 title: Page
 ---
 
-`Page` is a basic object that to store elements. The `store` may have several pages
+`Page` is a container for elements in the `store`. The `store` may have several pages.
 
 ```js
 const page = store.addPage({
-  background: 'grey', // "white" is default
+  background: 'grey', // default is "white"
 });
 ```
 
@@ -29,7 +29,7 @@ page.set({
 Creates an element with specified attributes. It is important to provide `type` attribute of the element.
 
 ```js
-page.addElement({
+store.activePage?.addElement({
   type: 'text',
   x: 50,
   y: 50,
@@ -44,7 +44,7 @@ You can use `children` property to access elements inside the page
 
 ```js
 // move every element by 10px to the right
-page.children.forEach((element) => {
+store.activePage?.children.forEach((element) => {
   element.set({ x: element.x + 10 });
 });
 ```
