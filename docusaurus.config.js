@@ -72,6 +72,10 @@ module.exports = {
               href: '/license',
             },
             {
+              label: 'Roadmap and bugs reports',
+              href: 'https://github.com/lavrton/polotno-board/issues',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/lavrton',
             },

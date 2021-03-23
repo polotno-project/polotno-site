@@ -38,19 +38,19 @@ type ToolbarProps = {
   store: StoreType,
   downloadButtonEnabled?: Boolean,
 
-  hideOpacity?: boolean,
   hideTextSpacing?: boolean,
   hideTextEffects?: boolean,
-  hideTextBold?: boolean,
-  hideTextItalic?: boolean,
-  hideTextUnderline?: boolean,
 
   hideImageFlip?: boolean,
   hideImageEffects?: boolean,
   hideImageCrop?: boolean,
   hideImageFit?: boolean,
 
+  hidePosition?: boolean,
+  hideOpacity?: boolean,
   hideDuplicate?: boolean,
+  hideLock?: boolean,
+  hideRemove?: boolean,
 };
 
 // example
@@ -88,7 +88,7 @@ const TextToolbar = observer(({ store }) => {
       />
       <NumericInput
         onValueChange={(fontSize) => {
-          element.set({ height: fontSize });
+          element.set({ fontSize: fontSize });
         }}
         value={element.fontSize}
         style={{ width: '50px', marginLeft: '10px' }}
@@ -100,4 +100,18 @@ const TextToolbar = observer(({ store }) => {
 });
 
 unstable_registerToolbarComponent('text', TextToolbar);
+```
+
+### Text element inputs
+
+If you want to customize the toolbar for an `text` element, you can use some built-in inputs:
+
+```js
+import {
+  FontFamilyInput,
+  FontSizeInput,
+  FontStyleGroup,
+  FontColorInput,
+  SpacingInput,
+} from 'polotno/toolbar/text-toolbar';
 ```

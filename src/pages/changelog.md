@@ -5,9 +5,17 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.17.0 - 2021-03-23
+
+- Added `fontWeight` property for `text` elements. It can have any CSS `fontWeight` values
+- `fontStyle` property of `text` element is slightly changed. It can accept only values "normal" or "italic"
+- Added a warning when polotno can't export store to an image
+- Better font loading check
+- Some internal refactoring for better components reuse
+
 ### 0.16.0 - 2021-03-12
 
-- **Breaking**. Fonts API is changed. Instead of `name` you should use `fontFamily`. 
+- **Breaking**. Fonts API is changed. Instead of `name` you should use `fontFamily`.
 
 ```js
 // old:
@@ -64,7 +72,6 @@ store.addFont({ fontFamily: 'Troika', url: path });
 - Better crop UI on toolbar
 - `custom` attribute for `page`
 - some other small bugs fixes
-
 
 ### 0.12.0 - 2021-02-08
 
@@ -139,7 +146,6 @@ store.addFont({ fontFamily: 'Troika', url: path });
 - Fixed ability to apply filters to images
 - Added ability to set custom attributes to elements with `element.set({ custom: { metaInformation: 'my-data' }})`
 
-
 ### 0.5.3
 
 - General bugs fixes and stability improvements
@@ -159,7 +165,6 @@ store.addFont({ fontFamily: 'Troika', url: path });
 - pdf export fixes
 - New button "fit image to background" in the toolbar
 - `downloadButtonEnabled` prop for toolbar component
-
 
 ### 0.4.3
 
@@ -213,7 +218,6 @@ store.addFont({ fontFamily: 'Troika', url: path });
 - Performance optimizations.
 - Better dark theme support.
 - Better text rendering and fonts load.
-
 
 ### 0.1.3
 

@@ -7,11 +7,13 @@ hide_table_of_contents: true
 
 Hello!
 
-[Polotno documentation](/docs/overview) is a good place for most answers. I am working hard to make the documentation as good as possible. 
+[Polotno documentation](/docs/overview) is a good place for most answers. I am working hard to make the documentation as good as possible.
 
 Can’t find what you're looking for in the documentation? Please do contact using the email address below.
 
 anton@polotno.dev
+
+Do you want to report a bug or make a feature request? Use [Polotno public roadmap](https://github.com/lavrton/polotno-board/issues).
 
 Also you can provide a feedback in the [Discord Chat](https://discord.gg/W2VeKgsr9J).
 

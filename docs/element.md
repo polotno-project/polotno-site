@@ -21,7 +21,6 @@ page.addElement({
 
 ## Basic actions
 
-
 ### `element.set(attrs)`
 
 Set new attributes to the element.
@@ -45,7 +44,6 @@ Move element up on z-index.
 ```js
 text.moveToBottom();
 ```
-
 
 ### `element.moveTop()`
 
@@ -102,7 +100,8 @@ page.addElement({
   placeholder: '',
   fontSize: 14,
   fontFamily: 'Roboto',
-  fontStyle: '',
+  fontStyle: 'normal', // can be normal or italic
+  fontWeight: 'normal', // can be normal or bold or some other CSS variations
   textDecoration: '',
   fill: 'black',
   align: 'center',
@@ -119,7 +118,6 @@ page.addElement({
 Enable edit mode for the text. It puts cursor inside the text and a user can do regular text editing.
 
 You can use `text.toggleEditMode()` to enter "edit mode" programmatically. For example, right after you created a new text element.
-
 
 ## Image element
 
@@ -156,6 +154,7 @@ Enter into "crop mode" of the image programmatically.
 ```js
 const svgElement = page.addElement({
   type: 'svg',
+  src: 'https://example.com/image.svg',
   x: 0,
   y: 0,
   rotation: 0,
@@ -166,7 +165,6 @@ const svgElement = page.addElement({
   brightness: 0,
   shadowEnabled: false,
   shadowBlur: 10,
-  svgSource: 'https://example.com/image.svg',
   width: 100,
   height: 100,
 });
@@ -180,4 +178,3 @@ You can replace some colors, to modify original image.
 ```js
 svgElement.replaceColor('red', 'blue');
 ```
-
