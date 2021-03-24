@@ -7,7 +7,7 @@ title: Custom elements
 **Please use it carefully. Watch [changelog](/changelog) for any changes!**
 
 By design `polotno` support three main types of elements: `text`, `image` and `svg`.
-In some cases you may want to create your own custom elements. 
+In some cases you may want to create your own custom elements.
 
 # How to create custom shapes with Polotno?
 
@@ -28,8 +28,8 @@ unstable_registerShapeModel({
   type: 'star',
   radius: 100,
   fill: 'black',
-  numPoints: 6
-})
+  numPoints: 6,
+});
 ```
 
 Now `polotno` store knows that we can define `star` model.
@@ -46,8 +46,9 @@ import { observer } from 'mobx-react-lite';
 import { Star } from 'react-konva';
 
 import { unstable_registerShapeComponent } from 'polotno/config';
-import { useSnap } from 'polotno/canvas/use-snap';
 
+// polotno util function
+import { useSnap } from 'polotno/canvas/use-snap';
 
 // every components has three main props - onClick, element and store
 export const StarElement = observer(({ onClick, element, store }) => {
@@ -111,10 +112,12 @@ export const StarElement = observer(({ onClick, element, store }) => {
     />
   );
 });
+
+// now we can register new component to draw our star
+unstable_registerShapeComponent('star', StarElement);
 ```
 
-
-### 3. Create custom top toolbar
+### 3. Create custom top toolbar (optional)
 
 Also we can define a custom toolbar to change star properties.
 
@@ -126,26 +129,24 @@ import { NumericInput, Navbar, Alignment } from '@blueprintjs/core';
 import ColorPicker from 'polotno/toolbar/color-picker';
 import { unstable_registerToolbarComponent } from 'polotno/config';
 
-
-const LineToolbar = observer(({ store }) => {
+const StarToolbar = observer(({ store }) => {
   const element = store.selectedElements[0];
 
   return (
     <Navbar.Group align={Alignment.LEFT}>
       <ColorPicker
-        value={element.stroke}
-        onChange={stroke =>
+        value={element.fill}
+        onChange={(fill) =>
           element.set({
-            stroke,
+            fill,
           })
         }
       />
       <NumericInput
-        onValueChange={val => {
-          console.log(val);
-          element.set({ height: val });
+        onValueChange={(radius) => {
+          element.set({ height: radius });
         }}
-        value={Math.round(element.height)}
+        value={element.radius}
         style={{ width: '50px', marginLeft: '10px' }}
         min={1}
         max={40}
@@ -154,5 +155,5 @@ const LineToolbar = observer(({ store }) => {
   );
 });
 
-unstable_registerToolbarComponent('line', LineToolbar);
+unstable_registerToolbarComponent('star', StarToolbar);
 ```
