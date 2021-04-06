@@ -10,7 +10,7 @@ title: Element
 - svg
 
 ```js
-page.addElement({
+const element = store.activePage.addElement({
   type: 'text',
   x: 50,
   y: 50,
@@ -21,12 +21,37 @@ page.addElement({
 
 ## Basic actions
 
+### Read properties
+
+At any time you can access any property of an element. See documentation for every type of element to see all available properties.
+
+```js
+const element = store.selectedElements[0];
+// logs type of element
+console.log(element.type);
+// logs id of element
+console.log(element.id);
+```
+
 ### `element.set(attrs)`
 
 Set new attributes to the element.
 
 ```js
 text.set({ x: text.x + 10, text: 'new text' });
+```
+
+### Custom properties
+
+You can't write ANY property directly into element. If you want to write some additional data into an element, you can use `custom` attribute.
+
+```js
+// this line will not work, because elements has no attribute userId
+element.set({ userId: '12' });
+// you can write such data into "custom" attribute
+element.set({ custom: { userId: '12' } });
+// read custom attribute
+console.log(element.custom?.userId);
 ```
 
 ### `element.moveUp()`
