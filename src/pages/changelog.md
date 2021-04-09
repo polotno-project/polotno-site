@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.0 - 2021-04-09
+
+- Simplify some semi-internal API usage
+- Updated "Elements" panel with default shapes
+- Show warning when `<Workspace />` component can't detect its size
+- PDF base64 export
+- Better snap when several objects are selected
+- Internal updates of dependencies
+
 ### 0.17.0 - 2021-03-23
 
 - Added `fontWeight` property for `text` elements. It can have any CSS `fontWeight` values
