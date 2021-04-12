@@ -100,9 +100,8 @@ export const App = ({ store }) => {
     <div
       style={{
         display: 'flex',
-        height: '100%',
-        width: '100%',
-        maxHeight: '100vh',
+        height: '100vh',
+        width: '100vw',
       }}
     >
       <div style={{ width: '300px', height: '100%', display: 'flex' }}>
