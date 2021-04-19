@@ -148,7 +148,7 @@ const UserDashboard = () => {
             <p>
               You can use Polotno only for local development or non-commercial
               project. For more information about available plans, please read{' '}
-              <a href="/#price">Polorno prices</a>.
+              <a href="/#price">Polotno prices</a>.
             </p>
 
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
