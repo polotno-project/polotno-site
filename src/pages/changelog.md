@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.2 - 2021-04-20
+
+- Better default crop behavior on image element resize
+- Internal code optimizations
+
 ### 0.18.1 - 2021-04-09
 
 - Quick fix for SVG colors detection
