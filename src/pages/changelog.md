@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.3 - 2021-04-21
+
+- Fix cursor jump on text edits
+- Fix error throw in "elements" side panel
+
 ### 0.18.2 - 2021-04-20
 
 - Better default crop behavior on image element resize
