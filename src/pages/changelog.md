@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.4 - 2021-04-22
+
+- Fix incorrect export when an element is highlighted
+
 ### 0.18.3 - 2021-04-21
 
 - Fix cursor jump on text edits

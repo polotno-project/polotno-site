@@ -35,7 +35,11 @@ module.exports = {
       type: 'category',
       label: 'Showcase',
       collapsed: false,
-      items: ['demo-full-editor', 'demo-simple-t-shirt'],
+      items: [
+        'demo-full-editor',
+        'demo-book-cover-editor',
+        'demo-simple-t-shirt',
+      ],
     },
   ],
 };
