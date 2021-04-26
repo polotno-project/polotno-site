@@ -1,13 +1,16 @@
 ---
 title: How to replace colors in SVG images
 author: Anton Lavrenov
+image: /img/replace-colors-in-svg.gif
 ---
 
 ![Color replace demo](/img/replace-colors-in-svg.gif)
 
-In `Polotno` application you can replace colors in SVG images. This post will describe basic steps to implement such functionality.
+In `Polotno` application you can replace colors in SVG images. Let me tell you how it works.
 
-## How does color replace in SVG work?
+<!--truncate-->
+
+## How color replacement is working?
 
 In order to replace colors in SVG we should:
 
@@ -63,9 +66,11 @@ export function getColors(svgString) {
 }
 ```
 
+Also take a look into https://www.npmjs.com/package/get-svg-colors-browser for that task.
+
 ## Replacing colors
 
-As soon as we have all colors used in the image, we show them in UI and ask a user to change these colors. All changed we will save in a special map object.
+As soon as we have all colors used in the image, we can show them in UI and ask a user to change these colors. All changes we will save in a special map object.
 
 ```js
 const replaceMap = {
