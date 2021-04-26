@@ -31,20 +31,8 @@ const App = () => {
   };
 
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rebeccapurple',
-      }}
-    >
-      <h3 style={{ fontFamily: 'sans-serif', color: 'thistle' }}>
-        Try to change these colors
-      </h3>
+    <div>
+      <h3 style={{ fontFamily: 'sans-serif' }}>Try to change these colors</h3>
       <div>
         {colors.map((color) => {
           return (
@@ -64,14 +52,12 @@ const App = () => {
           );
         })}
       </div>
-      <>
-        {displayColorPicker && (
-          <HexColorPicker
-            color={colorPickerSelectedColor}
-            onChange={(e) => setNewColor(colorPickerSelectedColor, e)}
-          />
-        )}
-      </>
+      {displayColorPicker && (
+        <HexColorPicker
+          color={colorPickerSelectedColor}
+          onChange={(e) => setNewColor(colorPickerSelectedColor, e)}
+        />
+      )}
       <Stage width={300} height={300}>
         <Layer>
           <Image image={image} />
