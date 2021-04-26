@@ -4,15 +4,17 @@ title: Side Panel
 
 `SidePanel` provides default set of components for adding new elements into the canvas, changing pages sizes, etc.
 
-
 ```js
 import SidePanel from 'polotno/side-panel/side-panel';
 
 const MyPanel = () => {
-  return <div><SidePanel store={store} /></div>;
-}
+  return (
+    <div>
+      <SidePanel store={store} />
+    </div>
+  );
+};
 ```
-
 
 The `SidePanel` will automatically take full width and height of its parent. So you don't have adjust its size manually. You can just setup the size of parent `<div>` with CSS.
 
@@ -24,26 +26,30 @@ You can pass `sections` property to `<SidePanel />` component to specify all ava
 import { SidePanel, DEFAULT_SECTIONS } from 'polotno/side-panel/side-panel';
 
 const MyPanel = () => {
-  return <div><SidePanel store={store} sections={DEFAULT_SECTIONS} /></div>;
-}
+  return (
+    <div>
+      <SidePanel store={store} sections={DEFAULT_SECTIONS} />
+    </div>
+  );
+};
 ```
 
 And this is how you can define in manually:
 
 ```js
 import { observer } from 'mobx-react-lite';
-import { SidePanel } from "polotno/side-panel/side-panel";
+import { SidePanel } from 'polotno/side-panel/side-panel';
 // import existing section
-import { TextSection } from "polotno/side-panel/side-panel";
+import { TextSection } from 'polotno/side-panel/side-panel';
 
 // import default tab component
-import { SectionTab } from "polotno/side-panel/tab-button";
+import { SectionTab } from 'polotno/side-panel/tab-button';
 // import our own icon
-import FaShapes from "@meronex/icons/fa/FaShapes";
+import FaShapes from '@meronex/icons/fa/FaShapes';
 
 // define the new custom section
 const CustomSection = {
-  name: "custom",
+  name: 'custom',
   Tab: (props) => (
     <SectionTab name="Custom" {...props}>
       <FaShapes icon="new-text-box" />
@@ -57,22 +63,23 @@ const CustomSection = {
         <p>Elements on the current page: {store.activePage?.children.length}</p>
       </div>
     );
-  })
+  }),
 };
 
 // we will have just two sections
 const sections = [CustomSection, TextSection];
 
 const CustomSidePanel = () => {
-  return <SidePanel store={store} sections={sections} defaultSection="custom" />
-}
+  return (
+    <SidePanel store={store} sections={sections} defaultSection="custom" />
+  );
+};
 ```
 
 Demo:
 
-
 <iframe
-    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/source/examples/polotno-custom-side-panel?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-custom-side-panel?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',
@@ -84,7 +91,6 @@ Demo:
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
   ></iframe>
 
-
 ### How to set your own default page sizes?
 
 With the same customization approach you can make your own panel for changing pages sizes:
@@ -95,12 +101,12 @@ import { observer } from 'mobx-react-lite';
 const AVAILABLE_SIZES = [
   { width: 500, height: 500 },
   { width: 1000, height: 1000 },
-  { width: 1500, height: 1500 }
+  { width: 1500, height: 1500 },
 ];
 
 // define the new custom section
 const СustomSizes = {
-  name: "sizes",
+  name: 'sizes',
   Tab: (props) => (
     <SectionTab name="Sizes" {...props}>
       <GiResize icon="new-text-box" />
@@ -113,7 +119,7 @@ const СustomSizes = {
         {AVAILABLE_SIZES.map(({ width, height }, i) => (
           <Button
             key={i}
-            style={{ width: "100%", marginBottom: "20px" }}
+            style={{ width: '100%', marginBottom: '20px' }}
             onClick={() => {
               store.setSize(width, height);
             }}
@@ -123,16 +129,13 @@ const СustomSizes = {
         ))}
       </div>
     );
-  })
+  }),
 };
 ```
 
-
-
 ### How to load custom photos?
 
-Demo: Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-load-custom-images
-
+Demo: Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-load-custom-images
 
 We can write another custom panel that will load images from any API:
 
@@ -151,8 +154,8 @@ export const PhotosPanel = observer(({ store }) => {
     // for demo images are hard coded
     // in real app here will be something like JSON structure
     setImages([
-      { url: "./carlos-lindner-zvZ-HASOA74-unsplash.jpg" },
-      { url: "./guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg" }
+      { url: './carlos-lindner-zvZ-HASOA74-unsplash.jpg' },
+      { url: './guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg' },
     ]);
   }
 
@@ -161,7 +164,7 @@ export const PhotosPanel = observer(({ store }) => {
   }, []);
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <InputGroup
         leftIcon="search"
         placeholder="Search..."
@@ -169,7 +172,7 @@ export const PhotosPanel = observer(({ store }) => {
           loadImages();
         }}
         style={{
-          marginBottom: "20px"
+          marginBottom: '20px',
         }}
       />
       <p>Demo images: </p>
@@ -181,12 +184,12 @@ export const PhotosPanel = observer(({ store }) => {
         onSelect={async (image, pos) => {
           const { width, height } = await getImageSize(image.url);
           store.activePage.addElement({
-            type: "image",
+            type: 'image',
             src: image.url,
             width,
             height,
             x: pos?.x || 0,
-            y: pos?.y || 0
+            y: pos?.y || 0,
           });
         }}
         rowsNumber={2}
@@ -198,13 +201,12 @@ export const PhotosPanel = observer(({ store }) => {
 });
 // define the new custom section
 const СustomPhotos = {
-  name: "photos",
+  name: 'photos',
   Tab: (props) => (
     <SectionTab name="Photos" {...props}>
       <MdPhotoLibrary />
     </SectionTab>
   ),
-  Panel: PhotosPanel
+  Panel: PhotosPanel,
 };
 ```
-

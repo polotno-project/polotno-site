@@ -13,7 +13,7 @@ In some cases you may want to create your own custom elements.
 
 As the demonstration we will create a custom `star` element.
 
-Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-custom-element
+Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-custom-element
 
 Creating new elements consists of three main steps.
 

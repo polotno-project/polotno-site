@@ -1,14 +1,14 @@
 ---
-title: Book cover Editor with Polotno
+title: Book cover Editor
 hide_table_of_contents: true
 ---
 
-## How to make a book cover design editor?
+### How to make a book cover design editor?
 
 The demo shows how you can to show a preview of your product with the Polotno export.
 
 <iframe
-    src="https://codesandbox.io/embed/github/lavrton/polotno-site/tree/source/examples/polotno-book-cover-editor?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-book-cover-editor?fontsize=11&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',

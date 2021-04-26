@@ -35,11 +35,15 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Resources',
           items: [
             {
               label: 'Getting Started',
               to: 'docs/overview',
+            },
+            {
+              label: 'Bog',
+              to: 'blog',
             },
             // {
             //   label: 'Second Doc',

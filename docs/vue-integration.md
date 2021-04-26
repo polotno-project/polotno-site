@@ -6,9 +6,9 @@ title: Integration with Vue framework.
 
 ### Is it possible to use `polotno` with `Vue.js` framework?
 
-Demo: https://codesandbox.io/s/github/lavrton/polotno-site/tree/source/examples/polotno-and-vue?file=/src/App.vue
+Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-and-vue?file=/src/App.vue
 
-If you don't need much customizations you can make your own application with `Vue.js` framework and embed `polotno` into it. You can use [store API](/docs/store-overview) to interact with the editor. Also you can 
+If you don't need much customizations you can make your own application with `Vue.js` framework and embed `polotno` into it. You can use [store API](/docs/store-overview) to interact with the editor. Also you can
 
 ```js
 <template>
