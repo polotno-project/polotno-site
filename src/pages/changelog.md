@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.7 - 2021-04-29
+
+- Fix cross origin images loading
+
 ### 0.18.6 - 2021-04-26
 
 - Better crop logic on image resize
