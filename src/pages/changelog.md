@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.18.5 - 2021-04-26
+### 0.18.6 - 2021-04-26
 
 - Better crop logic on image resize
 - When image is failed to load, polotno will automatically retry to load it
