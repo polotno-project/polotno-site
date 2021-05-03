@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.8 - 2021-04-03
+
+- Disable automatic image reloading
+- Added a custom hook to overwrite image loading logic
+- Smaller bundle size
+
 ### 0.18.7 - 2021-04-29
 
 - Fix cross origin images loading
