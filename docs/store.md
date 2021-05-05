@@ -60,7 +60,7 @@ console.log('Width is', store.width)
 Set new size of every page in the store
 
 ```js
-store.setSize({ width: 1000, height: 500 });
+store.setSize(1000, 500);
 ```
 
 ### `store.scale`
