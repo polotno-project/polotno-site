@@ -161,10 +161,18 @@ page.addElement({
   brightness: 0,
   shadowEnabled: false,
   shadowBlur: 10,
+
   src: 'https://example.com/image.png',
-  clipDirection: 'center-middle',
   width: 100,
   height: 100,
+  cropX: 0, // 0-1 : % from original image width
+  cropY: 0, // 0-1 : % from original image height
+  cropWidth: 1, // 0-1 : % from original image width
+  cropHeight: 1, // 0-1 : % from original image height
+  borderColor: 'black',
+  borderSize: 0,
+  flipX: false,
+  flipY: false,
 });
 ```
 
@@ -193,6 +201,8 @@ const svgElement = page.addElement({
   shadowBlur: 10,
   width: 100,
   height: 100,
+  flipX: false,
+  flipY: false,
 });
 ```
 
