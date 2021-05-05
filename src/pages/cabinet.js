@@ -155,7 +155,7 @@ const UserDashboard = () => {
               <button
                 onClick={() => {
                   Paddle.Checkout.open({
-                    product: 600588,
+                    product: 652979,
                     email: user.email,
                   });
                 }}
@@ -165,7 +165,7 @@ const UserDashboard = () => {
               <button
                 onClick={() => {
                   Paddle.Checkout.open({
-                    product: 616700,
+                    product: 652978,
                     email: user.email,
                   });
                 }}

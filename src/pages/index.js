@@ -327,7 +327,6 @@ function Home() {
                   </li>
                 </ul>
                 <p className="pricing-price">Free</p>
-                <p className="pricing-trial"></p>
                 <a
                   href={useBaseUrl('docs/overview')}
                   className="pricing-button"
@@ -357,9 +356,8 @@ function Home() {
                   </li>
                 </ul>
                 <p className="pricing-price">$100 / month</p>
-                <p className="pricing-trial">60 days trial period</p>
                 <a
-                  href="https://buy.paddle.com/product/600588"
+                  href="https://buy.paddle.com/product/652979"
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
@@ -387,9 +385,8 @@ function Home() {
                   </li>
                 </ul>
                 <p className="pricing-price">$200 / month</p>
-                <p className="trial">60 days trial period</p>
                 <a
-                  href="https://buy.paddle.com/product/616700"
+                  href="https://buy.paddle.com/product/652978"
                   className="pricing-button is-featured"
                   target="_blank"
                   onClick={() => {
@@ -404,7 +401,7 @@ function Home() {
                 <h2 className="pricing-header">Custom solution</h2>
                 <ul className="pricing-features">
                   <li className="pricing-features-item">
-                    I build everything <br /> for you
+                    Additional features on top of public API
                   </li>
                   <li className="pricing-features-item">
                     Full access to the customization source code
@@ -418,7 +415,6 @@ function Home() {
                   </li>
                 </ul>
                 <p className="pricing-price">From $10 000</p>
-                <p className="pricing-trial"></p>
                 <a
                   href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   className="pricing-button"
