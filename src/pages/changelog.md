@@ -5,7 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.18.8 - 2021-04-03
+### 0.18.9 - 2021-05-07
+
+- Fixed image loading when svg is used as source
+- Fixed `whenLoaded` detection for svg with color replaced
+- Fixed selection on duplicate
+
+### 0.18.8 - 2021-05-03
 
 - Disable automatic image reloading
 - Added a custom hook to overwrite image loading logic
