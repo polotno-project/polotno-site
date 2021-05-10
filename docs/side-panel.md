@@ -97,6 +97,9 @@ With the same customization approach you can make your own panel for changing pa
 
 ```js
 import { observer } from 'mobx-react-lite';
+import { SectionTab } from 'polotno/side-panel/tab-button';
+import { Button } from '@blueprintjs/core';
+import { GiResize } from "react-icons/gi";
 
 const AVAILABLE_SIZES = [
   { width: 500, height: 500 },
