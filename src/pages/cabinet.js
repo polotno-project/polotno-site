@@ -9,11 +9,9 @@ const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 // const isLocalhost =
 //   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
 
-const isLocalhost = false;
+const isLocalhost = true;
 
-const POLOTNO_API = isLocalhost
-  ? 'http://localhost:3001/api'
-  : 'https://api.polotno.dev/api';
+const POLOTNO_API = 'https://api.polotno.dev/api';
 
 const PRODUCTION_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
@@ -29,8 +27,25 @@ const UserDashboard = () => {
 
   const [subscription, setSubscription] = React.useState(null);
   const [keys, setKeys] = React.useState(null);
-  const [createStatus, setCreateState] = React.useState(null);
+  const [domains, setDomains] = React.useState(null);
+  const [createKeyStatus, setKeyCreateStatus] = React.useState(null);
   const [removingKey, setRemovingKey] = React.useState(null);
+  const [removingDomain, setRemovingDomain] = React.useState(null);
+
+  const [createDomainStatus, setDomainCreateStatus] = React.useState(null);
+
+  const loadDomains = async () => {
+    const accessToken = await getAccessTokenSilently({});
+
+    const req = await fetch(POLOTNO_API + '/get-user-domains', {
+      method: 'GET',
+      headers: {
+        Authorization: accessToken,
+      },
+    });
+    const res = await req.json();
+    setDomains(res);
+  };
 
   const loadKeys = async () => {
     const accessToken = await getAccessTokenSilently({});
@@ -61,6 +76,7 @@ const UserDashboard = () => {
   React.useEffect(() => {
     loadKeys();
     loadSubscription();
+    loadDomains();
   }, [user]);
 
   React.useEffect(() => {
@@ -76,7 +92,7 @@ const UserDashboard = () => {
   }, []);
 
   const createKey = async () => {
-    setCreateState('loading');
+    setKeyCreateStatus('loading');
     const accessToken = await getAccessTokenSilently({});
 
     const req = await fetch(POLOTNO_API + '/create-user-key', {
@@ -87,7 +103,7 @@ const UserDashboard = () => {
     });
     const res = await req.json();
     setKeys(res);
-    setCreateState(null);
+    setKeyCreateStatus(null);
   };
 
   const deleteKey = async (key) => {
@@ -106,6 +122,43 @@ const UserDashboard = () => {
     setRemovingKey(null);
   };
 
+  const domainRef = React.createRef();
+  const createDomain = async () => {
+    const domain = domainRef.current.value;
+    if (!domain) {
+      return;
+    }
+    setDomainCreateStatus('loading');
+    const accessToken = await getAccessTokenSilently({});
+
+    const req = await fetch(POLOTNO_API + '/create-user-domain', {
+      method: 'POST',
+      headers: {
+        Authorization: accessToken,
+      },
+      body: JSON.stringify({ domain }),
+    });
+    const res = await req.json();
+    setDomains(res);
+    setDomainCreateStatus(null);
+  };
+
+  const deleteDomain = async (domain) => {
+    setRemovingDomain(domain);
+    const accessToken = await getAccessTokenSilently({});
+
+    const req = await fetch(POLOTNO_API + '/delete-user-domain', {
+      method: 'POST',
+      headers: {
+        Authorization: accessToken,
+      },
+      body: JSON.stringify({ domain }),
+    });
+    const res = await req.json();
+    setDomains(res);
+    setRemovingDomain(null);
+  };
+
   return (
     <div>
       <h3>Hey, {user.nickname || user.name || user.email} </h3>
@@ -115,10 +168,10 @@ const UserDashboard = () => {
 
       <div style={{ maxWidth: '600px', margin: 'auto' }}>
         {!keys && <h3>Loading API keys...</h3>}
-        {keys && !keys.length && <h3>You don't have any API keys yet...</h3>}
+        {keys && <h3>API keys</h3>}
+        {keys && !keys.length && <p>You don't have any API keys yet...</p>}
         {keys && keys.length ? (
           <React.Fragment>
-            <h3>API keys</h3>
             {keys.map((key) => (
               <div className={styles.keyRow} key={key}>
                 <pre>{key}</pre>
@@ -136,9 +189,43 @@ const UserDashboard = () => {
         ) : null}
 
         {keys && (
-          <button onClick={createKey} disabled={createStatus === 'loading'}>
-            {createStatus === 'loading' ? 'Creating...' : 'Create new key'}
+          <button onClick={createKey} disabled={createKeyStatus === 'loading'}>
+            {createKeyStatus === 'loading' ? 'Creating...' : 'Create new key'}
           </button>
+        )}
+
+        {!domains && <h3>Loading domains data...</h3>}
+        {domains && <h3>Allowed domains</h3>}
+        {domains && !domains.length ? (
+          <p>You don't have any allowed domains yet. </p>
+        ) : null}
+        {domains && domains.length ? (
+          <React.Fragment>
+            {domains.map((domain) => (
+              <div className={styles.keyRow} key={domain}>
+                <pre>{domain}</pre>
+                <button
+                  onClick={() => {
+                    deleteDomain(domain);
+                  }}
+                  disabled={removingDomain === domain}
+                >
+                  {removingDomain === domain ? 'Removing...' : 'Remove'}
+                </button>
+              </div>
+            ))}
+          </React.Fragment>
+        ) : null}
+        {domains && (
+          <div className={styles.keyRow}>
+            <input ref={domainRef} placeholder="https://example.com"></input>
+            <button
+              onClick={createDomain}
+              disabled={createDomainStatus === 'loading'}
+            >
+              {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
+            </button>
+          </div>
         )}
         <hr />
         {!subscription && <h3>Loading subscription data...</h3>}
@@ -146,8 +233,9 @@ const UserDashboard = () => {
           <React.Fragment>
             <h3>You have no any subscriptions yet...</h3>
             <p>
-              You can use Polotno only for local development or non-commercial
-              project. For more information about available plans, please read{' '}
+              You can use Polotno only for{' '}
+              <strong>local development or non-commercial projects</strong>. For
+              more information about available plans, please read{' '}
               <a href="/#price">Polotno prices</a>.
             </p>
 

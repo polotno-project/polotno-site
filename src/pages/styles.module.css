@@ -52,6 +52,7 @@ h2 {
 
 .cabinetPage h3 {
   padding-bottom: 20px;
+  padding-top: 40px;
   text-align: center;
 }
 
@@ -82,6 +83,13 @@ h2 {
 .keyRow pre {
   display: inline-block;
   width: calc(100% - 90px);
+  margin: 0;
+}
+
+.keyRow input {
+  display: inline-block;
+  width: calc(100% - 90px);
+  padding: 10px;
   margin: 0;
 }
 

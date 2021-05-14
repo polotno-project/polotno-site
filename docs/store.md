@@ -5,10 +5,7 @@ title: Store overview
 
 `Store` is a basic data model object they you are going to work with. It has about %90 API functions provided by `Polotno`.
 
-
-
 ## Working with pages
-
 
 ```js
 import { createStore } from 'polotno/model/store';
@@ -19,17 +16,15 @@ const store = createStore({
 
 ### `store.addPage()`
 
-
 Store is a set of pages. Each pages have elements on it.
 
 ```js
-const page = store.addPage()
+const page = store.addPage();
 ```
 
 ### `store.pages`
 
 The getter. Returns all pages of the store.
-
 
 ### `store.activePage`
 
@@ -41,9 +36,8 @@ Remove pages from the store
 
 ```js
 // remove current page
-store.deletePages([store.activePage.id])
+store.deletePages([store.activePage.id]);
 ```
-
 
 ## UI
 
@@ -52,15 +46,20 @@ store.deletePages([store.activePage.id])
 Returns size of every page.
 
 ```js
-console.log('Width is', store.width)
+console.log('Width is', store.width);
 ```
 
-### `store.setSize(size)`
+### `store.setSize(width, height, shouldUseMagicResize?)`
 
 Set new size of every page in the store
 
 ```js
+// just change the pages size
 store.setSize(1000, 500);
+
+// resize all pages and apply "magic resize"
+// magic resize will automatically change sizes of all elements and adjust their position for a new size
+store.setSize(1000, 500, true);
 ```
 
 ### `store.scale`
@@ -68,7 +67,7 @@ store.setSize(1000, 500);
 Getter for current zoom level of the active page.
 
 ```js
-console.log('zoom is', store.scale)
+console.log('zoom is', store.scale);
 ```
 
 ### `store.setScale(size)`
@@ -79,7 +78,6 @@ Change zooming of active page.
 store.setScale(2);
 ```
 
-
 ## Working with elements
 
 ### `store.selectedElements`
@@ -89,7 +87,6 @@ Returns array of currently selected elements on the current page
 ```js
 const firstSelected = store.selectedElements[0];
 ```
-
 
 ### `store.selectElements(ids)`
 
@@ -127,15 +124,13 @@ Can we undo state?
 Undo last changes
 
 ```js
-store.activeElements[0].set({ x: 10});
+store.activeElements[0].set({ x: 10 });
 store.history.undo();
 ```
-
 
 ### `store.history.canRedo`
 
 Can we redo state?
-
 
 ### `store.history.redo()`
 
@@ -154,8 +149,11 @@ store.history.redo();
 Batch several actions into one history entry.
 
 ```js
-store.history.transaction(async ()=> {
-  const element = store.activePage.addElement({ type: 'text', text: 'loading' });
+store.history.transaction(async () => {
+  const element = store.activePage.addElement({
+    type: 'text',
+    text: 'loading',
+  });
   const text = await serverRequest();
   element.set({ text });
 });
@@ -166,9 +164,9 @@ store.history.transaction(async ()=> {
 Run transaction that should be ignored in history
 
 ```js
-store.history.ignore(()=> {
+store.history.ignore(() => {
   // that change will be NOT create new history point
-  element.set({ x: 0, y: 0});
+  element.set({ x: 0, y: 0 });
 });
 ```
 
@@ -179,7 +177,6 @@ Create a new history transaction. After that command all changes will be recorde
 ### `store.history.endTransaction()`
 
 Finish created transaction and record all changes as one history point.
-
 
 ## Serializations
 
@@ -201,19 +198,17 @@ Load passed json into the store. It will update all properties, pages and elemen
 ```js
 import { createStore } from 'polotno/model/store';
 const store = createStore({
-  key: YOUR_API_KEY // you can create it here: https://polotno.dev/cabinet/
+  key: YOUR_API_KEY, // you can create it here: https://polotno.dev/cabinet/
 });
 
 // save to JSON at some point of time
 const json = store.toJSON();
-
 
 // load from JSON
 // remember that "json" should be a javascript object
 // if you have a json string, you may need to parse it - JSON.parse(string);
 store.loadJSON(json);
 ```
-
 
 ## Export
 
@@ -226,7 +221,7 @@ Convert store into base64 URL
 store.toDataURL();
 
 // make exported image 2x bigger (higher quality)
-store.toDataURL({ pixelRatio: 2})
+store.toDataURL({ pixelRatio: 2 });
 
 // ignore page background on export
 store.toDataURL({ ignoreBackground: true });
@@ -234,7 +229,6 @@ store.toDataURL({ ignoreBackground: true });
 // export as jpg
 store.toDataURL({ mimeType: 'image/jpg' });
 ```
-
 
 ### `store.saveAsImage()`
 
@@ -248,7 +242,7 @@ store.saveAsImage({ fileName: 'polotno.png' });
 store.saveAsImage({ mimeType: 'image/jpg' });
 
 // make exported image 2x bigger (higher quality)
-store.saveAsImage({ pixelRatio: 2})
+store.saveAsImage({ pixelRatio: 2 });
 
 // ignore page background on export
 store.saveAsImage({ ignoreBackground: true });
@@ -261,13 +255,12 @@ store.saveAsImage({ pageId: store.pages[1].id });
 
 `saveAsPDF` will export drawing into PDF and save it as local file. By default it exports just the first page. If you need to export another pages, pass `pageId` property.
 
-
 ```js
 // default export
 store.saveAsPDF({ fileName: 'polotno.pdf' });
 
 // make exported image 2x bigger (higher quality)
-store.saveAsPDF({ pixelRatio: 2})
+store.saveAsPDF({ pixelRatio: 2 });
 
 // ignore page background on export
 store.saveAsPDF({ ignoreBackground: true });
@@ -285,8 +278,8 @@ The function to add new custom font to the project.
 ```js
 store.addFont({
   fontFamily: 'MyCustomFont',
-  url: serverUrlOrBase64
-})
+  url: serverUrlOrBase64,
+});
 ```
 
 Also you can use a richer API for more control:
@@ -296,18 +289,16 @@ store.addFont({
   fontFamily: 'MyCustomFont',
   styles: [
     {
-      src:
-        'url(pathToNormalFile.ttf)',
+      src: 'url(pathToNormalFile.ttf)',
       fontStyle: 'normal',
       fontWeight: 'normal',
     },
     {
-      src:
-        'url(pathToBoldFile.ttf)',
+      src: 'url(pathToBoldFile.ttf)',
       fontStyle: 'normal',
       fontWeight: 'bold',
-    }
-  ]
+    },
+  ],
 });
 ```
 
@@ -315,10 +306,9 @@ Or you can just register font in the store and then **manually** add required CS
 
 ```js
 store.addFont({
-  fontFamily: 'MyCustomFont'
-})
+  fontFamily: 'MyCustomFont',
+});
 ```
-
 
 ### `store.removeFont(name)`
 
