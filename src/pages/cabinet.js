@@ -9,7 +9,7 @@ const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 // const isLocalhost =
 //   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
 
-const isLocalhost = true;
+const isLocalhost = false;
 
 const POLOTNO_API = 'https://api.polotno.dev/api';
 
