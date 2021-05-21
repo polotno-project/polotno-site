@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.18.10 - 2021-05-21
+
+- Better crop behavior on `image` resize
+- Fix crop on resize of SVG elements
+- More basic shapes on elements tab
+- Fix font preview when you upload new font
+- Fix missing color replacement on `svg` elements
+- Add some warnings for better key usages
+
 ### 0.18.9 - 2021-05-07
 
 - Fixed image loading when svg is used as source
