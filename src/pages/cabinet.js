@@ -217,16 +217,18 @@ const UserDashboard = () => {
           </React.Fragment>
         ) : null}
         {domains && (
-          <div className={styles.keyRow}>
+          <React.Fragment>
+            <div className={styles.keyRow}>
+              <input ref={domainRef} placeholder="https://example.com"></input>
+              <button
+                onClick={createDomain}
+                disabled={createDomainStatus === 'loading'}
+              >
+                {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
+              </button>
+            </div>
             <p>It may take time to deploy the domain updates...</p>
-            <input ref={domainRef} placeholder="https://example.com"></input>
-            <button
-              onClick={createDomain}
-              disabled={createDomainStatus === 'loading'}
-            >
-              {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
-            </button>
-          </div>
+          </React.Fragment>
         )}
         <hr />
         {!subscription && <h3>Loading subscription data...</h3>}
