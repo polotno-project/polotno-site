@@ -218,6 +218,7 @@ const UserDashboard = () => {
         ) : null}
         {domains && (
           <div className={styles.keyRow}>
+            <p>It may take time to deploy the domain updates...</p>
             <input ref={domainRef} placeholder="https://example.com"></input>
             <button
               onClick={createDomain}
