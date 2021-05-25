@@ -38,6 +38,23 @@ store.activePage?.addElement({
 });
 ```
 
+### `page.clone()`
+
+Duplicate the page.
+
+```js
+store.activePage?.clone();
+```
+
+### `page.setZIndex(index)`
+
+Change order of pages
+
+```js
+// move active page to the beginning of list
+store.activePage?.zIndex(0);
+```
+
 ### `page.children`
 
 You can use `children` property to access elements inside the page
