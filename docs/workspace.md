@@ -27,6 +27,6 @@ The `Workspace` will automatically take full width and height of its parent. So 
 
 Optionally you can hide UI to add/remove/duplicate pages.
 
-```html
+```js
 <Workspace store={store} pageControlsEnabled={false} />
 ```

@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 ### 0.19.0 - 2021-05-25
 
-- New UI to control pages from the canvas
+- New UI to control pages from the canvas. You can hide it if you want https://polotno.dev/docs/workspace#hide-page-controls
 - Better PDF export with multiple pages in one file
 
 ### 0.18.10 - 2021-05-21
