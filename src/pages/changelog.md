@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.19.1 - 2021-05-25
+
+- Scroll and UI hotfixes
+
+### 0.19.0 - 2021-05-25
+
+- New UI to control pages from the canvas
+- Better PDF export with multiple pages in one file
+
 ### 0.18.10 - 2021-05-21
 
 - Better crop behavior on `image` resize
