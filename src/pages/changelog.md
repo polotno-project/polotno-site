@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.20.0 - 2021-05-27
+
+- Add support for all google fonts. Now `polotno` will automatically load them. If you don't need them all you can always change that in https://polotno.dev/docs/config#how-to-change-available-fonts
+- Fix canvas crashes on small images
+- Added `polotno-side-panel-tab` class for some customizations
+
 ### 0.19.1 - 2021-05-25
 
 - Scroll and UI hotfixes
