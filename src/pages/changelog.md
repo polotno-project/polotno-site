@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.21.1 - 2021-05-28
+
+- Translation API: https://polotno.dev/docs/config#how-to-translate-ui
+- Lock button UI fixes
+
 ### 0.20.1 - 2021-05-27
 
 - Add support for all google fonts. Now `polotno` will automatically load them. If you don't need them all you can always change that in https://polotno.dev/docs/config#how-to-change-available-fonts

@@ -2,6 +2,31 @@
 title: Polotno Editor configuration
 ---
 
+### How to translate UI?
+
+If you want to translate UI into a different language or change some labels you can use this:
+
+```js
+import { setTranslations } from 'polotno/config';
+setTranslations({
+  sidePanel: {
+    text: 'Текст',
+    myFonts: 'Мои шрифты',
+  },
+});
+```
+
+If you need to know full scheme of translation object you can use:
+
+```js
+import { getTranslations } from 'polotno/config';
+
+// log full translations object
+console.log(getTranslations());
+```
+
+If you are working on a translation for any language, please share your result with anton@polotno.dev. So we can have a large resource of translations.
+
 ### How to change Upload behavior?
 
 The default [SidePanel Component](/docs/side-panel) has `Upload` tab to import local images into the project. By default `polotno` just converting local file into base64 string.
@@ -19,7 +44,7 @@ async function upload(localFile) {
   formData.append('files[]', localFile);
   const res = await fetch(yourServerURL, {
     method: 'POST',
-    body: formData
+    body: formData,
   });
   const json = await res.json();
   const { url } = json;
