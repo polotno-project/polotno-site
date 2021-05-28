@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ### 0.21.1 - 2021-05-28
 
-- Translation API: https://polotno.dev/docs/config#how-to-translate-ui
+- [Translation API](/docs/config#how-to-translate-ui)
 - Lock button UI fixes
 
 ### 0.20.1 - 2021-05-27
