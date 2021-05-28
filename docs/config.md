@@ -25,7 +25,7 @@ import { getTranslations } from 'polotno/config';
 console.log(getTranslations());
 ```
 
-**If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.dev or on [discord](https://discord.gg/W2VeKgsr9J). We can find better defaults for UI and have a predefined collection of translations.**
+**If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.dev or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
 
 ### How to change Upload behavior?
 
