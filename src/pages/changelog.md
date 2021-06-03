@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.22.2 - 2021-06-03
+
+- General bugs fixes
+
 ### 0.22.1 - 2021-06-02
 
 - **New UI for "text" tab with templates**

@@ -5,7 +5,7 @@ title: Side Panel
 `SidePanel` provides default set of components for adding new elements into the canvas, changing pages sizes, etc.
 
 ```js
-import SidePanel from 'polotno/side-panel/side-panel';
+import { SidePanel } from 'polotno/side-panel';
 
 const MyPanel = () => {
   return (
@@ -23,7 +23,7 @@ The `SidePanel` will automatically take full width and height of its parent. So 
 You can pass `sections` property to `<SidePanel />` component to specify all available tabs manually. Here is the default UI:
 
 ```js
-import { SidePanel, DEFAULT_SECTIONS } from 'polotno/side-panel/side-panel';
+import { SidePanel, DEFAULT_SECTIONS } from 'polotno/side-panel';
 
 const MyPanel = () => {
   return (
@@ -38,12 +38,12 @@ And this is how you can define in manually:
 
 ```js
 import { observer } from 'mobx-react-lite';
-import { SidePanel } from 'polotno/side-panel/side-panel';
+import { SidePanel } from 'polotno/side-panel';
 // import existing section
-import { TextSection } from 'polotno/side-panel/side-panel';
+import { TextSection } from 'polotno/side-panel';
 
 // import default tab component
-import { SectionTab } from 'polotno/side-panel/tab-button';
+import { SectionTab } from 'polotno/side-panel';
 // import our own icon
 import FaShapes from '@meronex/icons/fa/FaShapes';
 
@@ -97,7 +97,7 @@ With the same customization approach you can make your own panel for changing pa
 
 ```js
 import { observer } from 'mobx-react-lite';
-import { SectionTab } from 'polotno/side-panel/tab-button';
+import { SectionTab } from 'polotno/side-panel';
 import { Button } from '@blueprintjs/core';
 import { GiResize } from "react-icons/gi";
 

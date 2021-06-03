@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Toolbar from "polotno/toolbar/toolbar";
-import Workspace from "polotno/canvas/workspace";
-import { SidePanel } from "polotno/side-panel/side-panel";
+import { Toolbar } from "polotno/toolbar/toolbar";
+import { Workspace } from "polotno/canvas/workspace";
+import { SidePanel } from "polotno/side-panel";
 import { createStore } from "polotno/model/store";
 
 import { Preview } from "./preview";

@@ -90,10 +90,10 @@ Set of React components for general canvas editor app.
 - side panels for adding new objects
 
 ```js
-import Toolbar from 'polotno/toolbar/toolbar';
-import ZoomButtons from 'polotno/toolbar/zoom-buttons';
-import SidePanel from 'polotno/side-panel/side-panel';
-import Workspace from 'polotno/canvas/workspace';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { SidePanel } from 'polotno/side-panel';
+import { Workspace } from 'polotno/canvas/workspace';
 
 export const App = ({ store }) => {
   return (

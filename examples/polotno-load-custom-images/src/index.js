@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { observer } from "mobx-react-lite";
 import { InputGroup } from "@blueprintjs/core";
 import { Workspace } from "polotno/canvas/workspace";
-import { SidePanel } from "polotno/side-panel/side-panel";
+import { SidePanel } from "polotno/side-panel";
 import { Toolbar } from "polotno/toolbar/toolbar";
 import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
 import { createStore } from "polotno/model/store";
@@ -19,9 +19,9 @@ import {
   UploadSection,
   BackgroundSection,
   SizeSection
-} from "polotno/side-panel/side-panel";
+} from "polotno/side-panel";
 //
-import { SectionTab } from "polotno/side-panel/tab-button";
+import { SectionTab } from "polotno/side-panel";
 import { ImagesGrid } from "polotno/side-panel/images-grid";
 // import our own icon
 import MdPhotoLibrary from "@meronex/icons/md/MdPhotoLibrary";
