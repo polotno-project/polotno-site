@@ -213,3 +213,55 @@ const СustomPhotos = {
   Panel: PhotosPanel,
 };
 ```
+
+### How to use `<ImagesGrid />` component?
+
+`<ImagesGrid />` is a React component that:
+
+- Displays an array of any items as images
+- Supports infinite scrolling API
+- Supports drag&drop from side panel into canvas
+
+```js
+import {  ImagesGrid } from 'polotno/side-panel/images-grid';
+
+<ImagesGrid
+  // pass an array of items that have any image information
+  images={[{ url: 'example.png' }, { url: 'example.png' }]}
+  // a function to get image URL from an item of the array
+  getPreview={(item) => item.url}
+  // this function will be called when user is clicked on image or dragged it into canvas
+  onSelect={async (image, pos) => {
+    // "pos" will be defined when a user dragged image
+    // you can use it to place new element on the correct position
+    // if a user just click on image, "pos" will be undefined
+    const width = 100;
+    const height = 100;
+
+    const x = (pos?.x || store.width / 2) - width / 2;
+    const y = (pos?.y || store.height / 2) - height / 2;
+    store.activePage?.addElement({
+      type: 'image',
+      src: image.url,
+      width,
+      height,
+      x,
+      y,
+    });
+  }}
+  // should we should loading indicator at the end?
+  isLoading={false}
+  // load more will be called when user scrolled to the bottom of the list
+  // you can request new data from your API there.
+  loadMore={() => {}}
+  // show special component at the bottom of every image element
+  getCredit={(image) => (
+    <span>
+      Photo by Anton
+    </span>
+  )}
+  // how many columns do we need? It actually should be called "columnsNumber"
+  // we will rename it later
+  rowsNumber={2}
+/>
+```
