@@ -29,7 +29,7 @@ module.exports = {
       type: 'category',
       label: 'Misc',
       collapsed: false,
-      items: ['custom-element', 'server-side', 'vue-integration'],
+      items: ['custom-element', 'templates-library', 'server-side', 'vue-integration'],
     },
     {
       type: 'category',

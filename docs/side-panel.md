@@ -138,7 +138,7 @@ const СustomSizes = {
 
 ### How to load custom photos?
 
-Demo: Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-load-custom-images
+Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-load-custom-images
 
 We can write another custom panel that will load images from any API:
 

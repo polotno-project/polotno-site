@@ -1,7 +1,7 @@
 {
-  "name": "polotno-load-custom-images",
+  "name": "polotno-templates-library",
   "version": "1.0.0",
-  "description": "A Polotno editor demo",
+  "description": "Polotno Editor demo",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
