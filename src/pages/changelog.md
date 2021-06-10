@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.23.0 - 2021-06-10
+
+- Search in Background tab
+- Add a warning when a font is not loading
+
 ### 0.22.2 - 2021-06-03
 
 - General bugs fixes
