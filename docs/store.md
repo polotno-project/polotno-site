@@ -109,7 +109,7 @@ store.deleteElements([element1.id, element2.id]);
 Finds elements on the store by passed id:
 
 ```js
-const element = store.getElementBuId('some-id');
+const element = store.getElementById('some-id');
 element.set({ x: 0 });
 ```
 
