@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.24.0 - 2021-06-18
+
+- **New Templates side panel**
+- PDF export file size optimizations
+- Improve SVG elements quality
+- Better typescript support
+
 ### 0.23.0 - 2021-06-10
 
 - Search in Background tab
