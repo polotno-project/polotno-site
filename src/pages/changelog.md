@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.24.2 - 2021-06-25
+
+- Better UI for size panel
+- Font loading fixes
+
 ### 0.24.1 - 2021-06-20
 
 - Quick fix for possible crashes of `<ImagesGrid />` components in the side panel
