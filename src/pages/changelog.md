@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 ### 0.24.3 - 2021-07-01
 
-- Drop API for `<ImagesGrid />` and side-panel. See https://polotno.dev/docs/side-panel#how-to-use-imagesgrid--component
+- Drop API for `<ImagesGrid />` and side-panel. See (SidePanel Docs)[/docs/side-panel#how-to-use-imagesgrid--component].
 - Fix `polotno` crash on some data
 - Better templates loading on side panel
 
