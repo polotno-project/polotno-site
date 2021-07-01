@@ -99,7 +99,7 @@ With the same customization approach you can make your own panel for changing pa
 import { observer } from 'mobx-react-lite';
 import { SectionTab } from 'polotno/side-panel';
 import { Button } from '@blueprintjs/core';
-import { GiResize } from "react-icons/gi";
+import { GiResize } from 'react-icons/gi';
 
 const AVAILABLE_SIZES = [
   { width: 500, height: 500 },
@@ -184,7 +184,11 @@ export const PhotosPanel = observer(({ store }) => {
       <ImagesGrid
         images={images}
         getPreview={(image) => image.url}
-        onSelect={async (image, pos) => {
+        onSelect={async (image, pos, element) => {
+          // image - an item from your array
+          // pos - relative mouse position on drop. undefined if user just clicked on image
+          // element - model from your store if images was dropped on an element.
+          //    Can be useful if you want to change some props on existing element instead of creating a new one
           const { width, height } = await getImageSize(image.url);
           store.activePage.addElement({
             type: 'image',
@@ -223,7 +227,7 @@ const СustomPhotos = {
 - Supports drag&drop from side panel into canvas
 
 ```js
-import {  ImagesGrid } from 'polotno/side-panel/images-grid';
+import { ImagesGrid } from 'polotno/side-panel/images-grid';
 
 <ImagesGrid
   // pass an array of items that have any image information
@@ -231,10 +235,11 @@ import {  ImagesGrid } from 'polotno/side-panel/images-grid';
   // a function to get image URL from an item of the array
   getPreview={(item) => item.url}
   // this function will be called when user is clicked on image or dragged it into canvas
-  onSelect={async (image, pos) => {
-    // "pos" will be defined when a user dragged image
-    // you can use it to place new element on the correct position
-    // if a user just click on image, "pos" will be undefined
+  onSelect={async (image, pos, element) => {
+    // image - an item from your array
+    // pos - relative mouse position on drop. undefined if user just clicked on image
+    // element - model from your store if images was dropped on an element.
+    //    Can be useful if you want to change some props on existing element instead of creating a new one
     const width = 100;
     const height = 100;
 
@@ -255,13 +260,33 @@ import {  ImagesGrid } from 'polotno/side-panel/images-grid';
   // you can request new data from your API there.
   loadMore={() => {}}
   // show special component at the bottom of every image element
-  getCredit={(image) => (
-    <span>
-      Photo by Anton
-    </span>
-  )}
+  getCredit={(image) => <span>Photo by Anton</span>}
   // how many columns do we need? It actually should be called "columnsNumber"
   // we will rename it later
   rowsNumber={2}
+/>;
+```
+
+### How to drop elements from side panel into workspace?
+
+If you don't want to use `<ImagesGrid />` component, you have to implement drop&drop of DOM elements by yourself. However `polotno` has some tools to listen to drop event on the workspace. You can use this:
+
+```js
+import { unstable_registerNextDomDrop } from 'polotno/config';
+
+// then in your components inside side panel you can do something like this:
+ <img
+  draggable
+  onDragStart={() => {
+    registerNextDomDrop((pos, element) => {
+      // here you can do you logic
+      // probably you want to create element on the canvas
+      // "pos" - is relative mouse position of drop
+      // "element" - is element from your store in case when DOM object is dropped on another element
+    });
+  }}
+  onDragEnd={() => {
+    registerNextDomDrop(null);
+  }}
 />
 ```
