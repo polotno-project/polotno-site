@@ -42,8 +42,12 @@ module.exports = {
               to: 'docs/overview',
             },
             {
-              label: 'Bog',
-              to: 'blog',
+              label: 'Roadmap and bugs reports',
+              href: 'https://github.com/lavrton/polotno-board/issues',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
             // {
             //   label: 'Second Doc',
@@ -76,8 +80,8 @@ module.exports = {
               href: '/license',
             },
             {
-              label: 'Roadmap and bugs reports',
-              href: 'https://github.com/lavrton/polotno-board/issues',
+              label: 'Privacy',
+              href: '/privacy',
             },
             {
               label: 'Twitter',
