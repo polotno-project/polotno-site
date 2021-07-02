@@ -5,6 +5,9 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.24.4 - 2021-07-02
+
+- Various hot fixes: better loading indicator, fix infinite templates loading, fix js error on object drop
 
 ### 0.24.3 - 2021-07-01
 
