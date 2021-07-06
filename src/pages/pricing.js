@@ -126,7 +126,7 @@ function Home() {
                 </ul>
                 <p className="pricing-price">From $10 000</p>
                 <a
-                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  href="mailto:sales@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
@@ -149,7 +149,7 @@ function Home() {
         >
           These plans don't fit your needs?{' '}
           <a
-            href="mailto:anton@polotno.dev?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
+            href="mailto:sales@polotno.dev?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
             target="_blank"
           >
             Tell us more
@@ -176,8 +176,6 @@ function Home() {
               There is a "Custom Solution" for the case if your resources are very limited or your want to boost the development time.
               "From $10 000" price is just a theoretical example. The exact price may be very different (usually higher) and discussed individually.
             </p>
-
-
             <p></p>
           </div>
         </section>

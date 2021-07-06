@@ -31,4 +31,4 @@ The payment process is handled by [Paddle](https://paddle.com/). If you choose t
 
 All emails are sent using [Mailchimp](https://mailchimp.com/). See the [Mailchimp Privacy Policy](https://mailchimp.com/legal/privacy/) for full details.
 
-Drop an email to anton@polotno.dev if you have any questions, comments, or concerns.
+Drop an email to legal@polotno.dev if you have any questions, comments, or concerns.
