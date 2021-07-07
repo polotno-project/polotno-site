@@ -1,14 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { observer } from "mobx-react-lite";
-import { InputGroup } from "@blueprintjs/core";
-import { Workspace } from "polotno/canvas/workspace";
-import { SidePanel } from "polotno/side-panel";
-import { Toolbar } from "polotno/toolbar/toolbar";
-import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
-import { createStore } from "polotno/model/store";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { observer } from 'mobx-react-lite';
+import { InputGroup } from '@blueprintjs/core';
 
-import { getImageSize } from "polotno/utils/image";
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+
+import { Workspace } from 'polotno/canvas/workspace';
+import { SidePanel } from 'polotno/side-panel';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { createStore } from 'polotno/model/store';
+import { getImageSize } from 'polotno/utils/image';
 
 // import all default sections
 // we will not use all of them in the demo
@@ -18,25 +20,25 @@ import {
   ElementsSection,
   UploadSection,
   BackgroundSection,
-  SizeSection
-} from "polotno/side-panel";
+  SizeSection,
+} from 'polotno/side-panel';
 //
-import { SectionTab } from "polotno/side-panel";
-import { ImagesGrid } from "polotno/side-panel/images-grid";
+import { SectionTab } from 'polotno/side-panel';
+import { ImagesGrid } from 'polotno/side-panel/images-grid';
 // import our own icon
-import MdPhotoLibrary from "@meronex/icons/md/MdPhotoLibrary";
+import MdPhotoLibrary from '@meronex/icons/md/MdPhotoLibrary';
 
 const store = createStore({
   // this is a demo key just for that project
   // (!) please don't use it in your projects
   // to create your own API key please go here: https://polotno.dev/cabinet
-  key: "nFA5H9elEytDyPyvKL7T"
+  key: 'nFA5H9elEytDyPyvKL7T',
 });
 
 store.addPage();
 store.activePage.addElement({
-  type: "text",
-  text: "hello"
+  type: 'text',
+  text: 'hello',
 });
 
 export const PhotosPanel = observer(({ store }) => {
@@ -50,8 +52,8 @@ export const PhotosPanel = observer(({ store }) => {
     // for demo images are hard coded
     // in real app here will be something like JSON structure
     setImages([
-      { url: "./carlos-lindner-zvZ-HASOA74-unsplash.jpg" },
-      { url: "./guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg" }
+      { url: './carlos-lindner-zvZ-HASOA74-unsplash.jpg' },
+      { url: './guillaume-de-germain-TQWJ4rQnUHQ-unsplash.jpg' },
     ]);
   }
 
@@ -60,7 +62,7 @@ export const PhotosPanel = observer(({ store }) => {
   }, []);
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <InputGroup
         leftIcon="search"
         placeholder="Search..."
@@ -68,7 +70,7 @@ export const PhotosPanel = observer(({ store }) => {
           loadImages();
         }}
         style={{
-          marginBottom: "20px"
+          marginBottom: '20px',
         }}
       />
       <p>Demo images: </p>
@@ -80,12 +82,12 @@ export const PhotosPanel = observer(({ store }) => {
         onSelect={async (image, { x, y }) => {
           const { width, height } = await getImageSize(image.url);
           store.activePage.addElement({
-            type: "image",
+            type: 'image',
             src: image.url,
             width,
             height,
             x,
-            y
+            y,
           });
         }}
         rowsNumber={2}
@@ -98,14 +100,14 @@ export const PhotosPanel = observer(({ store }) => {
 
 // define the new custom section
 const СustomPhotos = {
-  name: "photos",
+  name: 'photos',
   Tab: (props) => (
     <SectionTab name="Photos" {...props}>
       <MdPhotoLibrary />
     </SectionTab>
   ),
   // we need observer to update component automatically on any store changes
-  Panel: PhotosPanel
+  Panel: PhotosPanel,
 };
 
 // we will have just two sections
@@ -116,37 +118,22 @@ const sections = [
   UploadSection,
   BackgroundSection,
   // we will replace default resize with our own
-  SizeSection
+  SizeSection,
 ];
 
 export const App = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100%",
-        width: "100%"
-      }}
-    >
-      <div style={{ width: "200px", height: "100%", display: "flex" }}>
+    <PolotnoContainer className="polotno-app-container">
+      <SidePanelWrap>
         <SidePanel store={store} sections={sections} defaultSection="photos" />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          height: "100%",
-          margin: "auto",
-          flex: 1,
-          flexDirection: "column",
-          position: "relative"
-        }}
-      >
-        <Toolbar store={store} downloadButtonEnabled={true} />
+      </SidePanelWrap>
+      <WorkspaceWrap>
+        <Toolbar store={store} downloadButtonEnabled />
         <Workspace store={store} />
         <ZoomButtons store={store} />
-      </div>
-    </div>
+      </WorkspaceWrap>
+    </PolotnoContainer>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

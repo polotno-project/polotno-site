@@ -45,6 +45,10 @@ Add styles to your page:
   href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
   rel="stylesheet"
 />
+<link
+  href="https://unpkg.com/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+  rel="stylesheet"
+/>
 ```
 
 ## Core concept
@@ -90,6 +94,7 @@ Set of React components for general canvas editor app.
 - side panels for adding new objects
 
 ```js
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { Toolbar } from 'polotno/toolbar/toolbar';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { SidePanel } from 'polotno/side-panel';
@@ -97,31 +102,16 @@ import { Workspace } from 'polotno/canvas/workspace';
 
 export const App = ({ store }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100vh',
-        width: '100vw',
-      }}
-    >
-      <div style={{ width: '300px', height: '100%', display: 'flex' }}>
+    <PolotnoContainer className="polotno-app-container">
+      <SidePanelWrap>
         <SidePanel store={store} />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          height: '100%',
-          margin: 'auto',
-          flex: 1,
-          flexDirection: 'column',
-          position: 'relative',
-        }}
-      >
-        <Toolbar store={store} />
+      </SidePanelWrap>
+      <WorkspaceWrap>
+        <Toolbar store={store} downloadButtonEnabled />
         <Workspace store={store} />
         <ZoomButtons store={store} />
-      </div>
-    </div>
+      </WorkspaceWrap>
+    </PolotnoContainer>
   );
 };
 ```
