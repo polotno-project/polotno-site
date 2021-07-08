@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.25.6 - 2021-07-08
+
+- Fix mobile issues
+- Autofix of bad data on import
+
 ### 0.25.5 - 2021-07-08
 
 - Several style fixes.
