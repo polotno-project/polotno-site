@@ -5,11 +5,9 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.25.3 - 2021-07-07
+### 0.25.4 - 2021-07-07
 
-- New mobile layout for Polotno. In order to make it work automatically, you need to use special containers from polotno. See [UI components docs](/docs/overview#ui-components).
-
-- UI fixes and internal updates. You will need to add additional styles into your webpage:
+- UI fixes and internal updates. **You will need to add additional styles into your webpage**:
 
 ```html
 <link
@@ -17,6 +15,8 @@ hide_table_of_contents: true
   rel="stylesheet"
 />
 ```
+
+- **Experimental mobile layout for Polotno!** In order to make it work automatically, you need to use special containers. See [UI components docs](/docs/overview#ui-components) for samples.
 
 ### 0.24.6 - 2021-07-02
 
