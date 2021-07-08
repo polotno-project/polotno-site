@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "polotno": "0.25.4",
+    "polotno": "0.25.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-scripts": "3.0.1"

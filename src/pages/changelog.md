@@ -5,7 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.25.4 - 2021-07-07
+### 0.25.5 - 2021-07-08
+
+- Several style fixes.
+
+### 0.25.3 - 2021-07-07
 
 - UI fixes and internal updates. **You will need to add additional styles into your webpage**:
 
