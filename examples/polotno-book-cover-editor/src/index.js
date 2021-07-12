@@ -54,7 +54,6 @@ const App = ({ store }) => {
       <WorkspaceWrap>
         <Toolbar store={store} downloadButtonEnabled />
         <Workspace store={store} />
-        <ZoomButtons store={store} />
         <Preview store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
