@@ -34,6 +34,9 @@ export default {
     const { store } = createDemoApp({
       container: document.getElementById("app"),
       key: "YOUR_API_KEY", // you can create it here: https://polotno.dev/cabinet/
+      // you can hide back-link on a paid licence
+      // but it will be good if you can keep it for Polotno project support
+      showCredit: true,
     });
   },
 };

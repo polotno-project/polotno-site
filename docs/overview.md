@@ -31,6 +31,9 @@ import { createDemoApp } from 'polotno/polotno-app';
 const { store } = createDemoApp({
   container: document.getElementById('root'),
   key: 'YOUR_API_KEY', // you can create it here: https://polotno.dev/cabinet/
+  // you can hide back-link on a paid licence
+  // but it will be good if you can keep it for Polotno project support
+  showCredit: true,
 });
 ```
 

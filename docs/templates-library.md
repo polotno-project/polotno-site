@@ -17,7 +17,6 @@ In order to make a templates library you will need:
 7. Create a custom side panel to display list of templates from that API
 8. Use [`store.loadJSON()`](/docs/store-overview#storeloadjson)
 
-
 ## (1-4) Making designs library
 
 These are manual steps with human creativity involved. You should use your own polotno-made editor. Or you can use https://studio.polotno.dev/ if you want. You can use "Save" button to download `.json` file.
@@ -26,7 +25,7 @@ Now you need to create as many files as you need for your library.
 
 ## (5) Generating previews
 
-We can use `polotno-node` API to quickly generate small previews the whole library. 
+We can use `polotno-node` API to quickly generate small previews the whole library.
 I will show you a quick NodeJS script that will read load directory and create previews for every json file in it.
 When script is finished we will have a folder where designs (json files) and previews (png files).
 
@@ -37,7 +36,6 @@ import { createInstance } from 'polotno-node';
 
 // we will look for local directory for templates
 const FOLDER_NAME = 'templates';
-
 
 async function run() {
   // create working instance
@@ -99,11 +97,11 @@ As soon as you have backend API to get list of templates, you can use [Side Pane
 The side panel may look like this:
 
 ```js
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { useSWRInfinite } from "swr";
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { useSWRInfinite } from 'swr';
 
-import { ImagesGrid } from "polotno/side-panel/images-grid";
+import { ImagesGrid } from 'polotno/side-panel/images-grid';
 
 export const TemplatesPanel = observer(({ store }) => {
   // load data
@@ -115,7 +113,7 @@ export const TemplatesPanel = observer(({ store }) => {
   const isLoadingInitialData = !data && !error;
   const isLoading =
     isLoadingInitialData ||
-    !!(size > 0 && data && typeof data[size - 1] === "undefined");
+    !!(size > 0 && data && typeof data[size - 1] === 'undefined');
   const isEmpty = data?.[0]?.length === 0;
   const isReachingEnd = isEmpty || (data && data[0].total_pages === size);
 
@@ -126,7 +124,7 @@ export const TemplatesPanel = observer(({ store }) => {
   };
 
   return (
-    <div style={{ height: "100%" }}>
+    <div style={{ height: '100%' }}>
       <ImagesGrid
         shadowEnabled={false}
         images={data?.map((data) => data.items).flat()}
@@ -163,5 +161,3 @@ https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/example
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
   ></iframe>
-
-
