@@ -43,7 +43,7 @@ module.exports = {
             },
             {
               label: 'Roadmap and bugs reports',
-              href: 'https://github.com/lavrton/polotno-board/issues',
+              href: 'https://github.com/polotno-project/polotno-board/projects/1',
             },
             {
               label: 'Blog',

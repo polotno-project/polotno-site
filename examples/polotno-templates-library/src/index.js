@@ -27,7 +27,7 @@ const sections = [TemplatesSection, ...DEFAULT_SECTIONS];
 
 export const App = () => {
   return (
-    <PolotnoContainer className="polotno-app-container">
+    <PolotnoContainer>
       <SidePanelWrap>
         <SidePanel
           store={store}
