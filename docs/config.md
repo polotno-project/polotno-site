@@ -70,3 +70,15 @@ setGoogleFonts(['Roboto']);
 ```
 
 If you want to add/remove fonts specified by direct font path please use [Store fonts API](/docs/store-overview#working-with-fonts).
+
+### Hot to get API endpoints to get a list of available google fonts?
+
+```js
+import { getGoogleFontsListAPI, getGoogleFontImage } from 'polotno/config';
+
+// returns an URL to api.polotno.dev
+const url = getGoogleFontsListAPI();
+// when you fetch the list you can show preview of every font in the list
+// to get image path you can use this:
+<img src={getGoogleFontImage('Roboto')} />;
+```

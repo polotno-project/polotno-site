@@ -5,6 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.26.0 - 2021-07-20
+
+- **New gradient options for SVG element colors!**
+- Color pickers now suggest colors to reuse from the store
+- Some mobile UX fixes
+- Fix "fit to background" resize bug when image has filters
+- `getGoogleFontsListAPI` and `getGoogleFontImage` API. Details in [Configuration](/docs/config).
+- Fix weird behavior of filters inputs in the toolbar
+- Better dark theme support for color picker
+
 ### 0.25.7 - 2021-07-08
 
 - Fix mobile issues
