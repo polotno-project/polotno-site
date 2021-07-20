@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.26.1 - 2021-07-20
+
+- Hot fix for gradient crash
+
 ### 0.26.0 - 2021-07-20
 
 - **New gradient options for SVG element colors!**
