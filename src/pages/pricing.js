@@ -3,7 +3,6 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -161,20 +160,39 @@ function Home() {
           <div className="container">
             <h2>Frequently Asked Questions</h2>
 
-            <h3>Will I have access to the full source code on the paid plan?</h3>
-            <p><strong>No.</strong> Polotno is provided as minified JavaScript npm package. If you want to have access to the full source code please contact <a href="mailto:anton@polotno.dev">anton@polotno.dev</a>.</p>
+            <h3>
+              Will I have access to the full source code on the paid plan?
+            </h3>
+            <p>
+              <strong>No.</strong> Polotno is provided as minified JavaScript
+              npm package. If you want to have access to the full source code
+              please contact{' '}
+              <a href="mailto:anton@polotno.dev">anton@polotno.dev</a>.
+            </p>
 
             <h3>What kind of data is transmitted to your servers?</h3>
-            <p>Only the bare minimum that is required for core Polotno functions. No personal information, cookies or your site data is send to Polotno API servers. You can read more in <a href="/privacy">Privacy Policy</a>.</p>
+            <p>
+              Only the bare minimum that is required for core Polotno functions.
+              No personal information, cookies or your site data is send to
+              Polotno API servers. You can read more in{' '}
+              <a href="/privacy">Privacy Policy</a>.
+            </p>
 
             <h3>Will my subscription renew automatically?</h3>
-            <p>Yes. You will be billed every month. You can always cancel your subscription the the <a href="/cabinet">cabinet</a>.</p>
-            
+            <p>
+              Yes. You will be billed every month. You can always cancel your
+              subscription the <a href="/cabinet">cabinet</a>.
+            </p>
+
             <h3>When do I need to use "Custom Solution"?</h3>
             <p>
-              Polotno framework is a tool for developers. In order to setup it and make any customization, you need to have your own development resources.
-              There is a "Custom Solution" for the case if your resources are very limited or your want to boost the development time.
-              "From $10 000" price is just a theoretical example. The exact price may be very different (usually higher) and discussed individually.
+              Polotno framework is a tool for developers. In order to setup it
+              and make any customization, you need to have your own development
+              resources. There is a "Custom Solution" for the case if your
+              resources are very limited or your want to boost the development
+              time. "From $10 000" price is just a theoretical example. The
+              exact price may be very different (usually higher) and discussed
+              individually.
             </p>
             <p></p>
           </div>
