@@ -91,6 +91,7 @@ const LineToolbar = observer(({ store }) => {
             fill,
           })
         }
+        store={store}
       />
       <NumericInput
         onValueChange={(val) => {

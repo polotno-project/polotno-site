@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.26.2 - 2021-07-22
+
+- Fix `ColorPicker` component crash when it has not access to `store`.
+
 ### 0.26.1 - 2021-07-20
 
 - Hot fix for gradient crash
