@@ -160,6 +160,17 @@ function Home() {
           <div className="container">
             <h2>Frequently Asked Questions</h2>
 
+
+            <h3>When do I need to use "Custom Solution"?</h3>
+            <p>
+              Polotno framework is a tool for developers. In order to setup it
+              and make any customization, you need to have your own development
+              resources. There is a "Custom Solution" for the case if your
+              resources are very limited or you want to boost the development
+              time. "From $10 000" price is just a theoretical example. The
+              exact price may be very different (usually higher) and discussed
+              individually.
+            </p>
             <h3>
               Will I have access to the full source code on the paid plan?
             </h3>
@@ -183,18 +194,6 @@ function Home() {
               Yes. You will be billed every month. You can always cancel your
               subscription the <a href="/cabinet">cabinet</a>.
             </p>
-
-            <h3>When do I need to use "Custom Solution"?</h3>
-            <p>
-              Polotno framework is a tool for developers. In order to setup it
-              and make any customization, you need to have your own development
-              resources. There is a "Custom Solution" for the case if your
-              resources are very limited or your want to boost the development
-              time. "From $10 000" price is just a theoretical example. The
-              exact price may be very different (usually higher) and discussed
-              individually.
-            </p>
-            <p></p>
           </div>
         </section>
       </main>

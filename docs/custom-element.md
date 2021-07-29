@@ -141,6 +141,7 @@ const StarToolbar = observer(({ store }) => {
             fill,
           })
         }
+        store={store}
       />
       <NumericInput
         onValueChange={(radius) => {

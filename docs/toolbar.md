@@ -85,6 +85,7 @@ const TextToolbar = observer(({ store }) => {
             fill,
           })
         }
+        store={store}
       />
       <NumericInput
         onValueChange={(fontSize) => {
