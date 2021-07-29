@@ -303,7 +303,7 @@ function Home() {
         </section>
       </main>
       <main>
-        <h2>How is using Polotno?</h2>
+        <h2>Who is using Polotno?</h2>
         {/* <p style={{ textAlign: 'center' }}>
           If you want to get listed as Polotno user please write an email to{' '}
           <a href="mailto:anton@polotno.dev">anton@polotno.dev</a>.
