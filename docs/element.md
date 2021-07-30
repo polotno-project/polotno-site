@@ -188,6 +188,7 @@ Enter into "crop mode" of the image programmatically.
 const svgElement = page.addElement({
   type: 'svg',
   src: 'https://example.com/image.svg',
+  maskSrc: '', // should we draw mask image over svg element?
   keepRatio: false, // can we change aspect ration of svg?
   x: 0,
   y: 0,

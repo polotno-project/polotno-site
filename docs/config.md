@@ -27,10 +27,10 @@ console.log(getTranslations());
 
 **If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.dev or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
 
-### How to change Upload behavior?
+### How to change image upload behavior?
 
 The default [SidePanel Component](/docs/side-panel) has `Upload` tab to import local images into the project. By default `polotno` just converting local file into base64 string.
-Resulted URL strings are using for `image` elements. Using base64 string may produce project with a large size, since images will be fully encoded inside JSON.
+Resulted URL strings are using for `image` elements. Using base64 string may produce projects with a large size, since images will be fully encoded inside JSON.
 
 If you want to upload local images to your server you can do this:
 
@@ -58,18 +58,69 @@ setUploadFunc(upload);
 
 ### How to change available fonts?
 
-There are two ways to use fonts in `Polotno`: google fonts and font files.
+There are three types of fonts in `Polotno`:
+1. Google fonts
+2. User fonts defined in `store.fonts`
+3. Global fonts
 
-If you want to change default Google fonts list you can do this:
+#### (1) Google fonts usage
+
+In the default text toolbar, `Polotno` is using a very large list of google fonts. If you don't want to enable the full list or if you want to disable it you can use this:
 
 ```js
 import { setGoogleFonts } from 'polotno/config';
-
 // pass an array with google fonts names
 setGoogleFonts(['Roboto']);
+// pass empty array if you don't want to see google fonts in available fonts
+setGoogleFonts([]);
 ```
 
-If you want to add/remove fonts specified by direct font path please use [Store fonts API](/docs/store-overview#working-with-fonts).
+#### (2) User fonts
+
+If you want to add/remove fonts specific for the user you can use [Store Fonts API](/docs/store-overview#working-with-fonts).
+
+Fonts added into `store` directly will be included into JSON export via `store.toJSON()`.
+
+A user can add/remove fonts from the default "Text" side-panel inside "fonts" tab. 
+
+#### (3) Global fonts
+
+If you want to add fonts that you want to enable for all users you can use global API. Fonts added via global API will be NOT added into JSON export.
+
+```js
+import { addGlobalFont } from 'polotno/config';
+
+// add font by its URL
+addGlobalFont({
+  fontFamily: 'MyCustomFont',
+  url: url,
+});
+
+// more control over fonts
+addGlobalFont({
+  fontFamily: 'MyCustomFont',
+  styles: [
+    {
+      src: 'url(pathToNormalFile.ttf)',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+    },
+    {
+      src: 'url(pathToBoldFile.ttf)',
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+    },
+  ],
+});
+
+// if a font is already added into the page by some CSS
+// you can register it inside polotno
+// so it can be listed in available fonts in the toolbar
+
+addGlobalFont({
+  fontFamily: 'MyCustomFont',
+});
+```
 
 ### Hot to get API endpoints to get a list of available google fonts?
 

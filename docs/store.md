@@ -194,9 +194,9 @@ const json = store.toJSON();
 saveIntoBackend(JSON.stringify(json));
 ```
 
-### `store.loadJSON()`
+### `store.loadJSON(json, keepHistory?)`
 
-Load passed json into the store. It will update all properties, pages and elements
+Load passed json into the store. It will update all properties, pages and elements. By default loading JSON into the store will reset undo/redo history (so a user can't undo it). You can use `keepHistory` argument, if you want to preserve the history.
 
 ```js
 import { createStore } from 'polotno/model/store';
@@ -214,6 +214,11 @@ const json = store.toJSON();
 // remember that "json" should be a javascript object
 // if you have a json string, you may need to parse it - JSON.parse(string);
 store.loadJSON(json);
+
+
+// load JSON by save previous undo history
+// a user can undo this action
+store.loadJSON(json, true);
 ```
 
 ## Export
@@ -279,7 +284,7 @@ store.saveAsPDF({ pageId: store.pages[1].id });
 
 ### `store.addFont({ fontFamily, url })`
 
-The function to add new custom font to the project.
+The function to add a new custom font to the user project. Added fonts will be saved into exported JSON. If you want to add fonts available globally (ignored in JSON export), take a look into [Fonts Tutorial](/docs/config#how-to-change-available-fonts).
 
 ```js
 store.addFont({
@@ -326,6 +331,6 @@ store.removeFont('MyCustomFont');
 
 ### `store.loadFont(name)`
 
-Prepare the font to use on the webpage. You don't need to use that function is you work only on the canvas elements (they load fonts automatically).
-But it can be useful when you want to show a list of fonts somewhere in the UI.
+Prepare the font to use on the webpage. Text elements inside `<Workarea>` will use this function automatically.
+But it can be useful if you want to show a list of fonts somewhere in the UI.
 `store.loadFond(name)` function will add font to the webpage, so the browser can render correct font.

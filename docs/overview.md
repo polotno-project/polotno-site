@@ -3,13 +3,11 @@ id: overview
 title: Overview
 ---
 
-**The documentation is not fully ready and to complete yet!** It will be updated very soon. Thanks for your understanding.
-
 ## Why `polotno`?
 
 `Polotno` is a very opinionated JavaScript framework that will help you build canvas editor for several business use cases.
 
-There are many powerful JavaScript frameworks and tools that can help you make a canvas editor. But almost all of them are "low-level". Like https://konvajs.org/ is a 2d canvas framework. It is good, it is powerful. But you may need to write a lot of code to make a full canvas editor app.
+There are many powerful JavaScript frameworks and tools that can help you make a canvas editor. But almost all of them are "low-level". Like https://konvajs.org/ is a 2d canvas framework. It is good, it is powerful. But you may need to write **a lot of code** to make a full canvas editor app.
 
 So the idea is to make a simple tool to solve only very limited set of business needs. It doesn't have many options and configurations. And the API should be as small as possible.
 
@@ -56,11 +54,9 @@ Add styles to your page:
 
 ## Core concept
 
-`Polotno` consists of three main modules
-
 ### Store
 
-For saving and working with the objects tree of canvas editor. It provide API for adding/updating/removing canvas objects, undo/redo, selection changes, zooming.
+Store is the main object to control data and elements of canvas. It provide API for adding/updating/removing canvas objects, undo/redo, selection changes, zooming.
 
 ```js
 import { createStore } from 'polotno/model/store';
@@ -95,6 +91,8 @@ Set of React components for general canvas editor app.
 
 - a toolbar for basic objects manipulations actions (such as align, remove, change objects styles, etc).
 - side panels for adding new objects
+- zooming buttons
+- etc
 
 ```js
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
@@ -105,7 +103,7 @@ import { Workspace } from 'polotno/canvas/workspace';
 
 export const App = ({ store }) => {
   return (
-    <PolotnoContainer className="polotno-app-container">
+    <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
       <SidePanelWrap>
         <SidePanel store={store} />
       </SidePanelWrap>
