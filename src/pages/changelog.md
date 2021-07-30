@@ -8,7 +8,7 @@ hide_table_of_contents: true
 ### 0.27.0 - 2021-07-30
 
 - **Experimental masking for `svg` elements.** Usage: `svgElement.set({ maskSrc: imageURL })`. For now you can't control cropping behavior of image. It will be automatically centered.
-- New global fonts API
+- New global fonts API. For more info take a look into [Fonts Tutorial](/docs/config#how-to-change-available-fonts).
 - You can keep previous undo history when you import json. Usage `store.loadJSON(json, true)`.
 
 
