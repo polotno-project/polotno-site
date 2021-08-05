@@ -223,6 +223,19 @@ store.loadJSON(json, true);
 
 ## Export
 
+### `store.waitLoading()`
+
+Wait until all resources (images, fonts, etc) are loaded and displayed on the canvas.
+
+```js
+// import data
+store.loadJSON(json);
+// wait for loading
+await store.waitLoading();
+// do export
+const url = store.toDataURL();
+```
+
 ### `store.toDataURL()`
 
 Convert store into base64 URL
