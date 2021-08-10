@@ -5,12 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.28.0 - 2021-08-10
+
+- New property `cornerRadius` for `image` elements
+- Better typescript support
+
 ### 0.27.0 - 2021-07-30
 
 - **Experimental masking for `svg` elements.** Usage: `svgElement.set({ maskSrc: imageURL })`. For now you can't control cropping behavior of image. It will be automatically centered.
 - New global fonts API. For more info take a look into [Fonts Tutorial](/docs/config#how-to-change-available-fonts).
 - You can keep previous undo history when you import json. Usage `store.loadJSON(json, true)`.
-
 
 ### 0.26.2 - 2021-07-22
 

@@ -169,6 +169,7 @@ page.addElement({
   cropY: 0, // 0-1 : % from original image height
   cropWidth: 1, // 0-1 : % from original image width
   cropHeight: 1, // 0-1 : % from original image height
+  cornerRadius: 0,
   borderColor: 'black',
   borderSize: 0,
   flipX: false,
