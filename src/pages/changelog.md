@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.29.0 - 2021-08-19
+
+- Updated **Templates** side panel. Added search for templates.
+- [Configurable API endpoints](/docs/server-api).
+
 ### 0.28.0 - 2021-08-10
 
 - New property `cornerRadius` for `image` elements
