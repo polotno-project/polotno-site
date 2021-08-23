@@ -218,6 +218,59 @@ const СustomPhotos = {
 };
 ```
 
+### How to show custom side panel?
+
+Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-open-side-panel-programmatically
+
+```js
+// define the new custom section
+const CustomSection = {
+  name: 'custom-text',
+  // we don't need "Tab" property, because it will be hidden from the list
+  visibleInList: false,
+  // we need observer to update component automatically on any store changes
+  Panel: observer(({ store }) => {
+    const text = store.selectedElements[0]?.text;
+    return (
+      <div>
+        <InputGroup
+          value={text}
+          onChange={() => {
+            store.selectedElements[0].set({ text: e.target.value });
+          }}
+        />
+      </div>
+    );
+  }),
+};
+
+// add new section
+const sections = [...DEFAULT_SECTIONS, CustomSection];
+
+// use mobx API to react to selection changes
+autorun(() => {
+  const textSelected = store.selectedElements[0]?.type === 'text';
+  if (textSelected) {
+    store.openSidePanel('custom-text');
+  }
+});
+
+export const App = () => {
+  return (
+    <PolotnoContainer className="polotno-app-container">
+      <SidePanelWrap>
+        <SidePanel store={store} sections={sections} />
+      </SidePanelWrap>
+      <WorkspaceWrap>
+        <Toolbar store={store} downloadButtonEnabled />
+        <Workspace store={store} />
+        <ZoomButtons store={store} />
+      </WorkspaceWrap>
+    </PolotnoContainer>
+  );
+};
+```
+
 ### How to use `<ImagesGrid />` component?
 
 `<ImagesGrid />` is a React component that:
@@ -275,7 +328,7 @@ If you don't want to use `<ImagesGrid />` component, you have to implement drop&
 import { unstable_registerNextDomDrop } from 'polotno/config';
 
 // then in your components inside side panel you can do something like this:
- <img
+<img
   draggable
   onDragStart={() => {
     registerNextDomDrop((pos, element) => {
@@ -288,5 +341,5 @@ import { unstable_registerNextDomDrop } from 'polotno/config';
   onDragEnd={() => {
     registerNextDomDrop(null);
   }}
-/>
+/>;
 ```

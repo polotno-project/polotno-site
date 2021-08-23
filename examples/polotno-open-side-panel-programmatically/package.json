@@ -1,7 +1,7 @@
 {
-  "name": "polotno-simple-t-shirt-demo",
+  "name": "polotno-open-side-panel-programmatically",
   "version": "1.0.0",
-  "description": "T-shirt customization demo",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

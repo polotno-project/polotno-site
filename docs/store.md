@@ -81,6 +81,18 @@ Change zooming of active page.
 store.setScale(2);
 ```
 
+### `store.openedSidePanel`
+
+Getter for current opened side panel
+
+### `store.openSidePanel(panelName)`
+
+Change open side panel manually.
+
+```js
+store.openSidePanel('templates');
+```
+
 ## Working with elements
 
 ### `store.selectedElements`
@@ -214,7 +226,6 @@ const json = store.toJSON();
 // remember that "json" should be a javascript object
 // if you have a json string, you may need to parse it - JSON.parse(string);
 store.loadJSON(json);
-
 
 // load JSON by save previous undo history
 // a user can undo this action

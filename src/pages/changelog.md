@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.30.0 - 2021-08-23
+
+- Crash fixes for `image` and `svg` elements
+- API to control opened side panel.
+
 ### 0.29.0 - 2021-08-19
 
 - Updated **Templates** side panel. Added search for templates.
