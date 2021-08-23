@@ -91,7 +91,7 @@ Demo:
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
   ></iframe>
 
-### How to set your own default page sizes?
+## How to set your own default page sizes?
 
 With the same customization approach you can make your own panel for changing pages sizes:
 
@@ -136,7 +136,7 @@ const СustomSizes = {
 };
 ```
 
-### How to load custom photos?
+## How to load custom photos?
 
 Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-load-custom-images
 
@@ -218,7 +218,9 @@ const СustomPhotos = {
 };
 ```
 
-### How to show custom side panel?
+## How to implement "hidden" side panel?
+
+You can implement side panel in a way, that it is visible only in various situations, such as element selection.
 
 Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-open-side-panel-programmatically
 
@@ -244,7 +246,7 @@ const CustomSection = {
   }),
 };
 
-// add new section
+// add new section to side bar
 const sections = [...DEFAULT_SECTIONS, CustomSection];
 
 // use mobx API to react to selection changes
@@ -271,7 +273,7 @@ export const App = () => {
 };
 ```
 
-### How to use `<ImagesGrid />` component?
+## How to use `<ImagesGrid />` component?
 
 `<ImagesGrid />` is a React component that:
 

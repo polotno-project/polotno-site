@@ -12,7 +12,6 @@ import { Toolbar } from 'polotno/toolbar/toolbar';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { createStore } from 'polotno/model/store';
 
-// import all default sections
 import { DEFAULT_SECTIONS } from 'polotno/side-panel';
 
 const store = createStore({
@@ -28,7 +27,10 @@ const store = createStore({
 store.addPage();
 store.activePage.addElement({
   type: 'text',
-  text: 'hello',
+  text: 'Hello from Polotno',
+  y: store.height / 2,
+  width: store.width,
+  fontSize: 50,
 });
 
 // define the new custom section
@@ -43,8 +45,8 @@ const CustomSection = {
       <div>
         <InputGroup
           value={text}
-          onChange={() => {
-            store.selectedElements[0].set({ text: e.target.value });
+          onChange={(e) => {
+            store.selectedElements[0]?.set({ text: e.target.value });
           }}
         />
       </div>
@@ -55,15 +57,18 @@ const CustomSection = {
 // add new section
 const sections = [...DEFAULT_SECTIONS, CustomSection];
 
-//
-autorun(() => {
-  const textSelected = store.selectedElements[0]?.type === 'text';
-  if (textSelected) {
-    store.openSidePanel('custom-text');
-  }
-});
-
 export const App = () => {
+  // add reacion using mobx API
+  React.useEffect(() => {
+    return autorun(() => {
+      const textSelected = store.selectedElements[0]?.type === 'text';
+      if (textSelected) {
+        store.openSidePanel('custom-text');
+      } else {
+        store.openSidePanel('photos');
+      }
+    });
+  }, []);
   return (
     <PolotnoContainer className="polotno-app-container">
       <SidePanelWrap>
