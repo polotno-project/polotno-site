@@ -1,6 +1,6 @@
 ---
 id: store-overview
-title: Store overview
+title: Store
 ---
 
 `Store` is a basic data model object they you are going to work with. It has about %90 API functions provided by `Polotno`.

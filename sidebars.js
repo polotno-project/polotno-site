@@ -15,7 +15,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Store',
+      label: 'Store API',
       collapsed: false,
       items: ['store-overview', 'page-overview', 'element-overview'],
     },

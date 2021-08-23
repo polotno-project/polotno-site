@@ -322,7 +322,7 @@ import { ImagesGrid } from 'polotno/side-panel/images-grid';
 />;
 ```
 
-### How to drop elements from side panel into workspace?
+## How to drop elements from side panel into workspace?
 
 If you don't want to use `<ImagesGrid />` component, you have to implement drop&drop of DOM elements by yourself. However `polotno` has some tools to listen to drop event on the workspace. You can use this:
 
