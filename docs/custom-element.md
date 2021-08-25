@@ -9,7 +9,7 @@ title: Custom elements
 By design `polotno` support three main types of elements: `text`, `image` and `svg`.
 In some cases you may want to create your own custom elements.
 
-# How to create custom shapes with Polotno?
+## How to create custom shapes with Polotno?
 
 As the demonstration we will create a custom `star` element.
 

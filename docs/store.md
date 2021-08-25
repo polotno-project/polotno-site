@@ -263,6 +263,9 @@ store.toDataURL({ ignoreBackground: true });
 
 // export as jpg
 store.toDataURL({ mimeType: 'image/jpg' });
+
+// export only required page
+store.toDataURL({ pageId: store.pages[1].id });
 ```
 
 ### `store.saveAsImage()`
