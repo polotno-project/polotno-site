@@ -10,6 +10,7 @@ hide_table_of_contents: true
 - `image` element clipping with `clipSrc` property
 - Fixes for some side panel components API requests
 - Performance fixes
+- Better scrollbar for `<Workspace />` component
 
 ### 0.30.1 - 2021-08-23
 

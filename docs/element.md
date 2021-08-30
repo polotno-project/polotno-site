@@ -161,8 +161,12 @@ page.addElement({
   brightness: 0,
   shadowEnabled: false,
   shadowBlur: 10,
-
+  // url path to image
   src: 'https://example.com/image.png',
+
+  // url path to svg or image that will be used to clip image
+  // cab be used for image framing
+  clipSrc: '',
   width: 100,
   height: 100,
   cropX: 0, // 0-1 : % from original image width
