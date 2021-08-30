@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.31.1 - 2021-08-30
+
+- `image` element clipping with `clipSrc` property
+- Fixes for some side panel components API requests
+- Performance fixes
+
 ### 0.30.1 - 2021-08-23
 
 - Several hot fixes
