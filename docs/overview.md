@@ -26,6 +26,12 @@ Init demo application (without any frameworks):
 ```js
 import { createDemoApp } from 'polotno/polotno-app';
 
+// import css styles from blueprint framework (used by polotno)
+// if you bundler doesn't support such import you can use css from CDN (see bellow)
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
+
 const { store } = createDemoApp({
   container: document.getElementById('root'),
   key: 'YOUR_API_KEY', // you can create it here: https://polotno.dev/cabinet/
@@ -35,7 +41,18 @@ const { store } = createDemoApp({
 });
 ```
 
-Add styles to your page:
+Optionally you can import css styles from CDN:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="unpkg"
+values={[
+{label: 'unpkg', value: 'unpkg'},
+{label: 'jsdelivr', value: 'jsdelivr'}
+]}>
+<TabItem value="unpkg">
 
 ```html
 <link
@@ -51,6 +68,28 @@ Add styles to your page:
   rel="stylesheet"
 />
 ```
+
+</TabItem>
+<TabItem value="jsdelivr">
+
+```html
+<link
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+  rel="stylesheet"
+/>
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Core concept
 
