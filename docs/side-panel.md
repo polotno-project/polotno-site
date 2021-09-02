@@ -332,12 +332,29 @@ import { unstable_registerNextDomDrop } from 'polotno/config';
 // then in your components inside side panel you can do something like this:
 <img
   draggable
+  src={url}
   onDragStart={() => {
     registerNextDomDrop((pos, element) => {
-      // here you can do you logic
-      // probably you want to create element on the canvas
       // "pos" - is relative mouse position of drop
       // "element" - is element from your store in case when DOM object is dropped on another element
+
+      // you can just create new element on drop position
+      // or you can update existing element
+      // for example we can drop image from side panel into existing 'image' element in the workspace
+      if (element && element.type === 'image') {
+        // you can update any property you want, src, clipSrc, border, etc
+        element.set({ src: url });
+        return;
+      }
+      // or we can just create a new element
+      store.activePage.addElement({
+        type: 'image',
+        src: url,
+        x: pos.x,
+        y: pos.y,
+        width: 100,
+        height: 100,
+      });
     });
   }}
   onDragEnd={() => {
