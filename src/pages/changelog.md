@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.31.5 - 2021-09-02
+
+- Fix `<Workspace />` crashes when it is mounted inside too small area
+- Update all internal dependencies.
+- Change highlighting of active page
+
 ### 0.31.3 - 2021-08-30
 
 - `image` element clipping with `clipSrc` property
