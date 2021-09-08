@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.31.6 - 2021-09-08
+
+Technical release with internal bugs fixes and optimizations
+
+- Optimizing memory usage
+- Fix Firefox crashes on some clipping cases
+- Fix Firefox rendering bugs
+
 ### 0.31.5 - 2021-09-02
 
 - Fix `<Workspace />` crashes when it is mounted inside too small area
