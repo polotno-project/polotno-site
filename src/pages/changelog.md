@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.31.7 - 2021-09-08
+
+- Several quick fixes for rendering and opacity changes
+
 ### 0.31.6 - 2021-09-08
 
 Technical release with internal bugs fixes and optimizations
