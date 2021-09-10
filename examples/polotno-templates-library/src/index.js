@@ -32,7 +32,7 @@ export const App = () => {
         <SidePanel
           store={store}
           sections={sections}
-          defaultSection="templates"
+          defaultSection="custom-templates"
         />
       </SidePanelWrap>
       <WorkspaceWrap>

@@ -35,7 +35,7 @@ export const TemplatesPanel = observer(({ store }) => {
 
 // define the new custom section
 export const TemplatesSection = {
-  name: 'templates',
+  name: 'custom-templates',
   Tab: (props) => (
     <SectionTab name="Custom templates" {...props}>
       <MdPhotoLibrary />
