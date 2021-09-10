@@ -1,34 +1,20 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { useSWRInfinite } from "swr";
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { useInfiniteAPI } from 'polotno/utils/use-api';
 
-import { SectionTab } from "polotno/side-panel";
-import MdPhotoLibrary from "@meronex/icons/md/MdPhotoLibrary";
+import { SectionTab } from 'polotno/side-panel';
+import MdPhotoLibrary from '@meronex/icons/md/MdPhotoLibrary';
 
-import { ImagesGrid } from "polotno/side-panel/images-grid";
+import { ImagesGrid } from 'polotno/side-panel/images-grid';
 
 export const TemplatesPanel = observer(({ store }) => {
   // load data
-  const { data, error, mutate, size, setSize } = useSWRInfinite(
-    (index) => `templates/page${index + 1}.json`
-  );
-
-  // do some calculations from the hook above
-  const isLoadingInitialData = !data && !error;
-  const isLoading =
-    isLoadingInitialData ||
-    !!(size > 0 && data && typeof data[size - 1] === "undefined");
-  const isEmpty = data?.[0]?.length === 0;
-  const isReachingEnd = isEmpty || (data && data[0].total_pages === size);
-
-  const loadMore = () => {
-    if (!isReachingEnd) {
-      setSize(size + 1);
-    }
-  };
+  const { data, isLoading } = useInfiniteAPI({
+    getAPI: ({ page }) => `templates/page${page}.json`,
+  });
 
   return (
-    <div style={{ height: "100%" }}>
+    <div style={{ height: '100%' }}>
       <ImagesGrid
         shadowEnabled={false}
         images={data?.map((data) => data.items).flat()}
@@ -41,7 +27,6 @@ export const TemplatesPanel = observer(({ store }) => {
           // just inject it into store
           store.loadJSON(json);
         }}
-        loadMore={loadMore}
         rowsNumber={1}
       />
     </div>
@@ -50,12 +35,12 @@ export const TemplatesPanel = observer(({ store }) => {
 
 // define the new custom section
 export const TemplatesSection = {
-  name: "templates",
+  name: 'templates',
   Tab: (props) => (
-    <SectionTab name="Templates" {...props}>
+    <SectionTab name="Custom templates" {...props}>
       <MdPhotoLibrary />
     </SectionTab>
   ),
   // we need observer to update component automatically on any store changes
-  Panel: TemplatesPanel
+  Panel: TemplatesPanel,
 };
