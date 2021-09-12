@@ -232,6 +232,40 @@ store.loadJSON(json);
 store.loadJSON(json, true);
 ```
 
+## Events
+
+### `store.on('change', () => {})`
+
+Listen to any changes in the store. The event may trigger frequently on some operations like resize or dragging.
+
+```js
+// write a function for throttle saving
+let timeout = null;
+const requestSave = () => {
+  // if save is already requested - do nothing
+  if (timeout) {
+    return;
+  }
+  // schedule saving to the backend
+  timeout = setTimeout(() => {
+    // reset timeout
+    timeout = null;
+    // export the design
+    const json = store.toJSON();
+    // save it to the backend
+    fetch('https://example.com/designs', {
+      method: 'POST',
+      body: JSON.stringify(json),
+    });
+  }, 1000);
+};
+
+// request saving operation on any changes
+store.on('change', () => {
+  requestSave();
+});
+```
+
 ## Export
 
 ### `store.waitLoading()`
