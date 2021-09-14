@@ -283,7 +283,7 @@ const url = store.toDataURL();
 
 ### `store.toDataURL()`
 
-Convert store into base64 URL
+Export store into image in base64 URL format
 
 ```js
 // default export
@@ -321,6 +321,21 @@ store.saveAsImage({ ignoreBackground: true });
 
 // export second page
 store.saveAsImage({ pageId: store.pages[1].id });
+```
+
+### `store.toPDFDataURL()`
+
+Export store into PDF file in base64 URL format. You can use it to save to the backend.
+
+```js
+// default export
+store.toPDFDataURL();
+
+// double exported quality
+store.toPDFDataURL({ pixelRatio: 2 });
+
+// ignore page background on export
+store.toPDFDataURL({ ignoreBackground: true });
 ```
 
 ### `store.saveAsPDF()`
