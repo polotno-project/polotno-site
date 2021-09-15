@@ -5,6 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.32.0 - 2021-09-15
+
+- Experimental support for Background Removing function
+
+```js
+import { unstable_setRemoveBackgroundEnabled } from 'polotno/config';
+
+unstable_setRemoveBackgroundEnabled(true);
+```
+
 ### 0.31.7 - 2021-09-08
 
 - Several quick fixes for rendering and opacity changes
