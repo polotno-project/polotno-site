@@ -5,7 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.32.0 - 2021-09-15
+### 0.32.3 - 2021-09-15
+
+- Fix incorrect styles when text is under edit mode
+
+### 0.32.2 - 2021-09-15
 
 - Experimental support for Background Removing function
 
