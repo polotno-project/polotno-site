@@ -5,20 +5,12 @@ hide_table_of_contents: true
 
 # Contact
 
-Hello!
-
-[Polotno documentation](/docs/overview) is a good place for most answers. I am working hard to make the documentation as good as possible.
+[Polotno documentation](/docs/overview) is a good place for most answers. We are working hard to make the documentation as good as possible. Any feedback is welcome.
 
 Can’t find what you're looking for in the documentation? Please do contact using the email address below.
 
 anton@polotno.dev
 
+If you want to ask a quick question or if you are looking for support, please join [Discord Chat](https://discord.gg/W2VeKgsr9J).
+
 Do you want to report a bug or make a feature request? Use [Polotno public roadmap](https://github.com/lavrton/polotno-board/issues).
-
-Also you can provide a feedback in the [Discord Chat](https://discord.gg/W2VeKgsr9J).
-
-### Do you want to quickly ask a question?
-
-Here is a chat for you:
-
-<iframe src="https://go.crisp.chat/chat/embed/?website_id=fd91062d-4c29-40ee-9ed1-09a00d101aea" style={{ width: '100%', height: '500px', border: '1px solid grey', borderRadius: 5, boxShadow: '0 0 5px grey' }} />
