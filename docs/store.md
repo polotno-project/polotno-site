@@ -323,19 +323,19 @@ store.saveAsImage({ ignoreBackground: true });
 store.saveAsImage({ pageId: store.pages[1].id });
 ```
 
-### `store.toPDFDataURL()`
+### `async store.toPDFDataURL()`
 
 Export store into PDF file in base64 URL format. You can use it to save to the backend.
 
 ```js
 // default export
-store.toPDFDataURL();
+await store.toPDFDataURL();
 
 // double exported quality
-store.toPDFDataURL({ pixelRatio: 2 });
+await store.toPDFDataURL({ pixelRatio: 2 });
 
 // ignore page background on export
-store.toPDFDataURL({ ignoreBackground: true });
+await store.toPDFDataURL({ ignoreBackground: true });
 ```
 
 ### `store.saveAsPDF()`
@@ -346,14 +346,26 @@ store.toPDFDataURL({ ignoreBackground: true });
 // default export
 store.saveAsPDF({ fileName: 'polotno.pdf' });
 
-// make exported image 2x bigger (higher quality)
-store.saveAsPDF({ pixelRatio: 2 });
+// increase exported quality
+store.saveAsPDF({ dpi: 300 }); // default is 72
 
 // ignore page background on export
 store.saveAsPDF({ ignoreBackground: true });
 
 // export second page
 store.saveAsPDF({ pageId: store.pages[1].id });
+```
+
+### `store.setElementsPixelRatio(ratio)`
+
+In most of scenarios `polotno` is rasterizing (converting into bitmap) vector elements such as texts and svg images.
+When you do hight quality exports, you may want to temporary increase resolution of rendered elements.
+
+```js
+// make sure all elements are rendered with increased quality
+store.setElementsPixelRatio(2);
+// do the export
+store.toDataURL({ pixelRatio: 2 });
 ```
 
 ## Working with fonts

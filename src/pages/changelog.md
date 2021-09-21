@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.32.5 - 2021-09-20
+
+- Fix export quality of some elements
+- Better PDF export
+- new method `store.setElementsPixelRatio(ration)`
+
 ### 0.32.3 - 2021-09-15
 
 - Fix incorrect styles when text is under edit mode
