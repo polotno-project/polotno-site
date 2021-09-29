@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ### 0.33.0 - 2021-09-29
 
-- **new experimental "admin" mode to work with the design. `store.setRole('admin'). This mode will add additional controls in the toolbar to change some attributes of elements.**
+- **new experimental `admin` mode to work with the design `store.setRole('admin')`. This mode will add additional controls in the toolbar to change some attributes of elements.**
 - New `selectable` property for all elements. When `selectable: false` element is "invisible" for user's clicks. "admin" role can still select such elements
 - New property `alwaysOnTop` for all elements
 - new property `showInExport` for all elements.
