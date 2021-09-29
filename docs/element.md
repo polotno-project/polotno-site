@@ -5,9 +5,9 @@ title: Element
 
 `Element` represents a graphical object on the page. An element can have one of these types:
 
-- text
-- image
-- svg
+- `text`
+- `image`
+- `svg`
 
 ```js
 const element = store.activePage.addElement({
@@ -17,6 +17,12 @@ const element = store.activePage.addElement({
   fill: 'black',
   text: 'hello',
 });
+
+// logs 50
+console.log(element.x);
+
+// set new position
+element.set({ x: 100 });
 ```
 
 ## Basic actions
@@ -134,7 +140,15 @@ page.addElement({
   strokeWidth: 0,
   stroke: 'black',
   lineHeight: 1,
-  letterSpacing: 0, // % from font size
+  letterSpacing: 0, // % from font size,
+
+  // can user select element?
+  // if false, element will be "invisible" for user clicks
+  selectable: true,
+  // use for absolute positing of element
+  alwaysOnTop: false,
+  // also we can hide some elements from the export
+  showInExport: true,
 });
 ```
 
@@ -178,6 +192,14 @@ page.addElement({
   borderSize: 0,
   flipX: false,
   flipY: false,
+
+  // can user select element?
+  // if false, element will be "invisible" for user clicks
+  selectable: true,
+  // use for absolute positing of element
+  alwaysOnTop: false,
+  // also we can hide some elements from the export
+  showInExport: true,
 });
 ```
 
@@ -209,6 +231,13 @@ const svgElement = page.addElement({
   height: 100,
   flipX: false,
   flipY: false,
+  // can user select element?
+  // if false, element will be "invisible" for user clicks
+  selectable: true,
+  // use for absolute positing of element
+  alwaysOnTop: false,
+  // also we can hide some elements from the export
+  showInExport: true,
 });
 ```
 

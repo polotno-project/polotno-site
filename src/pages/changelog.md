@@ -5,6 +5,20 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.33.0 - 2021-09-29
+
+- **new experimental "admin" mode to work with the design. `store.setRole('admin'). This mode will add additional controls in the toolbar to change some attributes of elements.**
+- New `selectable` property for all elements. When `selectable: false` element is "invisible" for user's clicks. "admin" role can still select such elements
+- New property `alwaysOnTop` for all elements
+- new property `showInExport` for all elements.
+- Hold `ctrl` or `command` button to disable snap on drag
+- New hotkeys `ctrl+c`, `ctrl+v`, `ctrl+x`, `ctrl+a` to work on the workspace
+- Fix `store.loadJSON()` function. It was not working correctly when an element has `0` in `x` or `y` attribute
+- Fix `<Workspace />` auto-resize behavior. Now it is using `ResizeObserver` to adopt its size.
+- New prop `backgroundColor` for `<Workspace />` component
+- Better toolbar for `image` element. Now it will get shorter if no space available.
+- Various bugs fixes
+
 ### 0.32.5 - 2021-09-20
 
 - Fix export quality of some elements

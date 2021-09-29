@@ -17,7 +17,7 @@ const store = createStore({
 
 const App = () => {
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       <Workspace store={store} />
     </div>
   );
@@ -32,4 +32,12 @@ Optionally you can hide UI to add/remove/duplicate pages.
 
 ```js
 <Workspace store={store} pageControlsEnabled={false} />
+```
+
+## Change background color
+
+Optionally you can change background color of the workspace.
+
+```js
+<Workspace store={store} backgroundColor="grey" />
 ```
