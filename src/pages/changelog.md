@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.33.1 - 2021-09-30
+
+- Fix `<Workspace />` unmount fail
+
 ### 0.33.0 - 2021-09-29
 
 - **new experimental `admin` mode to work with the design `store.setRole('admin')`. This mode will add additional controls in the toolbar to change some attributes of elements.**
