@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.33.2
+
+- Add `pageBorderColor` and `activePageBorderColor` props for `<Workspace />`
+- Open unsplash links on a new tab
+- Remove automatic element selection with element has `selectable: false`.
+- Add more translations
+
 ### 0.33.1 - 2021-09-30
 
 - Fix `<Workspace />` unmount fail
