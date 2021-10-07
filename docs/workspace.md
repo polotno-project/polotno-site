@@ -34,10 +34,15 @@ Optionally you can hide UI to add/remove/duplicate pages.
 <Workspace store={store} pageControlsEnabled={false} />
 ```
 
-## Change background color
+## Workspace styling
 
-Optionally you can change background color of the workspace.
+Optionally you can change some styles of the workspace.
 
 ```js
-<Workspace store={store} backgroundColor="grey" />
+<Workspace
+  store={store}
+  backgroundColor="grey"
+  pageBorderColor="black" // border around page
+  activePageBorderColor="red" // border around active page. It will be used only if you have several pages. Otherwise just pageBorderColor will be used
+/>
 ```
