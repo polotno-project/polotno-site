@@ -11,6 +11,18 @@ hide_table_of_contents: true
 - Fix crashes on some cases of JSON import
 - Experimental rich renderer for `text` element to support different style options inside one text element
 
+```js
+import { unstable_useHtmlTextRender } from 'polotno/config';
+unstable_useHtmlTextRender(true);
+
+store.activePage.addElement({
+  type: 'text',
+  text: 'Polotno is a <span style="color: red;">red</span> and <strong>bold</strong> framework!',
+  fontSize: 60,
+  width: 400,
+});
+```
+
 ### 0.33.2
 
 - Add `pageBorderColor` and `activePageBorderColor` props for `<Workspace />`
