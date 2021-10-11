@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.34.0
+
+- Add `justify` align for `text` element
+- Fix crashes on some cases of JSON import
+- Experimental rich renderer for `text` element to support different style options inside one text element
+
 ### 0.33.2
 
 - Add `pageBorderColor` and `activePageBorderColor` props for `<Workspace />`
