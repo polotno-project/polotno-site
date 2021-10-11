@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.34.0
+### 0.34.1
 
 - Add `justify` align for `text` element
 - Fix crashes on some cases of JSON import
