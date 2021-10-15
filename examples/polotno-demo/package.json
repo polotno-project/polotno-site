@@ -1,7 +1,7 @@
 {
-  "name": "polotno-demo",
+  "name": "canvas",
   "version": "1.0.0",
-  "description": "Basic demo of canvas editor framework",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
