@@ -304,15 +304,11 @@ function Home() {
       </main>
       <main>
         <h2>Who is using Polotno?</h2>
-        {/* <p style={{ textAlign: 'center' }}>
-          If you want to get listed as Polotno user please write an email to{' '}
-          <a href="mailto:anton@polotno.dev">anton@polotno.dev</a>.
-        </p> */}
         <section style={{ textAlign: 'center' }}>
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-                <div className={classnames('col col--4', styles.feature)}>
+                <div className={classnames('col col--3', styles.feature)}>
                   <div className="text--center">
                     <a href="https://coamaker.com/" target="_blank">
                       <img
@@ -322,19 +318,8 @@ function Home() {
                       />
                     </a>
                   </div>
-                  {/* <p>
-                    "I have struggled with building my prototype for months,
-                    tried several Javascript libraries, and even tried to build
-                    a canvas tool by myself. As soon as I had found Polotno,
-                    everything happened fast: In just a few hours, I customized
-                    Polotno, picked the functions I needed, and from then on
-                    concentrated on building my business. Furthermore, the
-                    support at Polotno is amazing. New features are published
-                    quickly and reflect what the quickly growing community of
-                    users wishes."
-                  </p> */}
                 </div>
-                <div className={classnames('col col--4', styles.feature)}>
+                <div className={classnames('col col--3', styles.feature)}>
                   <div className="text--center">
                     <a href="https://mycanas.com/" target="_blank">
                       <img
@@ -344,19 +329,8 @@ function Home() {
                       />
                     </a>
                   </div>
-                  {/* <p>
-                    "I have struggled with building my prototype for months,
-                    tried several Javascript libraries, and even tried to build
-                    a canvas tool by myself. As soon as I had found Polotno,
-                    everything happened fast: In just a few hours, I customized
-                    Polotno, picked the functions I needed, and from then on
-                    concentrated on building my business. Furthermore, the
-                    support at Polotno is amazing. New features are published
-                    quickly and reflect what the quickly growing community of
-                    users wishes."
-                  </p> */}
                 </div>
-                <div className={classnames('col col--4', styles.feature)}>
+                <div className={classnames('col col--3', styles.feature)}>
                   <div className="text--center">
                     <a href="https://www.aryeo.com/" target="_blank">
                       <img
@@ -366,30 +340,17 @@ function Home() {
                       />
                     </a>
                   </div>
-                  {/* <p>
-                    <div
-                      style={{
-                        position: 'relative',
-                        paddingBottom: '62.5%',
-                        height: '0',
-                      }}
-                    >
-                      <iframe
-                        src="https://www.loom.com/embed/73bc209dfa41475d99ec11d4b850ac47"
-                        frameborder="0"
-                        webkitallowfullscreen
-                        mozallowfullscreen
-                        allowfullscreen
-                        style={{
-                          position: 'absolute',
-                          top: '0',
-                          left: '0',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                      ></iframe>
-                    </div>
-                  </p> */}
+                </div>
+                <div className={classnames('col col--3', styles.feature)}>
+                  <div className="text--center">
+                    <a href="https://www.jazzudesigner.com/" target="_blank">
+                      <img
+                        style={{ height: '100px', width: 'auto' }}
+                        className={styles.featureImage}
+                        src="/img/users/jazzu-designer-logo.png"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
