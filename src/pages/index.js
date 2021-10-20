@@ -141,6 +141,30 @@ const COMPETITORS = [
   'Zazzle',
 ];
 
+const USERS = [
+  {
+    image: 'logo-mycanvas.svg',
+    link: 'https://mycanvas.com/',
+  },
+  {
+    image: 'unbounce.svg',
+    link: 'https://unbounce.com/',
+  },
+  {
+    image: 'aryeo.png',
+    link: 'https://www.aryeo.com/',
+  },
+  {
+    image: 'jazzu-designer-logo.png',
+    link: 'https://www.jazzudesigner.com/',
+  },
+
+  {
+    image: 'coamaker.svg',
+    link: 'https://coamaker.com/',
+  },
+];
+
 function Home() {
   const ref = React.useRef();
 
@@ -154,7 +178,7 @@ function Home() {
       // use ref instead of state,
       // because state change is clearing algolia search
       ref.current.innerText = competitor;
-    }, 3000);
+    }, 6000);
     return () => clearInterval(timeout);
   }, []);
 
@@ -308,50 +332,27 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-                <div className={classnames('col col--3', styles.feature)}>
-                  <div className="text--center">
-                    <a href="https://coamaker.com/" target="_blank">
-                      <img
-                        style={{ height: '100px', width: 'auto' }}
-                        className={styles.featureImage}
-                        src="/img/users/coamaker.svg"
-                      />
-                    </a>
+                {USERS.map(({ link, image }, index) => (
+                  <div
+                    className={classnames('col col--2', styles.feature, {
+                      'col--offset-1': index === 0,
+                    })}
+                  >
+                    <div className="text--center">
+                      <a href={link} target="_blank">
+                        <img
+                          style={{
+                            width: '100%',
+                            height: '100px',
+                            objectFit: 'contain',
+                          }}
+                          className={styles.featureImage}
+                          src={'/img/users/' + image}
+                        />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className={classnames('col col--3', styles.feature)}>
-                  <div className="text--center">
-                    <a href="https://mycanas.com/" target="_blank">
-                      <img
-                        style={{ height: '100px', width: 'auto' }}
-                        className={styles.featureImage}
-                        src="/img/users/logo-mycanvas.svg"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className={classnames('col col--3', styles.feature)}>
-                  <div className="text--center">
-                    <a href="https://www.aryeo.com/" target="_blank">
-                      <img
-                        style={{ height: '100px', width: 'auto' }}
-                        className={styles.featureImage}
-                        src="/img/users/aryeo.png"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className={classnames('col col--3', styles.feature)}>
-                  <div className="text--center">
-                    <a href="https://www.jazzudesigner.com/" target="_blank">
-                      <img
-                        style={{ height: '100px', width: 'auto' }}
-                        className={styles.featureImage}
-                        src="/img/users/jazzu-designer-logo.png"
-                      />
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
