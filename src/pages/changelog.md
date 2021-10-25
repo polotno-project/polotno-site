@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.34.4 - 2021-10-25
+
+- Improve color picker performance
+- Fix issue scroll of workspace jumped after page deleting
+- Skip drop functions from sidepanel into locked object
+
 ### 0.34.3
 
 - Rich text renderer fixes
