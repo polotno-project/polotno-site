@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.34.5 - 2021-10-26
+
+- Add more translations for `<Workspace />` component
+- Fix possible crash in `store.deletePages()` method
+
 ### 0.34.4 - 2021-10-25
 
 - Improve color picker performance
