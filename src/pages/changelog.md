@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.34.6 - 2021-11-01
+
+- Fix wrong image display when it has both corner radius and border
+- Better positioning of pages in workspace
+- Better highlight of elements on selection. No you can see border around every selected element.
+- `visible` property for every element.
+
 ### 0.34.5 - 2021-10-26
 
 - Add more translations for `<Workspace />` component
