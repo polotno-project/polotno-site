@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.34.8 - 2021-11-05
+
+- Better resizing of `<Workspace />` when size of the store is changed
+- Fix `store.waitLoading()` for mask property on `svg` elements
+
 ### 0.34.6 - 2021-11-01
 
 - Fix wrong image display when it has both corner radius and border
