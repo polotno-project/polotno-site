@@ -33,6 +33,15 @@ The getter. Returns all pages of the store.
 
 The getter. Returns current active page or the last created.
 
+### `store.selectPage(id)`
+
+Mark a page as active. It will automatically scroll `<Workspace />` to that page.
+
+````js
+// select second page
+store.selectPage(store.pages[1].id);
+```
+
 ### `store.deletePages(ids)`
 
 Remove pages from the store
@@ -40,7 +49,7 @@ Remove pages from the store
 ```js
 // remove current page
 store.deletePages([store.activePage.id]);
-```
+````
 
 ## UI
 
