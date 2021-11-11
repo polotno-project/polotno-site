@@ -35,6 +35,7 @@ module.exports = {
         'server-side',
         'vue-integration',
         'server-api',
+        'cloud-render',
       ],
     },
     {

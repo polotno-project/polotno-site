@@ -1,0 +1,42 @@
+import "./styles.css";
+
+import SAMPLE_JSON from "./sample.json";
+
+const READY_TEXT = "Generate birthday cards";
+const LOADING_TEXT = "LOADING...";
+
+const jsonInput = document.querySelector("#input");
+jsonInput.value = JSON.stringify(SAMPLE_JSON);
+
+const button = document.querySelector("#generate-button");
+
+button.addEventListener("click", async () => {
+  const names = document.querySelector("#names").value.split(",");
+
+  document.querySelector("#images-container").innerHTML = "";
+  button.innerHTML = LOADING_TEXT;
+
+  names.forEach(async (name) => {
+    button.innerHTML = READY_TEXT;
+    const json = jsonInput.value;
+    const req = await fetch("https://api.polotno.dev/api/render", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        design: JSON.parse(json.replace("NAME", name)),
+        exportOptions: {
+          pixelRatio: 0.2
+        },
+        outputFormat: "json"
+      })
+    });
+
+    const { url } = await req.json();
+    const img = document.createElement("img");
+    img.src = url;
+
+    document.querySelector("#images-container").appendChild(img);
+  });
+});

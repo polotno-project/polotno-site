@@ -2,7 +2,7 @@
 title: Custom elements
 ---
 
-**THIS PAGE IS ABOUT VERY EXPERIMENTATION FEATURES OF POLOTNO!**
+**THIS PAGE IS ABOUT VERY EXPERIMENTAL FEATURES OF POLOTNO!**
 
 **Please use it carefully. Watch [changelog](/changelog) for any changes!**
 

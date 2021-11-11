@@ -160,7 +160,6 @@ function Home() {
           <div className="container">
             <h2>Frequently Asked Questions</h2>
 
-
             <h3>When do I need to use "Custom Solution"?</h3>
             <p>
               Polotno framework is a tool for developers. In order to setup it

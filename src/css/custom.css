@@ -143,6 +143,7 @@
   padding: 15px 0;
   font-weight: normal;
   color: black;
+  min-height: 68px;
 }
 
 .pricing-features-item:last-child {

@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+}
+
+#input {
+  width: 100%;
+}
+
+#images-container {
+  display: flex;
+}
+
+#images-container img {
+  margin: 10px;
+}
