@@ -5,7 +5,7 @@ title: API for automated image generation
 **This feature is experimental!** If you are interested to use it on production, please contact anton@lavrton.com.
 You will need to have a special Server Side Rendering license to use it.
 
-With Polotno Server API you can to generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
+With Polotno Server API you can generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
 
 ```js
 const req = await fetch('api.polotno.dev/api/render', {
