@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.35.0 - 2021-11-15
+
+- Allow snapping on element resize
+- Improve dragging performance
+- Fix highlight on text resize
+
 ### 0.34.8 - 2021-11-05
 
 - Better resizing of `<Workspace />` when size of the store is changed
