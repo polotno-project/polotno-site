@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.35.1 - 2021-11-16
+
+- Change internal dependency of `nanoid` to fix Codesandbox issue.
+
 ### 0.35.0 - 2021-11-15
 
 - Allow snapping on element resize
