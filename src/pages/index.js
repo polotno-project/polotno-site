@@ -130,17 +130,6 @@ function Feature({ imageUrl, title, description }) {
   );
 }
 
-const COMPETITORS = [
-  'Canva',
-  'Stensil',
-  'PixTeller',
-  'Snappa',
-  'Designbold',
-  'Crello',
-  'Piktochart',
-  'Zazzle',
-];
-
 const USERS = [
   {
     image: 'logo-mycanvas.svg',
@@ -166,22 +155,6 @@ const USERS = [
 ];
 
 function Home() {
-  const ref = React.useRef();
-
-  React.useEffect(() => {
-    let competitor = COMPETITORS[0];
-    const timeout = setInterval(() => {
-      const oldIndex = COMPETITORS.indexOf(competitor);
-      const newIndex = (oldIndex + 1) % COMPETITORS.length;
-      competitor = COMPETITORS[newIndex];
-
-      // use ref instead of state,
-      // because state change is clearing algolia search
-      ref.current.innerText = competitor;
-    }, 6000);
-    return () => clearInterval(timeout);
-  }, []);
-
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
@@ -192,14 +165,16 @@ function Home() {
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle" style={{ marginBottom: '60px' }}>
+          <h2 className="hero__subtitle">
+            Give your users superpower to edit design templates with familiar UI
+            right in your application.
+          </h2>
+          <h2
+            className="hero__subtitle"
+            style={{ marginBottom: '60px', fontSize: '1.3em', fontWeight: 300 }}
+          >
             {siteConfig.tagline}
-          </p>
-          <p className="hero__subtitle">
-            Create your own app like
-            <br />
-            <span ref={ref}>{COMPETITORS[0]}</span>
-          </p>
+          </h2>
           <div className={styles.buttons}>
             <Link
               className={classnames(
