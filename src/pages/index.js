@@ -159,8 +159,8 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Canvas Editor Framework ${siteConfig.title}`}
-      description="Polotno - Canvas Editor framework for JavaScript"
+      title={`Canvas Editor js SDK ${siteConfig.title}`}
+      description="Polotno - Design Editor framework for JavaScript"
     >
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
