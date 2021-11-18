@@ -159,7 +159,7 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Canvas Editor js SDK ${siteConfig.title}`}
+      title={`Design Editor JS SDK ${siteConfig.title} for canvas`}
       description="Polotno - Design Editor framework for JavaScript"
     >
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
