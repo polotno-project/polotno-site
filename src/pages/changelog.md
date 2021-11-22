@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.36.1 - 2021-11-22
+### 0.36.3 - 2021-11-22
 
 - **BREAKING:** `store.toDataURL()` is now async method. Use it as promise or `await` keyword.
 - Improve performance when design has many changes
