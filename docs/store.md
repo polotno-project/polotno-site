@@ -287,28 +287,28 @@ store.loadJSON(json);
 // wait for loading
 await store.waitLoading();
 // do export
-const url = store.toDataURL();
+const url = await store.toDataURL();
 ```
 
-### `store.toDataURL()`
+### `await store.toDataURL()`
 
 Export store into image in base64 URL format
 
 ```js
 // default export
-store.toDataURL();
+await store.toDataURL();
 
 // make exported image 2x bigger (higher quality)
-store.toDataURL({ pixelRatio: 2 });
+await store.toDataURL({ pixelRatio: 2 });
 
 // ignore page background on export
-store.toDataURL({ ignoreBackground: true });
+await store.toDataURL({ ignoreBackground: true });
 
 // export as jpg
-store.toDataURL({ mimeType: 'image/jpg' });
+await store.toDataURL({ mimeType: 'image/jpg' });
 
 // export only required page
-store.toDataURL({ pageId: store.pages[1].id });
+await store.toDataURL({ pageId: store.pages[1].id });
 ```
 
 ### `store.saveAsImage()`
@@ -374,7 +374,7 @@ When you do hight quality exports, you may want to temporary increase resolution
 // make sure all elements are rendered with increased quality
 store.setElementsPixelRatio(2);
 // do the export
-store.toDataURL({ pixelRatio: 2 });
+await store.toDataURL({ pixelRatio: 2 });
 ```
 
 ## Working with fonts
