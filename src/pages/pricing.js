@@ -14,7 +14,7 @@ function Home() {
       <main>
         <h2 id="price">Price</h2>
         {/* TODO: move styles from global to scope */}
-        <div className="background">
+        <div>
           <div className="container">
             <div className="panel pricing-table">
               <div className="pricing-plan">
@@ -26,13 +26,18 @@ function Home() {
                   <li className="pricing-features-item">
                     Have a small backlink to polotno website
                   </li>
-
                   <li className="pricing-features-item">
-                    All polotno features included
+                    All core polotno features included
                   </li>
                   <li className="pricing-features-item">
                     Basic community
                     <br /> support
+                  </li>
+                  <li className="pricing-features-item">
+                    No "Remove Image Background" support
+                  </li>
+                  <li className="pricing-features-item">
+                    No Cloud Render API support
                   </li>
                 </ul>
                 <p className="pricing-price">Free</p>
@@ -63,6 +68,12 @@ function Home() {
                     Email
                     <br /> support
                   </li>
+                  <li className="pricing-features-item">
+                    No "Remove Image Background" support
+                  </li>
+                  <li className="pricing-features-item">
+                    No Cloud Render API support
+                  </li>
                 </ul>
                 <p className="pricing-price">$100 / month</p>
                 <a
@@ -92,6 +103,12 @@ function Home() {
                   <li className="pricing-features-item">
                     High priority features request and support
                   </li>
+                  <li className="pricing-features-item">
+                    5000 remove background API calls per month
+                  </li>
+                  <li className="pricing-features-item">
+                    5000 cloud rendering API calls per month
+                  </li>
                 </ul>
                 <p className="pricing-price">$200 / month</p>
                 <a
@@ -113,7 +130,8 @@ function Home() {
                     Additional features on top of public API
                   </li>
                   <li className="pricing-features-item">
-                    Full access to the customization source code
+                    Full access to the <strong>customization</strong> source
+                    code
                   </li>
                   <li className="pricing-features-item">
                     Your own branding and styles (optional)
@@ -123,7 +141,9 @@ function Home() {
                     guarantee
                   </li>
                 </ul>
-                <p className="pricing-price">From $10 000</p>
+                <p className="pricing-price" style={{ marginTop: '160px' }}>
+                  From $10 000
+                </p>
                 <a
                   href="mailto:sales@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
                   className="pricing-button"
@@ -143,6 +163,7 @@ function Home() {
           style={{
             textAlign: 'center',
             paddingBottom: '50px',
+            paddingTop: '50px',
             fontSize: '1.5rem',
           }}
         >

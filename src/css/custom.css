@@ -29,33 +29,6 @@
   width: 100%;
 }
 
-.background::after {
-  content: '';
-  background: rgb(79, 104, 232);
-  background: -moz-linear-gradient(
-    top,
-    rgb(79, 104, 232) 0%,
-    rgb(79, 104, 232) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgb(79, 104, 232) 0%,
-    rgb(79, 104, 232) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgb(79, 104, 232) 0%,
-    rgb(79, 104, 232) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(79, 104, 232)', endColorstr='rgb(79, 104, 232)',GradientType=0 );
-  height: 350px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
 @media (min-width: 900px) {
   .background {
     padding: 0 0 25px;
