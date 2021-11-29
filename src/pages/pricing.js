@@ -104,7 +104,7 @@ function Home() {
                     High priority features request and support
                   </li>
                   <li className="pricing-features-item">
-                    5000 remove background API calls per month
+                    500 remove background API calls per month
                   </li>
                   <li className="pricing-features-item">
                     5000 cloud rendering API calls per month
