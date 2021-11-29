@@ -107,7 +107,7 @@ function Home() {
                     500 remove background API calls per month
                   </li>
                   <li className="pricing-features-item">
-                    5000 cloud rendering API calls per month
+                    3000 cloud rendering API calls per month
                   </li>
                 </ul>
                 <p className="pricing-price">$200 / month</p>
