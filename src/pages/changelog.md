@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.36.6 - 2021-12-02
+
+- Fix a bug with possible stuck in loading state, should fix issues with export
+- New property `page.bleed`.
+
 ### 0.36.5 - 2021-11-23
 
 - Fix image rendering in Safari

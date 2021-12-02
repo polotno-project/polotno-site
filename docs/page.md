@@ -21,6 +21,7 @@ page.set({
   background: 'red',
   // you can use "custom" attribute to save your own custom data
   custom: { myInternalId: 'some-id-here' },
+  bleed: 10, // in pixels
 });
 ```
 
