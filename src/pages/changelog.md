@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.36.8 - 2021-12-09
+
+- Selection fixes
+- Text highlight fixes
+
 ### 0.36.6 - 2021-12-02
 
 - Fix a bug with possible stuck in loading state, should fix issues with export
