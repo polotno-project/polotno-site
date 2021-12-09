@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.36.9 - 2021-12-09
+
+- Fix `<Workspace />` autoresize logic
+- Update zooming button
+
 ### 0.36.8 - 2021-12-09
 
 - Selection fixes
