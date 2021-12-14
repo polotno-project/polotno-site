@@ -266,17 +266,22 @@ const UserDashboard = () => {
             </div>
           </React.Fragment>
         )}
-        {subscription && subscription.update_url && (
+        {subscription && (
           <div>
-            <h3>Subscription</h3>
-            <p>
-              You are subscribed to Polotno plan for{' '}
-              {subscription.next_payment.amount}{' '}
-              {subscription.next_payment.currency}.
-            </p>
-            <p>
-              Next payment will be done on {subscription.next_payment.date}.
-            </p>
+            <h3>Subscription is {subscription.state}</h3>
+            {subscription.next_payment && (
+              <>
+                <p>
+                  You are subscribed to Polotno plan for{' '}
+                  {subscription.next_payment.amount}{' '}
+                  {subscription.next_payment.currency}.
+                </p>
+                <p>
+                  Next payment will be done on {subscription.next_payment.date}.
+                </p>
+              </>
+            )}
+
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <a href={subscription.update_url}>Update subscription</a>
               <a href={subscription.cancel_url} style={{ color: 'red' }}>
