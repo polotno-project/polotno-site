@@ -22,6 +22,8 @@ page.set({
   // you can use "custom" attribute to save your own custom data
   custom: { myInternalId: 'some-id-here' },
   bleed: 10, // in pixels
+  width: 1000, // in pixels. You can use 'auto' to inherit width from the store
+  height: 1000, // in pixels. You can use 'auto' to inherit height from the store
 });
 ```
 
@@ -66,3 +68,11 @@ store.activePage?.children.forEach((element) => {
   element.set({ x: element.x + 10 });
 });
 ```
+
+### `page.computedWidth`
+
+Return width of the page in pixels.
+
+### `page.computedHeight`
+
+Return height of the page in pixels.

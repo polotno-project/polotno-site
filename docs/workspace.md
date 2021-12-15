@@ -26,12 +26,33 @@ const App = () => {
 
 The `Workspace` will automatically take full width and height of its parent. So you don't have adjust its size manually. You can just setup the size of parent `<div>` with CSS.
 
+## Customize page controls
+
+```js
+<Workspace
+  store={store}
+  components={{
+    PageControls: ({ width, height, xPadding, yPadding }) => (
+      <div
+        style={{
+          position: 'absolute',
+          top: yPadding + 'px',
+          left: xPadding + 'px',
+        }}
+      >
+        My controls here...
+      </div>
+    ),
+  }}
+/>
+```
+
 ## Hide page controls
 
 Optionally you can hide UI to add/remove/duplicate pages.
 
 ```js
-<Workspace store={store} pageControlsEnabled={false} />
+<Workspace store={store} components={{ PageControls: () => null }} />
 ```
 
 ## Workspace styling

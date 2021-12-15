@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.37.1 - 2021-12-15
+
+- Ability to set different `width` and `height` for every page
+- Better `bleed` support
+- Ability to customize page controls in `<Workspace />`
+- Small fixes
+
 ### 0.36.9 - 2021-12-09
 
 - Fix `<Workspace />` autoresize logic
