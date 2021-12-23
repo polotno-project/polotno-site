@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.37.3 - 2021-12-23
+
+- Change opacity UI a bit. Add numeric input.
+- Export fixes for designs with bleed
+
 ### 0.37.1 - 2021-12-15
 
 - Ability to set different `width` and `height` for every page
