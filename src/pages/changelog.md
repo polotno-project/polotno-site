@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.37.4 - 2022-01-06
+
+- Ability to edit several text elements at once from side panel.
+- Couple fixes for JSON import/export
+
 ### 0.37.3 - 2021-12-23
 
 - Change opacity UI a bit. Add numeric input.
