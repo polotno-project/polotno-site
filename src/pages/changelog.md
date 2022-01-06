@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ### 0.37.4 - 2022-01-06
 
-- Ability to edit several text elements at once from side panel.
+- Ability to edit several text elements at once from toolbar.
 - Couple fixes for JSON import/export
 
 ### 0.37.3 - 2021-12-23
