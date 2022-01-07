@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.37.5 - 2022-01-07
+
+- PDF export fixes. It should work faster, produce smaller file size and render correctly in some PDF viewers.
+
 ### 0.37.4 - 2022-01-06
 
 - Ability to edit several text elements at once from toolbar.
