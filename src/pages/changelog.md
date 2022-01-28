@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.38.1 - 2022-01-28
+
+- `store.history.ignore` fixes
+- Better UX when remove background function is failed
+
 ### 0.38.0 - 2022-01-28
 
 - Show distance between elements. To see it select one element, then hold ALT/OPTION key and hover another element
