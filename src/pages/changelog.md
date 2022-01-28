@@ -5,6 +5,17 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.38.0 - 2022-01-28
+
+- Show distance between elements. To see it select one element, then hold ALT/OPTION key and hover another element
+- Enable "Remove background" feature for all Enterprise plan users
+- Better guidelines when you drag an element. Now it can show several lines at the same time
+- Change default search query in "Photos" section. Now it will show last photos from unsplash
+- Option to disable image downscaling to improve performance
+- More options in translations
+- Style fixes
+- Fix Polotno build in `react-scripts@5`
+
 ### 0.37.6 - 2022-01-11
 
 - Update all internal dependencies to their latest versions.
