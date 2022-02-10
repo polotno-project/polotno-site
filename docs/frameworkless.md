@@ -37,4 +37,3 @@ You can add it with a simple scripts into the page.
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
   ></iframe>
-```

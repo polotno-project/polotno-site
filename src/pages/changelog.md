@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.39.1 - 2022-02-10
+### 0.39.2 - 2022-02-10
 
 - **Collapsible side panel**
 - "Templates" panel updates. Not it can load a template into current page of multi-page document.
