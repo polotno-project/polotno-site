@@ -56,15 +56,15 @@ values={[
 
 ```html
 <link
-  href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+  href="https://unpkg.com/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
   rel="stylesheet"
 />
 <link
-  href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+  href="https://unpkg.com/@blueprintjs/core@3/lib/css/blueprint.css"
   rel="stylesheet"
 />
 <link
-  href="https://unpkg.com/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
   rel="stylesheet"
 />
 ```
@@ -74,15 +74,15 @@ values={[
 
 ```html
 <link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
   rel="stylesheet"
 />
 <link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@3/lib/css/blueprint.css"
   rel="stylesheet"
 />
 <link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
   rel="stylesheet"
 />
 ```

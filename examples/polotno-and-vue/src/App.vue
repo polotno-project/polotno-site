@@ -1,15 +1,15 @@
 <template>
   <div>
     <link
-      href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+      href="https://unpkg.com/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
       rel="stylesheet"
     />
     <link
-      href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+      href="https://unpkg.com/@blueprintjs/core@3/lib/css/blueprint.css"
       rel="stylesheet"
     />
     <link
-      href="https://unpkg.com/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+      href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
       rel="stylesheet"
     />
     <!-- <div v-text="store.pages[0].children.length"></div> -->
@@ -17,11 +17,11 @@
   </div>
 </template>
 <script>
-import { createDemoApp } from "polotno/polotno-app";
+import { createDemoApp } from 'polotno/polotno-app';
 // import { observer } from "mobx-vue";
 
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
       store: null,
@@ -29,8 +29,8 @@ export default {
   },
   mounted() {
     const { store } = createDemoApp({
-      container: document.getElementById("polotno"),
-      key: "YOUR_API_KEY", // you can create it here: https://polotno.dev/cabinet/
+      container: document.getElementById('polotno'),
+      key: 'YOUR_API_KEY', // you can create it here: https://polotno.dev/cabinet/
       // you can hide back-link on a paid licence
       // but it will be good if you can keep it for Polotno project support
       showCredit: true,

@@ -11,7 +11,7 @@ module.exports = {
       type: 'category',
       label: 'Polotno',
       collapsed: false,
-      items: ['overview', 'config'],
+      items: ['overview', 'config', 'frameworkless'],
     },
     {
       type: 'category',

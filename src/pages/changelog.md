@@ -5,6 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.39.1 - 2022-02-10
+
+- **Collapsible side panel**
+- "Templates" panel updates. Not it can load a template into current page of multi-page document.
+- Better error handling for most of default side panels.
+- Minor UI updates for Zoom Panel.
+- Fix display bug of Zoom Panel in Safari.
+- Optimize network loading of "Templates Panel"
+- Other small fixes...
+
 ### 0.38.1 - 2022-01-28
 
 - `store.history.ignore` fixes
@@ -257,7 +267,7 @@ Technical release with internal bugs fixes and optimizations
 
 ```html
 <link
-  href="https://unpkg.com/@blueprintjs/popover2@0.11.0/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
   rel="stylesheet"
 />
 ```

@@ -28,6 +28,8 @@ The `Workspace` will automatically take full width and height of its parent. So 
 
 ## Customize page controls
 
+You can customize page controls of your `<Workspace />` component. You can remove some buttons, add new one, etc. You are in total control on what else you want to see around page on the canvas.
+
 ```js
 <Workspace
   store={store}

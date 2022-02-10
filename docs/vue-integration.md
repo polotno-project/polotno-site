@@ -14,11 +14,11 @@ If you don't need much customizations you can make your own application with `Vu
 <template>
   <div>
     <link
-      href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css"
+      href="https://unpkg.com/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
       rel="stylesheet"
     />
     <link
-      href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css"
+      href="https://unpkg.com/@blueprintjs/core@3/lib/css/blueprint.css"
       rel="stylesheet"
     />
     <div id="app"></div>

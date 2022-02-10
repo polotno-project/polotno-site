@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Polotno Frameworkless demo" />
+    <meta charset="utf-8" />
+    <link
+      href="https://unpkg.com/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/core@3/lib/css/blueprint.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/polotno@latest/polotno.bundle.js"></script>
+    <div id="container"></div>
+    <script>
+      createPolotnoApp({
+        // this is a demo key just for that project
+        // (!) please don't use it in your projects
+        // to create your own API key please go here: https://polotno.dev/cabinet
+        key: 'nFA5H9elEytDyPyvKL7T',
+        // you can hide back-link on a paid licence
+        // but it will be good if you can keep it for Polotno project support
+        showCredit: true,
+        container: document.getElementById('container'),
+      });
+    </script>
+  </body>
+</html>
