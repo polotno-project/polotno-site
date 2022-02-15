@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.39.3 - 2022-02-15
+
+- Fix bug in filters for `image` elements
+- Faster project loading
+- Faster PDF export
+
 ### 0.39.2 - 2022-02-10
 
 - **Collapsible side panel**
