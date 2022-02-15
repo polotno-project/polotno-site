@@ -22,7 +22,6 @@ button.addEventListener('click', async () => {
   button.innerHTML = LOADING_TEXT;
 
   names.forEach(async (name) => {
-    button.innerHTML = READY_TEXT;
     const json = jsonInput.value;
     const req = await fetch('https://api.polotno.dev/api/render?KEY=' + KEY, {
       method: 'POST',
@@ -37,6 +36,7 @@ button.addEventListener('click', async () => {
         outputFormat: 'json',
       }),
     });
+    button.innerHTML = READY_TEXT;
 
     const { url } = await req.json();
     const img = document.createElement('img');

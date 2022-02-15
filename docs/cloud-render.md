@@ -7,6 +7,44 @@ You will need to have "Enterprise plan" to call this API.
 
 With Polotno Server API you can generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
 
+## How it looks like?
+
+```js
+const req = await fetch('https://api.polotno.dev/api/render?KEY=YOUR_API_KEY', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    // polotno json from store.toJSON()
+    design: json,
+    // optional output format for export
+    outputFormat: 'dataURL',
+    // optional export options for store.toDataURL() method
+    exportOptions: {},
+  }),
+});
+
+const { url } = await req.json();
+
+document.getElementById('image').src = url;
+```
+
+## Demo?
+
+<iframe
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/cloud-render?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    style={{
+      width: '100%',
+      height: '700px',
+      border: 0,
+      overflow: 'hidden',
+    }}
+    title="Polotno demo"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
+  ></iframe>
+
 ## Options
 
 ### `design`
@@ -32,39 +70,3 @@ File format of generated result. Possible values are: `png` (default), `jpeg`, `
 ### `exportOptions`
 
 Additional options to pass into export function. For more details see [store.toDataURL()](https://polotno.dev/docs/store-overview/#await-storetodataurl) and [store.toPDFDataURL()](https://polotno.dev/docs/store-overview/#async-storetopdfdataurl).
-
-```js
-const req = await fetch('https://api.polotno.dev/api/render?KEY=YOUR_API_KEY', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    // polotno json from store.toJSON()
-    design: json,
-    // optional output format for export
-    outputFormat: 'dataURL',
-    // optional export options for store.toDataURL() method
-    exportOptions: {},
-  }),
-});
-
-const { url } = await req.json();
-
-document.getElementById('image').src = url;
-```
-
-Demo:
-
-<iframe
-    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/cloud-render?fontsize=11&hidenavigation=1&theme=dark&view=preview"
-    style={{
-      width: '100%',
-      height: '700px',
-      border: 0,
-      overflow: 'hidden',
-    }}
-    title="Polotno demo"
-    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
-  ></iframe>
