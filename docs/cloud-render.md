@@ -7,8 +7,34 @@ You will need to have a special Server Side Rendering license to use it.
 
 With Polotno Server API you can generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
 
+## Options
+
+### `design`
+
+`design` - JSON data from polotno export `store.toJSON()`. Remember that you can generate such JSON on the fly on your backend. For example replace text on some elements dynamically.
+
+### `outputFormat`
+
+`outputFormat` - defines response format. Possible values are: `dataURL` (default), `url` and `file`.
+
+If you use `dataURL` or `url`, API will return json `{ url: '...' }` where `url` is the generated image url.
+
+`file` format will return file buffer. You can save it directly on the backend.
+
+**Note: Cloud API has 5mb limit for its payload!**. So it will be not able to return large data in `dataURL` or `file` format. You can use `url` format instead.
+
+**Images generated using `url` format has expiration time of 24 hour.** After that time, access to the file is not guaranteed. If you want to keep file, please save it on your backend.
+
+### `format`
+
+File format of generated result. Possible values are: `png` (default), `jpeg`, `pdf`.
+
+### `exportOptions`
+
+Additional options to pass into export function. For more details see [store.toDataURL()](https://polotno.dev/docs/store-overview/#await-storetodataurl) and [store.toPDFDataURL()](https://polotno.dev/docs/store-overview/#async-storetopdfdataurl).
+
 ```js
-const req = await fetch('api.polotno.dev/api/render?KEY=YOUR_API_KEY', {
+const req = await fetch('https://api.polotno.dev/api/render?KEY=YOUR_API_KEY', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -17,8 +43,7 @@ const req = await fetch('api.polotno.dev/api/render?KEY=YOUR_API_KEY', {
     // polotno json from store.toJSON()
     design: json,
     // optional output format for export
-    // possible values are 'file' and 'json'
-    outputFormat: 'json',
+    outputFormat: 'dataURL',
     // optional export options for store.toDataURL() method
     exportOptions: {},
   }),
