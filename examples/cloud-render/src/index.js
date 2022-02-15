@@ -3,7 +3,7 @@ import './styles.css';
 import SAMPLE_JSON from './sample.json';
 
 const READY_TEXT = 'Generate birthday cards';
-const LOADING_TEXT = 'LOADING...';
+const LOADING_TEXT = 'Doing hard work... Please wait...';
 
 const jsonInput = document.querySelector('#input');
 jsonInput.value = JSON.stringify(SAMPLE_JSON);
