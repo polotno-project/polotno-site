@@ -15,7 +15,7 @@ function Home() {
         <h2 id="price">Price</h2>
         {/* TODO: move styles from global to scope */}
         <div>
-          <div className="container">
+          <div className="container" style={{ maxWidth: '100%' }}>
             <div className="panel pricing-table">
               <div className="pricing-plan">
                 <h2 className="pricing-header">Non-commercial</h2>
@@ -37,7 +37,11 @@ function Home() {
                     No "Remove Image Background" support
                   </li>
                   <li className="pricing-features-item">
-                    No Cloud Render API support
+                    No{' '}
+                    <a href="/docs/cloud-render" target="_blank">
+                      Cloud Render API
+                    </a>{' '}
+                    support
                   </li>
                 </ul>
                 <p className="pricing-price">Free</p>
@@ -72,10 +76,14 @@ function Home() {
                     No "Remove Image Background" support
                   </li>
                   <li className="pricing-features-item">
-                    No Cloud Render API support
+                    No{' '}
+                    <a href="/docs/cloud-render" target="_blank">
+                      Cloud Render API
+                    </a>{' '}
+                    support
                   </li>
                 </ul>
-                <p className="pricing-price">$100 / month</p>
+                <p className="pricing-price">100 USD / month</p>
                 <a
                   href="https://buy.paddle.com/product/652979"
                   className="pricing-button"
@@ -104,13 +112,17 @@ function Home() {
                     High priority features request and support
                   </li>
                   <li className="pricing-features-item">
-                    500 remove background API calls per month
+                    500 Remove Background API calls per month
                   </li>
                   <li className="pricing-features-item">
-                    3000 cloud rendering API calls per month
+                    3000{' '}
+                    <a href="/docs/cloud-render" target="_blank">
+                      Cloud Rendering API
+                    </a>{' '}
+                    calls per month
                   </li>
                 </ul>
-                <p className="pricing-price">$200 / month</p>
+                <p className="pricing-price">200 USD / month</p>
                 <a
                   href="https://buy.paddle.com/product/652978"
                   className="pricing-button is-featured"
@@ -120,6 +132,46 @@ function Home() {
                   }}
                 >
                   Buy
+                </a>
+              </div>
+
+              <div className="pricing-plan">
+                <h2 className="pricing-header">Ultimate source</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
+                    <strong>
+                      Full access to source code of Polotno editor
+                    </strong>
+                  </li>
+                  <li className="pricing-features-item">
+                    Everything from Enterprise plan
+                  </li>
+
+                  <li className="pricing-features-item">
+                    Consulting about all Polotno internals
+                  </li>
+                  <li className="pricing-features-item">
+                    Increased limits for Remove Background API
+                  </li>
+                  <li className="pricing-features-item">
+                    Increased limits for{' '}
+                    <a href="/docs/cloud-render" target="_blank">
+                      Cloud Rendering API
+                    </a>{' '}
+                  </li>
+                </ul>
+                <p className="pricing-price" style={{ marginTop: '93px' }}>
+                  15 000 USD / year
+                </p>
+                <a
+                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Ultimate%20source%20solution%22%20plan.&body=Please%20describe%20your%20situation%20and%20requirements."
+                  className="pricing-button"
+                  target="_blank"
+                  onClick={() => {
+                    window.plausible('custom-solution-request');
+                  }}
+                >
+                  Contact
                 </a>
               </div>
 
@@ -134,18 +186,18 @@ function Home() {
                     code
                   </li>
                   <li className="pricing-features-item">
-                    Your own branding and styles (optional)
+                    Contracting work with Polotno developers
                   </li>
                   <li className="pricing-features-item">
                     1 year bug-free <br />
                     guarantee
                   </li>
                 </ul>
-                <p className="pricing-price" style={{ marginTop: '160px' }}>
+                <p className="pricing-price" style={{ marginTop: '163px' }}>
                   From $10 000
                 </p>
                 <a
-                  href="mailto:sales@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project%20and%20probably%20we%20will%20use%20it%20for%20%5Bdescribe%20your%20needs%5D."
+                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
@@ -195,10 +247,8 @@ function Home() {
               Will I have access to the full source code on the paid plan?
             </h3>
             <p>
-              <strong>No.</strong> Polotno is provided as minified JavaScript
-              npm package. If you want to have access to the full source code
-              please contact{' '}
-              <a href="mailto:anton@polotno.dev">anton@polotno.dev</a>.
+              Polotno is provided as minified JavaScript npm package. Full
+              source code is available only for "Ultimate source" plan users.
             </p>
 
             <h3>What kind of data is transmitted to your servers?</h3>
@@ -211,8 +261,8 @@ function Home() {
 
             <h3>Will my subscription renew automatically?</h3>
             <p>
-              Yes. You will be billed every month. You can always cancel your
-              subscription the <a href="/cabinet">cabinet</a>.
+              Yes. You will be billed every month/year. You can always cancel
+              your subscription in the <a href="/cabinet">cabinet</a>.
             </p>
           </div>
         </section>
