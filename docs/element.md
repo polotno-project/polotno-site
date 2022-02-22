@@ -241,6 +241,14 @@ const svgElement = page.addElement({
 });
 ```
 
+### `svgElement.colors`
+
+Array of colors detected in the svg image. You can use this array to replace colors in the svg image.
+
+```js
+console.log(svgElement.colors);
+```
+
 ### `svgElement.replaceColor(oldColor, newColor)`
 
 Some svg files support color replacement. `Polotno` can do that when a color of internal svg node is defined as `fill` property.
