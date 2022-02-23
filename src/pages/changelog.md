@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.39.4 - 2022-02-23
+### 0.39.5 - 2022-02-23
 
 - Better work for ordering of elements when several items are selected
 - Fix loading detector `svg` elements. It should fix export for documents with many pages.
