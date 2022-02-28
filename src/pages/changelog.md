@@ -5,10 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.39.9 - 2022-02-28
+
+- UI bugs fixes when bleed is used
+
 ### 0.39.5 - 2022-02-23
 
 - Better work for ordering of elements when several items are selected
-- Fix loading detector `svg` elements. It should fix export for documents with many pages.
+- Fix loading detector for `svg` elements. It should fix export for documents with many pages.
 - Fixed undo function when `svg` element is added to the document.
 
 ### 0.39.3 - 2022-02-15
