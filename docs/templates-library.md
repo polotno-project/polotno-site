@@ -66,7 +66,8 @@ async function run() {
       // we usually don't need original size there
       const maxWidth = 200;
       const scale = maxWidth / store.width;
-      return await store.toDataURL({ pixelRatio: scale }).split('base64,')[1];
+      const url = await store.toDataURL({ pixelRatio: scale });
+      return url.split('base64,')[1];
     }, json);
 
     // save images locally into the same folder
