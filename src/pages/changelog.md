@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.40.0 - 2022-03-09
+
+- Fix pdf export when background has alpha channel
+- Ability to drop an image from side panel to another image to replace it
+- "Fit to page" function for images will handle bleed correctly
+- Different small bugs fixes
+
 ### 0.39.9 - 2022-02-28
 
 - UI bugs fixes when bleed is used
