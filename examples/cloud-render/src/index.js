@@ -31,9 +31,10 @@ button.addEventListener('click', async () => {
       body: JSON.stringify({
         design: JSON.parse(json.replace('NAME', name)),
         exportOptions: {
+          // use pixelRatio < 1 to have much smaller image at the result
           pixelRatio: 0.2,
         },
-        outputFormat: 'json',
+        outputFormat: 'dataURL',
       }),
     });
     button.innerHTML = READY_TEXT;
