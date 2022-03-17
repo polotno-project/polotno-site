@@ -53,10 +53,11 @@ type ToolbarProps = {
   hideDuplicate?: boolean,
   hideLock?: boolean,
   hideRemove?: boolean,
+  components?: any,
 };
 
 // example
-<Toolbar store={store} hideDuplicate downloadButtonEnabled={false} />;
+<Toolbar store={store} hideDuplicate />;
 ```
 
 ### How to overwrite available properties for an element?
@@ -121,3 +122,53 @@ import {
 // You need to pass "store" and "elements" props to these inputs
 <FontFamilyInput store={store} elements={store.selectedElements} />;
 ```
+
+### How to overwrite "Download" button
+
+On the right side of the toolbar, Polotno has "Action Controls" section. You can use `components` prop to overwrite this section.
+
+<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-toolbar-actions" target="_blank">Open Demo</a></p>
+
+```js
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { Button } from '@blueprintjs/core';
+import { DownloadButton } from 'polotno/toolbar/download-button';
+
+const MyToolbar = ({ store }) => {
+  return (
+    <Toolbar
+      store={store}
+      components={{
+        ActionControls: ({ store }) => {
+          return (
+            <div>
+              <DownloadButton store={store} />
+              <Button
+                intent="primary"
+                onClick={() => {
+                  alert('Saving');
+                }}
+              >
+                Save
+              </Button>
+            </div>
+          );
+        },
+      }}
+    />
+  );
+};
+```
+
+<iframe
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-toolbar-actions?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    style={{
+      width: '100%',
+      height: '700px',
+      border: 0,
+      overflow: 'hidden',
+    }}
+    title="Polotno demo"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
+  ></iframe>

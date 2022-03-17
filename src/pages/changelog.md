@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.41.1 - 2022-03-17
+
+- **New "Layers" menu in the side panel.**
+- Ability to customize "Download" button in the toolbar
+- Ability to customize `<Workspace />` component for the case of no pages.
+
 ### 0.40.0 - 2022-03-09
 
 - Fix pdf export when background has alpha channel

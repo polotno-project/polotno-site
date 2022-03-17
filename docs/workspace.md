@@ -69,3 +69,17 @@ Optionally you can change some styles of the workspace.
   activePageBorderColor="red" // border around active page. It will be used only if you have several pages. Otherwise just pageBorderColor will be used
 />
 ```
+
+## No pages UI
+
+If your `store` has no pages, `<Workspace />` component will show a simple UI with a button to create a new page.
+You can overwrite this UI with your own.
+
+```js
+<Workspace
+  store={store}
+  components={{
+    NoPages: ({ store }) => <div>The project has no pages...</div>,
+  }}
+/>
+```
