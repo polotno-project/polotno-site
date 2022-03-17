@@ -24,9 +24,10 @@ store.addPage();
 export const App = () => {
   return (
     <PolotnoContainer className="polotno-app-container">
-      <SidePanelWrap>
+      {/* hide side panel on this demo */}
+      {/* <SidePanelWrap>
         <SidePanel store={store} />
-      </SidePanelWrap>
+      </SidePanelWrap> */}
       <WorkspaceWrap>
         {/* by default no action controls */}
         <Toolbar store={store} />
@@ -53,6 +54,7 @@ export const App = () => {
             },
           }}
         />
+        {/* then use our own buttons for download and save */}
         <Toolbar
           store={store}
           components={{
