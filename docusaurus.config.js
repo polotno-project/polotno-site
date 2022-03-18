@@ -22,6 +22,7 @@ module.exports = {
         { to: '/pricing', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
         { to: 'https://studio.polotno.dev', label: 'Studio', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
         {
           to: 'https://discord.gg/W2VeKgsr9J',
@@ -93,7 +94,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Polotno. Built with Docusaurus.`,
     },
     algolia: {
-      apiKey: '29f79523fee713489da139abf189e9c4',
+      appId: 'TB0G132RK2',
+      apiKey: '181b9799f5fd62aa2e2ea1aae75de020',
       indexName: 'polotno',
 
       // Optional: see doc section bellow
