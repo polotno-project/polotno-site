@@ -127,6 +127,8 @@ import {
 
 On the right side of the toolbar, Polotno has "Action Controls" section. You can use `components` prop to overwrite this section.
 
+> Recommendation: keep "Action Controls" as small as possible. `<Toolbar />` component already has a lot of buttons and components. So it is better give it as much available width as possible. You can put "Action Controls" buttons somewhere else in the UI of your application. For example, take a look into https://studio.polotno.dev/. Download button is placed on the top bar instead of the `<Toolbar />`.
+
 <p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-toolbar-actions" target="_blank">Open Demo</a></p>
 
 ```js
