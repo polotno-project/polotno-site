@@ -8,8 +8,8 @@ hide_table_of_contents: true
 ### 0.41.1 - 2022-03-17
 
 - **New "Layers" menu in the side panel.**
-- Ability to customize "Download" button in the toolbar
-- Ability to customize `<Workspace />` component for the case of no pages.
+- Ability to customize "Download" button in the toolbar https://polotno.dev/docs/toolbar/#how-to-overwrite-download-button
+- Ability to customize `<Workspace />` component for the case of no pages. https://polotno.dev/docs/workspace#no-pages-ui
 
 ### 0.40.0 - 2022-03-09
 
