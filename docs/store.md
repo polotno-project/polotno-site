@@ -102,6 +102,28 @@ Change open side panel manually.
 store.openSidePanel('templates');
 ```
 
+### `store.setUnit({ unit, dpi })`
+
+Set unit metrics to use in UI. You can use it to convert sizes from pixels to other units.
+
+```js
+store.setUnit({
+  unit: 'mm', // mm, cm, in, pt, px
+  dpi: 300,
+});
+```
+
+** Important! Setting new unit will NOT change values in all metrics, such as `width`, `height`, `x`, `y`, `fontSize`!** They will still be saved in pixels.
+Unit metrics will be used only for default UI from Polotno.
+
+### `store.unit`
+
+Returns unit used in UI to display measures. By default it is `px`. You can change it to `pt`, `mm`, `cm`, `in`.
+
+### `store.dpi`
+
+Returns dpi used to convert pixels to other units.
+
 ## Working with elements
 
 ### `store.selectedElements`
@@ -355,14 +377,15 @@ await store.toPDFDataURL({ ignoreBackground: true });
 // default export
 store.saveAsPDF({ fileName: 'polotno.pdf' });
 
-// increase exported quality
-store.saveAsPDF({ dpi: 300 }); // default is 72
+// change default dpi
+// changing DPI will not effect quality of the export. But it may change page size of exported PDF
+store.saveAsPDF({ dpi: 300 }); // default is store.dpi, it equals 72
 
 // ignore page background on export
 store.saveAsPDF({ ignoreBackground: true });
 
-// export second page
-store.saveAsPDF({ pageId: store.pages[1].id });
+// change export quality
+store.saveAsPDF({ pixelRatio: 2 });
 ```
 
 ### `store.setElementsPixelRatio(ratio)`

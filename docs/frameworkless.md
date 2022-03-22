@@ -10,15 +10,15 @@ You can add it with a simple scripts into the page.
 ```html
 <!-- add styles -->
 <link
-  href="https://unpkg.com/@blueprintjs/icons@3/lib/css/blueprint-icons.css"
+  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
   rel="stylesheet"
 />
 <link
-  href="https://unpkg.com/@blueprintjs/core@3/lib/css/blueprint.css"
+  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
   rel="stylesheet"
 />
 <link
-  href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
   rel="stylesheet"
 />
 <!-- add polotno bundle -->

@@ -5,6 +5,34 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.42.0 - 2022-03-22
+
+- **Breaking! Polotno is migrated to use blueprint v4 internally.**
+
+Steps to migrate:
+
+1. Change CSS styles to new version:
+
+```html
+<link
+  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  rel="stylesheet"
+/>
+```
+
+2. If you have any additional UI made for blueprint v3, you can migrate it to v4: https://github.com/palantir/blueprint/wiki/Blueprint-4.0.
+
+- **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`.
+- UX fixes in "Layers" menu
+
 ### 0.41.5 - 2022-03-17
 
 - **New "Layers" menu in the side panel.** https://polotno.dev/blog/2022-04-18-new-layers-panel
@@ -296,7 +324,7 @@ Technical release with internal bugs fixes and optimizations
 
 ```html
 <link
-  href="https://unpkg.com/@blueprintjs/popover2@0.13.0/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
   rel="stylesheet"
 />
 ```
