@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.42.0 - 2022-03-22
+### 0.42.1 - 2022-03-22
 
 - **Breaking! Polotno is migrated to use blueprint v4 internally.**
 
