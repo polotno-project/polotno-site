@@ -104,7 +104,7 @@ store.openSidePanel('templates');
 
 ### `store.setUnit({ unit, dpi })`
 
-Set unit metrics to use in UI. You can use it to convert sizes from pixels to other units.
+Set unit metrics to use in UI.
 
 ```js
 store.setUnit({
@@ -113,8 +113,7 @@ store.setUnit({
 });
 ```
 
-** Important! Setting new unit will NOT change values in all metrics, such as `width`, `height`, `x`, `y`, `fontSize`!** They will still be saved in pixels.
-Unit metrics will be used only for default UI from Polotno.
+** Important! Setting new unit will NOT change values in store and elements attributes, such as `width`, `height`, `x`, `y`, `fontSize`!** They will still be saved in pixels. Unit metrics will be used only for default UI from Polotno.
 
 ### `store.unit`
 

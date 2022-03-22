@@ -7,6 +7,8 @@ hide_table_of_contents: true
 
 ### 0.42.1 - 2022-03-22
 
+- **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`. https://polotno.dev/docs/store-overview#storesetunit-unit-dpi-
+- UX fixes in "Layers" menu
 - **Breaking! Polotno is migrated to use blueprint v4 internally.**
 
 Steps to migrate:
@@ -29,9 +31,6 @@ Steps to migrate:
 ```
 
 2. If you have any additional UI made for blueprint v3, you can migrate it to v4: https://github.com/palantir/blueprint/wiki/Blueprint-4.0.
-
-- **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`.
-- UX fixes in "Layers" menu
 
 ### 0.41.5 - 2022-03-17
 
