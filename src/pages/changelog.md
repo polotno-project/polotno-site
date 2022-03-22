@@ -30,7 +30,7 @@ Steps to migrate:
 />
 ```
 
-2. If you have any additional UI made for blueprint v3, you can migrate it to v4: https://github.com/palantir/blueprint/wiki/Blueprint-4.0.
+2. If you have any additional UI made for blueprint v3, you must migrate it to v4: https://github.com/palantir/blueprint/wiki/Blueprint-4.0.
 
 ### 0.41.5 - 2022-03-17
 
