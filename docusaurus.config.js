@@ -7,6 +7,7 @@ module.exports = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'polotno', // Usually your repo name.
   themeConfig: {
+    image: 'img/twitter-card.jpg',
     colorMode: {
       disableSwitch: true,
     },
