@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.42.3 - 2022-04-01
+
+- Better distance display when several elements selected
+- "Select All" will skip non-selectable elements
+- Fix distance display on ALT key usage
+- Fix loading of the same template several times into multi-page document
+- Increase loading time limit. It will prevent false loading errors and may improve exporting.
+
 ### 0.42.1 - 2022-03-22
 
 - **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`. https://polotno.dev/docs/store-overview#storesetunit-unit-dpi-
