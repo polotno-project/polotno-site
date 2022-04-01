@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.42.5 - 2022-04-01
+
+- Reverse order in "Layers" menu
+- Quick input fix in fonts selector for `text` element. Blurring the the input will work better.
+
 ### 0.42.3 - 2022-04-01
 
 - Better distance display when several elements selected
