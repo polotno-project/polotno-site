@@ -188,13 +188,26 @@ function Home() {
             >
               Get Started
             </Link>
+            <Link
+              className={classnames(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted
+              )}
+              style={{
+                backgroundColor: 'white',
+                marginLeft: '10px',
+              }}
+              to={useBaseUrl('docs/demo-full-editor')}
+            >
+              Launch Demo
+            </Link>
           </div>
           {/* <link
             href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
             rel="stylesheet"
             type="text/css"
           /> */}
-          <div
+          {/* <div
             id="mc_embed_signup"
             style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px' }}
           >
@@ -259,7 +272,7 @@ function Home() {
                 </div>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
         <div className="container" style={{ padding: '10px' }}>
           <img className={styles.demoImage} src="/img/polotno.png" />
