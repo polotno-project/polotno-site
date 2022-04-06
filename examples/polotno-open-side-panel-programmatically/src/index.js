@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import { autorun } from 'mobx';
 import { observer } from 'mobx-react-lite';
 
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
+
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { InputGroup } from '@blueprintjs/core';
 

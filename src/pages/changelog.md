@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.42.6 - 2022-04-06
+
+- Remove non-selectable elements from "Layers" menu
+- Strip HTML tags from simple `text` element display
+- Pasting several elements on the canvas will automatically select them all
+
 ### 0.42.5 - 2022-04-01
 
 - Reverse order in "Layers" menu

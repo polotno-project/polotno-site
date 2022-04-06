@@ -1,4 +1,7 @@
 import { createDemoApp } from 'polotno/polotno-app';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 console.log('starting the app...');
 
