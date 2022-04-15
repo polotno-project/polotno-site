@@ -70,9 +70,7 @@ const UserDashboard = () => {
       },
     });
     const res = await req.json();
-    if (res && res.state) {
-      setSubscription(res);
-    }
+    setSubscription(res);
   };
 
   React.useEffect(() => {
@@ -268,7 +266,7 @@ const UserDashboard = () => {
             </div>
           </React.Fragment>
         )}
-        {subscription && (
+        {subscription && subscription.update_url && (
           <div>
             <h3>Subscription is {subscription.state}</h3>
             {subscription.next_payment && (
