@@ -66,7 +66,7 @@ import { ImagesGrid } from 'polotno/side-panel/images-grid';
 
 It is a common scenario to request some API to display a list of images in the side panel grid. You can use any React tools here. You can use `fetch` methods inside hooks, you can use any library for that. But also you can use `useInfiniteAPI` hook from `Polotno`. `useInfiniteAPI` hooks is just a wrapper around [swr](https://swr.vercel.app/) library.
 
-````js
+```js
 import { useInfiniteAPI } from 'polotno/utils/use-api';
 
 export const SidePanel = () => {
@@ -135,4 +135,4 @@ import { unstable_registerNextDomDrop } from 'polotno/config';
     registerNextDomDrop(null);
   }}
 />;
-````
+```
