@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@blueprintjs/core';
-import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { PolotnoContainer, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
-import { SidePanel } from 'polotno/side-panel';
 import { Toolbar } from 'polotno/toolbar/toolbar';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { DownloadButton } from 'polotno/toolbar/download-button';
@@ -28,10 +27,6 @@ store.addPage();
 export const App = () => {
   return (
     <PolotnoContainer className="polotno-app-container">
-      {/* hide side panel on this demo */}
-      {/* <SidePanelWrap>
-        <SidePanel store={store} />
-      </SidePanelWrap> */}
       <WorkspaceWrap>
         {/* by default no action controls */}
         <Toolbar store={store} />

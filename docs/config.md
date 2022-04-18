@@ -1,6 +1,46 @@
 ---
-title: Polotno Editor configuration
+title: Editor configuration
 ---
+
+### How to enable dark theme?
+
+Thanks to https://blueprintjs.com/, `Polotno` has full support for the dark theme. To enable it, you just need to add `bp4-dark` class to any editor container.
+
+```html
+<body class="bp4-dark">
+  <div id="container"></div>
+</body>
+```
+
+### How to change image upload behavior?
+
+The default [SidePanel Component](/docs/side-panel) has `Upload` tab to import local images into the project. By default `polotno` just converting local file into base64 string. Resulted URL strings are using for `image` elements. Using base64 string may produce projects with a large size, since images will be fully encoded inside JSON.
+
+**It is very recommended to upload images into your server!** It will make JSON much smaller and easier to read. Also it will improve the performance of the editor a lot!
+
+If you want to upload local images to your server you can do this:
+
+```js
+import { setUploadFunc } from 'polotno/config';
+
+// define our upload function
+// you have to write your own logic, that fits your API
+async function upload(localFile) {
+  const formData = new FormData();
+  formData.append('files[]', localFile);
+  const res = await fetch(yourServerURL, {
+    method: 'POST',
+    body: formData,
+  });
+  const json = await res.json();
+  const { url } = json;
+  // return simple and short url
+  return url;
+}
+
+// set new function
+setUploadFunc(upload);
+```
 
 ### How to translate UI?
 
@@ -27,38 +67,10 @@ console.log(getTranslations());
 
 **If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.dev or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
 
-### How to change image upload behavior?
-
-The default [SidePanel Component](/docs/side-panel) has `Upload` tab to import local images into the project. By default `polotno` just converting local file into base64 string.
-Resulted URL strings are using for `image` elements. Using base64 string may produce projects with a large size, since images will be fully encoded inside JSON.
-
-If you want to upload local images to your server you can do this:
-
-```js
-import { setUploadFunc } from 'polotno/config';
-
-// define our upload function
-// you have to write your own logic, that fits your API
-async function upload(localFile) {
-  const formData = new FormData();
-  formData.append('files[]', localFile);
-  const res = await fetch(yourServerURL, {
-    method: 'POST',
-    body: formData,
-  });
-  const json = await res.json();
-  const { url } = json;
-  // return simple and short url
-  return url;
-}
-
-// set new function
-setUploadFunc(upload);
-```
-
 ### How to change available fonts?
 
 There are three types of fonts in `Polotno`:
+
 1. Google fonts
 2. User fonts defined in `store.fonts`
 3. Global fonts
@@ -81,7 +93,7 @@ If you want to add/remove fonts specific for the user you can use [Store Fonts A
 
 Fonts added into `store` directly will be included into JSON export via `store.toJSON()`.
 
-A user can add/remove fonts from the default "Text" side-panel inside "fonts" tab. 
+A user can add/remove fonts from the default "Text" side-panel inside "fonts" tab.
 
 #### (3) Global fonts
 

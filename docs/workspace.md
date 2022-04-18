@@ -1,8 +1,8 @@
 ---
-title: Workspace
+title: Workspace UI
 ---
 
-`Workspace` is the main `React` component that you are going to use to display the drawings and interact with them. All manipulations with canvas are made via [Store](/docs/store-overview).
+`Workspace` is issential part of `Polotno` framework. It is the main `React` component that you are going to use to display the drawings and interact with them. You can change canvas and its content programmatically using [Store API](/docs/store-overview).
 
 ```js
 import { Workspace } from 'polotno/canvas/workspace';

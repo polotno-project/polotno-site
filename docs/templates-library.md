@@ -29,6 +29,8 @@ We can use `polotno-node` API to quickly generate small previews the whole libra
 I will show you a quick NodeJS script that will read load directory and create previews for every json file in it.
 When script is finished we will have a folder where designs (json files) and previews (png files).
 
+If you prefer not to use NodeJS, you can use [`Polotno Cloud API`](/docs/cloud-render) to generate previews with your own backend language.
+
 ```js
 import fs from 'fs';
 import path from 'path';
@@ -94,6 +96,7 @@ This step is out of polotno scope. You can use any backend stack you like. Most 
 ### (7 and 8) Displaying templates on side panel
 
 As soon as you have backend API to get list of templates, you can use [Side Panel Customization](/docs/side-panel) to display that list on the page.
+In the demo we will use `<ImagesGrid />` component and `useInfiniteAPI` hook ([Docs for them](/docs/side-panel-utils)). You don't have to use them in your app. You can make your own implementation. But these modules may save you a lot of time, because they are designed for such use cases. Polotno uses them internally for default side panels.
 
 The side panel may look like this:
 

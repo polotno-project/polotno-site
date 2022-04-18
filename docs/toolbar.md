@@ -1,5 +1,5 @@
 ---
-title: Toolbar
+title: Toolbar UI
 ---
 
 `Toolbar` is a UI components to change elements on the canvas, reorder and align them, apply undo/redo.

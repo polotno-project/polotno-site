@@ -5,7 +5,7 @@ title: Overview
 
 ## Why `polotno`?
 
-`Polotno` is a very opinionated JavaScript framework that will help you build canvas editor for several business use cases.
+`Polotno` is a opinionated JavaScript library and React components to build canvas editor for several business use cases.
 
 There are many powerful JavaScript frameworks and tools that can help you make a canvas editor. But almost all of them are "low-level". Like https://konvajs.org/ is a 2d canvas framework. It is good, it is powerful. But you may need to write **a lot of code** to make a full canvas editor app.
 

@@ -19,11 +19,19 @@ module.exports = {
       collapsed: false,
       items: ['store-overview', 'page-overview', 'element-overview'],
     },
+    'workspace',
+    'toolbar',
     {
       type: 'category',
-      label: 'UI components',
+      label: 'Side Panel UI',
       collapsed: false,
-      items: ['workspace', 'side-panel', 'toolbar'],
+      items: [
+        'side-panel',
+        'side-panel-images',
+        'side-panel-hidden',
+        'side-panel-utils',
+        'side-panel-size',
+      ],
     },
     {
       type: 'category',
