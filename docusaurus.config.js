@@ -75,7 +75,7 @@ module.exports = {
           items: [
             {
               label: 'Status',
-              href: 'https://status.polotno.dev',
+              href: 'https://status.polotno.com',
             },
             {
               label: 'License',
