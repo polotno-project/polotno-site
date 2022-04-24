@@ -12,7 +12,7 @@ const button = document.querySelector('#generate-button');
 
 // this is a demo key just for that project
 // (!) please don't use it in your projects
-// to create your own API key please go here: https://polotno.dev/cabinet
+// to create your own API key please go here: https://polotno.com/cabinet
 const KEY = 'nFA5H9elEytDyPyvKL7T';
 
 button.addEventListener('click', async () => {
@@ -23,7 +23,7 @@ button.addEventListener('click', async () => {
 
   names.forEach(async (name) => {
     const json = jsonInput.value;
-    const req = await fetch('https://api.polotno.dev/api/render?KEY=' + KEY, {
+    const req = await fetch('https://api.polotno.com/api/render?KEY=' + KEY, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

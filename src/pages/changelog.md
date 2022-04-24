@@ -26,7 +26,7 @@ hide_table_of_contents: true
 
 ### 0.42.1 - 2022-03-22
 
-- **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`. https://polotno.dev/docs/store-overview#storesetunit-unit-dpi-
+- **New!** `Polotno` now supports real metric units. Usage: `store.setUnit({ unit: 'mm', dpi: 300 })`. https://polotno.com/docs/store-overview#storesetunit-unit-dpi-
 - UX fixes in "Layers" menu
 - **Breaking! Polotno is migrated to use blueprint v4 internally.**
 
@@ -53,9 +53,9 @@ Steps to migrate:
 
 ### 0.41.5 - 2022-03-17
 
-- **New "Layers" menu in the side panel.** https://polotno.dev/blog/2022-04-18-new-layers-panel
-- Ability to customize "Download" button in the toolbar https://polotno.dev/docs/toolbar/#how-to-overwrite-download-button
-- Ability to customize `<Workspace />` component for the case of no pages. https://polotno.dev/docs/workspace#no-pages-ui
+- **New "Layers" menu in the side panel.** https://polotno.com/blog/2022-04-18-new-layers-panel
+- Ability to customize "Download" button in the toolbar https://polotno.com/docs/toolbar/#how-to-overwrite-download-button
+- Ability to customize `<Workspace />` component for the case of no pages. https://polotno.com/docs/workspace#no-pages-ui
 
 ### 0.40.0 - 2022-03-09
 

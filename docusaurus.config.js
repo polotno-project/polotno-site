@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Polotno',
   tagline: 'Customizable SDK for making your own canvas editor',
-  url: 'https://polotno.dev',
+  url: 'https://polotno.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   // organizationName: 'facebook', // Usually your GitHub org/user name.
@@ -22,7 +22,7 @@ module.exports = {
         { to: 'changelog', label: 'Changelog', position: 'left' },
         { to: '/pricing', label: 'Price', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
-        { to: 'https://studio.polotno.dev', label: 'Studio', position: 'left' },
+        { to: 'https://studio.polotno.com', label: 'Studio', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
         {

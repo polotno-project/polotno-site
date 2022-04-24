@@ -65,7 +65,7 @@ import { getTranslations } from 'polotno/config';
 console.log(getTranslations());
 ```
 
-**If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.dev or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
+**If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.com or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
 
 ### How to change available fonts?
 
@@ -139,7 +139,7 @@ addGlobalFont({
 ```js
 import { getGoogleFontsListAPI, getGoogleFontImage } from 'polotno/config';
 
-// returns an URL to api.polotno.dev
+// returns an URL to api.polotno.com
 const url = getGoogleFontsListAPI();
 // when you fetch the list you can show preview of every font in the list
 // to get image path you can use this:

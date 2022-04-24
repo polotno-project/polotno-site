@@ -9,18 +9,24 @@ const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 // const isLocalhost =
 //   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
 
+const onDotCom =
+  typeof window !== undefined &&
+  window.location.origin.indexOf('polotno.com') >= 0;
+
 const isLocalhost = false;
 
-const POLOTNO_API = 'https://api.polotno.dev/api';
+const POLOTNO_API = 'https://api.polotno.com/api';
 
-const PRODUCTION_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
+const DOT_DEV_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
+const DOT_COM_ID = 'MNzqsYRf6Vz2bilIOXqc51Mb9BlDT1Tu';
+const PRODUCTION_ID = onDotCom ? DOT_COM_ID : DOT_DEV_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
 
 const ID = isLocalhost ? LOCAL_ID : PRODUCTION_ID;
 
 const redirect = isLocalhost
   ? 'http://localhost:3000/cabinet'
-  : 'https://polotno.dev/cabinet';
+  : 'https://polotno.com/cabinet';
 
 const UserDashboard = () => {
   const { user, logout, getAccessTokenSilently } = useAuth0();

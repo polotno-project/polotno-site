@@ -16,7 +16,7 @@ const { createInstance } = require('polotno-node');
 async function run() {
   // create working instance
   const instance = await createInstance({
-    // to create your own API key please go here: https://polotno.dev/cabinet
+    // to create your own API key please go here: https://polotno.com/cabinet
     key: 'nFA5H9elEytDyPyvKL7T',
   });
 

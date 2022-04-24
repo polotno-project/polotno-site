@@ -19,7 +19,7 @@ In order to make a templates library you will need:
 
 ## (1-4) Making designs library
 
-These are manual steps with human creativity involved. You should use your own polotno-made editor. Or you can use https://studio.polotno.dev/ if you want. You can use "Save" button to download `.json` file.
+These are manual steps with human creativity involved. You should use your own polotno-made editor. Or you can use https://studio.polotno.com/ if you want. You can use "Save" button to download `.json` file.
 
 Now you need to create as many files as you need for your library.
 
@@ -44,7 +44,7 @@ async function run() {
   const instance = await createInstance({
     // this is a demo key just for that project
     // (!) please don't use it in your projects
-    // to create your own API key please go here: https://polotno.dev/cabinet
+    // to create your own API key please go here: https://polotno.com/cabinet
     key: 'nFA5H9elEytDyPyvKL7T',
   });
 

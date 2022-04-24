@@ -9,7 +9,7 @@ import { Workspace } from 'polotno/canvas/workspace';
 import { createStore } from 'polotno/model/store';
 
 const store = createStore({
-  key: YOUR_API_KEY, // you can create it here: https://polotno.dev/cabinet/
+  key: YOUR_API_KEY, // you can create it here: https://polotno.com/cabinet/
   // you can hide back-link on a paid licence
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
