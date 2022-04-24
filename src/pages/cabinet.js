@@ -2,31 +2,39 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import styles from './styles.module.css';
-import Link from '@docusaurus/Link';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
+const DOT_DEV_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
+const DOT_COM_ID = 'MNzqsYRf6Vz2bilIOXqc51Mb9BlDT1Tu';
+
+let ID = DOT_COM_ID;
+let onDotCom = true;
+
+if (ExecutionEnvironment.canUseDOM) {
+  onDotCom =
+    typeof window !== undefined &&
+    window.location.origin.indexOf('polotno.com') >= 0;
+}
 
 const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 
 // const isLocalhost =
 //   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
 
-const onDotCom =
-  typeof window !== undefined &&
-  window.location.origin.indexOf('polotno.com') >= 0;
-
 const isLocalhost = false;
 
 const POLOTNO_API = 'https://api.polotno.com/api';
 
-const DOT_DEV_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
-const DOT_COM_ID = 'MNzqsYRf6Vz2bilIOXqc51Mb9BlDT1Tu';
 const PRODUCTION_ID = onDotCom ? DOT_COM_ID : DOT_DEV_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
 
-const ID = isLocalhost ? LOCAL_ID : PRODUCTION_ID;
+ID = isLocalhost ? LOCAL_ID : PRODUCTION_ID;
 
 const redirect = isLocalhost
   ? 'http://localhost:3000/cabinet'
-  : 'https://polotno.com/cabinet';
+  : onDotCom
+  ? 'https://polotno.com/cabinet'
+  : 'https://polotno.dev/cabinet';
 
 const UserDashboard = () => {
   const { user, logout, getAccessTokenSilently } = useAuth0();
