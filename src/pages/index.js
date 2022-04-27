@@ -152,6 +152,10 @@ const USERS = [
     image: 'coamaker.svg',
     link: 'https://coamaker.com/',
   },
+  {
+    image: 'leeg.jpg',
+    link: 'https://plataforma.leeg.com.br/',
+  },
 ];
 
 function Home() {
@@ -323,7 +327,7 @@ function Home() {
                 {USERS.map(({ link, image }, index) => (
                   <div
                     className={classnames('col col--2', styles.feature, {
-                      'col--offset-1': index === 0,
+                      // 'col--offset-1': index === 0,
                     })}
                   >
                     <div className="text--center">
@@ -349,15 +353,22 @@ function Home() {
               <div className="row">
                 <div className={classnames('col col--6', styles.feature)}>
                   <p>
-                    "I have struggled with building my prototype for months,
-                    tried several Javascript libraries, and even tried to build
-                    a canvas tool by myself. As soon as I had found Polotno,
-                    everything happened fast: In just a few hours, I customized
-                    Polotno, picked the functions I needed, and from then on
-                    concentrated on building my business. Furthermore, the
-                    support at Polotno is amazing. New features are published
-                    quickly and reflect what the quickly growing community of
-                    users wishes."
+                    @coamaker.com dev: "I have struggled with building my
+                    prototype for months, tried several Javascript libraries,
+                    and even tried to build a canvas tool by myself. As soon as
+                    I had found Polotno, everything happened fast: In just a few
+                    hours, I customized Polotno, picked the functions I needed,
+                    and from then on concentrated on building my business.
+                    Furthermore, the support at Polotno is amazing. New features
+                    are published quickly and reflect what the quickly growing
+                    community of users wishes."
+                  </p>
+                  <p>
+                    @leeg.com team "Perfect library with a great approach,
+                    provides a good development experience be the concise
+                    features and excellent typescript structure! Very well
+                    updated, simple and straight documentation and an incredible
+                    support by the development team."
                   </p>
                 </div>
                 <div className={classnames('col col--6', styles.feature)}>

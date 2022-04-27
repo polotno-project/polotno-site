@@ -54,6 +54,7 @@ module.exports = {
         'demo-full-editor',
         'demo-book-cover-editor',
         'demo-simple-t-shirt',
+        'demo-grid',
       ],
     },
   ],
