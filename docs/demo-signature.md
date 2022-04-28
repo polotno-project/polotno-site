@@ -3,7 +3,7 @@ title: Add signature to the canvas
 hide_table_of_contents: true
 ---
 
-In `polotno` you can draw directly on the canvas. But you can create your own custom UI for drawing operations, and then you can add the result into the canvas with `image` or `svg` elements.
+In `Polotno` you can not draw directly on the canvas. But you can create your own custom UI for drawing operations, and then you can add the result into the canvas using `image` or `svg` elements.
 
 On the demo we are going to create a custom side panel to add signature to the document.
 
