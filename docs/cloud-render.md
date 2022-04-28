@@ -1,9 +1,11 @@
 ---
-title: API for automated image generation
+title: Cloud Render API
 ---
 
 If you are interested to use it on production, please contact anton@lavrton.com.
 You will need to have "Enterprise plan" to call this API.
+
+## API for automated image generation
 
 With Polotno Server API you can generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
 

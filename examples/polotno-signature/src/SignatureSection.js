@@ -1,15 +1,15 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { SectionTab } from "polotno/side-panel";
-import * as svg from "polotno/utils/svg";
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { SectionTab } from 'polotno/side-panel';
+import * as svg from 'polotno/utils/svg';
 // import our own icon
-import FaSignature from "@meronex/icons/fa/FaSignature";
-import SignaturePad from "signature_pad";
-import { Button } from "@blueprintjs/core";
+import FaSignature from '@meronex/icons/fa/FaSignature';
+import SignaturePad from 'signature_pad';
+import { Button } from '@blueprintjs/core';
 
 // define the new custom section
 export const SignatureSection = {
-  name: "signature",
+  name: 'signature',
   Tab: (props) => (
     <SectionTab name="Signature" {...props}>
       <FaSignature />
@@ -21,6 +21,7 @@ export const SignatureSection = {
     const pad = React.useRef();
 
     React.useEffect(() => {
+      // resize canvas to full size
       ref.current.width = ref.current.parentElement.offsetWidth;
       pad.current = new SignaturePad(ref.current);
     }, []);
@@ -30,9 +31,9 @@ export const SignatureSection = {
         Draw your signature:
         <canvas
           ref={ref}
-          style={{ border: "1px solid grey", borderRadius: "5px" }}
+          style={{ border: '1px solid grey', borderRadius: '5px' }}
         />
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Button
             onClick={() => {
               pad.current.clear();
@@ -42,14 +43,14 @@ export const SignatureSection = {
           </Button>
           <Button
             onClick={() => {
-              const src = pad.current.toDataURL("image/svg+xml");
+              const src = pad.current.toDataURL('image/svg+xml');
               store.activePage.addElement({
-                type: "svg",
+                type: 'svg',
                 x: 659,
                 y: 721,
                 width: ref.current.width,
                 height: ref.current.height,
-                src
+                src,
               });
             }}
           >
@@ -58,5 +59,5 @@ export const SignatureSection = {
         </div>
       </div>
     );
-  })
+  }),
 };

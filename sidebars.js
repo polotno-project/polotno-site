@@ -33,6 +33,8 @@ module.exports = {
         'side-panel-size',
       ],
     },
+    'server-api',
+    'cloud-render',
     {
       type: 'category',
       label: 'Misc',
@@ -42,8 +44,6 @@ module.exports = {
         'templates-library',
         'server-side',
         'vue-integration',
-        'server-api',
-        'cloud-render',
       ],
     },
     {
@@ -55,6 +55,7 @@ module.exports = {
         'demo-book-cover-editor',
         'demo-simple-t-shirt',
         'demo-grid',
+        'demo-signature',
       ],
     },
   ],
