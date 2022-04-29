@@ -11,6 +11,8 @@ There are several tools that will help you to display and change QR codes in Pol
 2. With `svg` element you can show generated SVG image on the canvas.
 3. We can use `custom` attribute of `svg` shape to save any additional data. We can use it to store QR code data string for future reference.
 
+_Instructions: try to change content of select QR code. Try to deselect element to create new QR codes._
+
 <p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-qr-codes" target="_blank">Open Demo</a></p>
 
 <iframe
