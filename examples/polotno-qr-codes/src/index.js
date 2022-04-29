@@ -34,10 +34,10 @@ getQR(val).then((src) => {
   store.activePage.addElement({
     type: 'svg',
     name: 'qr',
-    x: store.width / 2 - 80,
-    y: store.height / 2 - 80,
-    width: 160,
-    height: 160,
+    x: store.width / 2 - 150,
+    y: store.height / 2 - 150,
+    width: 300,
+    height: 300,
     src,
     custom: {
       value: val,
