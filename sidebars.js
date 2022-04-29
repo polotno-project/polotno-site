@@ -48,7 +48,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Showcase',
+      label: 'Examples',
       collapsed: false,
       items: [
         'demo-full-editor',
@@ -56,6 +56,7 @@ module.exports = {
         'demo-simple-t-shirt',
         'demo-grid',
         'demo-signature',
+        'demo-qr-codes',
       ],
     },
   ],
