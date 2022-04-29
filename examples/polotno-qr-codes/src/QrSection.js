@@ -1,22 +1,22 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { SectionTab } from "polotno/side-panel";
-import QRCode from "qrcode";
-import * as svg from "polotno/utils/svg";
-import ImQrcode from "@meronex/icons/im/ImQrcode";
-import { Button, InputGroup } from "@blueprintjs/core";
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { SectionTab } from 'polotno/side-panel';
+import QRCode from 'qrcode';
+import * as svg from 'polotno/utils/svg';
+import ImQrcode from '@meronex/icons/im/ImQrcode';
+import { Button, InputGroup } from '@blueprintjs/core';
 
 // create svg image for QR code for input text
-async function getQR(text) {
+export async function getQR(text) {
   return new Promise((resolve) => {
     QRCode.toString(
-      text || "no-data",
+      text || 'no-data',
       {
-        type: "svg",
+        type: 'svg',
         color: {
-          dark: "#00F", // Blue dots
-          light: "#0000" // Transparent background
-        }
+          dark: '#00F', // Blue dots
+          light: '#0000', // Transparent background
+        },
       },
       (err, string) => {
         resolve(svg.svgToURL(string));
@@ -27,7 +27,7 @@ async function getQR(text) {
 
 // define the new custom section
 export const QrSection = {
-  name: "qr",
+  name: 'qr',
   Tab: (props) => (
     <SectionTab name="Qr" {...props}>
       <ImQrcode />
@@ -35,10 +35,10 @@ export const QrSection = {
   ),
   // we need observer to update component automatically on any store changes
   Panel: observer(({ store }) => {
-    const [val, setVal] = React.useState("");
+    const [val, setVal] = React.useState('');
 
     const el = store.selectedElements[0];
-    const isQR = el?.name === "qr";
+    const isQR = el?.name === 'qr';
 
     // if selection is changed we need to update input value
     React.useEffect(() => {
@@ -54,8 +54,8 @@ export const QrSection = {
           el.set({
             src,
             custom: {
-              value: val
-            }
+              value: val,
+            },
           });
         });
       }
@@ -71,44 +71,44 @@ export const QrSection = {
           }}
           placeholder="Type qr code content"
           value={val}
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         />
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            paddingTop: "20px"
+            display: 'flex',
+            justifyContent: 'space-between',
+            paddingTop: '20px',
           }}
         >
           <Button
             style={{
-              display: isQR ? "" : "none"
+              display: isQR ? '' : 'none',
             }}
             onClick={() => {
               store.selectElements([]);
-              setVal("");
+              setVal('');
             }}
           >
             Cancel
           </Button>
           <Button
             style={{
-              display: isQR ? "none" : ""
+              display: isQR ? 'none' : '',
             }}
             onClick={async () => {
               const src = await getQR(val);
 
               store.activePage.addElement({
-                type: "svg",
-                name: "qr",
+                type: 'svg',
+                name: 'qr',
                 x: 50,
                 y: 50,
                 width: 100,
                 height: 100,
                 src,
                 custom: {
-                  value: val
-                }
+                  value: val,
+                },
               });
             }}
           >
@@ -117,5 +117,5 @@ export const QrSection = {
         </div>
       </div>
     );
-  })
+  }),
 };
