@@ -1,15 +1,15 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
-import { SectionTab } from "polotno/side-panel";
-import * as svg from "polotno/utils/svg";
-import AiOutlineBarcode from "@meronex/icons/ai/AiOutlineBarcode";
-import { Button, InputGroup } from "@blueprintjs/core";
-import JsBarcode from "jsbarcode";
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { SectionTab } from 'polotno/side-panel';
+import * as svg from 'polotno/utils/svg';
+import AiOutlineBarcode from '@meronex/icons/ai/AiOutlineBarcode';
+import { Button, InputGroup } from '@blueprintjs/core';
+import JsBarcode from 'jsbarcode';
 
 // create svg image for QR code for input text
 export async function getBarcode(text) {
   const xmlSerializer = new XMLSerializer();
-  const svgNode = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   JsBarcode(svgNode, text);
 
   const svgText = xmlSerializer.serializeToString(svgNode);
@@ -18,13 +18,13 @@ export async function getBarcode(text) {
   return {
     src,
     width,
-    height
+    height,
   };
 }
 
 // define the new custom section
 export const BarcodeSection = {
-  name: "barcode",
+  name: 'barcode',
   Tab: (props) => (
     <SectionTab name="Barcode" {...props}>
       <AiOutlineBarcode />
@@ -32,10 +32,10 @@ export const BarcodeSection = {
   ),
   // we need observer to update component automatically on any store changes
   Panel: observer(({ store }) => {
-    const [val, setVal] = React.useState("");
+    const [val, setVal] = React.useState('');
 
     const el = store.selectedElements[0];
-    const isBarcode = el?.name === "barcode";
+    const isBarcode = el?.name === 'barcode';
 
     // if selection is changed we need to update input value
     React.useEffect(() => {
@@ -46,13 +46,13 @@ export const BarcodeSection = {
 
     // update image src when we change input data
     React.useEffect(() => {
-      if (isBarcode) {
+      if (isBarcode && val) {
         getBarcode(val).then(({ src }) => {
           el.set({
             src,
             custom: {
-              value: val
-            }
+              value: val,
+            },
           });
         });
       }
@@ -68,44 +68,44 @@ export const BarcodeSection = {
           }}
           placeholder="Type barcode code content"
           value={val}
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         />
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            paddingTop: "20px"
+            display: 'flex',
+            justifyContent: 'space-between',
+            paddingTop: '20px',
           }}
         >
           <Button
             style={{
-              display: isBarcode ? "" : "none"
+              display: isBarcode ? '' : 'none',
             }}
             onClick={() => {
               store.selectElements([]);
-              setVal("");
+              setVal('');
             }}
           >
             Cancel
           </Button>
           <Button
             style={{
-              display: isBarcode ? "none" : ""
+              display: isBarcode ? 'none' : '',
             }}
             onClick={async () => {
               const { src, width, height } = await getBarcode(val);
 
               store.activePage.addElement({
-                type: "svg",
-                name: "barcode",
+                type: 'svg',
+                name: 'barcode',
                 x: 50,
                 y: 50,
                 width,
                 height,
                 src,
                 custom: {
-                  value: val
-                }
+                  value: val,
+                },
               });
             }}
           >
@@ -114,5 +114,5 @@ export const BarcodeSection = {
         </div>
       </div>
     );
-  })
+  }),
 };
