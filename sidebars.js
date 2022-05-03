@@ -57,6 +57,7 @@ module.exports = {
         'demo-grid',
         'demo-signature',
         'demo-qr-codes',
+        'demo-bar-codes',
       ],
     },
   ],
