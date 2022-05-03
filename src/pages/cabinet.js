@@ -247,7 +247,6 @@ const UserDashboard = () => {
                 {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
               </button>
             </div>
-            <p>It may take time to deploy the domain updates...</p>
           </React.Fragment>
         )}
         <hr />
