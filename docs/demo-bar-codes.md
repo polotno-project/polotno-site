@@ -13,10 +13,10 @@ There are several tools that will help you to display and change Bar codes in Po
 
 _Instructions: try to change content of selected bar code. Try to deselect element to create new bar codes._
 
-<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-barcode" target="_blank">Open Demo</a></p>
+<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-bar-codes" target="_blank">Open Demo</a></p>
 
 <iframe
-    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-barcode?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-bar-codes?fontsize=11&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
       height: '700px',
