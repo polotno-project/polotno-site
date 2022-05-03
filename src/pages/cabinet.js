@@ -210,6 +210,12 @@ const UserDashboard = () => {
 
         {!domains && <h3>Loading domains data...</h3>}
         {domains && <h3>Allowed domains</h3>}
+        {domains && (
+          <p>
+            Note: it may take up to 8 minutes before domain list changes will
+            take affect.
+          </p>
+        )}
         {domains && !domains.length ? (
           <p>You don't have any allowed domains yet. </p>
         ) : null}
