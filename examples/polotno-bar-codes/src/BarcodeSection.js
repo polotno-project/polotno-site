@@ -66,7 +66,7 @@ export const BarcodeSection = {
           onChange={(e) => {
             setVal(e.target.value);
           }}
-          placeholder="Type barcode code content"
+          placeholder="Type bar code content"
           value={val}
           style={{ width: '100%' }}
         />
