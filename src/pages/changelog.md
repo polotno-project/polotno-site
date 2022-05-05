@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ### 0.42.7 - 2022-04-05
 
-- Smooth font changes. Text should jump now
+- Smooth font changes. Text should not jump now
 - Fix `showInExport: false` for `text` elements
 - Better font loading handling. Some fonts should load faster
 - Multi-select elements on the `Layers` menu with shift or ctrl
