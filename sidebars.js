@@ -58,6 +58,7 @@ module.exports = {
         'demo-signature',
         'demo-qr-codes',
         'demo-bar-codes',
+        'demo-page-numbers',
       ],
     },
   ],
