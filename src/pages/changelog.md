@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.42.8 - 2022-04-11
+
+- HTML text rendering fixes
+
 ### 0.42.7 - 2022-04-05
 
 - Smooth font changes. Text should not jump now
