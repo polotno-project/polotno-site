@@ -156,6 +156,10 @@ const USERS = [
     image: 'leeg.jpg',
     link: 'https://plataforma.leeg.com.br/',
   },
+  {
+    image: 'FlagCreator-min.jpg',
+    link: 'https://flag-creator.com/',
+  },
 ];
 
 function Home() {
@@ -326,8 +330,8 @@ function Home() {
               <div className="row">
                 {USERS.map(({ link, image }, index) => (
                   <div
-                    className={classnames('col col--2', styles.feature, {
-                      // 'col--offset-1': index === 0,
+                    className={classnames('col col--3', styles.feature, {
+                      'col--offset-2': index === 0,
                     })}
                   >
                     <div className="text--center">
