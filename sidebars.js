@@ -44,6 +44,7 @@ module.exports = {
         'templates-library',
         'server-side',
         'vue-integration',
+        'units',
       ],
     },
     {
