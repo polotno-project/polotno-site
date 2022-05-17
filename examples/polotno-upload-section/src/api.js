@@ -1,7 +1,7 @@
 // here should be implementation for your own backend API
 // but for demo we will just use local storage
 
-const delay = (ms = 3000) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms = 500) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function localFileToURL(file) {
   return new Promise((resolve, reject) => {
@@ -12,7 +12,7 @@ export async function localFileToURL(file) {
   });
 }
 
-export async function loadImages() {
+export async function getImages() {
   // delay to emulate network request
   await delay();
   return JSON.parse(localStorage.getItem('images') || '[]');

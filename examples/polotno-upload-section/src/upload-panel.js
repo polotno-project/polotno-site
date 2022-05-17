@@ -3,7 +3,6 @@ import { observer } from 'mobx-react-lite';
 import { Button } from '@blueprintjs/core';
 import { ImagesGrid } from 'polotno/side-panel';
 import { getImageSize } from 'polotno/utils/image';
-import { localFileToURL } from 'polotno/utils/file';
 
 import { getImages, saveImage, deleteImage } from './api';
 
@@ -12,16 +11,15 @@ export const UploadPanel = observer(({ store }) => {
   const [isUploading, setUploading] = React.useState(false);
 
   const load = async () => {
-    const json = await getImages();
-    setImages(json.images);
+    const images = await getImages();
+    setImages(images);
   };
 
   const handleFileInput = async (e) => {
     const { target } = e;
     setUploading(true);
     for (const file of target.files) {
-      const url = await localFileToURL(file);
-      await saveImage(url);
+      await saveImage(file);
     }
     await load();
     setUploading(false);

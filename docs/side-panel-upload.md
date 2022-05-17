@@ -2,11 +2,11 @@
 title: Upload panel
 ---
 
-Default upload panel is very simplified. It can't keep upload images across user sessions. And it doesn't upload images to the backend, but instead injects images as base64 string directly into the design (it may drop performance a lot). It is very recommended to overwrite it with your own implementation.
+Default upload panel is very simplified. It can't keep uploaded images across user sessions. And it doesn't upload images to the backend, but instead injects images as base64 string directly into the design (it may drop performance a lot). It is very recommended to overwrite it with your own implementation.
 
 ## How to implement upload section?
 
-`Upload` section may very very similar to [Images Section](/docs/side-panel-images). If will just need to implement several API endpoints on your backend to do:
+`Upload` section may very work similar to [Images Section](/docs/side-panel-images). You just need to implement several API endpoints on your backend to allow:
 
 1. Loading list of user images
 2. Uploading new image
