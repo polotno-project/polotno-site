@@ -8,10 +8,11 @@ hide_table_of_contents: true
 **Please use it carefully. Watch [changelog](/changelog) for any changes! And report about any bugs.**
 
 By default, `Polotno` can't render rich text elements. It means you can't style part of the text. Whole `text` element must have the same style, color, font, etc.
+But polotno has experimental support for rich text elements, that you need to explicitly enable.
 
 ### How to enabled rich text support?
 
-You can enabled rich text support with this.
+Use this:
 
 ```js
 import { unstable_useHtmlTextRender } from 'polotno/config';
