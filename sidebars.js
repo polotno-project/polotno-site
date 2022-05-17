@@ -37,15 +37,15 @@ module.exports = {
     'cloud-render',
     {
       type: 'category',
+      label: 'Beta',
+      collapsed: false,
+      items: ['custom-element', 'rich-text'],
+    },
+    {
+      type: 'category',
       label: 'Misc',
       collapsed: false,
-      items: [
-        'custom-element',
-        'templates-library',
-        'server-side',
-        'vue-integration',
-        'units',
-      ],
+      items: ['templates-library', 'server-side', 'vue-integration', 'units'],
     },
     {
       type: 'category',
