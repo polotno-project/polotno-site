@@ -20,7 +20,7 @@ const { store } = createDemoApp({
 
 store.activePage.addElement({
   type: 'text',
-  text: 'Hello <strong>from rich</strong> <span style="color: red; font-size: 100px;">support</span>!',
+  text: 'Hello <strong>from rich</strong> <u>text</u> <span style="color: red;">support</span>!',
   y: 300,
   x: store.width / 2 - 200,
   fontSize: 80,
