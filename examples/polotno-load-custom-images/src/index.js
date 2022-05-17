@@ -107,7 +107,7 @@ export const PhotosPanel = observer(({ store }) => {
 });
 
 // define the new custom section
-const СustomPhotos = {
+const CustomPhotos = {
   name: 'photos',
   Tab: (props) => (
     <SectionTab name="Photos" {...props}>
@@ -121,7 +121,7 @@ const СustomPhotos = {
 // we will have just two sections
 const sections = [
   TextSection,
-  СustomPhotos,
+  CustomPhotos,
   ElementsSection,
   UploadSection,
   BackgroundSection,

@@ -29,6 +29,7 @@ module.exports = {
         'side-panel',
         'side-panel-images',
         'side-panel-hidden',
+        'side-panel-upload',
         'side-panel-utils',
         'side-panel-size',
       ],
