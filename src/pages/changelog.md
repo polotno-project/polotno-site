@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.43.0 - 2022-05-18
+
+- Experimental support for vertical resize and align for `text` elements. https://polotno.com/docs/vertical-text-resize
+- Fixes for html text rendering.
+- Internal dependencies updated
+
 ### 0.42.8 - 2022-04-11
 
 - HTML text rendering fixes
