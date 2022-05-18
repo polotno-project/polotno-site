@@ -38,9 +38,9 @@ module.exports = {
     'cloud-render',
     {
       type: 'category',
-      label: 'Beta',
+      label: 'Beta experiments',
       collapsed: false,
-      items: ['custom-element', 'rich-text'],
+      items: ['custom-element', 'rich-text', 'vertical-text-resize'],
     },
     {
       type: 'category',
