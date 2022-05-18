@@ -1,11 +1,11 @@
 {
-  "name": "polotno-rich-text",
+  "name": "polotno-vertical-text-resize",
   "version": "1.0.0",
-  "description": "Polotno Rich Text",
+  "description": "Polotno Resize Text Vertically",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "polotno": "0.43.0",
+    "polotno": "0.43.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "3.0.1"
