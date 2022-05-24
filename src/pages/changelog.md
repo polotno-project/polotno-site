@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.43.2 - 2022-05-24
+
+- Fix color replace function in some SVG icons
+- Fix new line bug for `text` elements
+- "Text" side panel will create `text` elements with relative size depending on the canvas size
+
 ### 0.43.1 - 2022-05-18
 
 - Experimental support for vertical resize and align for `text` elements. https://polotno.com/docs/vertical-text-resize
