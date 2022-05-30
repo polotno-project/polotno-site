@@ -160,6 +160,10 @@ const USERS = [
     image: 'FlagCreator-min.jpg',
     link: 'https://flag-creator.com/',
   },
+  {
+    image: 'tigers.png',
+    link: 'https://www.rawlingstigers.com/',
+  },
 ];
 
 function Home() {
@@ -331,7 +335,7 @@ function Home() {
                 {USERS.map(({ link, image }, index) => (
                   <div
                     className={classnames('col col--3', styles.feature, {
-                      'col--offset-2': index === 0,
+                      // 'col--offset-2': index === 0,
                     })}
                   >
                     <div className="text--center">
@@ -355,24 +359,41 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-                <div className={classnames('col col--6', styles.feature)}>
-                  <p>
-                    @coamaker.com dev: "I have struggled with building my
-                    prototype for months, tried several Javascript libraries,
-                    and even tried to build a canvas tool by myself. As soon as
-                    I had found Polotno, everything happened fast: In just a few
-                    hours, I customized Polotno, picked the functions I needed,
-                    and from then on concentrated on building my business.
-                    Furthermore, the support at Polotno is amazing. New features
-                    are published quickly and reflect what the quickly growing
-                    community of users wishes."
+                <div
+                  className={classnames('col col--6', styles.feature)}
+                  style={{ fontSize: '12px' }}
+                >
+                  <p className={styles.feedback}>
+                    <strong>@coamaker.com dev:</strong> "I have struggled with
+                    building my prototype for months, tried several Javascript
+                    libraries, and even tried to build a canvas tool by myself.
+                    As soon as I had found Polotno, everything happened fast: In
+                    just a few hours, I customized Polotno, picked the functions
+                    I needed, and from then on concentrated on building my
+                    business. Furthermore, the support at Polotno is amazing.
+                    New features are published quickly and reflect what the
+                    quickly growing community of users wishes."
                   </p>
-                  <p>
-                    @leeg.com team "Perfect library with a great approach,
-                    provides a good development experience be the concise
-                    features and excellent typescript structure! Very well
-                    updated, simple and straight documentation and an incredible
-                    support by the development team."
+                  <p className={styles.feedback}>
+                    <strong>@leeg.com team:</strong> "Perfect library with a
+                    great approach, provides a good development experience be
+                    the concise features and excellent typescript structure!
+                    Very well updated, simple and straight documentation and an
+                    incredible support by the development team."
+                  </p>
+                  <p className={styles.feedback}>
+                    <strong>rawlingstigers team:</strong> Having graphic design
+                    tools is a must in the marketplace, especially in a
+                    business-to-consumer model. The ability to tell a story
+                    outside of the written word gives you an unfair advantage.
+                    We recognized this but didn't have the resources to hire a
+                    graphic design team to meet the demand of our directors.
+                    When looking into possible solutions, we found Polotno.
+                    Adding any type of software to a new organization has its
+                    challenges, but getting an immediate response from the
+                    Polotno team is a huge plus. This product continues to get
+                    better as we use it. I love the transparency, real-time
+                    updates, and sandbox Poltno offers.
                   </p>
                 </div>
                 <div className={classnames('col col--6', styles.feature)}>

@@ -99,3 +99,8 @@ h2 {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.feedback {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
