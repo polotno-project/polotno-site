@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.43.4 - 2022-06-01
+
+- Add transparent option in default list of background colors
+- Fix incorrect behavior on horizontal text resize
+- "Fit to page" button for `image` element will reset cropping
+
 ### 0.43.3 - 2022-05-26
 
 - Fix possible failure on color replace with gradients
