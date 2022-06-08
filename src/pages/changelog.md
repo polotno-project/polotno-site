@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.43.7 - 2022-06-08
+
+- Fix text editing bug in Firefox
+- Better support for RTL languages
+
 ### 0.43.6 - 2022-06-04
 
 - Fix failed export on some browsers
