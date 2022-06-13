@@ -5,7 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.43.7 - 2022-06-08
+### 0.43.10 - 2022-06-13
+
+- Ability to hide font family selector from toolbar
+- Better support for RTL languages in html renderer
+- Minor UI fixes
+
+### "polotno": "0.43.10", - 2022-06-08
 
 - Fix text editing bug in Firefox
 - Better support for RTL languages
