@@ -99,7 +99,8 @@
   color: #888;
   font-weight: 600;
   letter-spacing: 1px;
-  min-height: 145px;
+  min-height: 60px;
+  padding: 0px 0px;
 }
 
 .pricing-features {
@@ -128,6 +129,7 @@
   display: block;
   font-size: 20px;
   font-weight: 700;
+  min-height: 70px;
 }
 
 .pricing-trial {

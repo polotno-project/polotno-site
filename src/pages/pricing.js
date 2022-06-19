@@ -136,6 +136,43 @@ function Home() {
               </div>
 
               <div className="pricing-plan">
+                <h2 className="pricing-header">Custom solution</h2>
+                <ul className="pricing-features">
+                  <li className="pricing-features-item">
+                    Additional features on top of public API
+                  </li>
+                  <li className="pricing-features-item">
+                    Full access to the <strong>customization</strong> source
+                    code
+                  </li>
+                  <li className="pricing-features-item">
+                    Contracting work with Polotno developers
+                  </li>
+                  <li className="pricing-features-item">
+                    Help with integration
+                  </li>
+                  <li className="pricing-features-item">
+                    1 year bug-free <br />
+                    guarantee
+                  </li>
+                  <li className="pricing-features-item">
+                    License plan not included
+                  </li>
+                </ul>
+                <p className="pricing-price">(one time) From $10 000</p>
+                <a
+                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project."
+                  className="pricing-button"
+                  target="_blank"
+                  onClick={() => {
+                    window.plausible('custom-solution-request');
+                  }}
+                >
+                  Contact
+                </a>
+              </div>
+
+              <div className="pricing-plan">
                 <h2 className="pricing-header">Ultimate source</h2>
                 <ul className="pricing-features">
                   <li className="pricing-features-item">
@@ -151,53 +188,18 @@ function Home() {
                     Consulting about all Polotno internals
                   </li>
                   <li className="pricing-features-item">
-                    Increased limits for Remove Background API
+                    High-priority requests for any bugs fixes
                   </li>
                   <li className="pricing-features-item">
-                    Increased limits for{' '}
-                    <a href="/docs/cloud-render" target="_blank">
-                      Cloud Rendering API
-                    </a>{' '}
+                    High-priority requests for code refactoring
                   </li>
                 </ul>
                 <p className="pricing-price" style={{ marginTop: '93px' }}>
-                  15 000 USD / year
+                  25 000 USD first purchase
+                  <br /> 5 000 USD / year
                 </p>
                 <a
                   href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Ultimate%20source%20solution%22%20plan.&body=Please%20describe%20your%20situation%20and%20requirements."
-                  className="pricing-button"
-                  target="_blank"
-                  onClick={() => {
-                    window.plausible('custom-solution-request');
-                  }}
-                >
-                  Contact
-                </a>
-              </div>
-
-              <div className="pricing-plan">
-                <h2 className="pricing-header">Custom solution</h2>
-                <ul className="pricing-features">
-                  <li className="pricing-features-item">
-                    Additional features on top of public API
-                  </li>
-                  <li className="pricing-features-item">
-                    Full access to the <strong>customization</strong> source
-                    code
-                  </li>
-                  <li className="pricing-features-item">
-                    Contracting work with Polotno developers
-                  </li>
-                  <li className="pricing-features-item">
-                    1 year bug-free <br />
-                    guarantee
-                  </li>
-                </ul>
-                <p className="pricing-price" style={{ marginTop: '163px' }}>
-                  From $10 000
-                </p>
-                <a
-                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
