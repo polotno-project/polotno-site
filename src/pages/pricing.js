@@ -180,9 +180,6 @@ function Home() {
                       Full access to source code of Polotno editor
                     </strong>
                   </li>
-                  <li className="pricing-features-item">
-                    Everything from Enterprise plan
-                  </li>
 
                   <li className="pricing-features-item">
                     Consulting about all Polotno internals
@@ -194,7 +191,7 @@ function Home() {
                     High-priority requests for code refactoring
                   </li>
                 </ul>
-                <p className="pricing-price" style={{ marginTop: '93px' }}>
+                <p className="pricing-price" style={{ marginTop: '163px' }}>
                   25 000 USD first purchase
                   <br /> 5 000 USD / year
                 </p>
