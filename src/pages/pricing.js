@@ -191,7 +191,8 @@ function Home() {
                     High-priority requests for code refactoring
                   </li>
                   <li className="pricing-features-item">
-                    Long term access to updates with yearly subscription
+                    Long term access to updates and new versions with yearly
+                    subscription
                   </li>
                 </ul>
                 <p className="pricing-price" style={{ marginTop: '93px' }}>
