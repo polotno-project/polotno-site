@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 0.43.12 - 2022-06-13
+### 0.43.12 - 2022-06-26
 
 - Fixes for better RTL support
 - Typescript fixes
@@ -16,7 +16,7 @@ hide_table_of_contents: true
 - Better support for RTL languages in html renderer
 - Minor UI fixes
 
-### "polotno": "0.43.10", - 2022-06-08
+### 0.43.9 - 2022-06-08
 
 - Fix text editing bug in Firefox
 - Better support for RTL languages
