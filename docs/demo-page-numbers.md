@@ -1,5 +1,5 @@
 ---
-title: Page numbers
+title: Page numbers on canvas
 hide_table_of_contents: true
 ---
 

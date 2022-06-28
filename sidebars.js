@@ -61,6 +61,7 @@ module.exports = {
         'demo-qr-codes',
         'demo-bar-codes',
         'demo-page-numbers',
+        'demo-page-name',
       ],
     },
   ],
