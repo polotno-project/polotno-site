@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 0.43.13 - 2022-06-29
+
+- Dependency fixes and updates
+
 ### 0.43.12 - 2022-06-26
 
 - Fixes for better RTL support
