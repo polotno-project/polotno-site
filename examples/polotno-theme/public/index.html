@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* overwrite colors for side-panel tabs */
+      .bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab:hover,
+      .bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab.active {
+        background-color: #c8c52d;
+        color: white;
+      }
+
+      /* change hover style of all buttons */
+      .bp4-dark .bp4-button:not([class*="bp4-intent-"]):hover {
+        background-color: #c8c52d;
+      }
+
+      /* change main color of all active buttons */
+      .bp4-dark
+        .polotno-app-container
+        .bp4-button:not([class*="bp4-intent-"])
+        .bp4-icon:not([class*="bp4-intent-"]) {
+        color: white;
+      }
+      .bp4-dark .polotno-app-container .bp4-button.bp4-minimal.bp4-disabled {
+        color: rgba(171, 179, 191, 0.6);
+      }
+    </style>
+    <title>Polotno demo</title>
+  </head>
+
+  <body class="bp4-dark">
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

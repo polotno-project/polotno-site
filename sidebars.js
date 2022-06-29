@@ -7,12 +7,10 @@
 
 module.exports = {
   docs: [
-    {
-      type: 'category',
-      label: 'Polotno',
-      collapsed: false,
-      items: ['overview', 'config', 'frameworkless'],
-    },
+    'overview',
+    'config',
+    'theme',
+    'frameworkless',
     {
       type: 'category',
       label: 'Store API',

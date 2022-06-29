@@ -2,16 +2,6 @@
 title: Editor configuration
 ---
 
-### How to enable dark theme?
-
-Thanks to https://blueprintjs.com/, `Polotno` has full support for the dark theme. To enable it, you just need to add `bp4-dark` class to any editor container.
-
-```html
-<body class="bp4-dark">
-  <div id="container"></div>
-</body>
-```
-
 ### How to change image upload behavior?
 
 The default [SidePanel Component](/docs/side-panel) has `Upload` tab to import local images into the project. By default `polotno` just converting local file into base64 string. Resulted URL strings are using for `image` elements. Using base64 string may produce projects with a large size, since images will be fully encoded inside JSON.
