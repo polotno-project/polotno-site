@@ -24,6 +24,45 @@ const store = createStore({
 
 store.addPage();
 
+const ActionControls1 = ({ store }) => {
+  return (
+    <div>
+      <DownloadButton store={store} />
+      <Button
+        intent="primary"
+        onClick={() => {
+          alert('Saving');
+        }}
+      >
+        Save
+      </Button>
+    </div>
+  );
+};
+
+const ActionControls2 = ({ store }) => {
+  return (
+    <div>
+      <Button
+        onClick={() => {
+          store.saveAsImage({ pixelRatio: 0.2 });
+        }}
+        minimal
+      >
+        Download Preview
+      </Button>
+      <Button
+        minimal
+        onClick={() => {
+          alert('Save clicked...');
+        }}
+      >
+        Save
+      </Button>
+    </div>
+  );
+};
+
 export const App = () => {
   return (
     <PolotnoContainer className="polotno-app-container">
@@ -36,49 +75,14 @@ export const App = () => {
         <Toolbar
           store={store}
           components={{
-            ActionControls: ({ store }) => {
-              return (
-                <div>
-                  <DownloadButton store={store} />
-                  <Button
-                    intent="primary"
-                    onClick={() => {
-                      alert('Saving');
-                    }}
-                  >
-                    Save
-                  </Button>
-                </div>
-              );
-            },
+            ActionControls: ActionControls1,
           }}
         />
         {/* then use our own buttons for download and save */}
         <Toolbar
           store={store}
           components={{
-            ActionControls: ({ store }) => {
-              return (
-                <div>
-                  <Button
-                    onClick={() => {
-                      store.saveAsImage({ pixelRatio: 0.2 });
-                    }}
-                    minimal
-                  >
-                    Download Preview
-                  </Button>
-                  <Button
-                    minimal
-                    onClick={() => {
-                      alert('Save clicked...');
-                    }}
-                  >
-                    Save
-                  </Button>
-                </div>
-              );
-            },
+            ActionControls: ActionControls2,
           }}
         />
         <Workspace store={store} />
