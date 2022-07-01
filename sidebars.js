@@ -60,6 +60,7 @@ module.exports = {
         'demo-bar-codes',
         'demo-page-numbers',
         'demo-page-name',
+        'demo-charts',
       ],
     },
   ],
