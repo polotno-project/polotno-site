@@ -5,14 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### 1.0.0-0 - 2022-07-11
+### 1.0.0-1 - 2022-07-11
 
 This release is preparation for upcoming release 1.0.0.
 
 - **BREAKING CHANGE**: `Polotno` now requires `react@18` and `react-dom@18`. This is a breaking change because it means that the `Polotno` library will no longer work with older versions of React. To update the dependencies correctly you should go to `package.json` and update following packages:
 
 ```json
-"polotno": "^1.0.0-0",
+"polotno": "^1.0.0-1",
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
 ```
@@ -23,7 +23,7 @@ Then run `npm install` to update the dependencies.
 - More shadow options
 - Public API for bleeds. `store.activePage.set({ bleed: 20 })` to set bleed. `store.toggleBleed()` to show it on the workspace
 - Use ctrl/meta + wheel to quickly zoom in/out workspace
-- New element attributes `draggable`, `contentChangeEnabled` and `styleChangeEnabled`. These attributes are replacing `locked` attribute with more control.
+- New element attributes `draggable`, `contentEditable` and `styleEditable`. These attributes are replacing `locked` attribute with more control.
 - Fixes for export with bleed
 - Fix text jumping on resize
 

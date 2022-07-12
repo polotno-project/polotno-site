@@ -94,7 +94,7 @@ text.moveBottom();
 
 ### Locking
 
-You can use `draggable`, `contentChangeEnabled` and `styleChangeEnabled` attributes to lock element editing.
+You can use `draggable`, `contentEditable` and `styleEditable` attributes to lock element editing.
 
 ```js
 // lock the object
@@ -102,9 +102,9 @@ element.set({
   // can element be moved and resized
   draggable: false,
   // can we change content of element?
-  contentChangeEnabled: false,
+  contentEditable: false,
   // can we change style of element?
-  styleChangeEnabled: false,
+  styleEditable: false,
 });
 
 console.log(element.locked); // true
@@ -114,9 +114,9 @@ element.set({
   // can element be moved and resized
   draggable: true,
   // can we change content of element?
-  contentChangeEnabled: true,
+  contentEditable: true,
   // can we change style of element?
-  styleChangeEnabled: true,
+  styleEditable: true,
 });
 ```
 
@@ -168,9 +168,9 @@ page.addElement({
   // can element be moved and resized
   draggable: true,
   // can we change content of element?
-  contentChangeEnabled: true,
+  contentEditable: true,
   // can we change style of element?
-  styleChangeEnabled: true,
+  styleEditable: true,
 });
 ```
 
@@ -225,7 +225,7 @@ page.addElement({
   // can element be moved and resized
   draggable: true,
   // can we change content of element?
-  contentChangeEnabled,
+  contentEditable,
 });
 ```
 
@@ -267,7 +267,7 @@ const svgElement = page.addElement({
   // can element be moved and resized
   draggable: true,
   // can we change content of element?
-  contentChangeEnabled,
+  contentEditable,
 });
 ```
 
