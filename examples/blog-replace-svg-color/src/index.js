@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
 import { HexColorPicker } from 'react-colorful';
@@ -13,10 +13,8 @@ const App = () => {
   const modifiedSVG = svg.replaceColors(ORIGINAL_SVG, colorMap);
   const [image] = useImage(svg.svgToURL(modifiedSVG));
   const [displayColorPicker, setDisplayColorPicker] = React.useState(false);
-  const [
-    colorPickerSelectedColor,
-    setColorPickerSelectedColor,
-  ] = React.useState('#ffffff');
+  const [colorPickerSelectedColor, setColorPickerSelectedColor] =
+    React.useState('#ffffff');
 
   const showColorPicker = (toggle, oldColor) => {
     setDisplayColorPicker(toggle);
@@ -67,4 +65,5 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);

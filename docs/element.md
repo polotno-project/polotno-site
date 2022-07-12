@@ -94,14 +94,30 @@ text.moveBottom();
 
 ### Locking
 
-You can lock elements changes with `locked` property. Locked elements can't be changed by the end user from the canvas. So users can't drag them and resize them. Locked elements still can be changed from the code.
+You can use `draggable`, `contentChangeEnabled` and `styleChangeEnabled` attributes to lock element editing.
 
 ```js
 // lock the object
-element.set({ locked: true });
+element.set({
+  // can element be moved and resized
+  draggable: false,
+  // can we change content of element?
+  contentChangeEnabled: false,
+  // can we change style of element?
+  styleChangeEnabled: false,
+});
+
+console.log(element.locked); // true
 
 // unlock it
-element.set({ locked: false });
+element.set({
+  // can element be moved and resized
+  draggable: true,
+  // can we change content of element?
+  contentChangeEnabled: true,
+  // can we change style of element?
+  styleChangeEnabled: true,
+});
 ```
 
 ## Text element
@@ -116,7 +132,7 @@ page.addElement({
   x: 0,
   y: 0,
   rotation: 0,
-  locked: false,
+  locked: false, // deprecated
   blurEnabled: false,
   blurRadius: 10,
   brightnessEnabled: false,
@@ -149,6 +165,12 @@ page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
+  // can element be moved and resized
+  draggable: true,
+  // can we change content of element?
+  contentChangeEnabled: true,
+  // can we change style of element?
+  styleChangeEnabled: true,
 });
 ```
 
@@ -168,7 +190,7 @@ page.addElement({
   x: 0,
   y: 0,
   rotation: 0,
-  locked: false,
+  locked: false, // deprecated
   blurEnabled: false,
   blurRadius: 10,
   brightnessEnabled: false,
@@ -200,6 +222,10 @@ page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
+  // can element be moved and resized
+  draggable: true,
+  // can we change content of element?
+  contentChangeEnabled,
 });
 ```
 
@@ -220,7 +246,7 @@ const svgElement = page.addElement({
   x: 0,
   y: 0,
   rotation: 0,
-  locked: false,
+  locked: false, // deprecated
   blurEnabled: false,
   blurRadius: 10,
   brightnessEnabled: false,
@@ -238,6 +264,10 @@ const svgElement = page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
+  // can element be moved and resized
+  draggable: true,
+  // can we change content of element?
+  contentChangeEnabled,
 });
 ```
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { observer } from 'mobx-react-lite';
 import { InputGroup } from '@blueprintjs/core';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -144,4 +144,5 @@ export const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

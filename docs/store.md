@@ -123,6 +123,24 @@ Returns unit used in UI to display measures. By default it is `px`. You can chan
 
 Returns dpi used to convert pixels to other units.
 
+### `store.toggleBleed()`
+
+Show or hide bleed area on the workspace
+
+```js
+store.toggleBleed();
+store.toggleBleed(false);
+```
+
+### `store.toggleRules()`
+
+Show or hide rulers on workspace
+
+```js
+store.toggleRules();
+store.toggleRules(false);
+```
+
 ## Working with elements
 
 ### `store.selectedElements`
