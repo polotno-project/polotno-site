@@ -10,7 +10,7 @@ Currently `Polotno` has two roles - `admin` and `user`.
 store.setRole('admin');
 ```
 
-When `admin` mode is enabled, a user will have extra settings for every elements on the canvas:
+When `admin` mode is enabled a user will be able to select any element on the canvas, even if it is marked as `selectable: false`, also there will be extra settings for every elements on the canvas:
 
 ![Special settings UI](/img/admin-ui.png)
 

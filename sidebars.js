@@ -36,12 +36,6 @@ module.exports = {
     'cloud-render',
     {
       type: 'category',
-      label: 'Beta experiments',
-      collapsed: false,
-      items: ['custom-element', 'rich-text', 'vertical-text-resize'],
-    },
-    {
-      type: 'category',
       label: 'Misc',
       collapsed: false,
       items: [
@@ -51,6 +45,12 @@ module.exports = {
         'units',
         'user-roles',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Beta experiments',
+      collapsed: false,
+      items: ['custom-element', 'rich-text', 'vertical-text-resize'],
     },
     {
       type: 'category',
