@@ -141,6 +141,14 @@ store.toggleRules();
 store.toggleRules(false);
 ```
 
+### `store.setRole(role)`
+
+Set role of the current user. Possible values are: `user` and `admin`. For more information see [Roles Documentation](/docs/user-roles).
+
+```js
+store.setRole('admin');
+```
+
 ## Working with elements
 
 ### `store.selectedElements`

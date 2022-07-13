@@ -44,7 +44,13 @@ module.exports = {
       type: 'category',
       label: 'Misc',
       collapsed: false,
-      items: ['templates-library', 'server-side', 'vue-integration', 'units'],
+      items: [
+        'templates-library',
+        'server-side',
+        'vue-integration',
+        'units',
+        'user-roles',
+      ],
     },
     {
       type: 'category',

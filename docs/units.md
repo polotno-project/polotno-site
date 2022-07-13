@@ -7,7 +7,7 @@ title: Units and Measures
 By default Polotno is using CSS `pixels` as units with `1pt = 1px` and 72dpi. Everything you see in the `store` is in `pixels`. Like `width`, `height` or `fontSize`.
 Polotno will use this values in UI.
 
-You can change units displayed in the `store` using `setUnits` method.
+You can change units displayed in UI using `setUnits` method.
 
 ```js
 store.setUnit({
@@ -50,5 +50,5 @@ var pixels = unitToPx({
 
 When you export your design into PDF, `polotno` will use 72 PDI to determine the size of the exported pages. If you increase just the `dpi`, it will not change quality of the exported PDF. It will just produce a PDF file will smaller page sizes. You have two options to increase quality of your exported designs:
 
-1. First you can change DPI and change all pixels values in the store.
-2. Or you can use hight `pixelRatio` attribute when you do the export.
+1. You can use high `pixelRatio` attribute when you do the export. `store.saveAsPDF({ pixelRatio: 2})`
+1. Or you can change DPI and change ALL pixels values in the store.
