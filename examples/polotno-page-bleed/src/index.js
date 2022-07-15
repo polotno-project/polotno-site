@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, InputGroup, Navbar } from '@blueprintjs/core';
+import { Button, NumericInput, Navbar } from '@blueprintjs/core';
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
 import { SidePanel } from 'polotno/side-panel';
 import { Toolbar } from 'polotno/toolbar/toolbar';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { createStore } from 'polotno/model/store';
-
-import { PageControls } from './page-controls';
+import { observer } from 'mobx-react-lite';
 
 // create store
 const store = createStore({
@@ -22,36 +21,44 @@ const store = createStore({
 });
 
 // add page and element instantly
-store.addPage();
+store.addPage({ bleed: 20 });
+// show bleed
+store.toggleBleed();
 
-const Topbar = ({ store }) => {
+const Topbar = observer(({ store }) => {
   return (
     <Navbar>
-      <InputGroup
-        value={store.activePage.bleed}
-        onValueChange={(bleed) => {
-          store.activePage.set({ bleed });
-        }}
-      />
-      <Button
-        onClick={() => {
-          store.toggleBleed();
-        }}
-        active={store.bleedVisible}
-      >
-        Toggle bleed
-      </Button>
-      <Button
-        onClick={() => {
-          store.saveAsImage({ includeBleed: true });
-        }}
-        minimal
-      >
-        Export
-      </Button>
+      <Navbar.Group align="left">
+        <div>Bleed size (px):</div>
+        <NumericInput
+          value={store.activePage.bleed}
+          onValueChange={(bleed) => {
+            store.activePage.set({ bleed });
+          }}
+        />
+        <Button
+          onClick={() => {
+            store.toggleBleed();
+          }}
+          active={store.bleedVisible}
+          style={{ marginLeft: '20px' }}
+        >
+          Toggle bleed
+        </Button>
+      </Navbar.Group>
+      <Navbar.Group align="right">
+        <Button
+          onClick={() => {
+            store.saveAsImage({ includeBleed: true });
+          }}
+          style={{ marginLeft: '20px' }}
+        >
+          Export
+        </Button>
+      </Navbar.Group>
     </Navbar>
   );
-};
+});
 
 export const App = () => {
   return (
@@ -71,7 +78,7 @@ export const App = () => {
           </SidePanelWrap>
           <WorkspaceWrap>
             <Toolbar store={store} />
-            <Workspace store={store} components={{ PageControls }} />
+            <Workspace store={store} />
             <ZoomButtons store={store} />
           </WorkspaceWrap>
         </PolotnoContainer>
