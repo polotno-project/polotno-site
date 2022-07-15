@@ -15,7 +15,7 @@ store.toggleBleed(true);
 
 The canvas will have special space around the page:
 
-![Page with bleed](/img/page-with-bleed.png)
+<img src="/img/page-with-bleed.png" style={{maxWidth: "500px"}}/>
 
 To include bleed in the export you can do this:
 

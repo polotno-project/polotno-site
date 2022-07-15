@@ -29,7 +29,7 @@ const Topbar = observer(({ store }) => {
   return (
     <Navbar>
       <Navbar.Group align="left">
-        <div>Bleed size (px):</div>
+        <div style={{ marginRight: '20px' }}>Bleed size (px):</div>
         <NumericInput
           value={store.activePage.bleed}
           onValueChange={(bleed) => {
@@ -43,7 +43,7 @@ const Topbar = observer(({ store }) => {
           active={store.bleedVisible}
           style={{ marginLeft: '20px' }}
         >
-          Toggle bleed
+          Toggle bleed on Workspace
         </Button>
       </Navbar.Group>
       <Navbar.Group align="right">
