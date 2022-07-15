@@ -44,6 +44,7 @@ module.exports = {
         'vue-integration',
         'units',
         'user-roles',
+        'page-bleed',
       ],
     },
     {

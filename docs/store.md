@@ -128,6 +128,8 @@ Returns dpi used to convert pixels to other units.
 Show or hide bleed area on the workspace
 
 ```js
+store.activePage.set({ bleed: 20 }); // set bleed in pixels
+
 store.toggleBleed();
 store.toggleBleed(false);
 ```
@@ -356,9 +358,12 @@ await store.toDataURL({ mimeType: 'image/jpg' });
 
 // export only required page
 await store.toDataURL({ pageId: store.pages[1].id });
+
+// export with page bleed
+await store.toDataURL({ includeBleed: true });
 ```
 
-### `store.saveAsImage()`
+### `await store.saveAsImage()`
 
 `saveAsImage` will export drawing into image and save it as local file. By default it exports just the first page. If you need to export another pages, pass `pageId` property.
 
@@ -377,6 +382,9 @@ store.saveAsImage({ ignoreBackground: true });
 
 // export second page
 store.saveAsImage({ pageId: store.pages[1].id });
+
+// export with page bleed
+store.saveAsImage({ includeBleed: true });
 ```
 
 ### `async store.toPDFDataURL()`
@@ -411,6 +419,9 @@ store.saveAsPDF({ ignoreBackground: true });
 
 // change export quality
 store.saveAsPDF({ pixelRatio: 2 });
+
+// export with page bleed
+store.saveAsPDF({ includeBleed: true });
 ```
 
 ### `store.setElementsPixelRatio(ratio)`

@@ -1,0 +1,83 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button, InputGroup, Navbar } from '@blueprintjs/core';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { Workspace } from 'polotno/canvas/workspace';
+import { SidePanel } from 'polotno/side-panel';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { createStore } from 'polotno/model/store';
+
+import { PageControls } from './page-controls';
+
+// create store
+const store = createStore({
+  // this is a demo key just for that project
+  // (!) please don't use it in your projects
+  // to create your own API key please go here: https://polotno.dev/cabinet
+  key: 'nFA5H9elEytDyPyvKL7T',
+  // you can hide back-link on a paid licence
+  // but it will be good if you can keep it for Polotno project support
+  showCredit: true,
+});
+
+// add page and element instantly
+store.addPage();
+
+const Topbar = ({ store }) => {
+  return (
+    <Navbar>
+      <InputGroup
+        value={store.activePage.bleed}
+        onValueChange={(bleed) => {
+          store.activePage.set({ bleed });
+        }}
+      />
+      <Button
+        onClick={() => {
+          store.toggleBleed();
+        }}
+        active={store.bleedVisible}
+      >
+        Toggle bleed
+      </Button>
+      <Button
+        onClick={() => {
+          store.saveAsImage({ includeBleed: true });
+        }}
+        minimal
+      >
+        Export
+      </Button>
+    </Navbar>
+  );
+};
+
+export const App = () => {
+  return (
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Topbar store={store} />
+      <div style={{ height: 'calc(100% - 50px)' }}>
+        <PolotnoContainer className="polotno-app-container">
+          <SidePanelWrap>
+            <SidePanel store={store} />
+          </SidePanelWrap>
+          <WorkspaceWrap>
+            <Toolbar store={store} />
+            <Workspace store={store} components={{ PageControls }} />
+            <ZoomButtons store={store} />
+          </WorkspaceWrap>
+        </PolotnoContainer>
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
