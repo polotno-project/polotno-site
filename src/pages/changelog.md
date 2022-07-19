@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-2 - 2022-07-19
+
+- Fixes in `useInfiniteAPI` hook and `<ImagesGrid />` component. Loading of images in side panel should work smoother now. With less request and better loading indicator.
+
 ### 1.0.0-1 - 2022-07-11
 
 This release is preparation for upcoming release 1.0.0.
