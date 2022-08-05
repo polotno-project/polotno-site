@@ -273,6 +273,8 @@ const svgElement = page.addElement({
 
 ### `svgElement.colors`
 
+**Removed from v1.0.0-5. Don't use it!**
+
 Array of colors detected in the svg image. You can use this array to replace colors in the svg image.
 
 ```js

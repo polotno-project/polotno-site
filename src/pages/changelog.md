@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-5 - 2022-08-04
+
+- **Possibly Breaking**: `svgElement.colors` getter is removed. This change should not effect most of polotno application.
+- Large optimization when a document has many pages with svg elements.
+- Internal dependencies updated
+
 ### 1.0.0-3 - 2022-07-19
 
 - Increase limit on "stroke size" limit for `text` elements.
