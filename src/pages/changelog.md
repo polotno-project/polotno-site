@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-8 - 2022-08-09
+
+- Assets loading optimizations
+- Fix incorrect export when design has many pages
+- Small UI improvements
+
 ### 1.0.0-5 - 2022-08-04
 
 - **Possibly Breaking**: `svgElement.colors` getter is removed. This change should not effect most of polotno application.
