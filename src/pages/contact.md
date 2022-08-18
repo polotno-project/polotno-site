@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 Can’t find what you're looking for in the documentation? Please do contact using the email address below.
 
-anton@polotno.dev
+_anton at polotno.dev_
 
 If you want to ask a quick question or if you are looking for support, please join [Discord Chat](https://discord.gg/W2VeKgsr9J).
 

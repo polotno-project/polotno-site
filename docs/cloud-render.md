@@ -2,7 +2,7 @@
 title: Cloud Render API
 ---
 
-If you are interested to use it on production, please contact anton@lavrton.com.
+If you are interested to use it on production, please contact _anton at polotno.com_.
 You will need to have "Enterprise plan" to call this API.
 
 ## API for automated image generation
