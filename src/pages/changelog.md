@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-9 - 2022-08-24
+
+- Fix `ignoreBackground` option on exports
+- `store.loadJSON()` optimizations
+
 ### 1.0.0-8 - 2022-08-09
 
 - Assets loading optimizations
