@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-10 - 2022-08-26
+
+- Several rendering fixes for `text` elements, font change and dragging should be smoother
+- Added `hideImageRemoveBackground` for `Toolbar` component
+- Internal dependencies update
+
 ### 1.0.0-9 - 2022-08-24
 
 - Fix `ignoreBackground` option on exports

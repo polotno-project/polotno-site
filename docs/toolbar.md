@@ -45,6 +45,7 @@ type ToolbarProps = {
   hideImageEffects?: boolean,
   hideImageCrop?: boolean,
   hideImageFit?: boolean,
+  hideImageRemoveBackground?: boolean,
 
   hideSvgEffects?: boolean,
 

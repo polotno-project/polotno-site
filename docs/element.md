@@ -281,6 +281,25 @@ Array of colors detected in the svg image. You can use this array to replace col
 console.log(svgElement.colors);
 ```
 
+_Workaround:_
+
+If you want to detect colors in svg string you can use this:
+
+```js
+import { urlToString, getColors, useSvgColors } from 'polotno/utils/svg';
+
+// in react component:
+const Toolbar = ({ element }) => {
+  const colors = useSvgColors(element.src); // will return array of colors detected in the svg image
+};
+
+// in functions:
+async function getSvgColors(element) {
+  const svgString = await urlToString(element.src);
+  const colors = getColors(svgString);
+}
+```
+
 ### `svgElement.replaceColor(oldColor, newColor)`
 
 Some svg files support color replacement. `Polotno` can do that when a color of internal svg node is defined as `fill` property.
