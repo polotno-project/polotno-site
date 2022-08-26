@@ -281,7 +281,7 @@ Array of colors detected in the svg image. You can use this array to replace col
 console.log(svgElement.colors);
 ```
 
-_Workaround:_
+**Workaround:**
 
 If you want to detect colors in svg string you can use this:
 
