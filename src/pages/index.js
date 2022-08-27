@@ -176,7 +176,7 @@ function Home() {
     >
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
+          <h1 className="hero__title">{siteConfig.title} SDK</h1>
           <h2 className="hero__subtitle">
             Give your users superpower to edit design templates with familiar UI
             right in your application.
@@ -212,6 +212,24 @@ function Home() {
               to={useBaseUrl('docs/demo-full-editor')}
             >
               Launch Demo
+            </Link>
+          </div>
+          <div className={styles.buttons}>
+            <Link
+              className={classnames(
+                'button button--outline button--primary button--lg',
+                styles.getStarted
+              )}
+              style={{
+                backgroundColor: 'white',
+                marginLeft: '10px',
+                marginTop: '10px',
+                color: '#E704CFFF',
+              }}
+              target="_blank"
+              to={'https://studio.polotno.com/'}
+            >
+              Try Polotno Studio app
             </Link>
           </div>
           {/* <link
