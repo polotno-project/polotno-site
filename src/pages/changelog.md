@@ -5,6 +5,21 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-11 - 2022-08-29
+
+- Experimental `unstable_setTextOverflow` API. Usage:
+
+```js
+import { unstable_setTextOverflow } from 'polotno/config';
+
+// default behavior. when height of the text element doesn't fit the text, it will be resized
+unstable_setTextOverflow('resize');
+// when height of the text element doesn't fit the text, it will be cropped
+unstable_setTextOverflow('ellipsis');
+// when height of the text element doesn't fit the text, it will reduce its font size
+unstable_setTextOverflow('change-font-size');
+```
+
 ### 1.0.0-10 - 2022-08-26
 
 - Several rendering fixes for `text` elements, font change and dragging should be smoother
