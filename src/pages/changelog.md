@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-13 - 2022-09-15
+
+- Fixes for better mobile support
+
 ### 1.0.0-11 - 2022-08-29
 
 - Experimental `unstable_setTextOverflow` API. Usage:
