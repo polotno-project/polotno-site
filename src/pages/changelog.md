@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-17 - 2022-09-20
+
+- Fixes on experimental html text rendering
+- New API methods to control global fonts
+
 ### 1.0.0-15 - 2022-09-16
 
 - Fix loading of some SVG images in firefox
