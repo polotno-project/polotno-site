@@ -1,26 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from "polotno";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 
-import { Workspace } from "polotno/canvas/workspace";
-import { SidePanel } from "polotno/side-panel";
-import { Toolbar } from "polotno/toolbar/toolbar";
-import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
-import { createStore } from "polotno/model/store";
-import { BarcodeSection, getBarcode } from "./BarcodeSection";
+import { Workspace } from 'polotno/canvas/workspace';
+import { SidePanel } from 'polotno/side-panel';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { createStore } from 'polotno/model/store';
+import { BarcodeSection, getBarcode } from './BarcodeSection';
 
 // import all default sections
-import { DEFAULT_SECTIONS } from "polotno/side-panel";
+import { DEFAULT_SECTIONS } from 'polotno/side-panel';
 
 // create store
 const store = createStore({
   // this is a demo key just for that project
   // (!) please don't use it in your projects
   // to create your own API key please go here: https://polotno.dev/cabinet
-  key: "nFA5H9elEytDyPyvKL7T",
-  // you can hide back-link on a paid licence
+  key: 'nFA5H9elEytDyPyvKL7T',
+  // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
-  showCredit: true
+  showCredit: true,
 });
 // add to global namespace for debugging
 window.store = store;
@@ -29,11 +29,11 @@ window.store = store;
 store.addPage();
 
 // add first bar code
-const val = "10011";
+const val = '10011';
 getBarcode(val).then(({ src, width, height }) => {
   store.activePage.addElement({
-    type: "svg",
-    name: "barcode",
+    type: 'svg',
+    name: 'barcode',
     x: store.width / 2 - 150,
     y: store.height / 2 - 100,
     width: 300,
@@ -42,8 +42,8 @@ getBarcode(val).then(({ src, width, height }) => {
     width,
     height,
     custom: {
-      value: val
-    }
+      value: val,
+    },
   });
 });
 
@@ -65,4 +65,4 @@ export const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

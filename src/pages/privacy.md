@@ -7,11 +7,11 @@ hide_table_of_contents: true
 
 ### As a user of the web-application where `polotno` sdk is used.
 
-*This section is applied when you are using polotno on YOUR website.*
+_This section is applied when you are using polotno on YOUR website._
 
 **TL;DR:** Polotno framework doesn't use cookies, doesn't send any personal information, doesn't track your visitors and doesn't send any information from non-polotno components of the web-page.
 
-`polotno` SDK (javascript framework) is doing several network requests to https://api.polotno.dev/ in order to validate licence key and provide rich experience for your users.
+`polotno` SDK (javascript framework) is doing several network requests to https://api.polotno.dev/ in order to validate license key and provide rich experience for your users.
 
 `polotno` is using page URL for key validation request. Only `host` and `pathname` are used. `GET` parameters and hash are removed. `polotno` is using this request for very limited analytics about key usage and rate limits.
 
@@ -21,7 +21,7 @@ Note: At any point of time you can open Developer Tools and inspect what polotno
 
 ### As a user of [Polotno Cabinet](/cabinet).
 
-*This section is applied when you logging on https://polotno.dev/.*
+_This section is applied when you logging on https://polotno.dev/._
 
 I use a select number of trusted external service providers for certain service offerings. These service providers are carefully selected and meet high data protection, data privacy and security standards.
 

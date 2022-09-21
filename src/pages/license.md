@@ -1,14 +1,13 @@
 ---
-title: Licence
+title: license
 hide_table_of_contents: true
 ---
 
-# Polotno licence
+# Polotno license
 
 1. You can use this package for free for **non-commercial products** or local development
-2. For **commercial usage** you have to buy a licence here https://polotno.dev/
-3. Please respect the copyright. You can't modify the source of the `polotno` and redistribute it without permission or licence.
-
+2. For **commercial usage** you have to buy a license here https://polotno.dev/
+3. Please respect the copyright. You can't modify the source of the `polotno` and redistribute it without permission or license.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

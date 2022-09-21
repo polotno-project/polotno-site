@@ -35,7 +35,7 @@ import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 const { store } = createDemoApp({
   container: document.getElementById('root'),
   key: 'YOUR_API_KEY', // you can create it here: https://polotno.com/cabinet/
-  // you can hide back-link on a paid licence
+  // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });

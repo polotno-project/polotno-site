@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### 1.0.0-18 - 2022-09-21
+
+- Replace default assets provider in "Elements" side panel. Now it will use Noun project.
+
 ### 1.0.0-17 - 2022-09-20
 
 - Fixes on experimental html text rendering

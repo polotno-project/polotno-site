@@ -11,7 +11,7 @@ title: Store
 import { createStore } from 'polotno/model/store';
 const store = createStore({
   key: 'YOUR_API_KEY', // you can create it here: https://polotno.com/cabinet/
-  // you can hide back-link on a paid licence
+  // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
@@ -272,7 +272,7 @@ Load passed json into the store. It will update all properties, pages and elemen
 import { createStore } from 'polotno/model/store';
 const store = createStore({
   key: YOUR_API_KEY, // you can create it here: https://polotno.com/cabinet/
-  // you can hide back-link on a paid licence
+  // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
