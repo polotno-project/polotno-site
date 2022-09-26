@@ -31,29 +31,20 @@ const App = ({ store }) => {
 };
 ```
 
-Also `Toolbar` component has additional properties to hide some elements:
+Also `Toolbar` component has additional properties to hide some elements and overwrite inputs for some properties.
 
 ```js
 type ToolbarProps = {
   store: StoreType,
   downloadButtonEnabled?: Boolean,
 
-  hideTextSpacing?: boolean,
-  hideTextEffects?: boolean,
-
-  hideImageFlip?: boolean,
-  hideImageEffects?: boolean,
-  hideImageCrop?: boolean,
-  hideImageFit?: boolean,
-  hideImageRemoveBackground?: boolean,
-
-  hideSvgEffects?: boolean,
-
   hidePosition?: boolean,
   hideOpacity?: boolean,
   hideDuplicate?: boolean,
   hideLock?: boolean,
   hideRemove?: boolean,
+
+  // see how to use it in the example below
   components?: any,
 };
 
@@ -61,7 +52,80 @@ type ToolbarProps = {
 <Toolbar store={store} hideDuplicate />;
 ```
 
-### How to overwrite available properties for an element?
+### How to overwrite available inputs for an element type?
+
+In some application you may want to change available properties for selected element type. E.g. you may want to show a different color picker for `text` element. You can use `components` property for that. Just pass a component in format `TypeName` e.g. `TextFill`. You can use all built-element types as `Text`, `Image`, `Svg`. But also you can use `Many` prefix when several elements are selected.
+
+There are several built-in components but also you can add your own.
+
+```
+text element:
+  TextFontFamily
+  TextFontSize
+  TextFontVariant
+  TextFilters
+  TextFill
+  TextSpacing
+image elements
+  ImageFlip
+  ImageFilters
+  ImageFitToBackground
+  ImageCrop
+  ImageRemoveClip
+  ImageRemoveBackground
+svg element:
+  SvgFlip
+  SvgFilters
+  SvgColors
+```
+
+Example:
+
+```js
+import Toolbar from 'polotno/toolbar/toolbar';
+import Workspace from 'polotno/canvas/workspace';
+import { observer } from 'mobx-react-lite';
+
+const MyColorPicker = observer(({ store, element, elements }) => {
+  // store - main polotno store object
+  // elements - array of selected elements. The same as store.selectedElements
+  // element - first selected element. The same as store.selectedElements[0]
+  const element = store.selectedElement;
+  return (
+    <div>
+      <input
+        type="color"
+        value={element.fill}
+        onChange={(e) => {
+          element.set({
+            fill: e.target.value,
+          });
+        }}
+      />
+    </div>
+  );
+});
+
+const App = ({ store }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        margin: 'auto',
+        flex: 1,
+        flexDirection: 'column',
+        position: 'relative',
+      }}
+    >
+      <Toolbar store={store} components={{ TextFill: MyColorPicker }} />
+      <Workspace store={store} />
+    </div>
+  );
+};
+```
+
+### How to overwrite all inputs at once?
 
 In some application you may want to change available properties for selected element. Following [Custom Element Example](/docs/custom-element) you can make your own React component for any available element.
 
@@ -105,23 +169,6 @@ const TextToolbar = observer(({ store }) => {
 });
 
 unstable_registerToolbarComponent('text', TextToolbar);
-```
-
-### Text element inputs
-
-If you want to customize the toolbar for an `text` element, you can use some built-in inputs:
-
-```js
-import {
-  FontFamilyInput,
-  FontSizeInput,
-  FontStyleGroup,
-  FontColorInput,
-  SpacingInput,
-} from 'polotno/toolbar/text-toolbar';
-
-// You need to pass "store" and "elements" props to these inputs
-<FontFamilyInput store={store} elements={store.selectedElements} />;
 ```
 
 ### How to overwrite "Download" button

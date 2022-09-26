@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.0.0 - 2022-09-26**
+
+- New API to replace specific inputs in the toolbar. See [Toolbar](/docs/toolbar) page for more details.
+- Better crop defaults when images is replaced with drag&drop from side panel
+- Deleting elements with API shouldn't deselect all elements
+- UI fix for unknown Google fonts
+
 ### 1.0.0-18 - 2022-09-21
 
 - Replace default assets provider in "Elements" side panel. Now it will use Noun project.
