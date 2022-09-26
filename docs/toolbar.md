@@ -90,7 +90,6 @@ const MyColorPicker = observer(({ store, element, elements }) => {
   // store - main polotno store object
   // elements - array of selected elements. The same as store.selectedElements
   // element - first selected element. The same as store.selectedElements[0]
-  const element = store.selectedElement;
   return (
     <div>
       <input
