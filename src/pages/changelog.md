@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.1.0 - 2022-09-29**
+
+- Show elements outside of page bounding box. Make them selectable.
+- `page.background` now supports base64 data urls.
+
 ### **1.0.0 - 2022-09-26**
 
 - New API to replace specific inputs in the toolbar. See [Toolbar](/docs/toolbar) page for more details.
