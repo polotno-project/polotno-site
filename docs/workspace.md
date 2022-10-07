@@ -2,7 +2,7 @@
 title: Workspace UI
 ---
 
-`Workspace` is issential part of `Polotno` framework. It is the main `React` component that you are going to use to display the drawings and interact with them. You can change canvas and its content programmatically using [Store API](/docs/store-overview).
+`Workspace` is essential part of `Polotno` framework. It is the main `React` component that you are going to use to display the drawings and interact with them. You can change canvas and its content programmatically using [Store API](/docs/store-overview).
 
 ```js
 import { Workspace } from 'polotno/canvas/workspace';
@@ -69,6 +69,7 @@ Optionally you can change some styles of the workspace.
   backgroundColor="grey"
   pageBorderColor="black" // border around page
   activePageBorderColor="red" // border around active page. It will be used only if you have several pages. Otherwise just pageBorderColor will be used
+  bleedColor="rgba(255, 0, 0, 0.2)" // color of the bleed area, when it is toggled with `store.toggleBleed()`
 />
 ```
 

@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.1.1 - 2022-10-07**
+
+- New `bleedColor` optional property for `<Workspace />` component
+- Enabled corner radius control in filters for `svg` elements
+
 ### **1.1.0 - 2022-09-29**
 
 - Show elements outside of page bounding box. Make them selectable.
