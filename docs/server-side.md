@@ -1,5 +1,5 @@
 ---
-title: Server-side Image generation for Polotno
+title: Server-side Image generation with Node.js
 ---
 
 ### Is it possible to generate images from polotno JSON on the backend?

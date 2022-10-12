@@ -22,7 +22,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Side Panel UI',
-      collapsed: false,
+      collapsed: true,
       items: [
         'side-panel',
         'side-panel-images',
@@ -32,7 +32,7 @@ module.exports = {
         'side-panel-size',
       ],
     },
-    'server-api',
+    'server-side',
     'cloud-render',
     {
       type: 'category',
@@ -40,8 +40,9 @@ module.exports = {
       collapsed: false,
       items: [
         'templates-library',
-        'server-side',
+        'server-api',
         'vue-integration',
+        'nextjs-integration',
         'units',
         'user-roles',
         'page-bleed',

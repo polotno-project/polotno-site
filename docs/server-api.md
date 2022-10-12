@@ -1,5 +1,5 @@
 ---
-title: Backend API for assets in Polotno
+title: 3rd party assets usage
 ---
 
 ## How to replace iconscout API with our endpoint?
