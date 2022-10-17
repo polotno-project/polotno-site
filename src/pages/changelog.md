@@ -5,6 +5,18 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.0 - 2022-10-17**
+
+- Linear gradient support for fill of text elements
+- Fix bug on incorrect export while user is editing text
+- Ignore "placeholder" text elements in export
+- Fix incorrect console warnings on PASTE action
+- Fix color picker icon in "background" side panel
+- Clipboard now preserves order of selected elements
+- Clipboard now works across multiple browser's tabs
+- Tooltip fixes in the toolbar (showing on bottom)
+- Fix cloning of SVG elements when the have `cornerRadius` property
+
 ### **1.1.1 - 2022-10-07**
 
 - New `bleedColor` optional property for `<Workspace />` component

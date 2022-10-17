@@ -144,6 +144,7 @@ page.addElement({
   // it will be rendered if no text is defined
   // and we will use it in input element too
   // useful for template canvas, where users will need to replace text elements
+  // important (!) placeholders are removed from export result
   placeholder: '',
   fontSize: 14,
   fontFamily: 'Roboto',
@@ -257,6 +258,7 @@ const svgElement = page.addElement({
   height: 100,
   flipX: false,
   flipY: false,
+  cornerRadius: 0,
   // can user select element?
   // if false, element will be "invisible" for user clicks
   selectable: true,
