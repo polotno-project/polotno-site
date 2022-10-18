@@ -15,7 +15,7 @@ hide_table_of_contents: true
 - Clipboard now preserves order of selected elements
 - Clipboard now works across multiple browser's tabs
 - Tooltip fixes in the toolbar (showing on bottom)
-- Fix cloning of SVG elements when the have `cornerRadius` property
+- Fix cloning of SVG elements when they have `cornerRadius` property
 
 ### **1.1.1 - 2022-10-07**
 

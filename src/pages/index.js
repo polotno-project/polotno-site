@@ -232,17 +232,17 @@ function Home() {
               Try Polotno Studio app
             </Link>
           </div>
-          {/* <link
+          <link
             href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
             rel="stylesheet"
             type="text/css"
-          /> */}
-          {/* <div
+          />
+          <div
             id="mc_embed_signup"
             style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px' }}
           >
             <form
-              action="https://dev.us10.list-manage.com/subscribe/post?u=c4acb00b499825f956980387e&amp;id=c004a2de67"
+              action="https://polotno.us14.list-manage.com/subscribe/post?u=a00dbbf9e34b64aa1d3b67842&amp;id=b20e45c889&amp;f_id=000a92e0f0"
               method="post"
               id="mc-embedded-subscribe-form"
               name="mc-embedded-subscribe-form"
@@ -251,7 +251,7 @@ function Home() {
               novalidate
             >
               <div id="mc_embed_signup_scroll">
-                <div className="mc-field-group">
+                <div className="mc-field-group" style={{ display: 'flex' }}>
                   <input
                     type="email"
                     name="EMAIL"
@@ -264,6 +264,7 @@ function Home() {
                       borderRadius: '4px',
                       marginRight: '10px',
                       width: '150px',
+                      height: '48px',
                     }}
                   />
                   <input
@@ -274,6 +275,8 @@ function Home() {
                     className="button button--outline button--secondary "
                     style={{
                       backgroundColor: 'white',
+                      color: 'black',
+                      height: 'auto',
                     }}
                   />
                 </div>
@@ -302,7 +305,7 @@ function Home() {
                 </div>
               </div>
             </form>
-          </div> */}
+          </div>
         </div>
         <div className="container" style={{ padding: '10px' }}>
           <img className={styles.demoImage} src="/img/polotno.png" />
