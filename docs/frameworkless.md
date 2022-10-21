@@ -23,6 +23,7 @@ You can add it with a simple scripts into the page.
   rel="stylesheet"
 />
 <!-- add polotno bundle -->
+<!-- (!) important: make sure it is added into body of document (not <head>) -->
 <script src="https://unpkg.com/polotno@latest/polotno.bundle.js"></script>
 
 <!-- set styles for the editor -->
