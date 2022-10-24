@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.1 - 2022-10-24**
+
+- Performance improvements. Projects with many pages and many large images should work much faster.
+- New translations for the toolbar.
+
 ### **1.2.0 - 2022-10-17**
 
 - Linear gradient support for fill of text elements
