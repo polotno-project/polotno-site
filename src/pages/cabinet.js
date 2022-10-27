@@ -270,7 +270,7 @@ const UserDashboard = () => {
                   });
                 }}
               >
-                Buy Small Team plan for 100 USD.
+                Buy Small Team plan for 187 USD.
               </button>
               <button
                 onClick={() => {
@@ -280,7 +280,7 @@ const UserDashboard = () => {
                   });
                 }}
               >
-                Buy Enterprise Team plan for 200 USD.
+                Buy Enterprise Team plan for 385 USD.
               </button>
             </div>
           </React.Fragment>

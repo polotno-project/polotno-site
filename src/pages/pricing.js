@@ -83,7 +83,7 @@ function Home() {
                     support
                   </li>
                 </ul>
-                <p className="pricing-price">100 USD / month</p>
+                <p className="pricing-price">187 USD / month</p>
                 <a
                   href="https://buy.paddle.com/product/652979"
                   className="pricing-button"
@@ -122,7 +122,7 @@ function Home() {
                     calls per month
                   </li>
                 </ul>
-                <p className="pricing-price">200 USD / month</p>
+                <p className="pricing-price">385 USD / month</p>
                 <a
                   href="https://buy.paddle.com/product/652978"
                   className="pricing-button is-featured"
