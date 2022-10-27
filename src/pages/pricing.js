@@ -112,10 +112,10 @@ function Home() {
                     High priority features request and support
                   </li>
                   <li className="pricing-features-item">
-                    500 Remove Background API calls per month
+                    1000 Remove Background API calls per month
                   </li>
                   <li className="pricing-features-item">
-                    3000{' '}
+                    15000{' '}
                     <a href="/docs/cloud-render" target="_blank">
                       Cloud Rendering API
                     </a>{' '}
