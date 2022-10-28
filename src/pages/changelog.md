@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.2 - 2022-10-28**
+
+- Smoother scrolling when design has many pages
+- Fixed incorrect scroll position, when you select page via API
+- Set default `crossOrigin` to `anonymous` for `<ImagesGrid />` component
+- Fix icon centering in side panel
+
 ### **1.2.1 - 2022-10-24**
 
 - Performance improvements. Projects with many pages and many large images should work much faster.
