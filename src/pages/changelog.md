@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.3 - 2022-11-02**
+
+- Fix incorrect svg display for some files
+- Fix many crashes across the app
+
 ### **1.2.2 - 2022-10-28**
 
 - Smoother scrolling when design has many pages
