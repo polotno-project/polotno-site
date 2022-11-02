@@ -270,6 +270,9 @@ const svgElement = page.addElement({
   draggable: true,
   // can we change content of element?
   contentEditable,
+  // map of originalColor -> newColor, used to replace colors in svg image
+  // do not change it manually. Instead use `el.replaceColor(originalColor, newColor)
+  colorsReplace: {},
 });
 ```
 

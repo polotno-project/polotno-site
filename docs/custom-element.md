@@ -47,14 +47,9 @@ import { Star } from 'react-konva';
 
 import { unstable_registerShapeComponent } from 'polotno/config';
 
-// polotno util function
-import { useSnap } from 'polotno/canvas/use-snap';
-
-// every components has three main props - onClick, element and store
-export const StarElement = observer(({ onClick, element, store }) => {
-  const ref = React.useRef();
-  // useSnap - is utility hook that automatically enables snapping
-  const { onDragMove, onDragEnd } = useSnap(ref);
+// now we need to define how elements looks on canvas
+export const StarElement = observer(({ element, store }) => {
+  const ref = React.useRef(null);
 
   const handleChange = (e) => {
     const node = e.currentTarget;
@@ -63,11 +58,12 @@ export const StarElement = observer(({ onClick, element, store }) => {
     // we don't need that, so we reset it back to 1.
     node.scaleX(1);
     node.scaleY(1);
+    // and then save all changes back to the model
     element.set({
       x: node.x(),
       y: node.y(),
       rotation: e.target.rotation(),
-      width: element.width * scaleX,
+      radius: element.radius * scaleX,
     });
   };
 
@@ -77,7 +73,11 @@ export const StarElement = observer(({ onClick, element, store }) => {
   return (
     <Star
       ref={ref}
+      // remember to use "element" name. Polotno will use it internally to find correct node
       name="element"
+      // also it is important to pass id
+      // so polotno can automatically do selection
+      id={element.id}
       x={element.x}
       y={element.y}
       fill={element.fill}
@@ -88,26 +88,7 @@ export const StarElement = observer(({ onClick, element, store }) => {
       draggable={!element.locked}
       outerRadius={element.radius}
       innerRadius={element.radius * 0.5}
-      onDragStart={() => {
-        const isSelected = store.selectedElements.find((e) => e === element);
-        if (!isSelected) {
-          store.selectElements([element.id]);
-        }
-      }}
-      onDragMove={(e) => {
-        onDragMove(e);
-        handleChange(e);
-      }}
-      onDragEnd={(e) => {
-        onDragEnd(e);
-      }}
-      id={element.id}
-      onClick={() => {
-        onClick();
-      }}
-      onTap={() => {
-        onClick();
-      }}
+      onDragMove={handleChange}
       onTransform={handleChange}
     />
   );
