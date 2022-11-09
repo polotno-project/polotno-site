@@ -75,6 +75,9 @@ import { setGoogleFonts } from 'polotno/config';
 setGoogleFonts(['Roboto']);
 // pass empty array if you don't want to see google fonts in available fonts
 setGoogleFonts([]);
+
+// restore default loading of google fonts using Polotno API
+setGoogleFonts('default');
 ```
 
 #### (2) User fonts

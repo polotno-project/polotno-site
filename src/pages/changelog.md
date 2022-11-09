@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.4 - 2022-11-09**
+
+- Optimize Polotno for iOS Safari usage
+- Fix touchpad zooming
+- Add numeric input for Corner Radius attribute in Filters menu
+- Reactive flow for `setGoogleFonts` function
+
 ### **1.2.3 - 2022-11-02**
 
 - Fix incorrect svg display for some files
