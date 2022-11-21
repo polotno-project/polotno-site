@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.2.5 - 2022-11-21**
+
+- Little UI fixes
+- Fix incorrect resize for HTML text renderer
+
 ### **1.2.4 - 2022-11-09**
 
 - Optimize Polotno for iOS Safari usage
