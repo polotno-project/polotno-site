@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.3.1 - 2022-11-24**
+
+- Gradients now may have several colors and you can change their position.
+
 ### **1.2.5 - 2022-11-21**
 
 - Little UI fixes
