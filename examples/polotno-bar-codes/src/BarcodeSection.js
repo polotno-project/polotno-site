@@ -39,7 +39,7 @@ export const BarcodeSection = {
 
     // if selection is changed we need to update input value
     React.useEffect(() => {
-      if (el?.custom.value) {
+      if (el?.custom?.value) {
         setVal(el?.custom.value);
       }
     }, [isBarcode, el]);
