@@ -143,10 +143,10 @@ const USERS = [
     image: 'aryeo.png',
     link: 'https://www.aryeo.com/',
   },
-  {
-    image: 'jazzu-designer-logo.png',
-    link: 'https://www.jazzudesigner.com/',
-  },
+  // {
+  //   image: 'jazzu-designer-logo.png',
+  //   link: 'https://www.jazzudesigner.com/',
+  // },
 
   {
     image: 'coamaker.svg',
