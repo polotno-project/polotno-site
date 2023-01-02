@@ -186,6 +186,24 @@ const element = store.getElementById('some-id');
 element.set({ x: 0 });
 ```
 
+### `store.groupElements([element1.id, element2.id])`
+
+Group elements. It will create a new element with type `group` and will move all passed elements inside it.
+
+```js
+const ids = store.selectedElements.map((el) => el.id);
+store.groupElements(ids);
+```
+
+### `store.ungroupElements([element1.id, element2.id])`
+
+Ungroup elements. It will move all elements inside group to the page and remove the group.
+
+```js
+const id = store.selectedElements[0].id;
+store.ungroupElements([id]);
+```
+
 ## History
 
 ### `store.history.canUndo`
@@ -400,28 +418,58 @@ await store.toPDFDataURL({ pixelRatio: 2 });
 
 // ignore page background on export
 await store.toPDFDataURL({ ignoreBackground: true });
+
+// export only sub set of pages
+await store.toPDFDataURL({ pageIds: [store.pages[0].id, store.pages[2].id] });
 ```
 
-### `store.saveAsPDF()`
+### `await store.saveAsPDF()`
 
 `saveAsPDF` will export drawing into PDF and save it as local file. By default it exports just the first page. If you need to export another pages, pass `pageId` property.
 
 ```js
 // default export
-store.saveAsPDF({ fileName: 'polotno.pdf' });
+await store.saveAsPDF({ fileName: 'polotno.pdf' });
 
 // change default dpi
 // changing DPI will not effect quality of the export. But it may change page size of exported PDF
-store.saveAsPDF({ dpi: 300 }); // default is store.dpi, it equals 72
+await store.saveAsPDF({ dpi: 300 }); // default is store.dpi, it equals 72
 
 // ignore page background on export
-store.saveAsPDF({ ignoreBackground: true });
+await store.saveAsPDF({ ignoreBackground: true });
 
 // change export quality
-store.saveAsPDF({ pixelRatio: 2 });
+await store.saveAsPDF({ pixelRatio: 2 });
 
 // export with page bleed
-store.saveAsPDF({ includeBleed: true });
+await store.saveAsPDF({ includeBleed: true });
+
+// export only sub set of pages
+await store.saveAsPDF({ pageIds: [store.pages[0].id, store.pages[2].id] });
+```
+
+### `await store.toBlob()`
+
+Export store into blob object, it may work faster than `toDataURL` method.
+
+```js
+// default export
+await store.toBlob();
+
+// make exported image 2x bigger (higher quality)
+await store.toBlob({ pixelRatio: 2 });
+
+// ignore page background on export
+await store.toBlob({ ignoreBackground: true });
+
+// export as jpg
+await store.toBlob({ mimeType: 'image/jpg' });
+
+// export only required page
+await store.toBlob({ pageId: store.pages[1].id });
+
+// export with page bleed
+await store.toBlob({ includeBleed: true });
 ```
 
 ### `store.setElementsPixelRatio(ratio)`

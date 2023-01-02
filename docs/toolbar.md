@@ -37,24 +37,19 @@ Also `Toolbar` component has additional properties to hide some elements and ove
 type ToolbarProps = {
   store: StoreType,
   downloadButtonEnabled?: Boolean,
-
-  hidePosition?: boolean,
-  hideOpacity?: boolean,
-  hideDuplicate?: boolean,
-  hideLock?: boolean,
-  hideRemove?: boolean,
-
   // see how to use it in the example below
   components?: any,
 };
 
 // example
-<Toolbar store={store} hideDuplicate />;
+<Toolbar store={store} downloadButtonEnabled />;
 ```
 
 ### How to overwrite available inputs for an element type?
 
-In some application you may want to change available properties for selected element type. E.g. you may want to show a different color picker for `text` element. You can use `components` property for that. Just pass a component in format `TypeName` e.g. `TextFill`. You can use all built-element types as `Text`, `Image`, `Svg`. But also you can use `Many` prefix when several elements are selected.
+Toolbar supports special `components` property to add/change/remove most of its UI components.
+
+In some application you may want to change available properties for selected element type. E.g. you may want to show a different color picker for `text` element. Just pass a component in format `TypeName` e.g. `TextFill`. You can use all built-element types as `Text`, `Image`, `Svg`. But also you can use `Many` prefix when several elements are selected. Also you can define your own new components for any element type. E.g. `ImageAlertButton`
 
 There are several built-in components but also you can add your own.
 
@@ -77,9 +72,18 @@ svg element:
   SvgFlip
   SvgFilters
   SvgColors
+
+common:
+  History
+  Group
+  Position
+  Opacity
+  Lock
+  Duplicate
+  Remove
 ```
 
-Example:
+<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-toolbar-overwrite" target="_blank">Open Demo</a></p>
 
 ```js
 import Toolbar from 'polotno/toolbar/toolbar';
@@ -105,6 +109,26 @@ const MyColorPicker = observer(({ store, element, elements }) => {
   );
 });
 
+// as example lets disable font size input for text element
+// just return null from your component
+const TextTextFontSize = () => null;
+
+// also we can invent our own new component
+const TextAlertButton = observer(({ store, element, elements }) => {
+  return (
+    <button
+      onClick={() => {
+        alert('Hello!');
+      }}
+    >
+      Alert
+    </button>
+  );
+});
+
+// also we can disable default Undo/Redo buttons via History component
+const History = () => null;
+
 const App = ({ store }) => {
   return (
     <div
@@ -117,7 +141,15 @@ const App = ({ store }) => {
         position: 'relative',
       }}
     >
-      <Toolbar store={store} components={{ TextFill: MyColorPicker }} />
+      <Toolbar
+        store={store}
+        components={{
+          TextFill: MyColorPicker,
+          TextTextFontSize,
+          TextAlertButton,
+          History,
+        }}
+      />
       <Workspace store={store} />
     </div>
   );

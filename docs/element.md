@@ -3,11 +3,12 @@ id: element-overview
 title: Element
 ---
 
-`Element` represents a graphical object on the page. An element can have one of these types:
+`Element` represents a graphical object on the page or group. An element can have one of these types:
 
 - `text`
 - `image`
 - `svg`
+- `group`
 
 ```js
 const element = store.activePage.addElement({
@@ -99,24 +100,28 @@ You can use `draggable`, `contentEditable` and `styleEditable` attributes to loc
 ```js
 // lock the object
 element.set({
-  // can element be moved and resized
+  // can element be moved and rotated
   draggable: false,
   // can we change content of element?
   contentEditable: false,
   // can we change style of element?
   styleEditable: false,
+  // can we resize element?
+  resizable: false,
 });
 
 console.log(element.locked); // true
 
 // unlock it
 element.set({
-  // can element be moved and resized
+  // can element be moved and rotated
   draggable: true,
   // can we change content of element?
   contentEditable: true,
   // can we change style of element?
   styleEditable: true,
+  // can we resize element?
+  resizable: false,
 });
 ```
 
@@ -166,10 +171,14 @@ page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
-  // can element be moved and resized
+  // can element be moved and rotated
   draggable: true,
   // can we change content of element?
   contentEditable: true,
+  // can we remove element from UI with button or keyboard?
+  removable: true,
+  // can we resize element?
+  resizable: true,
   // can we change style of element?
   styleEditable: true,
 });
@@ -223,10 +232,15 @@ page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
-  // can element be moved and resized
+  // can element be moved and rotated
   draggable: true,
   // can we change content of element?
-  contentEditable,
+  contentEditable: true,
+
+  // can we remove element from UI with button or keyboard?
+  removable: true,
+  // can we resize element?
+  resizable: true,
 });
 ```
 
@@ -266,10 +280,14 @@ const svgElement = page.addElement({
   alwaysOnTop: false,
   // also we can hide some elements from the export
   showInExport: true,
-  // can element be moved and resized
+  // can element be moved and rotated
   draggable: true,
   // can we change content of element?
-  contentEditable,
+  contentEditable: true,
+  // can we remove element from UI with button or keyboard?
+  removable: true,
+  // can we resize element?
+  resizable: true,
   // map of originalColor -> newColor, used to replace colors in svg image
   // do not change it manually. Instead use `el.replaceColor(originalColor, newColor)
   colorsReplace: {},
@@ -312,4 +330,38 @@ You can replace some colors, to modify original image.
 
 ```js
 svgElement.replaceColor('red', 'blue');
+```
+
+## Group element
+
+Group element is a container for other elements. It can be used to move multiple elements together.
+
+Here is the example of default properties.
+
+```js
+const page = store.addPage();
+page.addElement({
+  type: 'text',
+  text: 'Hello world',
+  id: 'text-1',
+});
+page.addElement({
+  type: 'text',
+  text: 'Hello world',
+  id: 'text-1',
+});
+store.groupElements(['text-1', 'text-2']);
+const group = page.children[0];
+group.set({
+  name: 'group',
+  opacity: 0.5,
+
+  custom: {},
+
+  visible: true,
+  selectable: true,
+  removable: true,
+  alwaysOnTop: false,
+  showInExport: true,
+});
 ```
