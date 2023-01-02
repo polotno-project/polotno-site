@@ -156,6 +156,19 @@ const App = ({ store }) => {
 };
 ```
 
+<iframe
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-toolbar-overwrite?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+    style={{
+      width: '100%',
+      height: '700px',
+      border: 0,
+      overflow: 'hidden',
+    }}
+    title="Polotno demo"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
+  ></iframe>
+
 ### How to overwrite all inputs at once?
 
 In some application you may want to change available properties for selected element. Following [Custom Element Example](/docs/custom-element) you can make your own React component for any available element.
