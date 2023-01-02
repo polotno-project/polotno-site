@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Button } from '@blueprintjs/core';
+import { observer } from 'mobx-react-lite';
 import { PolotnoContainer, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
 import { Toolbar } from 'polotno/toolbar/toolbar';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
-import { DownloadButton } from 'polotno/toolbar/download-button';
 import { createStore } from 'polotno/model/store';
 
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -58,13 +58,13 @@ const TextTextFontSize = () => null;
 // also we can invent our own new component
 const TextAlertButton = observer(({ store, element, elements }) => {
   return (
-    <button
+    <Button
       onClick={() => {
         alert('Hello!');
       }}
     >
       Alert
-    </button>
+    </Button>
   );
 });
 
