@@ -10,7 +10,7 @@ hide_table_of_contents: true
 - **New feature!** Groups! You can now group elements together and move them as one. To group elements, select them and click on the "Group" button in the toolbar. To ungroup elements, select a group and click on the "Ungroup" button in the toolbar. You can also use `store.groupElements(ids)` and `store.ungroupElements(ids)` methods. Grouping features is not fully finished. I expect to have many updates to grouping API.
 - New property `resizable` for elements. You can now disable resizing for some elements. Previously `draggable` property was used for that, but it was confusing. Now `draggable` is used only for moving and rotating elements and `resizable` is used for resizing elements.
 - New property `removable` for elements. You can now disable removing elements from the canvas via UI or hotkeys.
-- Copy/Paste from one into another will not offset elements position.
+- Copy/Paste from page one into another page will not offset elements position.
 - Position button on the toolbar will work relative to active page size. Previously it was relative to the whole store size.
 - Position button on the toolbar will now move elements relative to each other, if several elements are selected.
 - `store.toPDFDataURL()` and `store.saveAsPDF()` now supports new argument `pageIds` to specify which pages should be exported.
