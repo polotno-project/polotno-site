@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.4.2 - 2023-01-04**
+
+- Hotfix to resolve incorrect locking behavior
+
 ### **1.4.1 - 2023-01-02**
 
 - **New feature!** Groups! You can now group elements together and move them as one. To group elements, select them and click on the "Group" button in the toolbar. To ungroup elements, select a group and click on the "Ungroup" button in the toolbar. You can also use `store.groupElements(ids)` and `store.ungroupElements(ids)` methods. Grouping features is not fully finished. I expect to have many updates to grouping API.
