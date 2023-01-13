@@ -209,6 +209,7 @@ page.addElement({
   shadowBlur: 10,
   // url path to image
   src: 'https://example.com/image.png',
+  keepRatio: false, // can we change aspect ratio of image
 
   // url path to svg or image that will be used to clip image
   // cab be used for image framing
@@ -257,7 +258,7 @@ const svgElement = page.addElement({
   type: 'svg',
   src: 'https://example.com/image.svg',
   maskSrc: '', // should we draw mask image over svg element?
-  keepRatio: false, // can we change aspect ration of svg?
+  keepRatio: false, // can we change aspect ratio of svg?
   x: 0,
   y: 0,
   rotation: 0,

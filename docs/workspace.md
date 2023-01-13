@@ -86,3 +86,18 @@ You can overwrite this UI with your own.
   }}
 />
 ```
+
+## Overwrite keyboard handler
+
+If you don't like default keyboard shortcuts, you can overwrite them with your own.
+
+```js
+<Workspace
+  store={store}
+  onKeyDown={(e, store) => {
+    if (e.key === 'Escape') {
+      store.deselectAll();
+    }
+  }}
+/>
+```

@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.4.4 - 2023-01-12**
+
+- New strike style button for `text` elements
+- Fix align top when several elements are selected
+- `onKeyDown` property for `<Workspace />` component to overwrite default keydown handler
+- API to control preset colors in the color picker. See configs docs [here](/docs/config).
+- Fix locking button for groups in "Layers" menu
+- new property `keepRatio` for `image` elements.
+
 ### **1.4.2 - 2023-01-04**
 
 - Hotfix to resolve incorrect locking behavior

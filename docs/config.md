@@ -138,3 +138,17 @@ const url = getGoogleFontsListAPI();
 // to get image path you can use this:
 <img src={getGoogleFontImage('Roboto')} />;
 ```
+
+## Change default preset colors in color picker
+
+By default color picker generates preset colors from (1) used colors in the design and (2) default colors. You can change your logic with your own presets
+
+```js
+import { setColorsPresetFunc } from 'polotno/config';
+
+// define your own function
+setColorsPresetFunc((store) => {
+  // return array of colors
+  return ['#000', '#fff'];
+});
+```
