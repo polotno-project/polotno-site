@@ -269,6 +269,10 @@ Create a new history transaction. After that command all changes will be recorde
 
 Finish created transaction and record all changes as one history point.
 
+### `store.history.clear()`
+
+Clear history.
+
 ## Serializations
 
 ### `store.toJSON()`
