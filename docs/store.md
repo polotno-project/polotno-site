@@ -476,6 +476,14 @@ await store.toBlob({ pageId: store.pages[1].id });
 await store.toBlob({ includeBleed: true });
 ```
 
+### `await store.toHTML()`
+
+**Warning: this function is experimental and may produce inconsistent result**. Export store into HTML string.
+
+### `await store.saveAsHTML()`
+
+**Warning: this function is experimental and may produce inconsistent result**. Export store into HTML string and save it as local `.html` file.
+
 ### `store.setElementsPixelRatio(ratio)`
 
 In most of scenarios `polotno` is rasterizing (converting into bitmap) vector elements such as texts and svg images.

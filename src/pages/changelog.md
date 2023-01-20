@@ -5,6 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.5.0 - 2023-01-20**
+
+- New "Background" effect for text elements. Cool and shy! Now all `text` elements have additional properties `backgroundEnabled`, `backgroundColor`, `backgroundOpacity`, `backgroundCornerRadius`, `backgroundPadding`.
+- **Very experimental** `store.toHTML()` export.
+- Fix letter spacing on text edits
+- Fix non-working redo via keyboard
+- Fix `italic` button work when several text elements are selected
+- Fix strikethrough when text has gradient
+- Change dragging flow on mobile. You need to select element first, then drag it.
+
 ### **1.4.4 - 2023-01-12**
 
 - New strike style button for `text` elements
