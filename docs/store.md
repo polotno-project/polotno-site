@@ -134,13 +134,13 @@ store.toggleBleed();
 store.toggleBleed(false);
 ```
 
-### `store.toggleRules()`
+### `store.toggleRulers()`
 
 Show or hide rulers on workspace
 
 ```js
-store.toggleRules();
-store.toggleRules(false);
+store.toggleRulers();
+store.toggleRulers(false);
 ```
 
 ### `store.setRole(role)`
