@@ -1,5 +1,5 @@
 ---
-title: Set page size
+title: Customizing Resize Panel
 ---
 
 ## How to set your own default page sizes?
@@ -28,6 +28,9 @@ const CustomSizesPanel = {
   ),
   // we need observer to update component automatically on any store changes
   Panel: observer(({ store }) => {
+    // we will just render buttons for each size
+    // but you also can add your own controls
+    // size inputs, etc
     return (
       <div>
         {AVAILABLE_SIZES.map(({ width, height }, i) => (
@@ -46,3 +49,18 @@ const CustomSizesPanel = {
   }),
 };
 ```
+
+<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-resize-panel" target="_blank">Open Demo</a></p>
+
+<iframe
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-resize-panel?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    style={{
+      width: '100%',
+      height: '700px',
+      border: 0,
+      overflow: 'hidden',
+    }}
+    title="Polotno demo"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
+  ></iframe>
