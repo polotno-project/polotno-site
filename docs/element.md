@@ -71,7 +71,7 @@ text.moveUp();
 
 ### `element.moveDown()`
 
-Move element up on z-index.
+Move element down on z-index.
 
 ```js
 text.moveToBottom();
