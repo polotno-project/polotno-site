@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.6.1 - 2023-02-01**
+
+- Rulers fixes
+- Internal dependencies updates
+
 ### **1.6.0 - 2023-01-25**
 
 - Show object size and rotation on transform
