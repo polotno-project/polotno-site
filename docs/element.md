@@ -143,7 +143,11 @@ page.addElement({
   brightnessEnabled: false,
   brightness: 0,
   shadowEnabled: false,
-  shadowBlur: 10,
+  shadowBlur: 5,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  shadowColor: 'black',
+  shadowOpacity: 1,
   text: 'Hey, polotno',
   // placeholder is working similar to input placeholder
   // it will be rendered if no text is defined
@@ -211,7 +215,11 @@ page.addElement({
   brightnessEnabled: false,
   brightness: 0,
   shadowEnabled: false,
-  shadowBlur: 10,
+  shadowBlur: 5,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  shadowColor: 'black',
+  shadowOpacity: 1,
   // url path to image
   src: 'https://example.com/image.png',
   keepRatio: false, // can we change aspect ratio of image
@@ -273,7 +281,11 @@ const svgElement = page.addElement({
   brightnessEnabled: false,
   brightness: 0,
   shadowEnabled: false,
-  shadowBlur: 10,
+  shadowBlur: 5,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  shadowColor: 'black',
+  shadowOpacity: 1,
   width: 100,
   height: 100,
   flipX: false,
