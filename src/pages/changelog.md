@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.6.2 - 2023-02-07**
+
+- More ruler fixes
+- Huge improvements for `store.toHTML()` method
+- Little ts fixes
+
 ### **1.6.1 - 2023-02-01**
 
 - Rulers fixes
