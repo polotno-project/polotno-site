@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.6.3 - 2023-02-15**
+
+- Some fixes for experimental HTML text renderer
+- Better color picker for svg elements in the toolbar
+- Fix bad background position on some mask elements
+
 ### **1.6.2 - 2023-02-07**
 
 - More ruler fixes
