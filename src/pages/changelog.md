@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.7.0 - 2023-02-21**
+
+- **New element type `line`. You can use it for both lines and arrows!**
+- Fix some typescript definitions
+- Internal dependencies updates
+
 ### **1.6.4 - 2023-02-15**
 
 - Slightly change label when you resize elements for better readability

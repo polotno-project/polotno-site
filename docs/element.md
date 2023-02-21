@@ -350,6 +350,41 @@ You can replace some colors, to modify original image.
 svgElement.replaceColor('red', 'blue');
 ```
 
+## Line element
+
+You can use `line` element to draw lines and arrows on the canvas. For now line elements may not support all available filters from JSON.
+
+```js
+const svgElement = page.addElement({
+  type: 'line',
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 10,
+  color: 'black',
+  rotation: 0,
+  dash: [], // array of numbers, like [5, 5]
+  startHead: '', // can be empty, arrow, triangle, circle, square, bar
+  endHead: '', // can be empty, arrow, triangle, circle, square, bar
+  // can user select element?
+  // if false, element will be "invisible" for user clicks
+  selectable: true,
+  // use for absolute positing of element
+  alwaysOnTop: false,
+  // also we can hide some elements from the export
+  showInExport: true,
+  // can element be moved and rotated
+  draggable: true,
+  // can we change content of element?
+  contentEditable: true,
+  // can we remove element from UI with button or keyboard?
+  removable: true,
+  // can we resize element?
+  resizable: true,
+  styleEditable: true,
+});
+```
+
 ## Group element
 
 Group element is a container for other elements. It can be used to move multiple elements together.
