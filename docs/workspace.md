@@ -96,7 +96,7 @@ If you don't like default keyboard shortcuts, you can overwrite them with your o
   store={store}
   onKeyDown={(e, store) => {
     if (e.key === 'Escape') {
-      store.deselectAll();
+      store.selectElements([]);
     }
   }}
 />

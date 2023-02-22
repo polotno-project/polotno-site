@@ -8,6 +8,7 @@ title: Element
 - `text`
 - `image`
 - `svg`
+- `line`
 - `group`
 
 ```js
