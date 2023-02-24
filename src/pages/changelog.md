@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.7.1 - 2023-02-24**
+
+- Huge memory usage optimizations for `svg` elements.
+- `line` elements fixes
+- Fix `store.waitLoading()` indicator when you have `image` elements with `clipSrc` property
+
 ### **1.7.0 - 2023-02-21**
 
 - **New element type `line`. You can use it for both lines and arrows!**
