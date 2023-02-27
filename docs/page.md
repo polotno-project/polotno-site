@@ -27,6 +27,18 @@ page.set({
 });
 ```
 
+### `page.setSize({ width, height, useMagic })`
+
+Change size of specified page. If `useMagic` is `true`, all elements will be resized proportionally.
+
+```js
+page.setSize({
+  width: 1000,
+  height: 1000,
+  useMagic: true,
+});
+```
+
 ### `page.addElement(attrs)`
 
 Creates an element with specified attributes. It is important to provide `type` attribute of the element.

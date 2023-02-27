@@ -63,7 +63,7 @@ console.log('Width is', store.width);
 
 ### `store.setSize(width, height, shouldUseMagicResize?)`
 
-Set new size of every page in the store
+Set new size of every page in the store.
 
 ```js
 // just change the pages size
