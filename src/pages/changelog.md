@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.7.2 - 2023-02-27**
+
+- Fix several downgrading bugs from previous version on resize of `image` element
+- `page.setSize({ width, height })` API
+- Fix text resizing with vertical resize is enabled
+
 ### **1.7.1 - 2023-02-24**
 
 - Huge memory usage optimizations for `svg` elements.
