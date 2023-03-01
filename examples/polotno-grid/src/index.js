@@ -157,9 +157,9 @@ const GridSection = {
               fill
               value={rows}
               onValueChange={(rows) => {
-                setRows(rows);
+                setRows(rows || 1);
               }}
-              min={0}
+              min={1}
               max={100}
               selectAllOnFocus
             />
@@ -172,9 +172,9 @@ const GridSection = {
               fill
               value={cols}
               onValueChange={(cols) => {
-                setCols(cols);
+                setCols(cols || 1);
               }}
-              min={0}
+              min={1}
               max={100}
               selectAllOnFocus
             />
