@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.7.4 - 2023-03-01**
+
+- Fix incorrect dragging when you try to move unselect child of a group
+- Better line height control in the toolbar (it will not move line )
+
+### **1.7.3 - 2023-02-26**
+
+- Fixes for html text renderer
+
 ### **1.7.2 - 2023-02-27**
 
 - Fix several downgrading bugs from previous version on resize of `image` element
