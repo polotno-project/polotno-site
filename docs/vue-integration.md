@@ -4,6 +4,10 @@ title: Integration with Vue framework.
 
 `Polotno` is designed to work with `React` framework. Most of the customization demos on the site are made for a `React` codebase.
 
+If you want to do any UI customizations, please take a look into [Non-React integration](/docs/non-react-integration) guide.
+
+For simpler prototype integration continue to read...
+
 ### Is it possible to use `polotno` with `Vue.js` framework?
 
 Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-and-vue?file=/src/App.vue

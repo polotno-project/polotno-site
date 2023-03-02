@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #root {
+        width: 100vw;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="./index.jsx" type="module"></script>
+    <script>
+      window.onload = () => {
+        window.createEditor({ container: document.getElementById('root') });
+      };
+    </script>
+  </body>
+</html>

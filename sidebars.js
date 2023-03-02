@@ -10,7 +10,12 @@ module.exports = {
     'overview',
     'config',
     'theme',
-    'frameworkless',
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: false,
+      items: ['frameworkless', 'non-react-integration'],
+    },
     {
       type: 'category',
       label: 'Store API',

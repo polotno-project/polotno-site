@@ -1,0 +1,24 @@
+{
+  "name": "polotno-editor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel ./editor/index.html",
+    "build": "parcel build ./editor/index.js --no-source-maps"
+  },
+  "main": "editor.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.7.0",
+    "polotno": "1.0.0-11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "buffer": "^5.7.1",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1"
+  }
+}
