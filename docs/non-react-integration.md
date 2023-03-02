@@ -210,7 +210,7 @@ You can pass some data into it and define some callbacks. Only your imagination 
 
 ## Vue example
 
-[Open Vite + Vue + Polotno example](https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-and-vue-custom)
+[Open Vite + Vue + Polotno example](https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-and-vue-custom?file=/src/components/Editor.vue)
 
 ## 10. Pitfalls
 
