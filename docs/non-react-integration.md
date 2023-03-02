@@ -20,7 +20,7 @@ The idea is simple:
 
 In modern days there are many tools to create react projects. For the demo I will use [parcel](https://parceljs.org/) bundler.
 
-If you want to see the final result, you can check [this example](https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/non-react-integration).
+If you want to see the sample result, you can check [example repo](https://github.com/polotno-project/polotno-site/tree/source/examples/polotno-non-react-integration).
 
 ## 1. Installations
 
