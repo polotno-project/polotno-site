@@ -42,7 +42,7 @@ You can add it with a simple scripts into the page.
 <div id="container"></div>
 <!-- init the editor -->
 <script>
-  createPolotnoApp({
+  const { store } = createPolotnoApp({
     // this is a demo key just for that project
     // (!) please don't use it in your projects
     // to create your own API key please go here: https://polotno.com/cabinet
@@ -52,6 +52,7 @@ You can add it with a simple scripts into the page.
     showCredit: true,
     container: document.getElementById('container'),
   });
+  // you can use full store API available here: https://polotno.com/docs/store-overview
 </script>
 ```
 

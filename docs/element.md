@@ -149,6 +149,7 @@ page.addElement({
   shadowOffsetY: 0,
   shadowColor: 'black',
   shadowOpacity: 1,
+  name: '', // name of element, can be used to find element in the store
   text: 'Hey, polotno',
   // placeholder is working similar to input placeholder
   // it will be rendered if no text is defined
@@ -221,6 +222,7 @@ page.addElement({
   shadowOffsetY: 0,
   shadowColor: 'black',
   shadowOpacity: 1,
+  name: '', // name of element, can be used to find element in the store
   // url path to image
   src: 'https://example.com/image.png',
   keepRatio: false, // can we change aspect ratio of image
@@ -287,6 +289,7 @@ const svgElement = page.addElement({
   shadowOffsetY: 0,
   shadowColor: 'black',
   shadowOpacity: 1,
+  name: '', // name of element, can be used to find element in the store
   width: 100,
   height: 100,
   flipX: false,
@@ -356,12 +359,13 @@ svgElement.replaceColor('red', 'blue');
 You can use `line` element to draw lines and arrows on the canvas. For now line elements may not support all available filters from JSON.
 
 ```js
-const svgElement = page.addElement({
+const lineElement = page.addElement({
   type: 'line',
   x: 0,
   y: 0,
   width: 400,
   height: 10,
+  name: '', // name of element, can be used to find element in the store
   color: 'black',
   rotation: 0,
   dash: [], // array of numbers, like [5, 5]
