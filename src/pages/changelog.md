@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.7.6 - 2023-03-13**
+
+- Fixes for html text renderer
+- Support for `line` and `group` elements in `store.toHTML()` method
+- Better scrolling on `store.selectPage(id)` method
+
 ### **1.7.4 - 2023-03-01**
 
 - Fix incorrect dragging when you try to move unselect child of a group
