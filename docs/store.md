@@ -316,9 +316,16 @@ store.loadJSON(json, true);
 
 ### `store.on('change', () => {})`
 
-Listen to any changes in the store. The event may trigger frequently on some operations like resize or dragging.
+Listen to any changes in the store. The event may trigger frequently on some operations like resize or dragging. `store.on()` will return back unsubscribe function.
 
 ```js
+// unsubscribe function
+const off = store.on('change', () => {
+  console.log('something changed');
+});
+// that line will unsubscribe from the event
+off();
+
 // write a function for throttle saving
 let timeout = null;
 const requestSave = () => {
