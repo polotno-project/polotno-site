@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.8.1 - 2023-03-22**
+
+- Fix html display on text element edits
+
+### **1.8.0 - 2023-03-22**
+
+- Some homework for video support, but it is not ready yet
+
 ### **1.7.6 - 2023-03-13**
 
 - Fixes for html text renderer
