@@ -5,6 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.8.5 - 2023-04-10**
+
+- Fix text edit inside group
+- Fix sidepanel size on mobile devices
+- Change default background query
+- Fixes for HTML text renderer
+
 ### **1.8.1 - 2023-03-22**
 
 - Fix html display on text element edits
