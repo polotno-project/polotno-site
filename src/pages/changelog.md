@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.8.6 - 2023-04-13**
+
+- Update dependencies
+- Fix color format issues for `svg` element toolbar color change
+
 ### **1.8.5 - 2023-04-10**
 
 - Fix text edit inside group
