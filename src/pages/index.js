@@ -251,7 +251,10 @@ function Home() {
               novalidate
             >
               <div id="mc_embed_signup_scroll">
-                <div className="mc-field-group" style={{ display: 'flex' }}>
+                <div
+                  className={'mc-field-group ' + styles.subscribeContainer}
+                  style={{ display: 'flex' }}
+                >
                   <input
                     type="email"
                     name="EMAIL"

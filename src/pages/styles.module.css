@@ -104,3 +104,21 @@ h2 {
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.subscribeContainer {
+  display: flex;
+}
+
+.subscribeContainer > * {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 966px) {
+  .subscribeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    justify-content: space-between;
+  }
+}
