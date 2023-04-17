@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.8.7 - 2023-04-17**
+
+- Update deps. May work a bit faster.
+
 ### **1.8.6 - 2023-04-13**
 
 - Update dependencies
