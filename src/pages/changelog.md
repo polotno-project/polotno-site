@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.2 - 2023-05-08**
+
+- Some homework for video support
+
 ### **1.9.1 - 2023-04-21**
 
 - Picker color from canvas on any color picker
