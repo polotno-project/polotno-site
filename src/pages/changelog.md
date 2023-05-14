@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.4 - 2023-05-14**
+
+- Fix render of text borders
+
 ### **1.9.2 - 2023-05-08**
 
 - Some homework for video support
