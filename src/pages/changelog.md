@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.5 - 2023-05-22**
+
+- Show used fonts first in the font family dropdown
+- Fix deselect of the element when you click on it with ctr or shift key pressed
+
 ### **1.9.4 - 2023-05-14**
 
 - Fix render of text borders
