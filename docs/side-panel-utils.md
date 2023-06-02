@@ -23,11 +23,14 @@ import { ImagesGrid } from 'polotno/side-panel/images-grid';
   // a function to get image URL from an item of the array
   getPreview={(item) => item.url}
   // this function will be called when user is clicked on image or dragged it into canvas
-  onSelect={async (image, pos, element) => {
+  onSelect={async (image, pos, element, event) => {
     // image - an item from your array
     // pos - relative mouse position on drop. undefined if user just clicked on image
     // element - model from your store if images was dropped on an element.
     //    Can be useful if you want to change some props on existing element instead of creating a new one
+    // event - will have additional data such as
+    //      elements - list of all elements under the mouse
+    //      page - page where user dropped the image
     const width = 100;
     const height = 100;
 

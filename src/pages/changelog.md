@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.6 - 2023-05-22**
+
+- Fix API to get image size to use `anonymous` mode for CORS images
+- More data for `onSelect` callback for `<ImagesGrid />` component
+
 ### **1.9.5 - 2023-05-22**
 
 - Show used fonts first in the font family dropdown
