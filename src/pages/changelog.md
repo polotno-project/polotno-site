@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.7 - 2023-06-05**
+
+- Make rotate handle of transformer more beautiful
+- Argument fixes for `onSelect` of `ImagesGrid` component
+
 ### **1.9.6 - 2023-05-22**
 
 - Fix API to get image size to use `anonymous` mode for CORS images
