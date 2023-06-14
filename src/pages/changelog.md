@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.9.8 - 2023-06-14**
+
+- Fix vertical text resize
+- Fix image drop from side panels
+
 ### **1.9.7 - 2023-06-05**
 
 - Make rotate handle of transformer more beautiful
