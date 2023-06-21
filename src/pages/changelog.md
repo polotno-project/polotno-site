@@ -7,6 +7,11 @@ hide_table_of_contents: true
 
 ### **1.9.8 - 2023-06-14**
 
+- Fixes for "Position" button on the toolbar
+- Fix for `page.setSize({ width, height })` API
+
+### **1.9.8 - 2023-06-14**
+
 - Fix vertical text resize
 - Fix image drop from side panels
 
