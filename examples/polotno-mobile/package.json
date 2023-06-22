@@ -1,7 +1,7 @@
 {
-  "name": "polotno-load-custom-images",
+  "name": "polotno-mobile",
   "version": "1.0.0",
-  "description": "A Polotno editor demo",
+  "description": "Mobile demo of polotno",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

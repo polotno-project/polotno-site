@@ -51,6 +51,7 @@ module.exports = {
         'units',
         'user-roles',
         'page-bleed',
+        'mobile',
       ],
     },
     {

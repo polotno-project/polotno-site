@@ -5,7 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### **1.9.8 - 2023-06-14**
+### **1.10.0 - 2023-06-22**
+
+- Force mobile view when `polotno-mobile` class is added to the any parent container
+- Update internal dependencies
+
+### **1.9.9 - 2023-06-20**
 
 - Fixes for "Position" button on the toolbar
 - Fix for `page.setSize({ width, height })` API
