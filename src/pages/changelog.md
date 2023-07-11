@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.11.0 - 2023-07-11**
+
+- **Alpha release of animations support. See [docs](/docs/animations) for more details.**
+- Fetch function customization for `useInfiniteAPI`.
+- Ability to change type labels in layers menu via translations
+
 ### **1.10.0 - 2023-06-22**
 
 - Force mobile view when `polotno-mobile` class is added to the any parent container

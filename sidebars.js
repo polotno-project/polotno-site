@@ -58,7 +58,12 @@ module.exports = {
       type: 'category',
       label: 'Beta experiments',
       collapsed: false,
-      items: ['custom-element', 'rich-text', 'vertical-text-resize'],
+      items: [
+        'custom-element',
+        'rich-text',
+        'vertical-text-resize',
+        'animations',
+      ],
     },
     {
       type: 'category',

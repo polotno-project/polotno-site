@@ -491,6 +491,14 @@ await store.toBlob({ includeBleed: true });
 
 **Warning: this function is experimental and may produce inconsistent result**. Export store into HTML string and save it as local `.html` file.
 
+### `await store.toGIFDataURL()`
+
+Export store into GIF image in base64 URL format.
+
+### `await store.saveAsGIF()`
+
+`saveAsGIF` will export drawing into GIF and save it as local file.
+
 ### `store.setElementsPixelRatio(ratio)`
 
 In most of scenarios `polotno` is rasterizing (converting into bitmap) vector elements such as texts and svg images.

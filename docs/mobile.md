@@ -12,7 +12,7 @@ Yes, You can use it on mobile and touch devices to create beautiful designs ther
 
 ### How to toggle mobile mode on large screens?
 
-In some cases you may want to force compact/mobile view on large screen. For example if you want to display the editor on the side. I that case you should add `polotno-mobile` class for any parent container of Polotno editor. For you can add it into `body` tag.
+In some cases you may want to force compact/mobile view on large screen. For example if you want to display the editor on the side. I that case you should add `polotno-mobile` class for any parent container of Polotno editor. E.g. you can add it into `body` tag.
 
 ```html
 <body class="polotno-mobile">
