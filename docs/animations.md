@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 By default, `Polotno` default UI is designed for static images. But you can enable animation support.
 
-### How to enabled rich text support?
+### How to enabled animations support?
 
 Use this:
 
