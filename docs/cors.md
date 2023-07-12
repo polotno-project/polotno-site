@@ -20,3 +20,5 @@ Before adding images into canvas, you may want to display in somewhere else in U
 ```js
 <img src="http://example.com/image.jpg" crossOrigin="anonymous" />
 ```
+
+> Explanation: if you load the same image in the same browsing session without the crossOrigin attribute, after it’s loaded with it, the browser will consider that it needs CORS protocol because it was initially loaded that way.
