@@ -52,6 +52,7 @@ module.exports = {
         'user-roles',
         'page-bleed',
         'mobile',
+        'cors',
       ],
     },
     {
