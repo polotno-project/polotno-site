@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 ### **1.12.1 - 2023-07-13**
 
-- Better export with `store.toHTML()`. Not it should NOT embed imaged. It will make your HTML file much smaller.
+- Better export with `store.toHTML()`. Now it should NOT embed images into file. It will make output much smaller.
 - Fix crashes in some cases
 
 ### **1.12.0 - 2023-07-13**
