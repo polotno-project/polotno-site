@@ -83,6 +83,10 @@ export const SidePanel = () => {
     // a function that should return number of pages available from the first API response
     // usually API response has a "totalPages", "size" or other field that tells you how many pages are available
     getSize = (firstResult) => firstResult.total_pages,
+    // a function to make an API request
+    // here is example of default fetch function
+    // you can customize it to add for example headers
+    fetchFunc = (url) => fetch(url).then((r) => r.json()),
   });
 
   // data - is an array of responses from the API

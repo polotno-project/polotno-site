@@ -51,6 +51,16 @@ Remove pages from the store
 store.deletePages([store.activePage.id]);
 ```
 
+### `store.clear()`
+
+Remove all pages from the store
+
+```js
+store.clear(); // it will remove all data and reset undo history
+
+store.clear({ keepHistory: true }); // it will remove all data but keep undo history
+```
+
 ## UI
 
 ### `store.width` and `store.height`

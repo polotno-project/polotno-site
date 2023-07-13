@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.0 - 2023-07-13**
+
+- New `store.clear()` method to purge all elements and pages from the store
+- Remove some logs from the console
+
 ### **1.11.0 - 2023-07-11**
 
 - **Alpha release of animations support. See [docs](/docs/animations) for more details.**
