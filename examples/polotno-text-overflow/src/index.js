@@ -2,7 +2,7 @@ import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
-import { reaction } from 'mobx-react-lite';
+import { reaction } from 'mobx';
 
 import { createDemoApp } from 'polotno/polotno-app';
 import { unstable_setTextOverflow } from 'polotno/config';
@@ -23,7 +23,7 @@ store.activePage.addElement({
   text: 'Text with the default resize behavior',
   y: 100,
   x: store.width / 2 - 200,
-  fontSize: 80,
+  fontSize: 50,
   width: 400,
   height: 400,
   name: 'overflow-default',
@@ -31,21 +31,10 @@ store.activePage.addElement({
 
 store.activePage.addElement({
   type: 'text',
-  text: 'Text with ellipsis',
-  y: 200,
-  x: store.width / 2 - 200,
-  fontSize: 80,
-  width: 400,
-  height: 400,
-  name: 'overflow-ellipsis',
-});
-
-store.activePage.addElement({
-  type: 'text',
   text: 'Type here to see how font is reduced',
-  y: 300,
+  y: 600,
   x: store.width / 2 - 200,
-  fontSize: 80,
+  fontSize: 50,
   width: 400,
   height: 400,
   name: 'overflow-reduce-font',
@@ -63,8 +52,6 @@ reaction(
     }
     if (el.name === 'overflow-default') {
       unstable_setTextOverflow('resize');
-    } else if (el.name === 'overflow-ellipsis') {
-      unstable_setTextOverflow('ellipsis');
     } else if (el.name === 'overflow-reduce-font') {
       unstable_setTextOverflow('change-font-size');
     }
