@@ -63,6 +63,7 @@ module.exports = {
         'custom-element',
         'rich-text',
         'vertical-text-resize',
+        'text-overflow',
         'animations',
       ],
     },
