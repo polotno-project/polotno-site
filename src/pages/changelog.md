@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.1 - 2023-07-13**
+
+- Better export with `store.toHTML()`. Not it should NOT embed imaged. It will make your HTML file much smaller.
+- Fix crashes in some cases
+
 ### **1.12.0 - 2023-07-13**
 
 - New `store.clear()` method to purge all elements and pages from the store
