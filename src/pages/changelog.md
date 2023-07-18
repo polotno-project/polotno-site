@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.2 - 2023-07-18**
+
+- Fix crashes on `line` elements usage
+
 ### **1.12.1 - 2023-07-13**
 
 - Better export with `store.toHTML()`. Now it should NOT embed images into file. It will make output much smaller.

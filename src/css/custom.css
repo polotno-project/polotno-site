@@ -162,3 +162,95 @@
 .pricing-button.is-featured:active {
   background-color: #269aff;
 }
+
+
+/* showcase */
+
+.grid-item {
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+}
+@media (min-width: 769px) {
+  .grid-item {
+    width: 50%;
+  }
+}
+@media (min-width: 769px) {
+  .grid-item.small {
+    width: 33%;
+  }
+}
+.grid-item a {
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  position: relative;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.25rem;
+}
+.grid-item a:hover {
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  -webkit-box-shadow: 0 10px 18px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 10px 18px 0 rgba(0,0,0,0.15);
+}
+.grid-item .preview {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding-top: 57.77777778%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-color: #272d37;
+  border-bottom: 1px solid #e6e6e6;
+}
+.grid-item.small .description {
+  min-height: 50px !important;
+}
+.grid-item .description {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  padding: 20px;
+  min-height: 110px;
+}
+.grid-item h4 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+.grid-item h5 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 30px;
+  margin: 0;
+}
+.grid-item p {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
