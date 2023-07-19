@@ -24,7 +24,7 @@ You can add it with a simple scripts into the page.
 />
 <!-- add polotno bundle -->
 <!-- (!) important: make sure it is added into body of document (not <head>) -->
-<script src="https://unpkg.com/polotno@1.2.1/polotno.bundle.js"></script>
+<script src="https://unpkg.com/polotno@1.12.3/polotno.bundle.js"></script>
 
 <!-- set styles for the editor -->
 <style>

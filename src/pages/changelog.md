@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.3 - 2023-07-19**
+
+- Fix for bundled version
+
 ### **1.12.2 - 2023-07-18**
 
 - Fix crashes on `line` elements usage
