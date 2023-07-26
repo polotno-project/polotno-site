@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.4 - 2023-07-26**
+
+- Ability to disable rotation snap when ctrl or meta key is pressed
+- Little style changes of side panel.
+- Add special class name `polotno-font-item` for uploaded font item in Text side panel
+
 ### **1.12.3 - 2023-07-19**
 
 - Fix for bundled version
