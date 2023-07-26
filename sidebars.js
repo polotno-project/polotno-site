@@ -53,6 +53,7 @@ module.exports = {
         'page-bleed',
         'mobile',
         'cors',
+        'button',
       ],
     },
     {
