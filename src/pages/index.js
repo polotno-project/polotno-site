@@ -248,7 +248,7 @@ function Home() {
               name="mc-embedded-subscribe-form"
               className="validate"
               target="_blank"
-              novalidate
+              noValidate
             >
               <div id="mc_embed_signup_scroll">
                 <div
@@ -303,7 +303,6 @@ function Home() {
                     type="text"
                     name="b_c4acb00b499825f956980387e_c004a2de67"
                     tabIndex="-1"
-                    value=""
                   />
                 </div>
               </div>
@@ -361,6 +360,7 @@ function Home() {
                     className={classnames('col col--3', styles.feature, {
                       // 'col--offset-2': index === 0,
                     })}
+                    key={index}
                   >
                     <div className="text--center">
                       <a href={link} target="_blank">
@@ -421,7 +421,7 @@ function Home() {
                   </p>
                 </div>
                 <div className={classnames('col col--6', styles.feature)}>
-                  <p>
+                  <div>
                     <div
                       style={{
                         position: 'relative',
@@ -431,10 +431,8 @@ function Home() {
                     >
                       <iframe
                         src="https://www.loom.com/embed/73bc209dfa41475d99ec11d4b850ac47"
-                        frameborder="0"
-                        webkitallowfullscreen
-                        mozallowfullscreen
-                        allowfullscreen
+                        frameBorder="0"
+                        allowFullScreen
                         style={{
                           position: 'absolute',
                           top: '0',
@@ -444,7 +442,7 @@ function Home() {
                         }}
                       ></iframe>
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

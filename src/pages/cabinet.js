@@ -18,13 +18,14 @@ if (ExecutionEnvironment.canUseDOM) {
 
 const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 
-// const isLocalhost =
-//   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
+const isLocalhost =
+  typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
 
-const isLocalhost = false;
+// const isLocalhost = false;
 
-const POLOTNO_API = 'https://api.polotno.com/api';
-
+const POLOTNO_API = isLocalhost
+  ? 'http://localhost:3001/api'
+  : 'https://api.polotno.com/api';
 const PRODUCTION_ID = onDotCom ? DOT_COM_ID : DOT_DEV_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
 
@@ -41,30 +42,16 @@ const UserDashboard = () => {
 
   const [subscription, setSubscription] = React.useState(null);
   const [keys, setKeys] = React.useState(null);
-  const [domains, setDomains] = React.useState(null);
   const [createKeyStatus, setKeyCreateStatus] = React.useState(null);
   const [removingKey, setRemovingKey] = React.useState(null);
   const [removingDomain, setRemovingDomain] = React.useState(null);
 
   const [createDomainStatus, setDomainCreateStatus] = React.useState(null);
 
-  const loadDomains = async () => {
-    const accessToken = await getAccessTokenSilently({});
-
-    const req = await fetch(POLOTNO_API + '/get-user-domains', {
-      method: 'GET',
-      headers: {
-        Authorization: accessToken,
-      },
-    });
-    const res = await req.json();
-    setDomains(res);
-  };
-
   const loadKeys = async () => {
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/get-user-keys', {
+    const req = await fetch(POLOTNO_API + '/cabinet/get-keys', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
@@ -90,7 +77,6 @@ const UserDashboard = () => {
   React.useEffect(() => {
     loadKeys();
     loadSubscription();
-    loadDomains();
   }, [user]);
 
   React.useEffect(() => {
@@ -109,12 +95,17 @@ const UserDashboard = () => {
     setKeyCreateStatus('loading');
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/create-user-key', {
+    const req = await fetch(POLOTNO_API + '/cabinet/create-key', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
       },
     });
+    if (req.status !== 200) {
+      alert('Something went wrong');
+      setKeyCreateStatus(null);
+      return;
+    }
     const res = await req.json();
     setKeys(res);
     setKeyCreateStatus(null);
@@ -124,7 +115,7 @@ const UserDashboard = () => {
     setRemovingKey(key);
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/delete-user-key', {
+    const req = await fetch(POLOTNO_API + '/cabinet/delete-key', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
@@ -137,21 +128,25 @@ const UserDashboard = () => {
   };
 
   const domainRef = React.createRef();
-  const createDomain = async () => {
-    const domain = domainRef.current.value;
+  const createDomain = async (key, domain) => {
     if (!domain) {
       return;
     }
     setDomainCreateStatus('loading');
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/create-user-domain', {
+    const req = await fetch(POLOTNO_API + '/cabinet/add-domain', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
       },
-      body: JSON.stringify({ domain }),
+      body: JSON.stringify({ domain, key }),
     });
+    if (req.status !== 200) {
+      alert('Something went wrong');
+      setDomainCreateStatus(null);
+      return;
+    }
     const res = await req.json();
     setDomains(res);
     setDomainCreateStatus(null);
@@ -187,28 +182,91 @@ const UserDashboard = () => {
         {keys && keys.length ? (
           <React.Fragment>
             {keys.map((key) => (
-              <div className={styles.keyRow} key={key}>
-                <pre>{key}</pre>
-                <button
-                  onClick={() => {
-                    deleteKey(key);
-                  }}
-                  disabled={removingKey === key}
-                >
-                  {removingKey === key ? 'Removing...' : 'Remove'}
-                </button>
+              <div className={styles.keyCard} key={key.key}>
+                <div className={styles.keyRow}>
+                  <div className={styles.col1}>Key:</div>
+                  <div className={styles.col2}>
+                    <pre>{key.key}</pre>
+                  </div>
+                  <div className={styles.col3}></div>
+                </div>
+                {key.domains.map((domain, index) => (
+                  <div className={styles.keyRow} key={index}>
+                    <div className={styles.col1}>
+                      {index === 0 && <div>Domains:</div>}
+                    </div>
+                    <div className={styles.col2}>
+                      <pre>{domain}</pre>
+                    </div>
+                    <div className={styles.col3}>
+                      <button
+                        onClick={() => {
+                          deleteKey(key);
+                        }}
+                        className="button button--danger"
+                        disabled={removingKey === key}
+                      >
+                        {removingKey === key ? 'Removing...' : 'Remove'}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+                <div className={styles.keyRow}>
+                  <div className={styles.col1}></div>
+                  <div className={styles.col2}>
+                    <input
+                      ref={domainRef}
+                      placeholder="https://example.com"
+                    ></input>
+                  </div>
+                  <div className={styles.col3}>
+                    <button
+                      onClick={(e) => {
+                        createDomain(
+                          key.key,
+                          e.currentTarget.parentElement.parentElement.querySelector(
+                            'input'
+                          ).value
+                        );
+                      }}
+                      disabled={createDomainStatus === 'loading'}
+                      className="button button--primary"
+                    >
+                      {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
+                    </button>
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', paddingTop: '10px' }}>
+                  <button
+                    onClick={() => {
+                      deleteKey(key);
+                    }}
+                    disabled={removingKey === key}
+                    className="button button--danger"
+                  >
+                    {removingKey === key
+                      ? 'Removing...'
+                      : 'Remove key and its domains'}
+                  </button>
+                </div>
               </div>
             ))}
           </React.Fragment>
         ) : null}
 
         {keys && (
-          <button onClick={createKey} disabled={createKeyStatus === 'loading'}>
-            {createKeyStatus === 'loading' ? 'Creating...' : 'Create new key'}
-          </button>
+          <div style={{ textAlign: 'center' }}>
+            <button
+              onClick={createKey}
+              disabled={createKeyStatus === 'loading'}
+              className="button button--primary"
+            >
+              {createKeyStatus === 'loading' ? 'Creating...' : 'Create new key'}
+            </button>
+          </div>
         )}
 
-        {!domains && <h3>Loading domains data...</h3>}
+        {/* {!domains && <h3>Loading domains data...</h3>}
         {domains && <h3>Allowed domains</h3>}
         {domains && (
           <p>
@@ -248,7 +306,7 @@ const UserDashboard = () => {
               </button>
             </div>
           </React.Fragment>
-        )}
+        )} */}
         <hr />
         {!subscription && <h3>Loading subscription data...</h3>}
         {subscription && !subscription.update_url && (

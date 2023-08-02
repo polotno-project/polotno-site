@@ -75,29 +75,46 @@ h2 {
   right: 20px;
 }
 
-.keyRow {
+.keyCard {
   position: relative;
   margin-bottom: 20px;
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.keyRow {
+  display: flex;
+}
+
+.col1 {
+  width: 100px;
+  padding: 13px;
+}
+
+.col2 {
+  width: 350px;
+}
+
+.col3 {
+  padding: 10px;
 }
 
 .keyRow pre {
   display: inline-block;
-  width: calc(100% - 90px);
+  width: calc(100% - 10px);
   margin: 0;
 }
 
 .keyRow input {
   display: inline-block;
-  width: calc(100% - 90px);
-  padding: 10px;
+  width: calc(100% - 10px);
+  padding: 1rem;
   margin: 0;
 }
 
 .keyRow button {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .feedback {
