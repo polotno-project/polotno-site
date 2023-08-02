@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.5 - 2023-08-01**
+
+- Fix `fileName` property for `store.saveAsGIF()` method
+- Use different keys for `<ImagesGrid />`
+
 ### **1.12.4 - 2023-07-26**
 
 - Ability to disable rotation snap when ctrl or meta key is pressed
