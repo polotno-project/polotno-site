@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.12.6 - 2023-08-06**
+
+- Fix infinite loop for text background rendering
+- Fix `fileName` argument for `store.saveAsHTML()`
+
 ### **1.12.5 - 2023-08-01**
 
 - Fix `fileName` property for `store.saveAsGIF()` method
