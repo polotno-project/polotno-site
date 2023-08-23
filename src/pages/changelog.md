@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.13.0 - 2023-08-23**
+
+- Changes logic in smart resize. It should work better now and keep layout of elements.
+- Update "Resize" side panel. More options and better UX.
+
 ### **1.12.6 - 2023-08-06**
 
 - Fix infinite loop for text background rendering
