@@ -164,6 +164,10 @@ const USERS = [
     image: 'tigers.png',
     link: 'https://www.rawlingstigers.com/',
   },
+  {
+    image: 'thirdmerch.webp',
+    link: 'https://www.thirdmerch.com/',
+  },
 ];
 
 function Home() {
