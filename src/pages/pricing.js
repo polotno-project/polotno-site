@@ -135,7 +135,7 @@ function Home() {
                 </a>
               </div>
 
-              <div className="pricing-plan">
+              {/* <div className="pricing-plan">
                 <h2 className="pricing-header">Custom solution</h2>
                 <ul className="pricing-features">
                   <li className="pricing-features-item">
@@ -170,7 +170,7 @@ function Home() {
                 >
                   Contact
                 </a>
-              </div>
+              </div> */}
 
               <div className="pricing-plan">
                 <h2 className="pricing-header">Ultimate source</h2>
@@ -180,7 +180,9 @@ function Home() {
                       Full access to source code of Polotno editor
                     </strong>
                   </li>
-
+                  <li className="pricing-features-item">
+                    <strong>Enterprise license included</strong>
+                  </li>
                   <li className="pricing-features-item">
                     Consulting about all Polotno internals
                   </li>
@@ -195,7 +197,7 @@ function Home() {
                     subscription
                   </li>
                 </ul>
-                <p className="pricing-price" style={{ marginTop: '93px' }}>
+                <p className="pricing-price">
                   25 000 USD first purchase
                   <br /> 5 000 USD / year
                 </p>
@@ -224,26 +226,43 @@ function Home() {
         >
           These plans don't fit your needs?{' '}
           <a
-            href="mailto:sales@polotno.dev?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
+            href="mailto:anton@polotno.com?subject=We%20need%20a%20different%20Polotno%20plan.&body=Describe%20your%20needs."
             target="_blank"
           >
             Tell us more
           </a>
         </section>
+        <section
+          className="container"
+          style={{
+            textAlign: 'center',
+            paddingBottom: '50px',
+            paddingTop: '50px',
+            fontSize: '2.5rem',
+          }}
+        >
+          Need help with custom development?{' '}
+          <a
+            href="mailto:anton@polotno.com?subject=We%20need%20custom%20development.&body=Describe%20your%20needs."
+            target="_blank"
+          >
+            Contact us
+          </a>
+        </section>
       </main>
+
       <main>
         <section>
           <div className="container">
             <h2>Frequently Asked Questions</h2>
 
-            <h3>When do I need to use "Custom Solution"?</h3>
+            <h3>When do I need to use "Custom Development"?</h3>
             <p>
               Polotno framework is a tool for developers. In order to setup it
               and make any customization, you need to have your own development
               resources. There is a "Custom Solution" for the case if your
               resources are very limited or you want to boost the development
-              time. "From $10 000" price is just a theoretical example. The
-              exact price may be very different (usually higher) and discussed
+              time. The exact price may be very different and discussed
               individually.
             </p>
             <h3>
