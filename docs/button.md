@@ -41,8 +41,9 @@ const button = document.getElementById('create_polotno');
 button.addEventListener('click', () => {
   window.createPolotnoEditor({
     sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers'],
-    onPublish: ({ dataURL }) => {
+    onPublish: ({ dataURL, json }) => {
       // do something with generated image
+      // also you can save json somewhere and load it later
     },
   });
 });
@@ -71,8 +72,9 @@ window.createPolotnoEditor({
   // load template from json file
   jsonUrl:
     'https://api.polotno.dev/templates/2021-10-25-instagram-post-sunday-reminder.json',
-  onPublish: ({ dataURL }) => {
+  onPublish: ({ dataURL, json }) => {
     document.getElementById('result').src = dataURL;
+    console.log('json', json);
   },
 });
 ```
