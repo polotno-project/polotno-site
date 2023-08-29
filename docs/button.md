@@ -37,9 +37,10 @@ There are several key reasons why implementing a Polotno button can significantl
 3. Initialize Polotno Button with your API key.
 
 ```js
-const button = document.getElementById('create_polotno');
+const button = document.getElementById('polotno-button');
 button.addEventListener('click', () => {
   window.createPolotnoEditor({
+    key: 'my-api-key',
     sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers'],
     onPublish: ({ dataURL, json }) => {
       // do something with generated image
@@ -64,6 +65,7 @@ function inchesToPx(inches) {
 }
 
 window.createPolotnoEditor({
+  key: 'my-api-key',
   // select sections you want to show
   sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers'],
   // initial size of the canvas
