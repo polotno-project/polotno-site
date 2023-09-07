@@ -43,6 +43,7 @@ To do that you need pass a component with a name in format `TypeName`, where typ
 <p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-tooltip" target="_blank">Open Demo</a></p>
 
 ```js
+import { observer } from 'mobx-react-lite';
 import Toolbar from 'polotno/toolbar/toolbar';
 import Workspace from 'polotno/canvas/workspace';
 import { Tooltip } from 'polotno/canvas/tooltip';
