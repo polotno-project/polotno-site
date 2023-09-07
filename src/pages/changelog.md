@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.14.0 - 2023-09-07**
+
+- New `Tooltip` component. See [docs](/docs/tooltip) for more details.
+
 ### **1.13.0 - 2023-08-23**
 
 - Changes logic in smart resize. It should work better now and keep layout of elements.
