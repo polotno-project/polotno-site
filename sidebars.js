@@ -24,6 +24,7 @@ module.exports = {
     },
     'workspace',
     'toolbar',
+    'tooltip',
     {
       type: 'category',
       label: 'Side Panel UI',
