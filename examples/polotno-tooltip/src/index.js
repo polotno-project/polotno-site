@@ -21,6 +21,14 @@ const store = createStore({
   showCredit: true,
 });
 const page = store.addPage();
+page.addElement({
+  type: 'text',
+  text: 'Hello world',
+  x: 100,
+  y: 400,
+  width: store.width - 200,
+  fontSize: 100,
+});
 
 const MyColorPicker = observer(({ store, element, elements }) => {
   // store - main polotno store object
