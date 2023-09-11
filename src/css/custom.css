@@ -56,6 +56,8 @@
     0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
+  max-width: 1350px;
+  margin: auto;
 }
 
 @media (min-width: 900px) {
@@ -226,6 +228,19 @@
 }
 .grid-item.small .description {
   min-height: 50px !important;
+}
+.grid-item .video {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-color: #272d37;
+  border-bottom: 1px solid #e6e6e6;
 }
 .grid-item .description {
   -webkit-box-sizing: border-box;

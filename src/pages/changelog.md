@@ -5,6 +5,31 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.14.1 - 2023-09-07**
+
+- Tooltip position fixes
+- Better localization for animation UI
+- Fix crash on some cases of group usage
+
+### **1.14.0 - 2023-09-07**
+
+- New `Tooltip` component. See [docs](/docs/tooltip) for more details.
+
+### **1.13.0 - 2023-08-23**
+
+- Changes logic in smart resize. It should work better now and keep layout of elements.
+- Update "Resize" side panel. More options and better UX.
+
+### **1.12.6 - 2023-08-06**
+
+- Fix infinite loop for text background rendering
+- Fix `fileName` argument for `store.saveAsHTML()`
+
+### **1.12.5 - 2023-08-01**
+
+- Fix `fileName` property for `store.saveAsGIF()` method
+- Use different keys for `<ImagesGrid />`
+
 ### **1.12.4 - 2023-07-26**
 
 - Ability to disable rotation snap when ctrl or meta key is pressed

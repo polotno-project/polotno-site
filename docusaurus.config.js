@@ -19,9 +19,10 @@ module.exports = {
       },
       items: [
         { to: 'docs/overview', label: 'Docs', position: 'left' },
-        { to: 'changelog', label: 'Changelog', position: 'left' },
+        // { to: 'changelog', label: 'Changelog', position: 'left' },
         { to: '/pricing', label: 'Price', position: 'left' },
-        { to: '/docs/demo-full-editor', label: 'Showcase', position: 'left' },
+        { to: '/showcase', label: 'Showcase', position: 'left' },
+        { to: '/docs/demo-full-editor', label: 'Demo', position: 'left' },
         { to: 'https://studio.polotno.com', label: 'Studio', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
@@ -46,6 +47,10 @@ module.exports = {
             {
               label: 'Roadmap and bugs reports',
               href: 'https://github.com/polotno-project/polotno-board/projects/1',
+            },
+            {
+              label: 'Changelog',
+              to: 'changelog',
             },
             {
               label: 'Blog',

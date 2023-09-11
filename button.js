@@ -22,8 +22,9 @@ const Button = ({ showResult }) => {
           window.createPolotnoEditor({
             jsonUrl:
               'https://api.polotno.dev/templates/2021-10-25-instagram-post-sunday-reminder.json',
-            onPublish: ({ dataURL }) => {
+            onPublish: ({ dataURL, json }) => {
               setResult(dataURL);
+              console.log('polotno json', json);
             },
           });
         }}
