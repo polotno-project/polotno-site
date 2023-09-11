@@ -57,6 +57,18 @@ console.log(getTranslations());
 
 **If you are working on a translation for any language or just changing default labels, please share your results with anton@polotno.com or on [discord](https://discord.gg/W2VeKgsr9J). It will help to make better defaults for UI and to make ready-to-use translations. Thanks.**
 
+Also you can use the same translation API to translate your custom components.
+
+```js
+import { observer } from 'mobx-react-lite';
+import { t } from 'polotno/utils/l10n';
+
+// in your component
+const App = observer(() => {
+  return <div>{t('sidePanel.yourLabel')}</div>; // sidePanel.yourLabel is a key in translations object
+});
+```
+
 ### How to change available fonts?
 
 There are three types of fonts in `Polotno`:
