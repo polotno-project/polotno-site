@@ -112,6 +112,9 @@ const UserDashboard = () => {
   };
 
   const deleteKey = async (key) => {
+    if (!window.confirm('Are you sure you want to delete a key?')) {
+      return;
+    }
     setRemovingKey(key);
     const accessToken = await getAccessTokenSilently({});
 
@@ -120,19 +123,18 @@ const UserDashboard = () => {
       headers: {
         Authorization: accessToken,
       },
-      body: JSON.stringify({ key }),
+      body: JSON.stringify(key),
     });
     const res = await req.json();
     setKeys(res);
     setRemovingKey(null);
   };
 
-  const domainRef = React.createRef();
-  const createDomain = async (key, domain) => {
+  const handleCreateDomain = async (key, domain) => {
     if (!domain) {
       return;
     }
-    setDomainCreateStatus('loading');
+    setDomainCreateStatus('loading' + key);
     const accessToken = await getAccessTokenSilently({});
 
     const req = await fetch(POLOTNO_API + '/cabinet/add-domain', {
@@ -148,23 +150,28 @@ const UserDashboard = () => {
       return;
     }
     const res = await req.json();
-    setDomains(res);
+    setKeys(res);
     setDomainCreateStatus(null);
   };
 
-  const deleteDomain = async (domain) => {
-    setRemovingDomain(domain);
+  const handleDeleteDomain = async (key, domain) => {
+    setRemovingDomain(key + domain);
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/delete-user-domain', {
+    const req = await fetch(POLOTNO_API + '/cabinet/delete-domain', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
       },
-      body: JSON.stringify({ domain }),
+      body: JSON.stringify({ key, domain }),
     });
+    if (req.status !== 200) {
+      alert('Something went wrong');
+      setRemovingDomain(null);
+      return;
+    }
     const res = await req.json();
-    setDomains(res);
+    setKeys(res);
     setRemovingDomain(null);
   };
 
@@ -182,7 +189,13 @@ const UserDashboard = () => {
         {keys && keys.length ? (
           <React.Fragment>
             {keys.map((key) => (
-              <div className={styles.keyCard} key={key.key}>
+              <div
+                className={styles.keyCard}
+                key={key.key}
+                styles={{
+                  pointerEvent: key.key === removingKey ? 'none' : 'auto',
+                }}
+              >
                 <div className={styles.keyRow}>
                   <div className={styles.col1}>Key:</div>
                   <div className={styles.col2}>
@@ -201,40 +214,58 @@ const UserDashboard = () => {
                     <div className={styles.col3}>
                       <button
                         onClick={() => {
-                          deleteKey(key);
+                          handleDeleteDomain(key.key, domain);
                         }}
                         className="button button--danger"
-                        disabled={removingKey === key}
+                        disabled={removingDomain === key.key + domain}
                       >
-                        {removingKey === key ? 'Removing...' : 'Remove'}
+                        {removingDomain === key.key + domain
+                          ? 'Removing...'
+                          : 'Remove'}
                       </button>
                     </div>
                   </div>
                 ))}
                 <div className={styles.keyRow}>
-                  <div className={styles.col1}></div>
+                  <div className={styles.col1}>
+                    {key.domains.length === 0 && <div>Domains:</div>}
+                  </div>
                   <div className={styles.col2}>
-                    <input
-                      ref={domainRef}
-                      placeholder="https://example.com"
-                    ></input>
+                    <input placeholder="https://example.com"></input>
                   </div>
                   <div className={styles.col3}>
                     <button
                       onClick={(e) => {
-                        createDomain(
+                        handleCreateDomain(
                           key.key,
                           e.currentTarget.parentElement.parentElement.querySelector(
                             'input'
                           ).value
                         );
                       }}
-                      disabled={createDomainStatus === 'loading'}
+                      disabled={createDomainStatus === 'loading' + key.key}
                       className="button button--primary"
                     >
-                      {createDomainStatus === 'loading' ? 'Adding...' : 'Add'}
+                      {createDomainStatus === 'loading' + key.key
+                        ? 'Adding...'
+                        : 'Add'}
                     </button>
                   </div>
+                </div>
+                <div
+                  style={{
+                    textAlign: 'center',
+                    paddingTop: '10px',
+                    opacity: 0.7,
+                    fontSize: '0.8rem',
+                  }}
+                >
+                  You can use full domain <strong>https://example.com</strong>{' '}
+                  or subdomain or even patterns like{' '}
+                  <strong>https://*.example.com</strong>,{' '}
+                  <strong>electron</strong> for Electron apps and{' '}
+                  <strong>headless</strong> for polotno-node backend
+                  application.
                 </div>
                 <div style={{ textAlign: 'center', paddingTop: '10px' }}>
                   <button
@@ -260,8 +291,13 @@ const UserDashboard = () => {
               onClick={createKey}
               disabled={createKeyStatus === 'loading'}
               className="button button--primary"
+              style={{
+                fontSize: '1.2em',
+              }}
             >
-              {createKeyStatus === 'loading' ? 'Creating...' : 'Create new key'}
+              {createKeyStatus === 'loading'
+                ? 'Creating...'
+                : 'Create new API key'}
             </button>
           </div>
         )}
@@ -327,6 +363,7 @@ const UserDashboard = () => {
                     email: user.email,
                   });
                 }}
+                className="button button--primary"
               >
                 Buy Small Team plan for 187 USD.
               </button>
@@ -337,6 +374,7 @@ const UserDashboard = () => {
                     email: user.email,
                   });
                 }}
+                className="button button--primary"
               >
                 Buy Enterprise Team plan for 385 USD.
               </button>

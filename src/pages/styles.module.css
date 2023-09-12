@@ -114,7 +114,8 @@ h2 {
   margin: 0;
 }
 
-.keyRow button {
+.keyRow .button--danger {
+  background-color: #89182de0;
 }
 
 .feedback {
