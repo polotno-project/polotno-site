@@ -18,10 +18,9 @@ if (ExecutionEnvironment.canUseDOM) {
 
 const AUTH_DOMAIN = 'polotno.eu.auth0.com';
 
-// const isLocalhost =
-//   typeof window !== undefined && window.location.href.indexOf('localhost') >= 0;
-
-const isLocalhost = false;
+const isLocalhost =
+  ExecutionEnvironment.canUseDOM &&
+  window.location.href.indexOf('localhost') >= 0;
 
 const POLOTNO_API = isLocalhost
   ? 'http://localhost:3001/api'
@@ -57,6 +56,10 @@ const UserDashboard = () => {
         Authorization: accessToken,
       },
     });
+    if (req.status !== 200) {
+      alert('Something went wrong. Can not load API keys.');
+      return;
+    }
     const res = await req.json();
     setKeys(res);
   };
@@ -366,6 +369,11 @@ const UserDashboard = () => {
               <a href="/price">Polotno prices</a>.
             </p>
 
+            <p>
+              Please use the same email <strong>{user.email}</strong> for
+              payment as you used for login.
+            </p>
+
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button
                 onClick={() => {
@@ -436,9 +444,23 @@ function Cabinet() {
         {!isLoading && !isAuthenticated && (
           <div style={{ textAlign: 'center ' }}>
             <h3>Do you want to generate API keys to use Polotno SDK?</h3>
-            <a onClick={loginWithPopup} className={styles.loginButton}>
+            <a
+              onClick={loginWithPopup}
+              className={styles.loginButton + ' button button--primary'}
+            >
               Login
             </a>
+            <p
+              style={{
+                paddingTop: '80px',
+                opacity: 0.7,
+                maxWidth: '380px',
+                margin: 'auto',
+              }}
+            >
+              If you already bought a subscription, use your payment email for
+              signup and login.
+            </p>
           </div>
         )}
       </div>
