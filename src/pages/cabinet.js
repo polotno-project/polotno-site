@@ -256,6 +256,17 @@ const UserDashboard = () => {
                   style={{
                     textAlign: 'center',
                     paddingTop: '10px',
+                    opacity: 0.9,
+                    fontSize: '0.8rem',
+                  }}
+                >
+                  Note: it may take up to 8 minutes before domain list changes
+                  will take affect.
+                </div>
+                <div
+                  style={{
+                    textAlign: 'center',
+                    paddingTop: '10px',
                     opacity: 0.7,
                     fontSize: '0.8rem',
                   }}
