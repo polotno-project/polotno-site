@@ -2,14 +2,20 @@
 title: Cloud Render API
 ---
 
-If you are interested to use it on production, please contact _anton at polotno.com_.
-You will need to have "Enterprise plan" to call this API.
+> If you are interested to use it on production, please contact _anton at polotno.com_.
+> You will need to have "Enterprise plan" to call this API.
 
-## API for automated image generation
+## What is Cloud Render API?
 
-With Polotno Server API you can generate images from JSON data. You can use it to generate image variations on bulk without making your own backend infrastructure.
+Using Polotno SDK you can generate images directly on the client. But sometimes you need to generate images on the backend. For example if you want to generate 1000 images with different text on it or if you want to simply offload rendering work from the client.
 
-## How it looks like?
+You can render images on the backend using [Polotno Node.js SDK](/docs/server-side). But it requires you to have your own backend infrastructure.
+
+Polotno Cloud Render API allows you to generate images on the cloud without any backend infrastructure. You can use it to generate images on the fly or to generate images in bulk.
+
+![Cloud Render Scheme](/img/cloud-render-scheme.jpg)
+
+## How does it look?
 
 ```js
 const req = await fetch('https://api.polotno.com/api/render?KEY=YOUR_API_KEY', {
@@ -33,6 +39,9 @@ document.getElementById('image').src = url;
 ```
 
 ## Demo?
+
+<!-- import CloudRenderDemo from '../cloud-render-demo'; -->
+<!-- <CloudRenderDemo /> -->
 
 <iframe
     src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/cloud-render?fontsize=11&hidenavigation=1&theme=dark&view=preview"

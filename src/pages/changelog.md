@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.14.4 - 2023-09-13**
+
+- Internal bugs fixes
+
 ### **1.14.1 - 2023-09-07**
 
 - Tooltip position fixes

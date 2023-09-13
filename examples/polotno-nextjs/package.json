@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "next": "latest",
-    "polotno": "^1.14.1",
+    "polotno": "^1.14.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
