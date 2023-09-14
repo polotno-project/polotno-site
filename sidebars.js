@@ -84,6 +84,7 @@ module.exports = {
         'demo-page-numbers',
         'demo-page-name',
         'demo-charts',
+        'demo-variables',
       ],
     },
   ],

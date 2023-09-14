@@ -1,7 +1,7 @@
 {
-  "name": "polotno-resize-panel",
+  "name": "polotno-variables-demo",
   "version": "1.0.0",
-  "description": "A Polotno editor demo",
+  "description": "Usage of dynamic template variables",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
