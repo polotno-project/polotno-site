@@ -7,7 +7,7 @@ import { Button, Classes, Dialog, InputGroup } from '@blueprintjs/core';
 const KEY = 'nFA5H9elEytDyPyvKL7T';
 
 const ExportModal = ({ isOpen, store, onClose }) => {
-  const [input, setInput] = React.useState('Anton, Olga, Mark');
+  const [input, setInput] = React.useState('Anton, Olga, Mark, Lavr');
   const [loading, setLoading] = React.useState(false);
   const [images, setImages] = React.useState([]);
 
@@ -60,7 +60,7 @@ const ExportModal = ({ isOpen, store, onClose }) => {
             setInput(e.target.value);
           }}
         />
-        <div>
+        <div style={{ display: 'flex', overflow: 'auto' }}>
           {images.map((url, index) => (
             <img
               src={url}
