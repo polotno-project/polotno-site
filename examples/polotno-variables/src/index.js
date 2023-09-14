@@ -12,6 +12,7 @@ import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 import { createStore } from 'polotno/model/store';
+import { json } from './sample';
 
 const store = createStore({
   key: 'nFA5H9elEytDyPyvKL7T', // you can create it here: https://polotno.com/cabinet/
@@ -19,7 +20,7 @@ const store = createStore({
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
-const page = store.addPage();
+store.loadJSON(json);
 
 export const App = ({ store }) => {
   return (
