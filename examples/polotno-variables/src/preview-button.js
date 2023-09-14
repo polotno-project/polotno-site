@@ -22,32 +22,41 @@ const ExportModal = ({ isOpen, store, onClose }) => {
     // for more info about cloud render API please go here:
     // https://polotno.com/docs/cloud-render
     const names = input.split(',').map((t) => t.trim());
-    const newImages = await Promise.all(
-      names.map(async (name) => {
-        const newJSON = JSON.parse(jsonString.replace('{name}', name));
-        const req = await fetch(
-          'https://api.polotno.com/api/render?KEY=' + KEY,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              design: newJSON,
-              exportOptions: {
-                // use pixelRatio < 1 to have much smaller image at the result
-                pixelRatio: 0.2,
+    try {
+      const newImages = await Promise.all(
+        names.map(async (name) => {
+          const newJSON = JSON.parse(jsonString.replace('{name}', name));
+          const req = await fetch(
+            'https://api.polotno.com/api/render?KEY=' + KEY,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
               },
-              outputFormat: 'dataURL',
-            }),
+              body: JSON.stringify({
+                design: newJSON,
+                exportOptions: {
+                  // use pixelRatio < 1 to have much smaller image at the result
+                  pixelRatio: 0.2,
+                },
+                outputFormat: 'dataURL',
+              }),
+            }
+          );
+          if (req.status !== 200) {
+            throw new Error('Failed to generate preview');
           }
-        );
-        const { url } = await req.json();
-        return url;
-      })
-    );
-    setImages(newImages);
-    setLoading(false);
+          const { url } = await req.json();
+          return url;
+        })
+      );
+      setImages(newImages);
+      setLoading(false);
+    } catch (e) {
+      alert('Something went wrong');
+      console.error(e);
+      setLoading(false);
+    }
   };
 
   return (
