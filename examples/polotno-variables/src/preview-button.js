@@ -16,6 +16,11 @@ const ExportModal = ({ isOpen, store, onClose }) => {
     const json = store.toJSON();
     const jsonString = JSON.stringify(json);
 
+    // this logic probably should be on the server side
+    // it is hard to use client side to generate many images
+    // so we will use our cloud render API for that
+    // for more info about cloud render API please go here:
+    // https://polotno.com/docs/cloud-render
     const names = input.split(',').map((t) => t.trim());
     const newImages = await Promise.all(
       names.map(async (name) => {
