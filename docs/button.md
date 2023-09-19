@@ -73,7 +73,7 @@ window.createPolotnoEditor({
   height: inchesToPx(10),
   // load template from json file
   jsonUrl:
-    'https://api.polotno.dev/templates/2021-10-25-instagram-post-sunday-reminder.json',
+    'https://api.polotno.com/templates/2021-10-25-instagram-post-sunday-reminder.json',
   // change default text of the publish button
   publishLabel: 'Save',
   onPublish: ({ dataURL, json }) => {

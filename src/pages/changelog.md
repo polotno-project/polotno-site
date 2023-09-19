@@ -830,7 +830,7 @@ Technical release with internal bugs fixes and optimizations
 
 ### 0.20.1 - 2021-05-27
 
-- Add support for all google fonts. Now `polotno` will automatically load them. If you don't need them all you can always change that in https://polotno.dev/docs/config#how-to-change-available-fonts
+- Add support for all google fonts. Now `polotno` will automatically load them. If you don't need them all you can always change that in https://polotno.com/docs/config#how-to-change-available-fonts
 - Fix canvas crashes on small images
 - Added `polotno-side-panel-tab` class for some customizations
 
@@ -840,7 +840,7 @@ Technical release with internal bugs fixes and optimizations
 
 ### 0.19.0 - 2021-05-25
 
-- New UI to control pages from the canvas. You can hide it if you want https://polotno.dev/docs/workspace#hide-page-controls
+- New UI to control pages from the canvas. You can hide it if you want https://polotno.com/docs/workspace#hide-page-controls
 - Better PDF export with multiple pages in one file
 
 ### 0.18.10 - 2021-05-21

@@ -24,7 +24,8 @@ const ExportModal = ({ isOpen, store, onClose }) => {
     const names = input.split(',').map((t) => t.trim());
     try {
       const newImages = await Promise.all(
-        names.map(async (name) => {
+        // limit to 5 images
+        names.slice(0, 5).map(async (name) => {
           const newJSON = JSON.parse(jsonString.replace('{name}', name));
           const req = await fetch(
             'https://api.polotno.com/api/render?KEY=' + KEY,

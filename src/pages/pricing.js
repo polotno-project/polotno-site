@@ -161,7 +161,7 @@ function Home() {
                 </ul>
                 <p className="pricing-price">(one time) From $10 000</p>
                 <a
-                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project."
+                  href="mailto:anton@polotno.com?subject=We%20are%20interested%20in%20Polotno%20%22Custom%20solution%22%20plan.&body=We%20are%20%5Bsomething%20about%20you%5D.%0D%0A%0D%0AAnd%20we%20are%20interested%20in%20the%20Polotno%20project."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {
@@ -202,7 +202,7 @@ function Home() {
                   <br /> 5 000 USD / year
                 </p>
                 <a
-                  href="mailto:anton@polotno.dev?subject=We%20are%20interested%20in%20Polotno%20%22Ultimate%20source%20solution%22%20plan.&body=Please%20describe%20your%20situation%20and%20requirements."
+                  href="mailto:anton@polotno.com?subject=We%20are%20interested%20in%20Polotno%20%22Ultimate%20source%20solution%22%20plan.&body=Please%20describe%20your%20situation%20and%20requirements."
                   className="pricing-button"
                   target="_blank"
                   onClick={() => {

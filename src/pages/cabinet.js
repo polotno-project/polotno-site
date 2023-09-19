@@ -34,7 +34,7 @@ const redirect = isLocalhost
   ? 'http://localhost:3000/cabinet'
   : onDotCom
   ? 'https://polotno.com/cabinet'
-  : 'https://polotno.dev/cabinet';
+  : 'https://polotno.com/cabinet';
 
 const UserDashboard = () => {
   const { user, logout, getAccessTokenSilently } = useAuth0();

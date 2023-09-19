@@ -21,7 +21,7 @@ const Button = ({ showResult }) => {
         onClick={() => {
           window.createPolotnoEditor({
             jsonUrl:
-              'https://api.polotno.dev/templates/2021-10-25-instagram-post-sunday-reminder.json',
+              'https://api.polotno.com/templates/2021-10-25-instagram-post-sunday-reminder.json',
             onPublish: ({ dataURL, json }) => {
               setResult(dataURL);
               console.log('polotno json', json);
