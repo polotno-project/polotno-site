@@ -2,12 +2,22 @@
 title: Custom elements
 ---
 
+Custom elements allows you to create your own shapes and add them to the canvas.
+
+By design `polotno` support several main types of elements: `text`, `image`, `svg`, `line`, `group`. In some cases you may want to create your own custom elements.
+
 **THIS PAGE IS ABOUT VERY EXPERIMENTAL FEATURES OF POLOTNO!**
 
 **Please use it carefully. Watch [changelog](/changelog) for any changes!**
 
-By design `polotno` support three main types of elements: `text`, `image` and `svg`.
-In some cases you may want to create your own custom elements.
+Before you start, please note that:
+
+1. Custom elements are not supported in [Cloud Render API](/docs/cloud-render).
+2. By default [polotno-node](/docs/server-side) (for backend rendering) does not support custom elements. But with some [extra configuration](https://github.com/polotno-project/polotno-node#your-own-client) you can make it work.
+3. You will need to know some Polotno internals to support animations for custom elements. Please write us if you need need help.
+4. In the future there will be more options for design export (e.g. to SVG, print-ready PDF, etc). You will need to write some adopters to make it work with custom elements.
+5. There are **NO** plans to remove this API in the near future.
+6. If possible, try to use built-in elements. For example you can draw some complex shapes using `svg` element (you can generate src in the runtime).
 
 ## How to create custom shapes with Polotno?
 
