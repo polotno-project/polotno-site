@@ -40,10 +40,11 @@ document.getElementById('image').src = url;
 
 ## Demo?
 
-<!-- import CloudRenderDemo from '../cloud-render-demo'; -->
-<!-- <CloudRenderDemo /> -->
+import CloudRenderDemo from '../cloud-render-demo';
 
-<iframe
+<CloudRenderDemo />
+
+<!-- <iframe
     src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/cloud-render?fontsize=11&hidenavigation=1&theme=dark&view=preview"
     style={{
       width: '100%',
@@ -54,7 +55,7 @@ document.getElementById('image').src = url;
     title="Polotno demo"
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
-  ></iframe>
+  ></iframe> -->
 
 ## Options
 
