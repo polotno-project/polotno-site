@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **1.14.6 - 2023-09-13**
+
+- Ability to set crop size when you export into PDF. `store.saveAsPDF({ cropMarkSize: 20 })`
+- Ability to hide `Admin` button from toolbar via `components` API.
+
 ### **1.14.5 - 2023-09-13**
 
 - Internal bugs fixes

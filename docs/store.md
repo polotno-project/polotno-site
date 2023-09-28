@@ -442,6 +442,9 @@ await store.toPDFDataURL({ ignoreBackground: true });
 
 // export only sub set of pages
 await store.toPDFDataURL({ pageIds: [store.pages[0].id, store.pages[2].id] });
+
+// export with page bleed and crop marks
+await store.toPDFDataURL({ includeBleed: true, cropMarkSize: 20 });
 ```
 
 ### `await store.saveAsPDF()`
@@ -464,6 +467,9 @@ await store.saveAsPDF({ pixelRatio: 2 });
 
 // export with page bleed
 await store.saveAsPDF({ includeBleed: true });
+
+// export with page bleed and crop marks
+await store.saveAsPDF({ includeBleed: true, cropMarkSize: 20 });
 
 // export only sub set of pages
 await store.saveAsPDF({ pageIds: [store.pages[0].id, store.pages[2].id] });
