@@ -123,6 +123,9 @@ module.exports = {
     {
       src: 'https://cdn.paddle.com/paddle/paddle.js',
     },
+    {
+      src: '/chat.js',
+    },
   ],
   presets: [
     [
