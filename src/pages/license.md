@@ -1,5 +1,5 @@
 ---
-title: license
+title: License
 hide_table_of_contents: true
 ---
 
@@ -28,7 +28,9 @@ For commercial usage, you are required to purchase a license. The Polotno SDK Co
 ### Definitions
 
 "Software": Refers to Polotno SDK developed by Lavrton.
+
 "Licensee": Refers to the individual or entity that holds a license and is a contracting party to this Agreement.
+
 "Product": Refers to any software, application, or elements that you develop using the Software or Modifications in accordance with this Agreement.
 
 ### License Grant
