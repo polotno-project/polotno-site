@@ -6,34 +6,6 @@ title: Toolip UI
 
 ![Tooltip image](/img/tooltip.png)
 
-**In current Polotno version Tooltip is disabled by default. Most likely it will be enabled by default in the next major release.**
-
-Basic usage:
-
-```js
-import Toolbar from 'polotno/toolbar/toolbar';
-import Workspace from 'polotno/canvas/workspace';
-import { Tooltip } from 'polotno/canvas/tooltip';
-
-const App = ({ store }) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100%',
-        margin: 'auto',
-        flex: 1,
-        flexDirection: 'column',
-        position: 'relative',
-      }}
-    >
-      <Toolbar store={store} />
-      <Workspace store={store} components={{ Tooltip }} />
-    </div>
-  );
-};
-```
-
 ### How to customize Tooltip?
 
 Similar to [Toolbar](/docs/toolbar), Tooltip supports special `components` property to add/change/remove most of its UI components.
@@ -104,3 +76,32 @@ const App = ({ store }) => {
     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
   ></iframe>
+
+## How to disable Tooltip?
+
+You can pass `Tooltip` component that renders `null` to disable it.
+
+```js
+import Toolbar from 'polotno/toolbar/toolbar';
+import Workspace from 'polotno/canvas/workspace';
+
+const Tooltip = () => null;
+
+const App = ({ store }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        margin: 'auto',
+        flex: 1,
+        flexDirection: 'column',
+        position: 'relative',
+      }}
+    >
+      <Toolbar store={store} />
+      <Workspace store={store} components={{ Tooltip }} />
+    </div>
+  );
+};
+```
