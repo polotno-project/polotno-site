@@ -18,8 +18,8 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        { to: 'docs/overview', label: 'Docs', position: 'left' },
-        // { to: 'changelog', label: 'Changelog', position: 'left' },
+        { to: '/docs/overview', label: 'Docs', position: 'left' },
+        { to: '/changelog', label: 'Changelog', position: 'left' },
         { to: '/pricing', label: 'Price', position: 'left' },
         { to: '/showcase', label: 'Showcase', position: 'left' },
         { to: '/docs/demo-full-editor', label: 'Demo', position: 'left' },

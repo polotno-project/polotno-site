@@ -17,6 +17,7 @@ The new major version of Polotno is here! It is a huge update with some breaking
 - **New:** Tooltip for canvas elements is enabled by default.
 - Ability to customize Transformer and Highlighter styles. See [Workspace Style](/docs/workspace#workspace-styling) for more details.
 - Fix selection of element when it is select on non-active page
+- Some components rename in `polotno/toolbar/*`, watch for typescript definitions to find new names.
 
 #### Migration guide
 
