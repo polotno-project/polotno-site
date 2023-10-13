@@ -11,10 +11,10 @@ The new major version of Polotno is here! It is a huge update with some breaking
 
 - **Breaking:** Update @blueprintjs/core to version 5.
 - **Breaking:** deprecated properties that starts from "hide" are removed from `<Toolbar />` component. If you don't have any deprecation warnings in the console with the last version of Polotno, you can skip this step.
+- Ability to customize what variations of Google Fonts to load. For more info see [Fonts Docs](/docs/config#1-google-fonts-usage).
+- **Possible breaking:** Better support for **bold** and _italic_ for Google fonts. It may effect text layout in your designs. If you want to keep old behavior, you can use `setGoogleFontsVariants('400,400italic')` API.
 - **New:** Distribute functionality in position menu. It will distribute selected elements with equal distance between them.
 - **New:** Tooltip for canvas elements is enabled by default.
-- Better support for **bold** and _italic_ for Google fonts.
-- Ability to customize what variations of Google Fonts to load. For more info see [Fonts Docs](/docs/config#1-google-fonts-usage).
 - Ability to customize Transformer and Highlighter styles. See [Workspace Style](/docs/workspace#workspace-styling) for more details.
 - Fix selection of element when it is select on non-active page
 
