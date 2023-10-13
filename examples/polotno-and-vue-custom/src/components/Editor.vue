@@ -12,20 +12,11 @@ onMounted(() => {
 </script>
 
 <template>
-<link
-    href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-    rel="stylesheet"
-  />
   <link
-    href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
+    href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
     rel="stylesheet"
   />
-  <link
-    href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
-    rel="stylesheet"
-  />
- <div id="editor"></div>
-  
+  <div id="editor"></div>
 </template>
 
 <style scoped>

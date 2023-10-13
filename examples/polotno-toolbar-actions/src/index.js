@@ -8,9 +8,7 @@ import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { DownloadButton } from 'polotno/toolbar/download-button';
 import { createStore } from 'polotno/model/store';
 
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 const store = createStore({
   // this is a demo key just for that project

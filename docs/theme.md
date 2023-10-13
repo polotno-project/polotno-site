@@ -8,10 +8,10 @@ Most of Polotno UI is made with [Blueprint](https://blueprintjs.com/) framework.
 
 ### How to enable dark theme?
 
-To enable dark-mode, you just need to add `bp4-dark` class to any editor container.
+To enable dark-mode, you just need to add `bp5-dark` class to any editor container.
 
 ```html
-<body class="bp4-dark">
+<body class="bp5-dark">
   <div id="container"></div>
 </body>
 ```
@@ -22,14 +22,14 @@ The simplest way is to use good old CSS styles. You can inspect full DOM tree fi
 
 ```css
 /* overwrite colors for side-panel tabs */
-.bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab:hover,
-.bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab.active {
+.bp5-dark .polotno-side-tabs-container .polotno-side-panel-tab:hover,
+.bp5-dark .polotno-side-tabs-container .polotno-side-panel-tab.active {
   background-color: #c8c52d;
   color: white;
 }
 
 /* change hover style of all buttons */
-.bp4-dark .bp4-button:not([class*='bp4-intent-']):hover {
+.bp5-dark .bp5-button:not([class*='bp5-intent-']):hover {
   background-color: #c8c52d;
 }
 ```

@@ -49,16 +49,9 @@ Create `index.html` file in the `editor` folder. It will be a template for your 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <link
-      href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+      href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
       rel="stylesheet"
     />
     <style>
@@ -190,15 +183,7 @@ Also remember to include CSS styles into your project:
 
 ```html
 <link
-  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
   rel="stylesheet"
 />
 ```

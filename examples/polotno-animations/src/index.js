@@ -3,9 +3,7 @@ import { unstable_setAnimationsEnabled } from 'polotno/config';
 
 unstable_setAnimationsEnabled(true);
 
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 const { store } = createDemoApp({
   container: document.getElementById('root'),

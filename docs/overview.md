@@ -28,9 +28,7 @@ import { createDemoApp } from 'polotno/polotno-app';
 
 // import css styles from blueprint framework (used by polotno)
 // if you bundler doesn't support such import you can use css from CDN (see bellow)
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 const { store } = createDemoApp({
   container: document.getElementById('root'),
@@ -56,15 +54,7 @@ values={[
 
 ```html
 <link
-  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
   rel="stylesheet"
 />
 ```
@@ -74,15 +64,7 @@ values={[
 
 ```html
 <link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@4/lib/css/blueprint.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdn.jsdelivr.net/npm/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@5/lib/css/blueprint.css"
   rel="stylesheet"
 />
 ```

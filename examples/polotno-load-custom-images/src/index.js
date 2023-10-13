@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { observer } from 'mobx-react-lite';
 import { InputGroup } from '@blueprintjs/core';
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+
 import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 

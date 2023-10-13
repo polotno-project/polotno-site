@@ -8,16 +8,9 @@
     />
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
     <link
-      href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+      href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
       rel="stylesheet"
     />
     <style>
@@ -31,32 +24,32 @@
       }
 
       /* overwrite colors for side-panel tabs */
-      .bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab:hover,
-      .bp4-dark .polotno-side-tabs-container .polotno-side-panel-tab.active {
+      .bp5-dark .polotno-side-tabs-container .polotno-side-panel-tab:hover,
+      .bp5-dark .polotno-side-tabs-container .polotno-side-panel-tab.active {
         background-color: #c8c52d;
         color: white;
       }
 
       /* change hover style of all buttons */
-      .bp4-dark .bp4-button:not([class*="bp4-intent-"]):hover {
+      .bp5-dark .bp5-button:not([class*='bp5-intent-']):hover {
         background-color: #c8c52d;
       }
 
       /* change main color of all active buttons */
-      .bp4-dark
+      .bp5-dark
         .polotno-app-container
-        .bp4-button:not([class*="bp4-intent-"])
-        .bp4-icon:not([class*="bp4-intent-"]) {
+        .bp5-button:not([class*='bp5-intent-'])
+        .bp5-icon:not([class*='bp5-intent-']) {
         color: white;
       }
-      .bp4-dark .polotno-app-container .bp4-button.bp4-minimal.bp4-disabled {
+      .bp5-dark .polotno-app-container .bp5-button.bp5-minimal.bp5-disabled {
         color: rgba(171, 179, 191, 0.6);
       }
     </style>
     <title>Polotno demo</title>
   </head>
 
-  <body class="bp4-dark">
+  <body class="bp5-dark">
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
     <!--

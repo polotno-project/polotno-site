@@ -1,15 +1,7 @@
 <template>
   <div>
     <link
-      href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+      href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
       rel="stylesheet"
     />
     <!-- <div v-text="store.pages[0].children.length"></div> -->

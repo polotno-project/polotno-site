@@ -92,6 +92,18 @@ setGoogleFonts([]);
 setGoogleFonts('default');
 ```
 
+By default Polotno will load regular, italic, bold and bold italic styles from the font. If you want to customize this and change default styles you can use this:
+
+````js
+import { setGoogleFontsVariants } from 'polotno/config';
+
+// default is
+setGoogleFontsVariants('400,400italic,700,700italic');
+
+// load only regular and thin styles
+setGoogleFontsVariants('400,100');
+```
+
 #### (2) User fonts
 
 If you want to add/remove fonts specific for the user you can use [Store Fonts API](/docs/store-overview#working-with-fonts).
@@ -137,7 +149,7 @@ addGlobalFont({
 addGlobalFont({
   fontFamily: 'MyCustomFont',
 });
-```
+````
 
 ### Hot to get API endpoints to get a list of available google fonts?
 

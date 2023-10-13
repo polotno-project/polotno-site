@@ -73,6 +73,23 @@ Optionally you can change some styles of the workspace.
 />
 ```
 
+Change default styles of Transformer (resize tool) and Highlighter (on object select or hover).
+
+```js
+import { setHighlighterStyle, setTransformerStyle } from 'polotno/config';
+
+// pass properties of Konva.Rect shape
+setTransformerStyle({
+  stroke: 'red',
+});
+
+// pass properties of Konva.Transformer node
+setHighlighterStyle({
+  anchorStroke: 'red',
+  borderStroke: 'red',
+});
+```
+
 ## No pages UI
 
 If your `store` has no pages, `<Workspace />` component will show a simple UI with a button to create a new page.

@@ -5,6 +5,74 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.0 - 2023-10-13**
+
+The new major version of Polotno is here! It is a huge update with some breaking changes. Please read this document carefully to migrate your application to the new version.
+
+- **Breaking:** Update @blueprintjs/core to version 5.
+- **Breaking:** deprecated properties that starts from "hide" are removed from `<Toolbar />` component. If you don't have any deprecation warnings in the console with the last version of Polotno, you can skip this step.
+- **New**: Distribute functionality in position menu. It will distribute selected elements with equal distance between them.
+- Better support for **bold** and _italic_ for Google fonts.
+- Ability to customize what variations of Google Fonts to load. For more info see [Fonts Docs](/docs/config#1-google-fonts-usage).
+- Ability to customize Transformer and Highlighter styles. See [Workspace Style](/docs/workspace#workspace-styling) for more details.
+- Fix selection of element when it is select on non-active page
+
+#### Migration guide
+
+Install last version of `polotno` package:
+
+```bash
+npm install polotno@latest
+```
+
+If you explicitly using `@blueprintjs/core` package (it is listed in your `package.json`) make sure you update it too:
+
+```bash
+npm install @blueprintjs/core@5
+```
+
+For blueprint related migration you can read [Blueprint migration guide](https://github.com/palantir/blueprint/wiki/Blueprint-5.0).
+
+##### Update styles import
+
+If you import from js
+
+```js
+// old
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
+
+// new
+import '@blueprintjs/core/lib/css/blueprint.css';
+```
+
+If you import style via CDN
+
+```html
+<!-- old -->
+<link
+  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  rel="stylesheet"
+/>
+
+<!-- NEW -->
+<link
+  href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
+  rel="stylesheet"
+/>
+```
+
+Then replace all instances of `bp4-` with `bp5-` in your styles.
+
 ### **1.14.6 - 2023-09-13**
 
 - Ability to set crop size when you export into PDF. `store.saveAsPDF({ cropMarkSize: 20 })`

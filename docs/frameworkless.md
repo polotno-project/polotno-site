@@ -11,20 +11,12 @@ You can add it with a simple scripts into the page.
 ```html
 <!-- add styles -->
 <link
-  href="https://unpkg.com/@blueprintjs/icons@4/lib/css/blueprint-icons.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/core@4/lib/css/blueprint.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://unpkg.com/@blueprintjs/popover2@1/lib/css/blueprint-popover2.css"
+  href="https://unpkg.com/@blueprintjs/core@5/lib/css/blueprint.css"
   rel="stylesheet"
 />
 <!-- add polotno bundle -->
 <!-- (!) important: make sure it is added into body of document (not <head>) -->
-<script src="https://unpkg.com/polotno@1.12.6/polotno.bundle.js"></script>
+<script src="https://unpkg.com/polotno@2/polotno.bundle.js"></script>
 
 <!-- set styles for the editor -->
 <style>
