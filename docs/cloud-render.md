@@ -21,6 +21,7 @@ Polotno Cloud Render API allows you to generate images on the cloud without any 
 const req = await fetch('https://api.polotno.com/api/render?KEY=YOUR_API_KEY', {
   method: 'POST',
   headers: {
+    // it is important to set a json content type
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
@@ -59,6 +60,16 @@ import CloudRenderDemo from '../cloud-render-demo';
 
 ## Options
 
+When you send request to the API, you need to pass JSON into request's body.
+
+```json
+{
+  "design": {},
+  "outputFormat": "dataURL",
+  "exportOptions": {}
+}
+```
+
 ### `design`
 
 `design` - JSON data from polotno export `store.toJSON()`. Remember that you can generate such JSON on the fly on your backend. For example replace text on some elements dynamically.
@@ -73,7 +84,7 @@ If you use `dataURL` or `url`, API will return json `{ url: '...' }` where `url`
 
 **Note: Cloud API has 5mb limit for its payload!**. So it will be not able to return large data in `dataURL` or `file` format. You can use `url` format instead.
 
-**Images generated using `url` format has expiration time of 24 hour.** After that time, access to the file is not guaranteed. If you want to keep file, please save it on your backend.
+**Images generated using `url` format has expiration time of 24 hour. After that time, access to the file is not guaranteed. If you want to keep file, please save it on your backend.**
 
 ### `format`
 
@@ -82,3 +93,23 @@ File format of generated result. Possible values are: `png` (default), `jpeg`, `
 ### `exportOptions`
 
 Additional options to pass into export function. For more details see [store.toDataURL()](https://polotno.com/docs/store-overview/#await-storetodataurl) and [store.toPDFDataURL()](https://polotno.com/docs/store-overview/#async-storetopdfdataurl).
+
+```json
+{
+  "design": {},
+  "exportOptions": {
+    "pixelRatio": 2
+  }
+}
+```
+
+### `useHtmlTextRender`
+
+Optional boolean value to enabled [Rich Text Feature](/docs/rich-text/)
+
+```json
+{
+  "design": {},
+  "useHtmlTextRender": true
+}
+```
