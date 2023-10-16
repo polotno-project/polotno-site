@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.2 - 2023-10-16**
+
+- Some hotfixes for new version
+
 ### **2.0.0 - 2023-10-13**
 
 The new major version of Polotno is here! It is a huge update with some breaking changes. Please read this document carefully to migrate your application to the new version.
