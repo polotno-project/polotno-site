@@ -225,6 +225,7 @@ const KEY = 'nFA5H9elEytDyPyvKL7T';
 const CloudRenderDemo = () => {
   const [pixelRatio, setPixelRatio] = React.useState(1);
   const [type, setType] = React.useState('png');
+  const [dpi, setDPI] = React.useState(72);
   const [loading, setLoading] = React.useState(false);
   const [image, setImage] = React.useState(null);
 
@@ -243,6 +244,7 @@ const CloudRenderDemo = () => {
           exportOptions: {
             // use pixelRatio < 1 to have much smaller image at the result
             pixelRatio,
+            dpi,
           },
           format: type,
           outputFormat: 'dataURL',
@@ -272,6 +274,18 @@ const CloudRenderDemo = () => {
       ></textarea>
       <h4>Output options:</h4>
       <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '100px' }}>File type:</div>
+        <select
+          id="type"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="png">PNG</option>
+          <option value="jpeg">JPEG</option>
+          <option value="pdf">PDF</option>
+        </select>
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
         <div style={{ width: '100px' }}>Pixel ratio:</div>
         <input
           type="range"
@@ -286,18 +300,23 @@ const CloudRenderDemo = () => {
         />{' '}
         {pixelRatio}
       </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '100px' }}>File type:</div>
-        <select
-          id="type"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option value="png">PNG</option>
-          <option value="jpeg">JPEG</option>
-          <option value="pdf">PDF</option>
-        </select>
-      </div>
+      {type === 'pdf' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '100px' }}>DPI:</div>
+          <input
+            type="range"
+            id="quality"
+            min="72"
+            max="300"
+            step="1"
+            value={dpi}
+            onChange={(e) => {
+              setDPI(parseFloat(e.target.value));
+            }}
+          />{' '}
+          {dpi}
+        </div>
+      )}
       <p>
         <button
           id="generate-button"
