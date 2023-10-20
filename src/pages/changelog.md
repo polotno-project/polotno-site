@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.4 - 2023-10-20**
+
+- Delay and duration inputs for animation picker
+
+### **2.0.3 - 2023-10-17**
+
+- Redo fixes when several texts are resized
+
 ### **2.0.2 - 2023-10-16**
 
 - Some hotfixes for new version
