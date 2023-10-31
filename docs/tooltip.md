@@ -1,8 +1,8 @@
 ---
-title: Toolip UI
+title: Tooltip UI
 ---
 
-`Tooltip` is a UI components similar to [Toolbar](/docs/toolbar), to change elements on the canvas, reorder and align them. Toolip is not fixed and will be rendered near selected elements.
+`Tooltip` is a UI components similar to [Toolbar](/docs/toolbar), to change elements on the canvas, reorder and align them. Tooltip is not fixed and will be rendered near selected elements.
 
 ![Tooltip image](/img/tooltip.png)
 
