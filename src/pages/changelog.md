@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.8 - 2023-11-01**
+
+- Undo/redo fixes
+
+### **2.0.7 - 2023-11-01**
+
+- Html render fixes
+
 ### **2.0.6 - 2023-11-01**
 
 - Better video support
