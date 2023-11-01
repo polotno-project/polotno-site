@@ -103,14 +103,14 @@ Additional options to pass into export function. For more details see [store.toD
 }
 ```
 
-### `useHtmlTextRender`
+### `htmlTextRenderEnabled`
 
 Optional boolean value to enable [Rich Text Feature](/docs/rich-text/)
 
 ```json
 {
   "design": {},
-  "useHtmlTextRender": true
+  "htmlTextRenderEnabled": true
 }
 ```
 
