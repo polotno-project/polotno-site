@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.6 - 2023-11-01**
+
+- Better video support
+- Resize behavior improvements
+- Update internal dependencies
+
 ### **2.0.4 - 2023-10-20**
 
 - Delay and duration inputs for animation picker
