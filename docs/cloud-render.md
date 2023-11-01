@@ -105,11 +105,22 @@ Additional options to pass into export function. For more details see [store.toD
 
 ### `useHtmlTextRender`
 
-Optional boolean value to enabled [Rich Text Feature](/docs/rich-text/)
+Optional boolean value to enable [Rich Text Feature](/docs/rich-text/)
 
 ```json
 {
   "design": {},
   "useHtmlTextRender": true
+}
+```
+
+### `textVerticalResizeEnabled`
+
+Optional boolean value to enable [Vertically Resized Text](/docs/vertical-text-resize/)
+
+```json
+{
+  "design": {},
+  "textVerticalResizeEnabled": true
 }
 ```
