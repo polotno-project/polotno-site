@@ -7,7 +7,7 @@ title: Integration with Next.js framework.
 1. Create isolated React component for all Polotno-related UI.
 2. Put that component inside `components` folder. Or it can be another folder. **But it is important to NOT use `pages` or `app` folder!!!**
 3. Use dynamic import for that component. It will help to avoid SSR errors. https://nextjs.org/docs/advanced-features/dynamic-import
-4. In some versions of next.js you may need to set up `next.config.js`` to make it work:
+4. In some versions of next.js you may need to set up `next.config.js` to make it work:
 
 ```js
 /** @type {import('next').NextConfig} */
