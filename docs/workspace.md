@@ -80,13 +80,13 @@ import { setHighlighterStyle, setTransformerStyle } from 'polotno/config';
 
 // pass properties of Konva.Rect shape
 setTransformerStyle({
-  stroke: 'red',
+  anchorStroke: 'red',
+  borderStroke: 'red',
 });
 
 // pass properties of Konva.Transformer node
 setHighlighterStyle({
-  anchorStroke: 'red',
-  borderStroke: 'red',
+  stroke: 'red',
 });
 ```
 
