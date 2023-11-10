@@ -78,13 +78,13 @@ Change default styles of Transformer (resize tool) and Highlighter (on object se
 ```js
 import { setHighlighterStyle, setTransformerStyle } from 'polotno/config';
 
-// pass properties of Konva.Rect shape
+// pass properties of Konva.Transformer shape
 setTransformerStyle({
   anchorStroke: 'red',
   borderStroke: 'red',
 });
 
-// pass properties of Konva.Transformer node
+// pass properties of Konva.Rect node
 setHighlighterStyle({
   stroke: 'red',
 });
