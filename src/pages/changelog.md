@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.10 - 2023-11-09**
+
+- Position menu UI updates
+
 ### **2.0.9 - 2023-11-09**
 
 - Tooltip position fixes
