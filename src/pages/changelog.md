@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.0.12 - 2023-11-10**
+
+- Fix preset colors in gradient picker
+- Fix page background in HTML export
+
+### **2.0.11 - 2023-11-10**
+
+- Little internal changes for better support of circular dependencies
+
 ### **2.0.10 - 2023-11-09**
 
 - Position menu UI updates
