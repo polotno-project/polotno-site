@@ -25,7 +25,7 @@ unstable_registerShapeModel(
     fill: 'black',
     numPoints: 6,
   },
-  // option extend function
+  // optional extend function
   (starModel) => {
     // starModel is a model from mobx-state-tree
     // we can define some additional methods here
