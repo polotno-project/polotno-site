@@ -21,11 +21,7 @@ Before you start, please note that:
 
 ## How to create custom shapes with Polotno?
 
-As the demonstration we will create a custom `star` element.
-
-Demo: https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-custom-element
-
-Creating new elements consists of three main steps.
+As the demonstration we will create a custom `star` element. Creating new elements consists of three main steps.
 
 ### 1. Create model for your element
 
@@ -165,3 +161,18 @@ const StarToolbar = observer(({ store }) => {
 
 unstable_registerToolbarComponent('star', StarToolbar);
 ```
+
+<p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-custom-element" target="_blank">Open Demo</a></p>
+
+<iframe
+    src="https://codesandbox.io/embed/github/polotno-project/polotno-site/tree/source/examples/polotno-custom-element?fontsize=11&hidenavigation=1&theme=dark&view=preview"
+    style={{
+      width: '100%',
+      height: '700px',
+      border: 0,
+      overflow: 'hidden',
+    }}
+    title="Polotno demo"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin allow-downloads"
+  ></iframe>
