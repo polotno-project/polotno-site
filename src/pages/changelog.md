@@ -5,7 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### **2.1.00 - 2023-11-17**
+### **2.1.1 - 2023-11-17**
+
+- Ability to trim videos
+- Image export fixes
+- Little UX fixes in `<ImagesGrid />` component
+
+### **2.1.0 - 2023-11-17**
 
 - Hold ALT + drag start to copy selected elements
 - Add number inputs into animation picker
