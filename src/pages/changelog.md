@@ -5,7 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### **2.1.1 - 2023-11-17**
+### **2.1.2 - 2023-11-27**
+
+- Extended ability to create your own custom element models. See [Custom Element](/docs/custom-element) for more details.
+- Little style fix in custom fonts panel in "Text" side panel
+
+### **2.1.1 - 2023-11-27**
 
 - Ability to trim videos
 - Image export fixes

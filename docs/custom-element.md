@@ -34,12 +34,28 @@ First we need to define additional attributes for our new element. Very basic at
 ```js
 import { unstable_registerShapeModel } from 'polotno/config';
 
-unstable_registerShapeModel({
-  type: 'star',
-  radius: 100,
-  fill: 'black',
-  numPoints: 6,
-});
+unstable_registerShapeModel(
+  // define properties
+  {
+    type: 'star',
+    radius: 100,
+    fill: 'black',
+    numPoints: 6,
+  },
+  // option extend function
+  (starModel) => {
+    // starModel is a model from mobx-state-tree
+    // we can define some additional methods here
+    // and return it back
+    return starModel.actions((self) => {
+      return {
+        setNumPoints(numPoints) {
+          self.numPoints = numPoints;
+        },
+      };
+    });
+  }
+);
 ```
 
 Now `polotno` store knows that we can define `star` model.

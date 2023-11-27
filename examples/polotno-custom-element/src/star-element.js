@@ -17,12 +17,28 @@ import { unstable_registerTransformerAttrs } from 'polotno/config';
 
 // define our model
 // we need to provide all default values
-unstable_registerShapeModel({
-  type: 'star',
-  radius: 100,
-  fill: 'black',
-  numPoints: 6,
-});
+unstable_registerShapeModel(
+  // define properties
+  {
+    type: 'star',
+    radius: 100,
+    fill: 'black',
+    numPoints: 6,
+  },
+  // option extend function
+  (starModel) => {
+    // starModel is a model from mobx-state-tree
+    // we can define some additional methods here
+    // and return it back
+    return starModel.actions((self) => {
+      return {
+        setNumPoints(numPoints) {
+          self.numPoints = numPoints;
+        },
+      };
+    });
+  }
+);
 
 // now we need to define how elements looks on canvas
 export const StarElement = observer(({ element, store }) => {
