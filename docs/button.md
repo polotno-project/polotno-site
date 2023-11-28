@@ -80,5 +80,11 @@ window.createPolotnoEditor({
     document.getElementById('result').src = dataURL;
     console.log('json', json);
   },
+  // optionally you can react to any change in the editor
+  // for example temporary save design somewhere to restore it later via jsonUrl
+  // you may need to save JSON manually to your server
+  onChange: ({ json }) => {
+    console.log('json', json);
+  },
 });
 ```
