@@ -18,4 +18,6 @@
   'https://public.profitwell.com/js/profitwell.js'
 );
 
-profitwell('start', {});
+if (window.location.pathname.indexOf('/cabinet') !== 0) {
+  profitwell('start', {});
+}
