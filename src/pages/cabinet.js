@@ -80,6 +80,10 @@ const UserDashboard = () => {
   React.useEffect(() => {
     loadKeys();
     loadSubscription();
+
+    if (window.profitwell) {
+      window.profitwell('start', { user_email: user.email });
+    }
   }, [user]);
 
   React.useEffect(() => {

@@ -126,6 +126,11 @@ module.exports = {
     {
       src: '/chat.js',
     },
+    {
+      src: '/profitwell.js',
+      id: 'profitwell-js',
+      'data-pw-auth': '681cc5f913ddbdb6e41718906c7dbaa9',
+    },
   ],
   presets: [
     [
