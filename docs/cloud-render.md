@@ -92,7 +92,7 @@ File format of generated result. Possible values are: `png` (default), `jpeg`, `
 
 ### `exportOptions`
 
-Additional options to pass into export function. For more details see [store.toDataURL()](https://polotno.com/docs/store-overview/#await-storetodataurl) and [store.toPDFDataURL()](https://polotno.com/docs/store-overview/#async-storetopdfdataurl).
+Additional options to pass into export function. For more details see [store.toDataURL()](/docs/store-overview/#await-storetodataurl) and [store.toPDFDataURL()](/docs/store-overview/#async-storetopdfdataurl).
 
 ```json
 {

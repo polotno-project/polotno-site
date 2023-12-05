@@ -74,6 +74,10 @@ window.createPolotnoEditor({
   // load template from json file
   jsonUrl:
     'https://api.polotno.com/templates/2021-10-25-instagram-post-sunday-reminder.json',
+  // load template from json object
+  json: {
+    // json object of the design
+  },
   // change default text of the publish button
   publishLabel: 'Save',
   onPublish: ({ dataURL, json }) => {
