@@ -70,6 +70,10 @@ Optionally you can change some styles of the workspace.
   pageBorderColor="black" // border around page
   activePageBorderColor="red" // border around active page. It will be used only if you have several pages. Otherwise just pageBorderColor will be used
   bleedColor="rgba(255, 0, 0, 0.2)" // color of the bleed area, when it is toggled with `store.toggleBleed()`
+  // optinally you can change default padding around page content
+  // you can set it to 0 if you want to have full width and height of the canvas
+  paddingX={50}
+  paddingY={50}
 />
 ```
 

@@ -5,6 +5,16 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.2.0 - 2023-12-05**
+
+- Make consistent zoom for zoom buttons and touchpad zooming
+- Little UX fixes in the toolbar
+- Fix bug with group selection
+- `<ImagesGrid />` component style fixes
+- Admins will see all elements in the "Layers" menu, even if they are not selectable
+- Props to workspace to control padding
+- Internal homework for new `figure` element type
+
 ### **2.1.2 - 2023-11-27**
 
 - Extended ability to create your own custom element models. See [Custom Element](/docs/custom-element) for more details.
