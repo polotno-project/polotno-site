@@ -5,7 +5,13 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
-### **2.2.0 - 2023-12-05**
+### **2.2.2 - 2023-12-06**
+
+- Performance fixes
+- Fix video preview in the trim panel
+- Fixes for `figure` rendering
+
+### **2.2.1 - 2023-12-05**
 
 - Make consistent zoom for zoom buttons and touchpad zooming
 - Little UX fixes in the toolbar
