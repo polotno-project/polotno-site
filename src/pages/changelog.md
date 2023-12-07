@@ -5,6 +5,15 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.2.5 - 2023-12-07**
+
+- Performance improvements
+- Fix image cropping when image has "resizable: false"
+
+### **2.2.3 - 2023-12-06**
+
+- Fix image cropping
+
 ### **2.2.2 - 2023-12-06**
 
 - Performance fixes
