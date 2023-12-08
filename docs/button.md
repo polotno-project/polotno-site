@@ -90,5 +90,13 @@ window.createPolotnoEditor({
   onChange: ({ json }) => {
     console.log('json', json);
   },
+  // you can pass initial uploads to the editor
+  // then will be shown in the upload section
+  uploads: [
+    {
+      url: 'https://example.com/image.jpg',
+      preview: 'https://example.com/image.jpg',
+    },
+  ],
 });
 ```
