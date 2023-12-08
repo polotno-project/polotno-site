@@ -98,5 +98,10 @@ window.createPolotnoEditor({
       preview: 'https://example.com/image.jpg',
     },
   ],
+  // you can enable or disable animations
+  // by default animations are disabled
+  // warning - editor can't export into video or gif
+  // you have to use Cloud API or your own server for that
+  animationsEnabled: true,
 });
 ```
