@@ -53,7 +53,7 @@ function CRMForm({ onContinue }) {
   };
 
   const handleCrmSave = async (values) => {
-    // setCrmData(values);
+    setCrmData(values);
     const accessToken = await getAccessTokenSilently({});
     const req = await fetch(POLOTNO_API + '/cabinet/save-crm-data', {
       method: 'POST',
@@ -62,7 +62,7 @@ function CRMForm({ onContinue }) {
       },
       body: JSON.stringify(values),
     });
-    const res = await req.json();
+    // const res = await req.json();
   };
 
   React.useEffect(() => {
