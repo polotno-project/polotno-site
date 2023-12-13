@@ -78,7 +78,7 @@ h2 {
 .keyCard {
   position: relative;
   margin-bottom: 20px;
-  /* background-color: rgba(0, 0, 0, 0.05); */
+  background-color: white;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);

@@ -341,7 +341,7 @@ const UserDashboard = () => {
               <div
                 className={styles.keyCard}
                 key={key.key}
-                styles={{
+                style={{
                   pointerEvent: key.key === removingKey ? 'none' : 'auto',
                 }}
               >
