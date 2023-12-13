@@ -4,16 +4,16 @@ import styles from './styles.module.css';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { Formik, Field, Form } from 'formik';
 
-const DOT_DEV_ID = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
+const DEVELOPER_COM = 'QLNBl0Vci943fWC42GMZXiyWaNvtzXQb';
 const DOT_COM_ID = 'MNzqsYRf6Vz2bilIOXqc51Mb9BlDT1Tu';
 
 let ID = DOT_COM_ID;
-let onDotCom = true;
+let developerDomain = true;
 
 if (ExecutionEnvironment.canUseDOM) {
-  onDotCom =
+  developerDomain =
     typeof window !== undefined &&
-    window.location.origin.indexOf('polotno.com') >= 0;
+    window.location.origin.indexOf('developer.polotno.com') >= 0;
 }
 
 const AUTH_DOMAIN = 'polotno.eu.auth0.com';
@@ -25,15 +25,15 @@ const isLocalhost =
 const POLOTNO_API = isLocalhost
   ? 'http://localhost:3001/api'
   : 'https://api.polotno.com/api';
-const PRODUCTION_ID = onDotCom ? DOT_COM_ID : DOT_DEV_ID;
+const PRODUCTION_ID = developerDomain ? DEVELOPER_COM : DOT_COM_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
 
 ID = isLocalhost ? LOCAL_ID : PRODUCTION_ID;
 
 const redirect = isLocalhost
   ? 'http://localhost:3000/cabinet'
-  : onDotCom
-  ? 'https://polotno.com/cabinet'
+  : developerDomain
+  ? 'https://developer.polotno.com/cabinet'
   : 'https://polotno.com/cabinet';
 
 function CRMForm({ onContinue }) {
