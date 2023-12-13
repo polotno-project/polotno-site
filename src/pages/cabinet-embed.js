@@ -36,6 +36,11 @@ const redirect = isLocalhost
   ? 'https://developer.polotno.com/cabinet'
   : 'https://polotno.com/cabinet';
 
+const getParam = (name) => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+};
+
 function CRMForm({ onContinue }) {
   const { user, logout, getAccessTokenSilently } = useAuth0();
   const [crmData, setCrmData] = React.useState({});
@@ -60,7 +65,10 @@ function CRMForm({ onContinue }) {
       headers: {
         Authorization: accessToken,
       },
-      body: JSON.stringify(values),
+      body: JSON.stringify({
+        ...values,
+        selectedPlan: getParam('selectedPlan'),
+      }),
     });
     // const res = await req.json();
   };
