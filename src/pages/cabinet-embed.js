@@ -576,7 +576,18 @@ const UserDashboard = () => {
 };
 
 function Cabinet() {
-  const { isLoading, isAuthenticated, loginWithPopup, error } = useAuth0();
+  const { isLoading, isAuthenticated, loginWithPopup } = useAuth0();
+  const [autoLogged, setAutoLogged] = React.useState(false);
+
+  React.useEffect(() => {
+    if (autoLogged) {
+      return;
+    }
+    if (!isLoading && !isAuthenticated) {
+      setAutoLogged(true);
+      loginWithPopup();
+    }
+  }, [isLoading, isAuthenticated, autoLogged]);
 
   return (
     <div className={styles.cabinetPage}>
