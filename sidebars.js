@@ -52,6 +52,7 @@ module.exports = {
         'units',
         'user-roles',
         'page-bleed',
+        'overlays',
         'mobile',
         'cors',
         'button',
