@@ -26,8 +26,11 @@ page.addElement({
   fill: 'transparent',
   stroke: 'red',
   strokeWidth: 10,
-  strokeDash: [10, 10],
+  dash: [10, 10],
   cornerRadius: 100,
+  selectable: false,
+  alwaysOnTop: true,
+  showInExport: false,
 });
 
 page.addElement({
