@@ -30,6 +30,8 @@ store.activePage.addElement({
 ## Example
 
 In the demo let's add a dashed red shape on top of the design and make it non-selectable, always on top, and not visible in export.
+Regular user can't do anything with it, but it is visible on the screen.
+You can use special "admin" role to allow users to interact with such elements. See [Roles](/docs/user-roles) for more details.
 
 <p><a className="button button--primary" href="https://codesandbox.io/s/github/polotno-project/polotno-site/tree/source/examples/polotno-overlay" target="_blank">Open Demo</a></p>
 
