@@ -5,6 +5,14 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.3.0 - 2023-12-18**
+
+- Fix JSON loading when some values are `null`
+- Rewrite of elements side panel with new "figure" elements
+- Better image quality in the editor for some zooming cases
+- HTML export fixes
+- Use pinch for zoom in crop mode
+
 ### **2.2.5 - 2023-12-07**
 
 - Performance improvements
