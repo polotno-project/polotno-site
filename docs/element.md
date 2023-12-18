@@ -9,6 +9,7 @@ title: Element
 - `image`
 - `svg`
 - `line`
+- `figure`
 - `group`
 
 ```js
@@ -389,6 +390,29 @@ const lineElement = page.addElement({
   styleEditable: true,
 });
 ```
+
+## Figure element
+
+You can use `figure` to draw basic shapes on the canvas. It has large collection of shapes that can be controlled with `subType` property.
+
+```js
+const figureElement = page.addElement({
+  type: 'figure',
+  subType: 'rect',
+  x: 0,
+  y: 0,
+  width: 400,
+  height: 400,
+  fill: 'black',
+  stroke: 'red',
+  strokeWidth: 40,
+  cornerRadius: 40,
+});
+```
+
+Currently supported list of `subType`:
+
+`rect`, `circle`, `star`, `triangle`, `rightTriangle`, `diamond`, `pentagon`, `hexagon`, `speechBubble`, `cross`, `arc`, `cloud`, `rightArrow`, `leftArrow`, `downArrow`, `upArrow`, `asterisk1`, `asterisk2`, `bookmark`, `butterfly`, `cylinder`, `diamond2`, `door`, `drop1`, `drop2`, `explosion`, `flag`, `flower`, `frame`, `heart1`, `home`, `home2`, `hourglass`, `house`, `keyhole`, `kiss`, `leaf`, `lightning1`, `lightning2`, `magnet`, `mithosis`, `orangeRicky`, `party`, `pillow`, `polygon`, `rainbow`, `rhodeIsland`, `shell`, `shield1`, `shield2`, `skewedRectangle`, `softFlower`, `softStar`, `stairs1`, `stairs2`, `teewee`, `blob1`, `blob10`, `blob11`, `blob12`, `blob13`, `blob14`, `blob15`, `blob16`, `blob17`, `blob18`, `blob19`, `blob2`, `blob20`, `blob21`, `blob22`, `blob23`, `blob24`, `blob25`, `blob26`, `blob27`, `blob28`, `blob29`, `blob3`, `blob30`, `blob31`, `blob32`, `blob4`, `blob5`, `blob6`, `blob7`, `blob8`, `blob9`
 
 ## Group element
 
