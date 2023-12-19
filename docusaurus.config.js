@@ -16,6 +16,7 @@ module.exports = {
       logo: {
         alt: 'Polotno logo',
         src: 'img/logo.svg',
+        href: 'https://polotno.com',
       },
       items: [
         { to: '/docs/overview', label: 'Docs', position: 'left' },
