@@ -1,6 +1,9 @@
 window.$crisp = [];
 window.CRISP_WEBSITE_ID = 'fd91062d-4c29-40ee-9ed1-09a00d101aea';
 (function () {
+  if (location.href.indexOf('cabinet-embed') >= 0) {
+    return;
+  }
   d = document;
   s = d.createElement('script');
   s.src = 'https://client.crisp.chat/l.js';
