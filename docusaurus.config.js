@@ -119,7 +119,7 @@ module.exports = {
       src: 'https://plausible.io/js/plausible.js',
       async: true,
       defer: true,
-      'data-domain': 'polotno.com',
+      'data-domain': 'developer.polotno.com',
     },
     {
       src: 'https://cdn.paddle.com/paddle/paddle.js',
