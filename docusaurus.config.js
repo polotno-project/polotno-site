@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Polotno',
   tagline: 'Customizable SDK for making your own canvas editor',
-  url: 'https://polotno.com',
+  url: 'https://developer.polotno.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   // organizationName: 'facebook', // Usually your GitHub org/user name.
@@ -20,18 +20,18 @@ module.exports = {
       items: [
         { to: '/docs/overview', label: 'Docs', position: 'left' },
         { to: '/changelog', label: 'Changelog', position: 'left' },
-        { to: '/pricing', label: 'Price', position: 'left' },
-        { to: '/showcase', label: 'Showcase', position: 'left' },
-        { to: '/docs/demo-full-editor', label: 'Demo', position: 'left' },
-        { to: 'https://studio.polotno.com', label: 'Studio', position: 'left' },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        // { to: '/pricing', label: 'Price', position: 'left' },
+        // { to: '/showcase', label: 'Showcase', position: 'left' },
+        // { to: '/docs/demo-full-editor', label: 'Demo', position: 'left' },
+        // { to: 'https://studio.polotno.com', label: 'Studio', position: 'left' },
+        // { to: '/blog', label: 'Blog', position: 'left' },
         { to: '/cabinet', label: 'API keys', position: 'right' },
         {
           to: 'https://discord.gg/W2VeKgsr9J',
           label: 'Discord chat',
           position: 'right',
         },
-        { to: '/contact', label: 'Contact', position: 'right' },
+        // { to: '/contact', label: 'Contact', position: 'right' },
       ],
     },
     footer: {
