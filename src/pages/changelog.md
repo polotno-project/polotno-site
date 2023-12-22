@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.3.5 - 2023-12-22**
+
+- Tooltip fixes
+
 ### **2.3.4 - 2023-12-22**
 
 - Touch device fixes
