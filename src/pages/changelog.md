@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.3.4 - 2023-12-22**
+
+- Touch device fixes
+- Memory usage optimizations
+
 ### **2.3.1 - 2023-12-20**
 
 - Fix bug with corner radius for `rect` shape of `figure` element
