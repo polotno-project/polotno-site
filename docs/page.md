@@ -67,7 +67,7 @@ Change order of pages
 
 ```js
 // move active page to the beginning of list
-store.activePage?.zIndex(0);
+store.activePage?.setZIndex(0);
 ```
 
 ### `page.children`
