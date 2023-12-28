@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.0 - 2023-12-28**
+
+- Gradient for figures
+- Video rendering fixes
+
 ### **2.3.5 - 2023-12-22**
 
 - Tooltip fixes
