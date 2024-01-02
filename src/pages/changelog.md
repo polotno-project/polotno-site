@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.1 - 2024-01-02**
+
+- Gradients for figures strokes are disabled
+- UX improvements for stroke toolbar button for figure elements
+
 ### **2.4.0 - 2023-12-28**
 
 - Gradient for figures
