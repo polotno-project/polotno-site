@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.2 - 2024-01-04**
+
+- Infinite scroll for icons in the "Elements" side panel
+- Fix copy/paste offset for groups
+- More options for frameworkless usage of Polotno.
+
 ### **2.4.1 - 2024-01-02**
 
 - Gradients for figures strokes are disabled
