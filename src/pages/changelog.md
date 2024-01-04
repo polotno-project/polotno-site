@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.3 - 2024-01-04**
+
+- Some infinite scroll hotfixes
+
 ### **2.4.2 - 2024-01-04**
 
 - Infinite scroll for icons in the "Elements" side panel
