@@ -14,7 +14,7 @@ module.exports = {
       type: 'category',
       label: 'Integrations',
       collapsed: false,
-      items: ['frameworkless', 'non-react-integration'],
+      items: ['frameworkless', 'non-react-integration', 'button'],
     },
     {
       type: 'category',
@@ -55,7 +55,6 @@ module.exports = {
         'overlay',
         'mobile',
         'cors',
-        'button',
       ],
     },
     {

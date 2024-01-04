@@ -43,6 +43,9 @@ You can add it with a simple scripts into the page.
     // but it will be good if you can keep it for Polotno project support
     showCredit: true,
     container: document.getElementById('container'),
+    // also optionally you can specify which side panels you want to show
+    // by default all panels are shown
+    // sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers']
   });
   // you can use full store API available here: https://polotno.com/docs/store-overview
 </script>
