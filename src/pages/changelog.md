@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.4 - 2024-01-09**
+
+- Fix "Layers" menu scrolling on mobile devices
+- Translation fixes
+- Typescript fixes
+
 ### **2.4.3 - 2024-01-04**
 
 - Some infinite scroll hotfixes
