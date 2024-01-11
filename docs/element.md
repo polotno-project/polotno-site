@@ -97,7 +97,7 @@ text.moveBottom();
 
 ### Locking
 
-You can use `draggable`, `contentEditable` and `styleEditable` attributes to lock element editing.
+You can use `draggable`, `contentEditable`, `styleEditable` and `resizable` attributes to lock element editing.
 
 ```js
 // lock the object
@@ -123,7 +123,7 @@ element.set({
   // can we change style of element?
   styleEditable: true,
   // can we resize element?
-  resizable: false,
+  resizable: true,
 });
 ```
 
@@ -413,6 +413,70 @@ const figureElement = page.addElement({
 Currently supported list of `subType`:
 
 `rect`, `circle`, `star`, `triangle`, `rightTriangle`, `diamond`, `pentagon`, `hexagon`, `speechBubble`, `cross`, `arc`, `cloud`, `rightArrow`, `leftArrow`, `downArrow`, `upArrow`, `asterisk1`, `asterisk2`, `bookmark`, `butterfly`, `cylinder`, `diamond2`, `door`, `drop1`, `drop2`, `explosion`, `flag`, `flower`, `frame`, `heart1`, `home`, `home2`, `hourglass`, `house`, `keyhole`, `kiss`, `leaf`, `lightning1`, `lightning2`, `magnet`, `mithosis`, `orangeRicky`, `party`, `pillow`, `polygon`, `rainbow`, `rhodeIsland`, `shell`, `shield1`, `shield2`, `skewedRectangle`, `softFlower`, `softStar`, `stairs1`, `stairs2`, `teewee`, `blob1`, `blob10`, `blob11`, `blob12`, `blob13`, `blob14`, `blob15`, `blob16`, `blob17`, `blob18`, `blob19`, `blob2`, `blob20`, `blob21`, `blob22`, `blob23`, `blob24`, `blob25`, `blob26`, `blob27`, `blob28`, `blob29`, `blob3`, `blob30`, `blob31`, `blob32`, `blob4`, `blob5`, `blob6`, `blob7`, `blob8`, `blob9`
+
+### Video element
+
+You can use `video` to render video on the canvas. `video` element has a lot of similar properties to `image` element.
+
+```js
+const videoElement = page.addElement({
+  type: 'video',
+  x: 0,
+  y: 0,
+  rotation: 0,
+
+  // url path to video
+  src: 'https://example.com/image.png',
+  // start/end time of video in % from video duration
+  // can be used for trimming video
+  startTime: 0,
+  endTime: 1,
+
+  shadowEnabled: false,
+  shadowBlur: 5,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
+  shadowColor: 'black',
+  shadowOpacity: 1,
+  name: '', // name of element, can be used to find element in the store
+
+  width: 100,
+  height: 100,
+  cropX: 0, // 0-1 : % from original image width
+  cropY: 0, // 0-1 : % from original image height
+  cropWidth: 1, // 0-1 : % from original image width
+  cropHeight: 1, // 0-1 : % from original image height
+  borderColor: 'black',
+  borderSize: 0,
+  flipX: false,
+  flipY: false,
+
+  // can user select element?
+  // if false, element will be "invisible" for user clicks
+  selectable: true,
+  // use for absolute positing of element
+  alwaysOnTop: false,
+  // also we can hide some elements from the export
+  showInExport: true,
+  // can element be moved and rotated
+  draggable: true,
+  // can we change content of element?
+  contentEditable: true,
+
+  // can we remove element from UI with button or keyboard?
+  removable: true,
+  // can we resize element?
+  resizable: true,
+});
+```
+
+### Duration
+
+As soon as video is rendered on the canvas you can use `videoElement.duration` to get its duration in seconds.
+
+```js
+console.log(videoElement.duration);
+```
 
 ## Group element
 
