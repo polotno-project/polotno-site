@@ -414,7 +414,7 @@ Currently supported list of `subType`:
 
 `rect`, `circle`, `star`, `triangle`, `rightTriangle`, `diamond`, `pentagon`, `hexagon`, `speechBubble`, `cross`, `arc`, `cloud`, `rightArrow`, `leftArrow`, `downArrow`, `upArrow`, `asterisk1`, `asterisk2`, `bookmark`, `butterfly`, `cylinder`, `diamond2`, `door`, `drop1`, `drop2`, `explosion`, `flag`, `flower`, `frame`, `heart1`, `home`, `home2`, `hourglass`, `house`, `keyhole`, `kiss`, `leaf`, `lightning1`, `lightning2`, `magnet`, `mithosis`, `orangeRicky`, `party`, `pillow`, `polygon`, `rainbow`, `rhodeIsland`, `shell`, `shield1`, `shield2`, `skewedRectangle`, `softFlower`, `softStar`, `stairs1`, `stairs2`, `teewee`, `blob1`, `blob10`, `blob11`, `blob12`, `blob13`, `blob14`, `blob15`, `blob16`, `blob17`, `blob18`, `blob19`, `blob2`, `blob20`, `blob21`, `blob22`, `blob23`, `blob24`, `blob25`, `blob26`, `blob27`, `blob28`, `blob29`, `blob3`, `blob30`, `blob31`, `blob32`, `blob4`, `blob5`, `blob6`, `blob7`, `blob8`, `blob9`
 
-### Video element
+## Video element
 
 You can use `video` to render video on the canvas. `video` element has a lot of similar properties to `image` element.
 
