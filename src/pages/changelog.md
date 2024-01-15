@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.5 - 2024-01-15**
+
+- Fix broken "magic resize"
+
 ### **2.4.4 - 2024-01-09**
 
 - Fix "Layers" menu scrolling on mobile devices
