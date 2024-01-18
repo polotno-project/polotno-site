@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.7 - 2024-01-18**
+
+- Better resize of text when it has effects
+- Better filters picker when screen is small
+
 ### **2.4.6 - 2024-01-17**
 
 - Better smart resize for figure elements
