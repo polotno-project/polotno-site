@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.6 - 2024-01-17**
+
+- Better smart resize for figure elements
+- Fix incorrect `text` export when it has some styles
+
 ### **2.4.5 - 2024-01-15**
 
 - Fix broken "magic resize"
