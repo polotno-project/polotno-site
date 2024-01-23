@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.8 - 2024-01-23**
+
+- Mobile style fixes
+- Fix deep grouping
+- Pass `React.Context` into `<Tooltip />` component
+
 ### **2.4.7 - 2024-01-18**
 
 - Better resize of text when it has effects
