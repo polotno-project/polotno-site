@@ -51,7 +51,7 @@ const MyColorPicker = observer(({ store, element, elements }) => {
 
 // as example lets disable font size input for text element
 // just return null from your component
-const TextTextFontSize = () => null;
+const TextFontSize = () => null;
 
 // also we can invent our own new component
 const TextAlertButton = observer(({ store, element, elements }) => {
@@ -77,7 +77,7 @@ export const App = () => {
           store={store}
           components={{
             TextFill: MyColorPicker,
-            TextTextFontSize,
+            TextFontSize,
             TextAlertButton,
             History,
           }}

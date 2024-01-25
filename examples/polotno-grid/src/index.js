@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { observer } from 'mobx-react-lite';
+import { reaction } from 'mobx';
 import { NumericInput, Switch, Alignment } from '@blueprintjs/core';
 
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
@@ -106,7 +107,7 @@ function generateGrid(rows, cols) {
     alwaysOnTop: true,
   });
 
-  // add fake elemtns to snap on grid
+  // add fake elements to snap on grid
   [...Array(rows - 1)].forEach((_, index) => {
     createDot(dx * (index + 1), 0);
   });
@@ -114,6 +115,17 @@ function generateGrid(rows, cols) {
     createDot(0, dy * (index + 1));
   });
 }
+
+let rowsNumber = 5;
+let colsNumber = 5;
+
+// let's react to size changes
+reaction(
+  () => [store.width, store.height],
+  () => {
+    generateGrid(rowsNumber, colsNumber);
+  }
+);
 
 // define the new custom section
 const GridSection = {
@@ -126,15 +138,13 @@ const GridSection = {
   // we need observer to update component automatically on any store changes
   Panel: observer(({ store }) => {
     const [visible, setVisible] = React.useState(true);
-    const [rows, setRows] = React.useState(5);
-    const [cols, setCols] = React.useState(5);
     React.useEffect(() => {
       if (!visible) {
         clearGrid();
       } else {
-        generateGrid(rows, cols);
+        generateGrid(rowsNumber, colsNumber);
       }
-    }, [rows, cols, visible]);
+    }, [visible]);
     return (
       <div>
         <div>
@@ -155,9 +165,10 @@ const GridSection = {
           <div style={{ width: '50%', display: 'inline-block' }}>
             <NumericInput
               fill
-              value={rows}
+              defaultValue={rows}
               onValueChange={(rows) => {
-                setRows(rows || 1);
+                rowsNumber = rows || 1;
+                generateGrid(rowsNumber, colsNumber);
               }}
               min={1}
               max={100}
@@ -170,9 +181,10 @@ const GridSection = {
           <div style={{ width: '50%', display: 'inline-block' }}>
             <NumericInput
               fill
-              value={cols}
+              defaultValue={cols}
               onValueChange={(cols) => {
-                setCols(cols || 1);
+                colsNumber = cols || 1;
+                generateGrid(rowsNumber, colsNumber);
               }}
               min={1}
               max={100}
