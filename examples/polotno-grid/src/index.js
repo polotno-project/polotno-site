@@ -165,7 +165,7 @@ const GridSection = {
           <div style={{ width: '50%', display: 'inline-block' }}>
             <NumericInput
               fill
-              defaultValue={rows}
+              defaultValue={rowsNumber}
               onValueChange={(rows) => {
                 rowsNumber = rows || 1;
                 generateGrid(rowsNumber, colsNumber);
@@ -181,7 +181,7 @@ const GridSection = {
           <div style={{ width: '50%', display: 'inline-block' }}>
             <NumericInput
               fill
-              defaultValue={cols}
+              defaultValue={colsNumber}
               onValueChange={(cols) => {
                 colsNumber = cols || 1;
                 generateGrid(rowsNumber, colsNumber);
