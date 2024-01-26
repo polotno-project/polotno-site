@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.9 - 2024-01-26**
+
+- Fix fails on exports for large designs or large pixelRatio values
+
 ### **2.4.8 - 2024-01-23**
 
 - Mobile style fixes
