@@ -70,10 +70,11 @@ Optionally you can change some styles of the workspace.
   pageBorderColor="black" // border around page
   activePageBorderColor="red" // border around active page. It will be used only if you have several pages. Otherwise just pageBorderColor will be used
   bleedColor="rgba(255, 0, 0, 0.2)" // color of the bleed area, when it is toggled with `store.toggleBleed()`
-  // optinally you can change default padding around page content
+  // optionally you can change default padding around page content
   // you can set it to 0 if you want to have full width and height of the canvas
   paddingX={50}
   paddingY={50}
+  altCloneEnabled={true} // enable alt+drag to clone objects, default is true
 />
 ```
 
@@ -113,12 +114,17 @@ You can overwrite this UI with your own.
 If you don't like default keyboard shortcuts, you can overwrite them with your own.
 
 ```js
+import { handleHotkey } from 'polotno/workplace/hotkeys';
+
 <Workspace
   store={store}
   onKeyDown={(e, store) => {
     if (e.key === 'Escape') {
       store.selectElements([]);
+      return;
     }
+    // optionally you can call default handler
+    handleHotkey(e, store);
   }}
-/>
+/>;
 ```

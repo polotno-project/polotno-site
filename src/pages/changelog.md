@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.10 - 2024-01-31**
+
+- `altCloneEnabled` for workspace
+- Better detection of used colors in color picker
+- Second tap on selected side panel on mobile will close it
+
 ### **2.4.9 - 2024-01-26**
 
 - Fix fails on exports for large designs or large pixelRatio values
