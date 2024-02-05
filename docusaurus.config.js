@@ -139,6 +139,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          // routeBasePath: '/docs/overview', // Serve the docs at the site's root
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
