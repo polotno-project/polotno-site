@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.12 - 2024-02-09**
+
+- Performance improvements
+- Fix exporting on some text variations
+
 ### **2.4.10 - 2024-01-31**
 
 - `altCloneEnabled` for workspace

@@ -94,7 +94,7 @@ setGoogleFonts('default');
 
 By default Polotno will load regular, italic, bold and bold italic styles from the font. If you want to customize this and change default styles you can use this:
 
-````js
+```js
 import { setGoogleFontsVariants } from 'polotno/config';
 
 // default is
@@ -149,7 +149,7 @@ addGlobalFont({
 addGlobalFont({
   fontFamily: 'MyCustomFont',
 });
-````
+```
 
 ### Hot to get API endpoints to get a list of available google fonts?
 
