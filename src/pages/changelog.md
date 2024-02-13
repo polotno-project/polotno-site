@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.13 - 2024-02-13**
+
+- Fix blur filter picker
+
 ### **2.4.12 - 2024-02-09**
 
 - Performance improvements
