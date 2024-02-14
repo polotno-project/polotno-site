@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.15 - 2024-02-14**
+
+- Better font loading detection
+- Fix custom toolbar API for `figure` elements
+
 ### **2.4.13 - 2024-02-13**
 
 - Fix blur filter picker
