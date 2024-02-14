@@ -61,6 +61,8 @@ text element:
   TextFilters
   TextFill
   TextSpacing
+  TextAnimations
+
 image elements
   ImageFlip
   ImageFilters
@@ -68,10 +70,36 @@ image elements
   ImageCrop
   ImageRemoveClip
   ImageRemoveBackground
+  ImageAnimations
+
 svg element:
   SvgFlip
   SvgFilters
   SvgColors
+  SvgAnimations
+
+line element:
+  LineSettings
+  LineColor
+  LineHeads
+  LineAnimations
+
+figure element:
+  FigureFill
+  FigureStroke
+  FigureSettings
+  FigureFilters
+  FigureAnimations
+
+video element:
+  VideoTrim
+  VideoAnimations
+
+many elements selected:
+  ManyAnimations
+
+page (no elements selected):
+  PageDuration
 
 common:
   History
