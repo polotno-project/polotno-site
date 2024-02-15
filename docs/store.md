@@ -580,4 +580,4 @@ store.removeFont('MyCustomFont');
 
 Prepare the font to use on the webpage. Text elements inside `<Workarea>` will use this function automatically.
 But it can be useful if you want to show a list of fonts somewhere in the UI.
-`store.loadFond(name)` function will add font to the webpage, so the browser can render correct font.
+`store.loadFont(name)` function will add font to the webpage, so the browser can render correct font.
