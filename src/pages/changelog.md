@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.16 - 2024-02-19**
+
+- Fix distance display on canvas when several elements are selected
+
 ### **2.4.15 - 2024-02-14**
 
 - Better font loading detection
