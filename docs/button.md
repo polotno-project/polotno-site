@@ -67,7 +67,16 @@ function inchesToPx(inches) {
 window.createPolotnoEditor({
   key: 'my-api-key',
   // select sections you want to show
-  sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers'],
+  sections: [
+    'photos',
+    'text',
+    'elements',
+    'upload',
+    'background',
+    'layers',
+    'size',
+  ],
+  defaultSection: 'photos', // what section open by default
   // initial size of the canvas
   width: inchesToPx(20),
   height: inchesToPx(10),
@@ -91,7 +100,7 @@ window.createPolotnoEditor({
     console.log('json', json);
   },
   // you can pass initial uploads to the editor
-  // then will be shown in the upload section
+  // they will be shown in the upload section
   uploads: [
     {
       url: 'https://example.com/image.jpg',
@@ -100,7 +109,7 @@ window.createPolotnoEditor({
   ],
   // you can enable or disable animations
   // by default animations are disabled
-  // warning - editor can't export into video or gif
+  // warning - editor can't export into video or gif yet
   // you have to use Cloud API or your own server for that
   animationsEnabled: true,
 });
