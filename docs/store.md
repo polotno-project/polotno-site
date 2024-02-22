@@ -144,6 +144,10 @@ store.toggleBleed();
 store.toggleBleed(false);
 ```
 
+### `store.bleedVisible`
+
+Getter for current state of bleed visibility
+
 ### `store.toggleRulers()`
 
 Show or hide rulers on workspace
@@ -152,6 +156,10 @@ Show or hide rulers on workspace
 store.toggleRulers();
 store.toggleRulers(false);
 ```
+
+### `store.rulesVisible`
+
+Getter for current state of rulers visibility
 
 ### `store.setRole(role)`
 
