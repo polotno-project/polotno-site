@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.18 - 2024-02-27**
+
+- `elementHook` for html export
+
 ### **2.4.17 - 2024-02-26**
 
 - Animation support for `rich-text` feature

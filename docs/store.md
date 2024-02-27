@@ -509,11 +509,27 @@ await store.toBlob({ includeBleed: true });
 
 ### `await store.toHTML()`
 
-**Warning: this function is experimental and may produce inconsistent result**. Export store into HTML string.
+**Warning: this function is beta and may produce inconsistent result**.
+
+Export store into HTML string.
+
+```js
+const html = await store.toHTML();
+
+const html = await store.toHTML({
+  elementHook: ({ dom, element }) => {
+    // post process dom representation of the element
+    dom.className = 'my-element';
+    return dom;
+  },
+});
+```
 
 ### `await store.saveAsHTML()`
 
-**Warning: this function is experimental and may produce inconsistent result**. Export store into HTML string and save it as local `.html` file.
+**Warning: this function is beta and may produce inconsistent result**.
+
+Export store into HTML string and save it as local `.html` file.
 
 ### `await store.toGIFDataURL()`
 
