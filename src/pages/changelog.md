@@ -5,6 +5,12 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.19 - 2024-03-04**
+
+- Improve performance of resizing of many elements
+- Better detection if visible pages in the workspace
+- Update internal dependencies
+
 ### **2.4.18 - 2024-02-27**
 
 - `elementHook` for html export
