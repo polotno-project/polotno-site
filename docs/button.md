@@ -41,7 +41,6 @@ const button = document.getElementById('polotno-button');
 button.addEventListener('click', () => {
   window.createPolotnoEditor({
     key: 'my-api-key',
-    sections: ['photos', 'text', 'elements', 'upload', 'background', 'layers'],
     onPublish: ({ dataURL, json }) => {
       // do something with generated image
       // also you can save json somewhere and load it later
@@ -68,6 +67,7 @@ window.createPolotnoEditor({
   key: 'my-api-key',
   // select sections you want to show
   sections: [
+    'templates',
     'photos',
     'text',
     'elements',
@@ -112,5 +112,12 @@ window.createPolotnoEditor({
   // warning - editor can't export into video or gif yet
   // you have to use Cloud API or your own server for that
   animationsEnabled: true,
+
+  // also you can translate full UI, ask us for the list of keys
+  translations: {
+    sidePanel: {
+      templates: 'Шаблоны',
+    },
+  },
 });
 ```
