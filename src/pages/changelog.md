@@ -5,6 +5,11 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.20 - 2024-03-06**
+
+- Fix loading of some svg files
+- Fix loading of fonts with bad file names
+
 ### **2.4.19 - 2024-03-04**
 
 - Improve performance of resizing of many elements
