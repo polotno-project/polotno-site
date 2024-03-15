@@ -5,6 +5,17 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.22 - 2024-03-15**
+
+- Network usage optimizations
+- Lazy loading of images in <ImagesGrid />
+- Fix page size on html export
+
+### **2.4.21 - 2024-03-14**
+
+- Remove group from export when it has `showInExport: false` property
+- Remove html data from pasted text for rich text feature
+
 ### **2.4.20 - 2024-03-06**
 
 - Fix loading of some svg files
