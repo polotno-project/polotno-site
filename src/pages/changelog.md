@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 ## Welcome to the change log of `Polotno`.
 
+### **2.4.23 - 2024-03-16**
+
+- Fix animations for "move" direction
+
 ### **2.4.22 - 2024-03-15**
 
 - Network usage optimizations
