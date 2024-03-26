@@ -26,7 +26,11 @@ module.exports = {
         // { to: '/docs/demo-full-editor', label: 'Demo', position: 'left' },
         // { to: 'https://studio.polotno.com', label: 'Studio', position: 'left' },
         // { to: '/blog', label: 'Blog', position: 'left' },
-        { to: '/cabinet', label: 'API keys', position: 'right' },
+        {
+          to: 'https://polotno.com/login',
+          label: 'API keys',
+          position: 'right',
+        },
         {
           to: 'https://discord.gg/W2VeKgsr9J',
           label: 'Discord chat',
