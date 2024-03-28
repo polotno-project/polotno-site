@@ -1,0 +1,5 @@
+# Redirect with a 301
+[[redirects]]
+from = "/docs/*"
+to = "https://polotno.com/docs/:splat"
+status = 301
