@@ -1,1 +1,2 @@
-/docs/*  https://polotno.com/docs/:splat
+/docs/*  https://polotno.com/docs/:splat 301!
+https://developer.polotno.com/docs/*  https://polotno.com/docs/:splat 301!
