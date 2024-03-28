@@ -132,4 +132,4 @@ const App = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App store={store} />);
+root.render(<App />);
