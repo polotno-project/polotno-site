@@ -1,7 +1,7 @@
 {
-  "name": "polotno-pexels",
+  "name": "polotno-rulers",
   "version": "1.0.0",
-  "description": "Load Pexels images in Polotno",
+  "description": "Show how to use rulers in Polotno",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
