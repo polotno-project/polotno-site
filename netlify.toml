@@ -3,3 +3,18 @@
   from = "/docs/*"
   to = "https://polotno.com/docs/:splat"
   status = 301
+
+[[redirects]]
+  from = "/license"
+  to = "https://polotno.com/license"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "https://polotno.com/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/changelog"
+  to = "https://polotno.com/changelog"
+  status = 301
