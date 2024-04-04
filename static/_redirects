@@ -1,4 +1,8 @@
-/docs/_ https://polotno.com/docs/:splat 301!
-https://developer.polotno.com/docs/_ https://polotno.com/docs/:splat 301!
+/docs/* https://polotno.com/docs/:splat 301!
+https://developer.polotno.com/docs/* https://polotno.com/docs/:splat 301!
 https://developer.polotno.com/changelog https://polotno.com/changelog 301!
 https://developer.polotno.com/changelog/ https://polotno.com/changelog 301!
+https://developer.polotno.com/license https://polotno.com/license 301!
+https://developer.polotno.com/license/ https://polotno.com/license 301!
+https://developer.polotno.com/privacy https://polotno.com/privacy 301!
+https://developer.polotno.com/privacy/ https://polotno.com/privacy 301!
