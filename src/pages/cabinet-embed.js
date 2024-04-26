@@ -24,7 +24,7 @@ const isLocalhost =
 
 const POLOTNO_API = isLocalhost
   ? 'http://localhost:3001/api'
-  : 'https://api.polotno.com/api';
+  : 'https://api-vercel.polotno.com/api';
 const PRODUCTION_ID = developerDomain ? DEVELOPER_COM : DOT_COM_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
 
