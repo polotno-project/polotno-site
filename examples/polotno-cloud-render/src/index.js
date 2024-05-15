@@ -29,27 +29,39 @@ const App = () => {
     setImage(null);
     try {
       const json = JSON.parse(document.getElementById('input').value);
-      const req = await fetch('https://api.polotno.com/api/render?KEY=' + KEY, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          design: json,
-          exportOptions: {
+      const req = await fetch(
+        'https://api.polotno.com/api/renders?KEY=' + KEY,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            design: json,
             // use pixelRatio < 1 to have much smaller image at the result
             pixelRatio,
             dpi,
-          },
-          format: type,
-          outputFormat: 'dataURL',
-        }),
-      });
-      const { url } = await req.json();
-      if (type === 'pdf') {
-        downloadFile(url, 'export.' + type);
-      } else {
-        setImage(url);
+            format: type,
+          }),
+        }
+      );
+      const { id } = await req.json();
+      for (let i = 0; i < 100; i++) {
+        const req = await fetch(
+          'https://api.polotno.com/api/renders/' + id + '?KEY=' + KEY
+        );
+        const job = await req.json();
+        if (job.status === 'done') {
+          const url = job.output;
+          if (type === 'pdf' || type === 'mp4') {
+            downloadFile(url, 'export.' + type);
+          } else {
+            setImage(url);
+          }
+          break;
+        }
+        // wait a bit
+        await new Promise((r) => setTimeout(r, 1000));
       }
     } catch (e) {
       console.error(e);
@@ -78,6 +90,7 @@ const App = () => {
           <option value="png">PNG</option>
           <option value="jpeg">JPEG</option>
           <option value="pdf">PDF</option>
+          <option value="mp4">mp4</option>
         </select>
       </div>
       <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
