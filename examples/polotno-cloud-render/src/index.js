@@ -51,6 +51,10 @@ const App = () => {
           'https://api.polotno.com/api/renders/' + id + '?KEY=' + KEY
         );
         const job = await req.json();
+        if (job.status === 'error') {
+          alert('Error: ' + job.error);
+          break;
+        }
         if (job.status === 'done') {
           const url = job.output;
           if (type === 'pdf' || type === 'mp4') {
