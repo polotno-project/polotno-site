@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { PolotnoContainer, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { createStore } from 'polotno/model/store';
 
@@ -84,6 +85,7 @@ export const App = () => {
         />
         <Workspace store={store} />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );

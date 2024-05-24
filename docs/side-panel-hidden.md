@@ -51,6 +51,7 @@ export const App = () => {
         <Toolbar store={store} downloadButtonEnabled />
         <Workspace store={store} />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );

@@ -253,6 +253,7 @@ On the right side of the toolbar, Polotno has "Action Controls" section. You can
 
 ```js
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { Button } from '@blueprintjs/core';
 import { DownloadButton } from 'polotno/toolbar/download-button';
 

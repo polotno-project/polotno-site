@@ -5,6 +5,7 @@ import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
 import { SidePanel } from 'polotno/side-panel';
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { createStore } from 'polotno/model/store';
 
@@ -34,6 +35,7 @@ export const App = () => {
         <Toolbar store={store} />
         <Workspace store={store} components={{ PageControls }} />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );

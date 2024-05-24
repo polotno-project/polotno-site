@@ -6,6 +6,7 @@ import '@blueprintjs/core/lib/css/blueprint.css';
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { Workspace } from 'polotno/canvas/workspace';
 import { SidePanel } from 'polotno/side-panel';
 import { createStore } from 'polotno/model/store';

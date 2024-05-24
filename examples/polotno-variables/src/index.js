@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { SidePanel } from 'polotno/side-panel';
 import { Workspace } from 'polotno/canvas/workspace';
@@ -30,6 +31,7 @@ export const App = ({ store }) => {
         <Toolbar store={store} components={{ ActionControls: PreviewButton }} />
         <Workspace store={store} />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );

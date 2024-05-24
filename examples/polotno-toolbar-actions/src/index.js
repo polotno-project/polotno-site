@@ -4,6 +4,7 @@ import { Button } from '@blueprintjs/core';
 import { PolotnoContainer, WorkspaceWrap } from 'polotno';
 import { Workspace } from 'polotno/canvas/workspace';
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { DownloadButton } from 'polotno/toolbar/download-button';
 import { createStore } from 'polotno/model/store';
@@ -85,6 +86,7 @@ export const App = () => {
         />
         <Workspace store={store} />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );

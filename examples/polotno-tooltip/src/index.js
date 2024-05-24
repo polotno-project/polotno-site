@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { observer } from 'mobx-react-lite';
 import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
 import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { SidePanel } from 'polotno/side-panel';
 import { Workspace } from 'polotno/canvas/workspace';
@@ -60,6 +61,7 @@ export const App = ({ store }) => {
           components={{ Tooltip, TextFill: MyColorPicker }}
         />
         <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );
