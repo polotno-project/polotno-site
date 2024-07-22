@@ -72,8 +72,8 @@ function createDot(x, y) {
 function generateGrid(rows, cols) {
   clearGrid();
   const { width, height } = store;
-  const dx = width / rows;
-  const dy = width / cols;
+  const dx = width / cols;
+  const dy = height / rows;
   // generate svg data for grid image
   const template = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
