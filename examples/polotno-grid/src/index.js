@@ -77,7 +77,7 @@ function generateGrid(rows, cols) {
   // generate svg data for grid image
   const template = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
-    ${[...Array(rows - 1)]
+    ${[...Array(cols - 1)]
       .map(
         (_, index) =>
           `<line x1="${dx * (index + 1)}" y1="0" x2="${
@@ -85,7 +85,7 @@ function generateGrid(rows, cols) {
           }" y2="${height}" stroke="blue" stroke-width="2"/>`
       )
       .join('')}
-      ${[...Array(cols - 1)]
+      ${[...Array(rows - 1)]
         .map(
           (_, index) =>
             `<line x1="0" y1="${dy * (index + 1)}" x2="${width}" y2="${
