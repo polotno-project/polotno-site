@@ -10,6 +10,7 @@ import { Toolbar } from 'polotno/toolbar/toolbar';
 import { PagesTimeline } from 'polotno/pages-timeline';
 import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
 import { createStore } from 'polotno/model/store';
+import { InputGroup } from '@blueprintjs/core';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
