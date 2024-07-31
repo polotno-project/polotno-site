@@ -37,7 +37,7 @@ const CustomSection = {
       <div>
         <InputGroup
           value={text}
-          onChange={() => {
+          onChange={(e) => {
             store.selectedElements[0].set({ text: e.target.value });
           }}
         />
