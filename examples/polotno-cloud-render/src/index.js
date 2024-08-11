@@ -23,10 +23,22 @@ const App = () => {
   const [dpi, setDPI] = React.useState(72);
   const [loading, setLoading] = React.useState(false);
   const [image, setImage] = React.useState(null);
+  const [htmlTextRenderEnabled, setHtmlTextRenderEnabled] =
+    React.useState(true);
+  const [includeBleed, setIncludeBleed] = React.useState(true);
+  const [textVerticalResizeEnabled, setTextVerticalResizeEnabled] =
+    React.useState(true);
+  const [webhook, setWebhook] = React.useState('');
+  const [ignoreBackground, setIgnoreBackground] = React.useState(false);
+  const [skipFontError, setSkipFontError] = React.useState(false);
+  const [skipImageError, setSkipImageError] = React.useState(false);
+  const [textOverflow, setTextOverflow] = React.useState('change-font-size');
+  const [progress, setProgress] = React.useState(0);
 
   const handleDownload = async () => {
     setLoading(true);
     setImage(null);
+    setProgress(0);
     try {
       const json = JSON.parse(document.getElementById('input').value);
       const req = await fetch(
@@ -42,6 +54,15 @@ const App = () => {
             pixelRatio,
             dpi,
             format: type,
+            outputFormat: 'url',
+            htmlTextRenderEnabled,
+            includeBleed,
+            textVerticalResizeEnabled,
+            webhook,
+            ignoreBackground,
+            skipFontError,
+            skipImageError,
+            textOverflow,
           }),
         }
       );
@@ -54,6 +75,9 @@ const App = () => {
         if (job.status === 'error') {
           alert('Error: ' + job.error);
           break;
+        }
+        if (job.status === 'progress') {
+          setProgress(job.progress);
         }
         if (job.status === 'done') {
           const url = job.output;
@@ -69,13 +93,14 @@ const App = () => {
       }
     } catch (e) {
       console.error(e);
-      alert('Somethings wen wrong...');
+      alert('Something went wrong...');
     }
     setLoading(false);
+    setProgress(0);
   };
 
   return (
-    <div>
+    <div className="container">
       <h4>Template JSON (result of store.toJSON() export):</h4>
       <textarea
         rows="10"
@@ -94,7 +119,6 @@ const App = () => {
           <option value="png">PNG</option>
           <option value="jpeg">JPEG</option>
           <option value="pdf">PDF</option>
-          <option value="mp4">mp4</option>
         </select>
       </div>
       <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
@@ -129,6 +153,73 @@ const App = () => {
           {dpi}
         </div>
       )}
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>HTML Text Render:</div>
+        <input
+          type="checkbox"
+          checked={htmlTextRenderEnabled}
+          onChange={(e) => setHtmlTextRenderEnabled(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Include Bleed:</div>
+        <input
+          type="checkbox"
+          checked={includeBleed}
+          onChange={(e) => setIncludeBleed(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Text Vertical Resize:</div>
+        <input
+          type="checkbox"
+          checked={textVerticalResizeEnabled}
+          onChange={(e) => setTextVerticalResizeEnabled(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Webhook URL:</div>
+        <input
+          type="text"
+          value={webhook}
+          onChange={(e) => setWebhook(e.target.value)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Ignore Background:</div>
+        <input
+          type="checkbox"
+          checked={ignoreBackground}
+          onChange={(e) => setIgnoreBackground(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Skip Font Error:</div>
+        <input
+          type="checkbox"
+          checked={skipFontError}
+          onChange={(e) => setSkipFontError(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Skip Image Error:</div>
+        <input
+          type="checkbox"
+          checked={skipImageError}
+          onChange={(e) => setSkipImageError(e.target.checked)}
+        />
+      </div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Text Overflow:</div>
+        <select
+          value={textOverflow}
+          onChange={(e) => setTextOverflow(e.target.value)}
+        >
+          <option value="change-font-size">Change Font Size</option>
+          <option value="resize">Resize</option>
+          <option value="ellipsis">Ellipsis</option>
+        </select>
+      </div>
       <p>
         <button
           id="generate-button"
@@ -137,13 +228,21 @@ const App = () => {
           disabled={loading}
         >
           {loading
-            ? 'Rendering...'
+            ? progress > 0
+              ? `Rendering... ${progress}%`
+              : 'Rendering...'
             : type === 'pdf'
             ? 'Render and Download'
             : 'Render'}
         </button>
       </p>
-      {image && <img style={{ maxWidth: '100%' }} src={image}></img>}
+      {image && (
+        <img
+          style={{ maxWidth: '100%' }}
+          src={image}
+          alt="Rendered output"
+        ></img>
+      )}
     </div>
   );
 };
