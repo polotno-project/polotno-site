@@ -21,6 +21,7 @@ const App = () => {
   const [pixelRatio, setPixelRatio] = React.useState(1);
   const [type, setType] = React.useState('png');
   const [dpi, setDPI] = React.useState(72);
+  const [fps, setFps] = React.useState(10);
   const [loading, setLoading] = React.useState(false);
   const [image, setImage] = React.useState(null);
   const [htmlTextRenderEnabled, setHtmlTextRenderEnabled] =
@@ -53,6 +54,7 @@ const App = () => {
             // use pixelRatio < 1 to have much smaller image at the result
             pixelRatio,
             dpi,
+            fps,
             format: type,
             outputFormat: 'url',
             htmlTextRenderEnabled,
@@ -119,6 +121,7 @@ const App = () => {
           <option value="png">PNG</option>
           <option value="jpeg">JPEG</option>
           <option value="pdf">PDF</option>
+          <option value="mp4">mp4</option>
         </select>
       </div>
       <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
@@ -151,6 +154,23 @@ const App = () => {
             }}
           />{' '}
           {dpi}
+        </div>
+      )}
+      {type === 'mp4' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '100px' }}>FPS:</div>
+          <input
+            type="range"
+            id="quality"
+            min="5"
+            max="60"
+            step="1"
+            value={fps}
+            onChange={(e) => {
+              setFps(parseFloat(e.target.value));
+            }}
+          />{' '}
+          {fps}
         </div>
       )}
       <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
@@ -231,7 +251,7 @@ const App = () => {
             ? progress > 0
               ? `Rendering... ${progress}%`
               : 'Rendering...'
-            : type === 'pdf'
+            : type === 'pdf' || type === 'mp4'
             ? 'Render and Download'
             : 'Render'}
         </button>
