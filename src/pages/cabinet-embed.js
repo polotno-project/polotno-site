@@ -23,7 +23,7 @@ const isLocalhost =
   window.location.href.indexOf('localhost') >= 0;
 
 const POLOTNO_API = isLocalhost
-  ? 'http://localhost:3001/api'
+  ? 'http://localhost:3002/api'
   : 'https://api-vercel.polotno.com/api';
 const PRODUCTION_ID = developerDomain ? DEVELOPER_COM : DOT_COM_ID;
 const LOCAL_ID = '3ST3bZS6HsQ50L5qkKZ8kKnOtDz831ki';
@@ -35,147 +35,6 @@ const redirect = isLocalhost
   : developerDomain
   ? 'https://developer.polotno.com/cabinet'
   : 'https://polotno.com/cabinet';
-
-const getParam = (name) => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(name);
-};
-
-function CRMForm({ onContinue }) {
-  const { user, logout, getAccessTokenSilently } = useAuth0();
-  const [crmData, setCrmData] = React.useState({});
-
-  const loadCrmData = async () => {
-    const accessToken = await getAccessTokenSilently({});
-    const req = await fetch(POLOTNO_API + '/cabinet/get-crm-data', {
-      method: 'GET',
-      headers: {
-        Authorization: accessToken,
-      },
-    });
-    const res = await req.json();
-    setCrmData(res);
-  };
-
-  const handleCrmSave = async (values) => {
-    setCrmData(values);
-    const accessToken = await getAccessTokenSilently({});
-    const req = await fetch(POLOTNO_API + '/cabinet/save-crm-data', {
-      method: 'POST',
-      headers: {
-        Authorization: accessToken,
-      },
-      body: JSON.stringify({
-        ...values,
-        selectedPlan: getParam('selectedPlan'),
-      }),
-    });
-    // const res = await req.json();
-  };
-
-  React.useEffect(() => {
-    loadCrmData();
-  }, [user]);
-
-  if (crmData) {
-    return null;
-  }
-
-  return (
-    <Formik
-      initialValues={{
-        companySize: '',
-        knowAbout: '',
-        role: '',
-      }}
-      validate={(values) => {
-        const errors = {};
-        if (!values.companySize) {
-          errors.companySize = 'Required';
-        }
-        if (!values.knowAbout) {
-          errors.knowAbout = 'Required';
-        }
-        if (!values.role) {
-          errors.role = 'Required';
-        }
-        return errors;
-      }}
-      onSubmit={async (values) => {
-        handleCrmSave(values);
-      }}
-    >
-      <Form className={styles.formContainer}>
-        <div>Tell us more about yourself</div>
-        <div className={styles.formGroup}>
-          <label htmlFor="company-size" className={styles.formLabel}>
-            Company size:
-          </label>
-
-          <Field
-            name="companySize"
-            as="select"
-            className={styles.formSelect}
-            required
-          >
-            <option value="">Select size</option>
-            <option value="small">Small (1-10 employees)</option>
-            <option value="medium">Medium (11-50 employees)</option>
-            <option value="large">Large (51-200 employees)</option>
-            <option value="enterprise">Enterprise (200+ employees)</option>
-          </Field>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="know-about" className={styles.formLabel}>
-            How do you know about Polotno:
-          </label>
-          <Field
-            id="know-about"
-            name="knowAbout"
-            className={styles.formSelect}
-            as="select"
-            required
-          >
-            <option value="">Select option</option>
-            <option value="konva">Found in Konva.js</option>
-            <option value="studio">Polotno Studio App</option>
-            <option value="online_search">Online Search</option>
-            <option value="word_of_mouth">Word of Mouth</option>
-            <option value="social_media">Social Media</option>
-            <option value="advertisement">Advertisement</option>
-            <option value="other">Other</option>
-          </Field>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="Role" className={styles.formLabel}>
-            What is your role in the company:
-          </label>
-          <Field
-            id="Role"
-            name="role"
-            className={styles.formSelect}
-            as="select"
-            required
-          >
-            <option value="">Select role</option>
-            <option value="owner">Owner</option>
-            <option value="manager">CTO</option>
-            <option value="employee">Employee</option>
-            <option value="other">Other</option>
-          </Field>
-        </div>
-
-        <div className={styles.formGroup}>
-          <button type="submit" className={styles.formButton}>
-            Submit
-          </button>
-        </div>
-      </Form>
-    </Formik>
-  );
-}
 
 const UserDashboard = () => {
   const { user, logout, getAccessTokenSilently } = useAuth0();
@@ -191,10 +50,11 @@ const UserDashboard = () => {
   const loadKeys = async () => {
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/cabinet/get-keys', {
+    const req = await fetch(POLOTNO_API + '/account/get-keys', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
     });
     if (req.status !== 200) {
@@ -208,10 +68,11 @@ const UserDashboard = () => {
   const loadSubscription = async () => {
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/get-user-subscription', {
+    const req = await fetch(POLOTNO_API + '/account/get-user-subscription', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
     });
     const res = await req.json();
@@ -243,10 +104,11 @@ const UserDashboard = () => {
     setKeyCreateStatus('loading');
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/cabinet/create-key', {
+    const req = await fetch(POLOTNO_API + '/account/create-key', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
     });
     if (req.status !== 200) {
@@ -266,10 +128,11 @@ const UserDashboard = () => {
     setRemovingKey(key);
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/cabinet/delete-key', {
+    const req = await fetch(POLOTNO_API + '/account/delete-key', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
       body: JSON.stringify(key),
     });
@@ -285,10 +148,11 @@ const UserDashboard = () => {
     setDomainCreateStatus('loading' + key);
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/cabinet/add-domain', {
+    const req = await fetch(POLOTNO_API + '/account/add-domain', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
       body: JSON.stringify({ domain, key }),
     });
@@ -306,10 +170,11 @@ const UserDashboard = () => {
     setRemovingDomain(key + domain);
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/cabinet/delete-domain', {
+    const req = await fetch(POLOTNO_API + '/account/delete-domain', {
       method: 'POST',
       headers: {
         Authorization: accessToken,
+        'X-Provider': 'auth0',
       },
       body: JSON.stringify({ key, domain }),
     });
@@ -331,12 +196,16 @@ const UserDashboard = () => {
       </a>
 
       <div style={{ maxWidth: '600px', margin: 'auto' }}>
-        <CRMForm />
+        {/* <CRMForm /> */}
         {!keys && <h3>Loading API keys...</h3>}
         {keys && <h3>API keys</h3>}
         {keys && !keys.length && <p>You don't have any API keys yet...</p>}
         {keys && keys.length ? (
           <React.Fragment>
+            <h3>
+              Warning: account is under migration. Data in read-mode only. If
+              you need to do any changes, please write to anton@polotno.com
+            </h3>
             {keys.map((key) => (
               <div
                 className={styles.keyCard}
