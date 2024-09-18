@@ -25,10 +25,10 @@ const App = () => {
   const [loading, setLoading] = React.useState(false);
   const [image, setImage] = React.useState(null);
   const [htmlTextRenderEnabled, setHtmlTextRenderEnabled] =
-    React.useState(true);
-  const [includeBleed, setIncludeBleed] = React.useState(true);
+    React.useState(false);
+  const [includeBleed, setIncludeBleed] = React.useState(false);
   const [textVerticalResizeEnabled, setTextVerticalResizeEnabled] =
-    React.useState(true);
+    React.useState(false);
   const [webhook, setWebhook] = React.useState('');
   const [ignoreBackground, setIgnoreBackground] = React.useState(false);
   const [skipFontError, setSkipFontError] = React.useState(false);
