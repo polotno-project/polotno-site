@@ -203,10 +203,6 @@ const UserDashboard = () => {
         {keys && !keys.length && <p>You don't have any API keys yet...</p>}
         {keys && keys.length ? (
           <React.Fragment>
-            <h3>
-              Warning: account is under migration. Data in read-mode only. If
-              you need to do any changes, please write to anton@polotno.com
-            </h3>
             {keys.map((key) => (
               <div
                 className={styles.keyCard}
