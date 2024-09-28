@@ -77,7 +77,7 @@ const UserDashboard = () => {
       },
     });
     const res = await req.json();
-    setSubscription(res);
+    setSubscription(res || {});
   };
 
   React.useEffect(() => {
