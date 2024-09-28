@@ -69,7 +69,7 @@ const UserDashboard = () => {
   const loadSubscription = async () => {
     const accessToken = await getAccessTokenSilently({});
 
-    const req = await fetch(POLOTNO_API + '/account/get-user-subscription', {
+    const req = await fetch(POLOTNO_API + '/account/get-paddle-subscription', {
       method: 'GET',
       headers: {
         Authorization: accessToken,
