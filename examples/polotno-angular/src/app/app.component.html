@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <div *mobxAutorun class="header">
+    <div>
+      This header is controlled by Angular. It can be used to display the number
+      of pages: {{ store.pages.length }}
+    </div>
+    <div>
+      <button (click)="store.addPage()">Add Page</button>
+    </div>
+  </div>
+  <div id="root"></div>
+</div>
