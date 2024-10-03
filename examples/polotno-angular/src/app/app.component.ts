@@ -26,7 +26,7 @@ export class AppComponent {
   }
 
   public ngAfterViewInit() {
-    this.root = ReactDOM.createRoot(document.getElementById("root"));
+    this.root = ReactDOM.createRoot(document.getElementById("editor"));
     this.renderComponent();
   }
 
