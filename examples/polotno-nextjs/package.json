@@ -8,7 +8,7 @@
     "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^14",
     "polotno": "2.19.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
