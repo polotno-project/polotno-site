@@ -38,6 +38,8 @@ store.activePage.addElement({
   name: 'overflow-reduce-font',
 });
 
+store.selectElements([]);
+
 // react to selection change
 reaction(
   () => {
