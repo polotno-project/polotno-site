@@ -15,6 +15,7 @@ import {
   createQuill,
   setQuillContent,
 } from 'polotno/canvas/html-element';
+import { Button } from '@blueprintjs/core';
 
 unstable_useHtmlTextRender(true);
 
