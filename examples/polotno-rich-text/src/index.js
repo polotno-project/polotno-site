@@ -9,6 +9,7 @@ import { Workspace } from 'polotno/canvas/workspace';
 import { unstable_useHtmlTextRender } from 'polotno/config';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import { createStore } from 'polotno/model/store';
+import { observer } from 'mobx-react-lite';
 
 unstable_useHtmlTextRender(true);
 
