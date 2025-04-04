@@ -1,20 +1,24 @@
-import { createDemoApp } from 'polotno/polotno-app';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { SidePanel } from 'polotno/side-panel';
+import { Workspace } from 'polotno/canvas/workspace';
 import { unstable_useHtmlTextRender } from 'polotno/config';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import { createStore } from 'polotno/model/store';
 
 unstable_useHtmlTextRender(true);
 
-import '@blueprintjs/core/lib/css/blueprint.css';
-
-const { store } = createDemoApp({
-  container: document.getElementById('root'),
-  // this is a demo key just for that project
-  // (!) please don't use it in your projects
-  // to create your own API key please go here: https://polotno.com/cabinet
-  key: 'nFA5H9elEytDyPyvKL7T',
+const store = createStore({
+  key: 'nFA5H9elEytDyPyvKL7T', // you can create it here: https://polotno.com/cabinet/
   // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
+const page = store.addPage();
 
 store.activePage.addElement({
   type: 'text',
@@ -24,3 +28,104 @@ store.activePage.addElement({
   fontSize: 80,
   width: 400,
 });
+
+const ToggleButton = observer(
+  ({
+    active,
+    globalActive,
+    format,
+    element,
+    disableGlobal,
+    enableGlobal,
+    icon,
+    ...props
+  }) => {
+    return (
+      <Button
+        {...props}
+        minimal
+        icon={icon}
+        active={active}
+        onMouseDown={(e) => {
+          e.preventDefault();
+        }}
+        onClick={(e) => {
+          let quill = window.__polotnoQuill;
+
+          if (quill) {
+            const selection = quill.getSelection();
+            quill.formatText(
+              selection.index,
+              selection.length,
+              format,
+              !quillRef.currentFormat[format],
+              'user'
+            );
+            if (globalActive) {
+              disableGlobal();
+            }
+            return;
+          }
+
+          // if whole text selected, let's remove bold from inner
+          quill = createTempQuill({ html: element.text });
+          quill.setSelection(0, quill.getLength(), 'api');
+          quill.format(format, false);
+          const innerHtml = quill.root.innerHTML;
+          removeTempQuill(quill);
+          element.set({ text: innerHtml });
+
+          if (globalActive) {
+            disableGlobal();
+          } else {
+            enableGlobal();
+          }
+        }}
+      />
+    );
+  }
+);
+
+export const TextBold = observer(({ element, store }) => {
+  return (
+    <ToggleButton
+      format="bold"
+      active={
+        quillRef.currentFormat.bold ||
+        element.fontWeight === 'bold' ||
+        element.fontWeight === '700'
+      }
+      globalActive={
+        element.fontWeight === 'bold' || element.fontWeight === '700'
+      }
+      element={element}
+      disableGlobal={() => element.set({ fontWeight: 'normal' })}
+      enableGlobal={() => element.set({ fontWeight: 'bold' })}
+      text="Bold"
+    />
+  );
+});
+
+export const App = ({ store }) => {
+  return (
+    <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
+      <SidePanelWrap>
+        <SidePanel store={store} />
+      </SidePanelWrap>
+      <WorkspaceWrap>
+        <Toolbar
+          store={store}
+          components={{
+            TextBold,
+          }}
+        />
+        <Workspace store={store} />
+        <ZoomButtons store={store} />
+        <PagesTimeline store={store} />
+      </WorkspaceWrap>
+    </PolotnoContainer>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App store={store} />);
