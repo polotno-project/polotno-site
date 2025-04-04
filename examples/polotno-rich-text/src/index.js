@@ -10,6 +10,11 @@ import { unstable_useHtmlTextRender } from 'polotno/config';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import { createStore } from 'polotno/model/store';
 import { observer } from 'mobx-react-lite';
+import {
+  quillRef,
+  createQuill,
+  setQuillContent,
+} from 'polotno/canvas/html-element';
 
 unstable_useHtmlTextRender(true);
 
@@ -29,6 +34,21 @@ store.activePage.addElement({
   fontSize: 80,
   width: 400,
 });
+
+const createTempQuill = ({ html }) => {
+  const el = document.createElement('div');
+  document.body.appendChild(el);
+  // el.innerHTML = html;
+  el.style.display = 'none';
+  el.style.whiteSpace = 'pre-wrap';
+  const quill = createQuill(el);
+  setQuillContent(quill, html);
+  return quill;
+};
+
+const removeTempQuill = (quill) => {
+  quill.root.parentElement.remove();
+};
 
 const ToggleButton = observer(
   ({

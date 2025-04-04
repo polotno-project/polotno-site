@@ -47,12 +47,3 @@ export const App = ({ store }) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App store={store} />);
-
-store.activePage.addElement({
-  type: 'text',
-  text: 'Try to animate me!',
-  y: 300,
-  x: store.width / 2 - 200,
-  fontSize: 80,
-  width: 400,
-});
