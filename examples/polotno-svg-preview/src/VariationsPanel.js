@@ -46,7 +46,7 @@ export const VariationsSection = {
     };
 
     return (
-      <div style={{ padding: 16 }}>
+      <div style={{ padding: 16, height: '100%' }}>
         <Button
           intent="primary"
           loading={loading}
