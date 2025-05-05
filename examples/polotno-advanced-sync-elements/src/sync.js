@@ -1,4 +1,4 @@
-import { reaction } from "mobx";
+import { reaction } from 'mobx';
 
 // Utility to throttle execution of a function
 const throttle = (callback, timeout = 500) => {
@@ -20,7 +20,7 @@ const updatePageNumber = (element) => {
   const baseText = element.custom?.text || element.text;
 
   element.set({
-    text: baseText.replaceAll("{pageNumber}", index + 1),
+    text: baseText.replaceAll('{pageNumber}', index + 1),
   });
 };
 
@@ -30,7 +30,7 @@ const syncElements = (store) => {
 
   // First, update page numbers for all relevant text elements
   store.find((item) => {
-    if (item.type === "text" && !item._editModeEnabled) {
+    if (item.type === 'text' && !item._editModeEnabled) {
       updatePageNumber(item);
     }
   });
@@ -44,14 +44,17 @@ const syncElements = (store) => {
       item.custom?.syncId === syncElement.custom.syncId
     ) {
       const sourceProps = { ...syncElement.toJSON() };
+      // we don't need to sync id
       delete sourceProps.id;
+      // we don't need to sync text, because it is synced via custom prop
+      delete sourceProps.text;
 
       const currentProps = item.toJSON();
       Object.keys(sourceProps).forEach((key) => {
         const from = currentProps[key];
         const to = sourceProps[key];
         if (JSON.stringify(from) !== JSON.stringify(to)) {
-          console.log("set", key, from, to);
+          console.log('set', key, from, to);
           item.set({ [key]: to });
         }
       });
@@ -64,7 +67,7 @@ const onElementRemove = (store, callback) => {
   let lastIds = {};
 
   store.on(
-    "change",
+    'change',
     throttle(() => {
       const newIds = {};
       store.find((item) => {
@@ -129,7 +132,7 @@ const setupEditReaction = (store) => {
 // Attach syncing on general store changes
 const setupSyncOnChange = (store) => {
   store.on(
-    "change",
+    'change',
     throttle(() => {
       syncElements(store);
     })
