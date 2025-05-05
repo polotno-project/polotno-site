@@ -27,7 +27,7 @@ store.addPage();
 
 const text = store.activePage.addElement({
   type: "text",
-  text: "try to apply me to all pages",
+  text: "try to apply me to all pages. Page number is: {pageNumber}",
   fontSize: 50,
   width: 400,
 });
@@ -40,9 +40,9 @@ store.pages[0].select();
 const ApplyToAllPages = ({ store, element, elements }) => {
   return (
     <Button
+      minimal
       onClick={() => {
         elements.forEach((element) => {
-          console.log("element", element.id);
           // first let's remove all "copies" of that element in other pages
           if (element.custom?.syncId) {
             const idsToDelete = [];
@@ -71,7 +71,6 @@ const ApplyToAllPages = ({ store, element, elements }) => {
           delete props.id;
           // put it on every page
           store.pages.forEach((page) => {
-            console.log(element);
             if (page === element.page) {
               return;
             }
@@ -108,7 +107,17 @@ export const App = ({ store }) => {
             LineApplyToAllPages: ApplyToAllPages,
           }}
         />
-        <Workspace store={store} />
+        <Workspace
+          store={store}
+          components={{
+            TextApplyToAllPages: ApplyToAllPages,
+            ImageApplyToAllPages: ApplyToAllPages,
+            VideoApplyToAllPages: ApplyToAllPages,
+            FigureApplyToAllPages: ApplyToAllPages,
+            GifApplyToAllPages: ApplyToAllPages,
+            LineApplyToAllPages: ApplyToAllPages,
+          }}
+        />
         <ZoomButtons store={store} />
         <PagesTimeline store={store} />
       </WorkspaceWrap>
