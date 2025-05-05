@@ -1,21 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from "polotno";
-import { Toolbar } from "polotno/toolbar/toolbar";
-import { PagesTimeline } from "polotno/pages-timeline";
-import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
-import { SidePanel } from "polotno/side-panel";
-import { Workspace } from "polotno/canvas/workspace";
-import { Button } from "@blueprintjs/core";
-import { nanoid } from "nanoid";
-import { setupSync } from "./sync";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { SidePanel } from 'polotno/side-panel';
+import { Workspace } from 'polotno/canvas/workspace';
+import { Button } from '@blueprintjs/core';
+import { nanoid } from 'nanoid';
+import { setupSync } from './sync';
 
-import "@blueprintjs/core/lib/css/blueprint.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-import { createStore } from "polotno/model/store";
+import { createStore } from 'polotno/model/store';
 
 const store = createStore({
-  key: "nFA5H9elEytDyPyvKL7T", // you can create it here: https://polotno.com/cabinet/
+  key: 'nFA5H9elEytDyPyvKL7T', // you can create it here: https://polotno.com/cabinet/
   // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
@@ -25,14 +25,18 @@ setupSync(store);
 
 store.addPage();
 
-const text = store.activePage.addElement({
-  type: "text",
-  text: "try to apply me to all pages. Page number is: {pageNumber}",
+const text = 'try to apply me to all pages. Page number is: {pageNumber}';
+store.activePage.addElement({
+  type: 'text',
+  text: text,
+  custom: {
+    text,
+  },
   fontSize: 50,
   width: 400,
 });
 
-for (var i = 0; i < 2; i++) {
+for (var i = 0; i < 5; i++) {
   const page = store.addPage();
 }
 store.pages[0].select();
@@ -54,7 +58,7 @@ const ApplyToAllPages = ({ store, element, elements }) => {
                 idsToDelete.push(item.id);
               }
             });
-            console.log("idsToDelete", idsToDelete);
+            console.log('idsToDelete', idsToDelete);
             store.deleteElements(idsToDelete);
           }
           // create sync id
@@ -91,7 +95,7 @@ const ApplyToAllPages = ({ store, element, elements }) => {
 
 export const App = ({ store }) => {
   return (
-    <PolotnoContainer style={{ width: "100vw", height: "100vh" }}>
+    <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
       <SidePanelWrap>
         <SidePanel store={store} />
       </SidePanelWrap>
@@ -125,5 +129,5 @@ export const App = ({ store }) => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App store={store} />);
