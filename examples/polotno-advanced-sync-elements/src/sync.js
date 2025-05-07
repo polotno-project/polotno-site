@@ -38,6 +38,7 @@ const syncElements = (store) => {
   const syncElement = store.selectedElements.find((el) => el.custom?.syncId);
   if (!syncElement) return;
 
+  const zIndex = syncElement.parent.children.indexOf(syncElement);
   store.find((item) => {
     if (
       item !== syncElement &&
@@ -58,6 +59,10 @@ const syncElements = (store) => {
           item.set({ [key]: to });
         }
       });
+      const oldZIndex = item.parent.children.indexOf(item);
+      if (oldZIndex !== zIndex) {
+        item.setZIndex(zIndex);
+      }
     }
   });
 };
