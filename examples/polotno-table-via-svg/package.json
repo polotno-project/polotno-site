@@ -1,17 +1,17 @@
 {
-  "name": "polotno-vertical-text-resize",
+  "name": "polotno-table-example",
   "version": "1.0.0",
-  "description": "Polotno Resize Text Vertically",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@handsontable/react": "^15.3.0",
+    "handsontable": "^15.3.0",
     "polotno": "2.23.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.3.1",
+    "react-datasheet": "1.4.12",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1"
-  },
-  "devDependencies": {
-    "typescript": "^4"
   },
   "scripts": {
     "start": "react-scripts start",
