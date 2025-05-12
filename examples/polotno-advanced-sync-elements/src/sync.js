@@ -24,7 +24,7 @@ const updatePageNumber = (element) => {
   });
 };
 
-// Update all synced elements (same syncId) to match the selected one
+let lastNumberOfPages = 0;
 const syncElements = (store) => {
   if (store.selectedElements.some((el) => el._editModeEnabled)) return;
 
@@ -35,6 +35,29 @@ const syncElements = (store) => {
     }
   });
 
+  // if number of pages changed, we need to add sync elements to all pages that has no sync id
+  if (lastNumberOfPages !== store.pages.length) {
+    lastNumberOfPages = store.pages.length;
+    // find a page with any sync elements
+    const page = store.pages.find((page) => {
+      return page.children.some((el) => el.custom?.syncId);
+    });
+    if (page) {
+      const syncElements = page.children.filter((el) => el.custom?.syncId);
+      // now iterate over all pages that has no sync id and add them
+      store.pages.forEach((page) => {
+        if (!page.children.some((el) => el.custom?.syncId)) {
+          syncElements.forEach((el) => {
+            const json = el.toJSON();
+            delete json.id;
+            page.addElement(json);
+          });
+        }
+      });
+    }
+  }
+
+  // Update all synced elements (same syncId) to match the selected one
   const syncElement = store.selectedElements.find((el) => el.custom?.syncId);
   if (!syncElement) return;
 
