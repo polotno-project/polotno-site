@@ -22,6 +22,15 @@ const store = createStore({
 });
 const page = store.addPage();
 
+// load template
+fetch(
+  'https://api.polotno.com/templates/2021-10-25-youtube-thumbnail-gradient-gaming.json'
+)
+  .then((res) => res.json())
+  .then((data) => {
+    store.loadJSON(data);
+  });
+
 const PageControls = observer((props) => {
   const activeIndex = store.pages.indexOf(store.activePage);
   const canGoBack = activeIndex > 0;
