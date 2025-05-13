@@ -1,19 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from "polotno";
-import { Toolbar } from "polotno/toolbar/toolbar";
-import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
-import { SidePanel } from "polotno/side-panel";
-import { Workspace } from "polotno/canvas/workspace";
-import { Switch, Button } from "@blueprintjs/core";
-import { observer } from "mobx-react-lite";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { SidePanel } from 'polotno/side-panel';
+import { Workspace } from 'polotno/canvas/workspace';
+import { Button } from '@blueprintjs/core';
+import { observer } from 'mobx-react-lite';
+import { getClientRect } from 'polotno/utils/math';
 
-import "@blueprintjs/core/lib/css/blueprint.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-import { createStore } from "polotno/model/store";
+import { createStore } from 'polotno/model/store';
 
 const store = createStore({
-  key: "nFA5H9elEytDyPyvKL7T", // you can create it here: https://polotno.com/cabinet/
+  key: 'nFA5H9elEytDyPyvKL7T', // you can create it here: https://polotno.com/cabinet/
   // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
@@ -64,9 +65,9 @@ const validateTextPosition = () => {
     });
     if (!backgroundEl) {
       backgroundEl = element.page.addElement({
-        type: "figure",
-        subType: "rect",
-        fill: "grey",
+        type: 'figure',
+        subType: 'rect',
+        fill: 'grey',
         selectable: false,
         draggable: false,
         resizable: false,
@@ -81,11 +82,12 @@ const validateTextPosition = () => {
       backgroundEl.page.setElementZIndex(backgroundEl.id, elementIndex);
     }
 
+    const box = getClientRect(element);
     backgroundEl.set({
       x: 0,
-      y: element.y,
-      width: store.width,
-      height: element.height,
+      y: box.y,
+      width: box.width,
+      height: box.height,
     });
   });
 };
@@ -102,13 +104,13 @@ const requestChange = () => {
   }, 10);
 };
 
-store.on("change", () => {
-  requestChange();
+store.on('change', () => {
+  validateTextPosition();
 });
 
 store.activePage.addElement({
-  type: "text",
-  text: "Try to set my background",
+  type: 'text',
+  text: 'Try to set my background',
   fontSize: 80,
   width: store.width / 2,
   x: store.width / 4,
@@ -117,18 +119,18 @@ store.activePage.addElement({
 
 export const App = ({ store }) => {
   return (
-    <PolotnoContainer style={{ width: "100vw", height: "100vh" }}>
+    <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
       <SidePanelWrap>
         <SidePanel store={store} />
       </SidePanelWrap>
       <WorkspaceWrap>
-        <Toolbar store={store} components={{ TextFullWidthBackground }} />
-        <Workspace store={store} />
+        <Toolbar store={store} />
+        <Workspace store={store} components={{ TextFullWidthBackground }} />
         <ZoomButtons store={store} />
       </WorkspaceWrap>
     </PolotnoContainer>
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App store={store} />);
