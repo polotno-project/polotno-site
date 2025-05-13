@@ -22,14 +22,24 @@ const store = createStore({
 });
 const page = store.addPage();
 
-// load template
-fetch(
-  'https://api.polotno.com/templates/2021-10-25-youtube-thumbnail-gradient-gaming.json'
-)
-  .then((res) => res.json())
-  .then((data) => {
-    store.loadJSON(data);
-  });
+// load templates
+Promise.all([
+  fetch(
+    'https://api.polotno.com/templates/2021-10-25-youtube-thumbnail-gradient-gaming.json'
+  ).then((res) => res.json()),
+  fetch(
+    'https://api.polotno.com/templates/2021-10-25-youtube-thumbnail-travel-visit.json'
+  ).then((res) => res.json()),
+]).then(([firstTemplate, secondTemplate]) => {
+  // Get the first page from second template
+  const secondPage = secondTemplate.pages[0];
+
+  // Add the second page to the first template
+  firstTemplate.pages.push(secondPage);
+
+  // Load the combined template
+  store.loadJSON(firstTemplate);
+});
 
 const PageControls = observer((props) => {
   const activeIndex = store.pages.indexOf(store.activePage);
@@ -82,6 +92,7 @@ export const App = ({ store }) => {
           store={store}
           renderOnlyActivePage
           components={{ PageControls }}
+          paddingY={80}
         />
         <ZoomButtons store={store} />
         <PagesTimeline store={store} />
