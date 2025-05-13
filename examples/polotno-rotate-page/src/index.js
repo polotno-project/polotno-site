@@ -1,78 +1,68 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from "polotno";
-import { Toolbar } from "polotno/toolbar/toolbar";
-import { PagesTimeline } from "polotno/pages-timeline";
-import { ZoomButtons } from "polotno/toolbar/zoom-buttons";
-import { SidePanel } from "polotno/side-panel";
-import { Workspace } from "polotno/canvas/workspace";
-import { Button } from "@blueprintjs/core";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { PolotnoContainer, SidePanelWrap, WorkspaceWrap } from 'polotno';
+import { Toolbar } from 'polotno/toolbar/toolbar';
+import { PagesTimeline } from 'polotno/pages-timeline';
+import { ZoomButtons } from 'polotno/toolbar/zoom-buttons';
+import { SidePanel } from 'polotno/side-panel';
+import { Workspace } from 'polotno/canvas/workspace';
+import { Button } from '@blueprintjs/core';
 
-import "@blueprintjs/core/lib/css/blueprint.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-import { createStore } from "polotno/model/store";
+import { createStore } from 'polotno/model/store';
 
 const store = createStore({
-  key: "nFA5H9elEytDyPyvKL7T", // you can create it here: https://polotno.com/cabinet/
+  key: 'nFA5H9elEytDyPyvKL7T', // you can create it here: https://polotno.com/cabinet/
   // you can hide back-link on a paid license
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
 const page = store.addPage();
 
+// load template
+fetch(
+  'https://api.polotno.com/templates/2021-10-25-youtube-thumbnail-gradient-gaming.json'
+)
+  .then((res) => res.json())
+  .then((data) => {
+    store.loadJSON(data);
+  });
+
 const PageRotate = ({ store }) => {
   return (
     <Button
+      minimal
       onClick={() => {
-        // Rotate the page by swapping width and height
-        const oldWidth = store.width;
-        const oldHeight = store.height;
-        const newWidth = store.height;
-        const newHeight = store.width;
-        const centerX = store.width / 2;
-        const centerY = store.height / 2;
+        // 1. swap page dimensions
+        const [oldW, oldH] = [store.width, store.height];
+        const [newW, newH] = [oldH, oldW];
+        const [cx, cy] = [oldW / 2, oldH / 2];
+        store.setSize(newW, newH);
 
-        const newCenterX = newWidth / 2;
-        const newCenterY = newHeight / 2;
-        store.setSize(newWidth, newHeight);
-
-        // Rotate each child element
+        // 2. move + rotate every element
+        const [ncx, ncy] = [newW / 2, newH / 2];
         store.pages.forEach((page) => {
-          page.children.forEach((child) => {
-            const oldX = child.x;
-            const oldY = child.y;
-            const oldRotation = child.rotation || 0;
-
-            // Translate to origin (center of the page)
-            const translatedX = oldX - centerX;
-            const translatedY = oldY - centerY;
-
-            // Apply 90-degree rotation
-            const rotatedX = -translatedY;
-            const rotatedY = +translatedX;
-
-            // Translate back to the original coordinate system
-            const newX = newCenterX + rotatedX;
-            const newY = newCenterY + rotatedY;
-
-            // Set new positions and rotation
-            child.set({
-              x: newX,
-              y: newY,
-              rotation: oldRotation + 90, // Rotate the child by 90 degrees
+          page.children.forEach((el) => {
+            const [dx, dy] = [el.x - cx, el.y - cy];
+            const [rx, ry] = [-dy, dx]; // 90° rotation matrix
+            el.set({
+              x: ncx + rx,
+              y: ncy + ry,
+              rotation: (el.rotation || 0) + 90,
             });
           });
         });
       }}
     >
-      Rotate
+      Rotate 90°
     </Button>
   );
 };
 
 export const App = ({ store }) => {
   return (
-    <PolotnoContainer style={{ width: "100vw", height: "100vh" }}>
+    <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
       <SidePanelWrap>
         <SidePanel store={store} />
       </SidePanelWrap>
@@ -86,5 +76,5 @@ export const App = ({ store }) => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App store={store} />);
