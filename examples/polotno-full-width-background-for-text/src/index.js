@@ -68,7 +68,6 @@ const validateTextPosition = () => {
         type: 'figure',
         subType: 'rect',
         fill: 'grey',
-        selectable: false,
         draggable: false,
         resizable: false,
         custom: {
