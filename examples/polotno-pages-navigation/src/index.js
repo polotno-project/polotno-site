@@ -92,7 +92,7 @@ export const App = ({ store }) => {
           store={store}
           renderOnlyActivePage
           components={{ PageControls }}
-          paddingY={80}
+          paddingX={80}
         />
         <ZoomButtons store={store} />
         <PagesTimeline store={store} />
