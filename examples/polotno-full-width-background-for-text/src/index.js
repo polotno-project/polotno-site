@@ -86,22 +86,10 @@ const validateTextPosition = () => {
     backgroundEl.set({
       x: 0,
       y: box.y,
-      width: box.width,
+      width: element.page.computedWidth,
       height: box.height,
     });
   });
-};
-
-let timeout = null;
-const requestChange = () => {
-  if (timeout) {
-    return;
-  }
-
-  timeout = setTimeout(() => {
-    validateTextPosition();
-    timeout = null;
-  }, 10);
 };
 
 store.on('change', () => {
