@@ -30,6 +30,7 @@ const store = createStore({
   // but it will be good if you can keep it for Polotno project support
   showCredit: true,
 });
+store.addPage();
 
 export const App = () => {
   return (
