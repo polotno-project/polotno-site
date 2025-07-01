@@ -80,6 +80,8 @@ const App = () => {
       const job = await req.json();
       if (job.status === 'error') {
         alert('Error: ' + job.error);
+        setLoading(false);
+        setProgress(0);
         return;
       }
       if (job.status === 'done') {
@@ -89,6 +91,8 @@ const App = () => {
         } else {
           setImage(url);
         }
+        setLoading(false);
+        setProgress(0);
         return;
       }
       for (let i = 0; i < 100; i++) {
