@@ -39,12 +39,30 @@ const App = () => {
   const [colorSpace, setColorSpace] = React.useState('RGB');
   const [profile, setProfile] = React.useState('FOGRA39');
 
+  // UI related state
+  const [jsonText, setJsonText] = React.useState(
+    JSON.stringify(DEFAULT_JSON, null, 2)
+  );
+  const [jsonError, setJsonError] = React.useState(null);
+
+  const textareaRef = React.useRef(null);
+
   const handleDownload = async () => {
     setLoading(true);
     setImage(null);
     setProgress(0);
     try {
-      const json = JSON.parse(document.getElementById('input').value);
+      let json;
+      try {
+        json = JSON.parse(jsonText);
+        setJsonError(null);
+      } catch (e) {
+        setJsonError(e.message);
+        textareaRef.current?.focus();
+        setLoading(false);
+        setProgress(0);
+        return;
+      }
       const req = await fetch(
         'https://api.polotno.com/api/renders?KEY=' + KEY,
         {
@@ -95,9 +113,10 @@ const App = () => {
         setProgress(0);
         return;
       }
+      const jobId = job.id;
       for (let i = 0; i < 100; i++) {
         const req = await fetch(
-          'https://api.polotno.com/api/renders/' + id + '?KEY=' + KEY
+          'https://api.polotno.com/api/renders/' + jobId + '?KEY=' + KEY
         );
         const job = await req.json();
         if (job.status === 'error') {
@@ -121,6 +140,7 @@ const App = () => {
       }
     } catch (e) {
       console.error(e);
+      // general error, not JSON related
       alert('Something went wrong...');
     }
     setLoading(false);
@@ -128,176 +148,218 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <h4>Template JSON (result of store.toJSON() export):</h4>
-      <textarea
-        rows="10"
-        id="input"
-        style={{ width: '100%' }}
-        defaultValue={JSON.stringify(DEFAULT_JSON, null, 2)}
-      ></textarea>
-      <h4>Output options:</h4>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '100px' }}>File type:</div>
-        <select
-          id="type"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option value="png">PNG</option>
-          <option value="jpeg">JPEG</option>
-          <option value="pdf">PDF</option>
-          <option value="mp4">mp4</option>
-        </select>
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '100px' }}>Pixel ratio:</div>
-        <input
-          type="range"
-          id="quality"
-          min="0.1"
-          max="2"
-          step="0.1"
-          value={pixelRatio}
-          onChange={(e) => {
-            setPixelRatio(parseFloat(e.target.value));
-          }}
-        />{' '}
-        {pixelRatio}
-      </div>
-      {type === 'pdf' && (
-        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-          <div style={{ width: '100px' }}>DPI:</div>
-          <input
-            type="range"
-            id="quality"
-            min="72"
-            max="300"
-            step="1"
-            value={dpi}
-            onChange={(e) => {
-              setDPI(parseFloat(e.target.value));
+    <>
+      <div className="layout">
+        <div className="pane json-pane">
+          <div className="textarea-header">
+            <h4 style={{ margin: 0 }}>Template JSON</h4>
+            {jsonError && <span className="error">{jsonError}</span>}
+          </div>
+          <textarea
+            ref={textareaRef}
+            className="json-input"
+            value={jsonText}
+            onChange={(e) => setJsonText(e.target.value)}
+            onBlur={() => {
+              try {
+                JSON.parse(jsonText);
+                setJsonError(null);
+              } catch (e) {
+                setJsonError(e.message);
+              }
             }}
-          />{' '}
-          {dpi}
-        </div>
-      )}
-      {type === 'pdf' && (
-        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-          <div style={{ width: '200px' }}>Vector:</div>
-          <input
-            type="checkbox"
-            checked={vector}
-            onChange={(e) => setVector(e.target.checked)}
+            style={{ width: '100%', height: '100%', resize: 'vertical' }}
           />
         </div>
-      )}
-      {type === 'mp4' && (
-        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-          <div style={{ width: '100px' }}>FPS:</div>
+        <div className="pane preview-pane">
+          <h4 style={{ marginTop: 0 }}>Preview</h4>
+          {image ? (
+            <img
+              src={image}
+              alt="Rendered output"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+              }}
+            />
+          ) : (
+            <div className="preview-placeholder"></div>
+          )}
+        </div>
+      </div>
+
+      {/* Primary visible options */}
+      <div className="primary-options">
+        <div className="option">
+          <label>File type:</label>
+          <select value={type} onChange={(e) => setType(e.target.value)}>
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+            <option value="pdf">PDF</option>
+            <option value="mp4">mp4</option>
+          </select>
+        </div>
+        <div className="option">
+          <label>Pixel ratio: {pixelRatio}</label>
           <input
             type="range"
-            id="quality"
-            min="5"
-            max="60"
-            step="1"
-            value={fps}
-            onChange={(e) => {
-              setFps(parseFloat(e.target.value));
-            }}
-          />{' '}
-          {fps}
+            min="0.1"
+            max="2"
+            step="0.1"
+            value={pixelRatio}
+            onChange={(e) => setPixelRatio(parseFloat(e.target.value))}
+          />
         </div>
-      )}
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>HTML Text Render:</div>
-        <input
-          type="checkbox"
-          checked={htmlTextRenderEnabled}
-          onChange={(e) => setHtmlTextRenderEnabled(e.target.checked)}
-        />
       </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Include Bleed:</div>
-        <input
-          type="checkbox"
-          checked={includeBleed}
-          onChange={(e) => setIncludeBleed(e.target.checked)}
-        />
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Text Vertical Resize:</div>
-        <input
-          type="checkbox"
-          checked={textVerticalResizeEnabled}
-          onChange={(e) => setTextVerticalResizeEnabled(e.target.checked)}
-        />
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Webhook URL:</div>
-        <input
-          type="text"
-          value={webhook}
-          onChange={(e) => setWebhook(e.target.value)}
-        />
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Ignore Background:</div>
-        <input
-          type="checkbox"
-          checked={ignoreBackground}
-          onChange={(e) => setIgnoreBackground(e.target.checked)}
-        />
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Skip Font Error:</div>
-        <input
-          type="checkbox"
-          checked={skipFontError}
-          onChange={(e) => setSkipFontError(e.target.checked)}
-        />
-      </div>
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Skip Image Error:</div>
-        <input
-          type="checkbox"
-          checked={skipImageError}
-          onChange={(e) => setSkipImageError(e.target.checked)}
-        />
-      </div>
-      {(type === 'jpeg' || type === 'pdf') && (
-        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-          <div style={{ width: '200px' }}>Color Space:</div>
-          <select
-            value={colorSpace}
-            onChange={(e) => setColorSpace(e.target.value)}
-          >
-            <option value="RGB">RGB</option>
-            <option value="CMYK">CMYK</option>
-          </select>
+
+      {/* Advanced options */}
+      <details className="advanced-options">
+        <summary>Advanced options</summary>
+        <div className="options-grid">
+          {type === 'pdf' && (
+            <>
+              <div className="option">
+                <label>DPI: {dpi}</label>
+                <input
+                  type="range"
+                  min="72"
+                  max="300"
+                  step="1"
+                  value={dpi}
+                  onChange={(e) => setDPI(parseFloat(e.target.value))}
+                />
+              </div>
+              <div className="option">
+                <label>Vector:</label>
+                <input
+                  type="checkbox"
+                  checked={vector}
+                  onChange={(e) => setVector(e.target.checked)}
+                />
+              </div>
+            </>
+          )}
+
+          {type === 'mp4' && (
+            <div className="option">
+              <label>FPS: {fps}</label>
+              <input
+                type="range"
+                min="5"
+                max="60"
+                step="1"
+                value={fps}
+                onChange={(e) => setFps(parseFloat(e.target.value))}
+              />
+            </div>
+          )}
+
+          <div className="option">
+            <label>HTML Text Render:</label>
+            <input
+              type="checkbox"
+              checked={htmlTextRenderEnabled}
+              onChange={(e) => setHtmlTextRenderEnabled(e.target.checked)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Include Bleed:</label>
+            <input
+              type="checkbox"
+              checked={includeBleed}
+              onChange={(e) => setIncludeBleed(e.target.checked)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Text Vertical Resize:</label>
+            <input
+              type="checkbox"
+              checked={textVerticalResizeEnabled}
+              onChange={(e) => setTextVerticalResizeEnabled(e.target.checked)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Webhook URL:</label>
+            <input
+              type="text"
+              value={webhook}
+              onChange={(e) => setWebhook(e.target.value)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Ignore Background:</label>
+            <input
+              type="checkbox"
+              checked={ignoreBackground}
+              onChange={(e) => setIgnoreBackground(e.target.checked)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Skip Font Error:</label>
+            <input
+              type="checkbox"
+              checked={skipFontError}
+              onChange={(e) => setSkipFontError(e.target.checked)}
+            />
+          </div>
+
+          <div className="option">
+            <label>Skip Image Error:</label>
+            <input
+              type="checkbox"
+              checked={skipImageError}
+              onChange={(e) => setSkipImageError(e.target.checked)}
+            />
+          </div>
+
+          {(type === 'jpeg' || type === 'pdf') && (
+            <div className="option">
+              <label>Color Space:</label>
+              <select
+                value={colorSpace}
+                onChange={(e) => setColorSpace(e.target.value)}
+              >
+                <option value="RGB">RGB</option>
+                <option value="CMYK">CMYK</option>
+              </select>
+            </div>
+          )}
+
+          {(type === 'jpeg' || type === 'pdf') && colorSpace === 'CMYK' && (
+            <div className="option">
+              <label>Profile:</label>
+              <select
+                value={profile}
+                onChange={(e) => setProfile(e.target.value)}
+              >
+                <option value="FOGRA39">FOGRA39</option>
+                <option value="USWebCoatedSWOP">USWebCoatedSWOP</option>
+              </select>
+            </div>
+          )}
+
+          <div className="option">
+            <label>Text Overflow:</label>
+            <select
+              value={textOverflow}
+              onChange={(e) => setTextOverflow(e.target.value)}
+            >
+              <option value="change-font-size">Change Font Size</option>
+              <option value="resize">Resize</option>
+              <option value="ellipsis">Ellipsis</option>
+            </select>
+          </div>
         </div>
-      )}
-      {(type === 'jpeg' || type === 'pdf') && colorSpace === 'CMYK' && (
-        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-          <div style={{ width: '200px' }}>Profile:</div>
-          <select value={profile} onChange={(e) => setProfile(e.target.value)}>
-            <option value="FOGRA39">FOGRA39</option>
-            <option value="USWebCoatedSWOP">USWebCoatedSWOP</option>
-          </select>
-        </div>
-      )}
-      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
-        <div style={{ width: '200px' }}>Text Overflow:</div>
-        <select
-          value={textOverflow}
-          onChange={(e) => setTextOverflow(e.target.value)}
-        >
-          <option value="change-font-size">Change Font Size</option>
-          <option value="resize">Resize</option>
-          <option value="ellipsis">Ellipsis</option>
-        </select>
-      </div>
-      <p>
+      </details>
+
+      {/* Sticky action bar */}
+      <div className="action-bar">
         <button
           id="generate-button"
           className="button button--primary"
@@ -309,18 +371,11 @@ const App = () => {
               ? `Rendering... ${progress}%`
               : 'Rendering...'
             : type === 'pdf' || type === 'mp4'
-            ? 'Render and Download'
+            ? 'Render & Download'
             : 'Render'}
         </button>
-      </p>
-      {image && (
-        <img
-          style={{ maxWidth: '100%' }}
-          src={image}
-          alt="Rendered output"
-        ></img>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
