@@ -77,18 +77,19 @@ const App = () => {
           }),
         }
       );
-      const { id, status } = await req.json();
-      if (status === 'error') {
-        alert('Error: ' + id);
+      const job = await req.json();
+      if (job.status === 'error') {
+        alert('Error: ' + job.error);
         return;
       }
-      if (status === 'done') {
+      if (job.status === 'done') {
         const url = job.output;
         if (type === 'pdf' || type === 'mp4') {
           downloadFile(url, 'export.' + type);
         } else {
           setImage(url);
         }
+        return;
       }
       for (let i = 0; i < 100; i++) {
         const req = await fetch(
