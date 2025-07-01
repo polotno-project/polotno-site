@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { DEFAULT_JSON } from "./sample";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { DEFAULT_JSON } from './sample';
 
 const downloadFile = async (url, filename) => {
   const response = await fetch(url);
   const blob = await response.blob();
   const blobUrl = URL.createObjectURL(blob);
-  const a = document.createElement("a");
+  const a = document.createElement('a');
   a.href = blobUrl;
   a.download = filename;
   a.click();
@@ -15,13 +15,13 @@ const downloadFile = async (url, filename) => {
 // this is a demo key just for that project
 // (!) please don't use it in your projects
 // to create your own API key please go here: https://polotno.com/cabinet
-const KEY = "nFA5H9elEytDyPyvKL7T";
+const KEY = 'nFA5H9elEytDyPyvKL7T';
 
 const App = () => {
   const [pixelRatio, setPixelRatio] = React.useState(1);
-  const [type, setType] = React.useState("png");
+  const [type, setType] = React.useState('png');
   const [dpi, setDPI] = React.useState(72);
-  const [fps, setFps] = React.useState(10);
+  const [fps, setFps] = React.useState(24);
   const [loading, setLoading] = React.useState(false);
   const [image, setImage] = React.useState(null);
   const [htmlTextRenderEnabled, setHtmlTextRenderEnabled] =
@@ -29,26 +29,29 @@ const App = () => {
   const [includeBleed, setIncludeBleed] = React.useState(false);
   const [textVerticalResizeEnabled, setTextVerticalResizeEnabled] =
     React.useState(false);
-  const [webhook, setWebhook] = React.useState("");
+  const [webhook, setWebhook] = React.useState('');
   const [ignoreBackground, setIgnoreBackground] = React.useState(false);
   const [skipFontError, setSkipFontError] = React.useState(false);
   const [skipImageError, setSkipImageError] = React.useState(false);
-  const [textOverflow, setTextOverflow] = React.useState("change-font-size");
+  const [textOverflow, setTextOverflow] = React.useState('change-font-size');
   const [progress, setProgress] = React.useState(0);
   const [vector, setVector] = React.useState(false);
+  const [colorSpace, setColorSpace] = React.useState('RGB');
+  const [profile, setProfile] = React.useState('FOGRA39');
 
   const handleDownload = async () => {
     setLoading(true);
     setImage(null);
     setProgress(0);
     try {
-      const json = JSON.parse(document.getElementById("input").value);
+      const json = JSON.parse(document.getElementById('input').value);
       const req = await fetch(
-        "https://api.polotno.com/api/renders?KEY=" + KEY,
+        'https://api.polotno.com/api/renders?KEY=' + KEY,
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
+            Prefer: 'wait',
           },
           body: JSON.stringify({
             design: json,
@@ -57,7 +60,7 @@ const App = () => {
             dpi,
             fps,
             format: type,
-            outputFormat: "url",
+            outputFormat: 'url',
             htmlTextRenderEnabled,
             includeBleed,
             textVerticalResizeEnabled,
@@ -67,26 +70,42 @@ const App = () => {
             skipImageError,
             vector,
             textOverflow,
+            color: {
+              space: colorSpace,
+              profile: colorSpace === 'CMYK' ? profile : undefined,
+            },
           }),
         }
       );
-      const { id } = await req.json();
+      const { id, status } = await req.json();
+      if (status === 'error') {
+        alert('Error: ' + id);
+        return;
+      }
+      if (status === 'done') {
+        const url = job.output;
+        if (type === 'pdf' || type === 'mp4') {
+          downloadFile(url, 'export.' + type);
+        } else {
+          setImage(url);
+        }
+      }
       for (let i = 0; i < 100; i++) {
         const req = await fetch(
-          "https://api.polotno.com/api/renders/" + id + "?KEY=" + KEY
+          'https://api.polotno.com/api/renders/' + id + '?KEY=' + KEY
         );
         const job = await req.json();
-        if (job.status === "error") {
-          alert("Error: " + job.error);
+        if (job.status === 'error') {
+          alert('Error: ' + job.error);
           break;
         }
-        if (job.status === "progress") {
+        if (job.status === 'progress') {
           setProgress(job.progress);
         }
-        if (job.status === "done") {
+        if (job.status === 'done') {
           const url = job.output;
-          if (type === "pdf" || type === "mp4") {
-            downloadFile(url, "export." + type);
+          if (type === 'pdf' || type === 'mp4') {
+            downloadFile(url, 'export.' + type);
           } else {
             setImage(url);
           }
@@ -97,7 +116,7 @@ const App = () => {
       }
     } catch (e) {
       console.error(e);
-      alert("Something went wrong...");
+      alert('Something went wrong...');
     }
     setLoading(false);
     setProgress(0);
@@ -109,12 +128,12 @@ const App = () => {
       <textarea
         rows="10"
         id="input"
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
         defaultValue={JSON.stringify(DEFAULT_JSON, null, 2)}
       ></textarea>
       <h4>Output options:</h4>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "100px" }}>File type:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '100px' }}>File type:</div>
         <select
           id="type"
           value={type}
@@ -126,8 +145,8 @@ const App = () => {
           <option value="mp4">mp4</option>
         </select>
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "100px" }}>Pixel ratio:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '100px' }}>Pixel ratio:</div>
         <input
           type="range"
           id="quality"
@@ -138,12 +157,12 @@ const App = () => {
           onChange={(e) => {
             setPixelRatio(parseFloat(e.target.value));
           }}
-        />{" "}
+        />{' '}
         {pixelRatio}
       </div>
-      {type === "pdf" && (
-        <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-          <div style={{ width: "100px" }}>DPI:</div>
+      {type === 'pdf' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '100px' }}>DPI:</div>
           <input
             type="range"
             id="quality"
@@ -154,13 +173,13 @@ const App = () => {
             onChange={(e) => {
               setDPI(parseFloat(e.target.value));
             }}
-          />{" "}
+          />{' '}
           {dpi}
         </div>
       )}
-      {type === "pdf" && (
-        <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-          <div style={{ width: "200px" }}>Vector:</div>
+      {type === 'pdf' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '200px' }}>Vector:</div>
           <input
             type="checkbox"
             checked={vector}
@@ -168,9 +187,9 @@ const App = () => {
           />
         </div>
       )}
-      {type === "mp4" && (
-        <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-          <div style={{ width: "100px" }}>FPS:</div>
+      {type === 'mp4' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '100px' }}>FPS:</div>
           <input
             type="range"
             id="quality"
@@ -181,68 +200,89 @@ const App = () => {
             onChange={(e) => {
               setFps(parseFloat(e.target.value));
             }}
-          />{" "}
+          />{' '}
           {fps}
         </div>
       )}
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>HTML Text Render:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>HTML Text Render:</div>
         <input
           type="checkbox"
           checked={htmlTextRenderEnabled}
           onChange={(e) => setHtmlTextRenderEnabled(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Include Bleed:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Include Bleed:</div>
         <input
           type="checkbox"
           checked={includeBleed}
           onChange={(e) => setIncludeBleed(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Text Vertical Resize:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Text Vertical Resize:</div>
         <input
           type="checkbox"
           checked={textVerticalResizeEnabled}
           onChange={(e) => setTextVerticalResizeEnabled(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Webhook URL:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Webhook URL:</div>
         <input
           type="text"
           value={webhook}
           onChange={(e) => setWebhook(e.target.value)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Ignore Background:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Ignore Background:</div>
         <input
           type="checkbox"
           checked={ignoreBackground}
           onChange={(e) => setIgnoreBackground(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Skip Font Error:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Skip Font Error:</div>
         <input
           type="checkbox"
           checked={skipFontError}
           onChange={(e) => setSkipFontError(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Skip Image Error:</div>
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Skip Image Error:</div>
         <input
           type="checkbox"
           checked={skipImageError}
           onChange={(e) => setSkipImageError(e.target.checked)}
         />
       </div>
-      <div style={{ display: "flex", gap: "20px", padding: "10px" }}>
-        <div style={{ width: "200px" }}>Text Overflow:</div>
+      {(type === 'jpeg' || type === 'pdf') && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '200px' }}>Color Space:</div>
+          <select
+            value={colorSpace}
+            onChange={(e) => setColorSpace(e.target.value)}
+          >
+            <option value="RGB">RGB</option>
+            <option value="CMYK">CMYK</option>
+          </select>
+        </div>
+      )}
+      {(type === 'jpeg' || type === 'pdf') && colorSpace === 'CMYK' && (
+        <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+          <div style={{ width: '200px' }}>Profile:</div>
+          <select value={profile} onChange={(e) => setProfile(e.target.value)}>
+            <option value="FOGRA39">FOGRA39</option>
+            <option value="USWebCoatedSWOP">USWebCoatedSWOP</option>
+          </select>
+        </div>
+      )}
+      <div style={{ display: 'flex', gap: '20px', padding: '10px' }}>
+        <div style={{ width: '200px' }}>Text Overflow:</div>
         <select
           value={textOverflow}
           onChange={(e) => setTextOverflow(e.target.value)}
@@ -262,15 +302,15 @@ const App = () => {
           {loading
             ? progress > 0
               ? `Rendering... ${progress}%`
-              : "Rendering..."
-            : type === "pdf" || type === "mp4"
-            ? "Render and Download"
-            : "Render"}
+              : 'Rendering...'
+            : type === 'pdf' || type === 'mp4'
+            ? 'Render and Download'
+            : 'Render'}
         </button>
       </p>
       {image && (
         <img
-          style={{ maxWidth: "100%" }}
+          style={{ maxWidth: '100%' }}
           src={image}
           alt="Rendered output"
         ></img>
@@ -279,5 +319,5 @@ const App = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
