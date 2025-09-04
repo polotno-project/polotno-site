@@ -104,7 +104,7 @@ const App = () => {
       }
       if (job.status === 'done') {
         const url = job.output;
-        if (type === 'pdf' || type === 'mp4') {
+        if (type === 'pdf' || type === 'mp4' || type === 'gif') {
           downloadFile(url, 'export.' + type);
         } else {
           setImage(url);
@@ -128,7 +128,7 @@ const App = () => {
         }
         if (job.status === 'done') {
           const url = job.output;
-          if (type === 'pdf' || type === 'mp4') {
+          if (type === 'pdf' || type === 'mp4' || type === 'gif') {
             downloadFile(url, 'export.' + type);
           } else {
             setImage(url);
@@ -196,6 +196,7 @@ const App = () => {
           <select value={type} onChange={(e) => setType(e.target.value)}>
             <option value="png">PNG</option>
             <option value="jpeg">JPEG</option>
+            <option value="gif">GIF</option>
             <option value="pdf">PDF</option>
             <option value="mp4">mp4</option>
           </select>
@@ -370,7 +371,7 @@ const App = () => {
             ? progress > 0
               ? `Rendering... ${progress}%`
               : 'Rendering...'
-            : type === 'pdf' || type === 'mp4'
+            : type === 'pdf' || type === 'mp4' || type === 'gif'
             ? 'Render & Download'
             : 'Render'}
         </button>
